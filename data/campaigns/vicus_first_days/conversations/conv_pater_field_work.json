@@ -1,0 +1,120 @@
+{
+  "id": "conv_pater_field_work",
+  "titleTr": "Pater ile Tarla Çalışması",
+  "startNodeId": "start",
+  "npcIds": [
+    "pater"
+  ],
+  "locationIds": [
+    "field_edge"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "speakerNpcId": "pater",
+      "npcLineLatin": "Fili, ager parandus est. Potesne aratrum aspicere?",
+      "npcLineTr": "Evlat, tarla hazırlanmalı. Sabana bakabilir misin?",
+      "options": [
+        {
+          "id": "opt_look_tool",
+          "labelTr": "Aletleri incelemeyi kabul et",
+          "verb": "inspect",
+          "requiresLatin": true,
+          "playerIntentTr": "Sabana bakarım",
+          "targetMeaningTr": "Sabana bakıyorum",
+          "canonicalAnswers": [
+            "aratrum aspicio",
+            "aratrum video"
+          ],
+          "successNextNodeId": "inspect_tools",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_refuse_work",
+          "labelTr": "Tarla işini reddet",
+          "verb": "refuse",
+          "requiresLatin": false,
+          "nextNodeId": "reflection"
+        }
+      ]
+    },
+    {
+      "id": "inspect_tools",
+      "narrationTr": "Eski saban (aratrum) ve toprak kazma aletleri kenarda duruyor. Pater tarlayı sürmeye hazırlanıyor.",
+      "options": [
+        {
+          "id": "opt_dig_field",
+          "labelTr": "Toprağı kazmaya başla",
+          "verb": "help",
+          "requiresLatin": true,
+          "playerIntentTr": "Toprağı kazıyorum",
+          "targetMeaningTr": "Toprağı kazıyorum",
+          "canonicalAnswers": [
+            "terram fodio",
+            "laboro in agro"
+          ],
+          "successNextNodeId": "field_dig",
+          "failureBehavior": "retry"
+        }
+      ]
+    },
+    {
+      "id": "field_dig",
+      "speakerNpcId": "pater",
+      "npcLineLatin": "Bene laboras. Ager mox paratus erit.",
+      "npcLineTr": "Güzel çalışıyorsun. Tarla yakında hazır olacak.",
+      "options": [
+        {
+          "id": "opt_finish_field",
+          "labelTr": "Çalışmayı bitir",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "narrationTr": "Sohbet bitmeden önce kısa bir an durup öğrendiğin sözü ve yapılan işi zihninde tekrar ediyorsun.",
+      "options": [
+        {
+          "id": "finish_reflection",
+          "labelTr": "Konuşmayı tamamla",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "isEnding": true,
+      "endingSummaryTr": "Pater ile tarla çalışmasını başarıyla tamamladın.",
+      "options": [],
+      "onEnterEffects": [
+        {
+          "type": "RECORD_VILLAGE_ACTIVITY",
+          "payload": {
+            "activityId": "field_labor",
+            "npcIds": [
+              "pater"
+            ],
+            "lifePathChanges": {
+              "villa": 1
+            },
+            "summaryTr": "Pater ile tarla çalışması yaptın."
+          }
+        },
+        {
+          "type": "ADD_LIFE_PATH_HINT",
+          "payload": {
+            "path": "villa",
+            "amount": 1,
+            "reasonTr": "Toprak işleriyle ilgilendin."
+          }
+        }
+      ]
+    }
+  ],
+  "relatedActivityId": "field_labor"
+}

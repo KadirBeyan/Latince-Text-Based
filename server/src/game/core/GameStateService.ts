@@ -151,6 +151,19 @@ export class GameStateService {
       chapterProgress,
       unlockedChapters,
       activeInteraction: save.activeInteraction,
+      activeConversation: (() => {
+        if (!save.activeConversation) return undefined;
+        const { flowId, currentNodeId } = save.activeConversation;
+        const flow = this.contentLoader.getConversationFlow(flowId);
+        if (!flow) return save.activeConversation;
+        const node = flow.nodes.find((n: any) => n.id === currentNodeId);
+        if (!node) return save.activeConversation;
+        return {
+          ...save.activeConversation,
+          currentNode: node,
+          options: node.options
+        };
+      })(),
       livingScene,
       villageLife: (() => {
         const system = new VillageLifeSystem();

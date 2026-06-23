@@ -1,0 +1,66 @@
+{
+  "id": "vicus_first_days",
+  "title": "Köyde İlk Günler",
+  "titleTr": "Köyde İlk Günler",
+  "titleLatin": "In Vico",
+  "subtitle": "Roma dünyasına küçük bir köyde başlıyorsun.",
+  "description": "Oyuncu, Roma dünyasında küçük bir vicus sakini olarak karakterini kurar; Latinceyi dünya içinde konuşarak, okuyarak ve ilişki kurarak öğrenir.",
+  "descriptionTr": "Oyuncu, Roma dünyasında küçük bir vicus sakini olarak karakterini kurar; Latinceyi dünya içinde konuşarak, okuyarak ve ilişki kurarak öğrenir.",
+  "startChapterId": "village_first_days",
+  "startSceneId": "vicus_001_home_morning",
+  "recommendedLevel": "A1",
+  "chapters": [
+    {
+      "id": "village_first_days",
+      "title": "Köyde İlk Günler",
+      "titleTr": "Köyde İlk Günler",
+      "titleLatin": "In Vico",
+      "description": "Roma dünyasına küçük bir köyde sıradan biri olarak başlıyorsun.",
+      "descriptionTr": "Roma dünyasına küçük bir köyde sıradan biri olarak başlıyorsun.",
+      "order": 0,
+      "startQuestId": "vicus_prologue_main",
+      "startSceneId": "vicus_001_home_morning",
+      "locationIds": [
+        "home_hut",
+        "village_path",
+        "field_edge",
+        "village_market",
+        "shrine",
+        "teacher_corner",
+        "veteran_bench",
+        "scribe_table"
+      ],
+      "npcIds": [
+        "mater",
+        "pater",
+        "magister_ruralis",
+        "mercator_vicus",
+        "veteranus",
+        "scriba_vicus",
+        "sacerdos_vicus",
+        "amicus"
+      ],
+      "grammarFocus": [
+        "greetings-basic",
+        "sum-esse-present",
+        "ego-tu-basic",
+        "simple-sentence-basic"
+      ],
+      "vocabularyFocus": [
+        "vocab-salve",
+        "vocab-vale",
+        "vocab-nomen",
+        "vocab-mihi",
+        "vocab-aqua",
+        "vocab-panis"
+      ],
+      "estimatedSceneCount": 18,
+      "unlockConditions": [],
+      "mainQuests": [
+        "vicus_prologue_main"
+      ],
+      "sideQuests": [],
+      "reviewQuests": []
+    }
+  ]
+}

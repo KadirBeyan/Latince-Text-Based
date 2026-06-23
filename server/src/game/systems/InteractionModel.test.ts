@@ -73,7 +73,7 @@ test("SceneSystem - resolveIntentSelect immediately resolves when requiresLatin 
   };
 
   const { gameEngine, saveRepository } = createTestEngineWithInteractionScene(model);
-  let state = await gameEngine.createNewGame("Marcus", "via-prima");
+  let state = await gameEngine.createNewGame("Marcus", "vicus_first_days");
   const saveId = state.saveId;
 
   assert.strictEqual(state.currentScene.id, "test_interaction_scene");
@@ -118,7 +118,7 @@ test("SceneSystem - resolveIntentSelect locks selectedIntentId when requiresLati
   };
 
   const { gameEngine, saveRepository } = createTestEngineWithInteractionScene(model);
-  let state = await gameEngine.createNewGame("Marcus", "via-prima");
+  let state = await gameEngine.createNewGame("Marcus", "vicus_first_days");
   const saveId = state.saveId;
 
   // Select intent requiring Latin

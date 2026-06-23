@@ -109,7 +109,7 @@ test("GameEngine - Dialogue Sequence linear turn progression and success path", 
   };
 
   const { gameEngine } = createTestEngineWithDialogueSequence(sequence);
-  let state = await gameEngine.createNewGame("Marcus", "via-prima");
+  let state = await gameEngine.createNewGame("Marcus", "vicus_first_days");
   const saveId = state.saveId;
 
   // Active interaction should start at turn 0

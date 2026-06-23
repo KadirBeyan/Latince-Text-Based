@@ -5,6 +5,7 @@ interface VillageActivityBoardProps {
   activities: VillageActivity[];
   availableChoices: SceneChoice[];
   onSubmitChoice: (choiceId: string) => Promise<void>;
+  onStartConversation: (flowId: string) => Promise<void>;
   actionsUsed: number;
   maxActions: number;
 }
@@ -13,6 +14,7 @@ export function VillageActivityBoard({
   activities,
   availableChoices,
   onSubmitChoice,
+  onStartConversation,
   actionsUsed,
   maxActions
 }: VillageActivityBoardProps) {
@@ -59,7 +61,11 @@ export function VillageActivityBoard({
               className={`village-activity-card ${isDisabled ? "disabled" : "clickable"}`}
               onClick={() => {
                 if (!isDisabled) {
-                  onSubmitChoice(choiceId);
+                  if (activity.conversationFlowId) {
+                    onStartConversation(activity.conversationFlowId);
+                  } else {
+                    onSubmitChoice(choiceId);
+                  }
                 }
               }}
             >

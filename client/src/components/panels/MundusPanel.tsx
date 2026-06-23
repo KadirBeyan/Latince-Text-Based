@@ -3,11 +3,14 @@ import { useGameStore } from "../../stores/gameStore";
 import { GeneratedQuestPanel } from "./GeneratedQuestPanel";
 
 const LOCATIONS_CONFIG: Record<string, { label: string; note: string }> = {
-  ludus_room: { label: "Ludus (Okul)", note: "Zihnini eğit, Latince öğren." },
-  forum: { label: "Forum (Meydan)", note: "Romalılarla konuş, ticaret yap ve ikna et." },
-  domus: { label: "Domus (Ev)", note: "Dinlen, günlüğünü incele ve düşün." },
-  castra: { label: "Castra (Ordugah)", note: "Disiplin, nöbet ve askeri düzen." },
-  bibliotheca: { label: "Bibliotheca (Kütüphane)", note: "Antik tomarları çalış ve bilgi edin." }
+  home_hut: { label: "Ev Kulübesi", note: "Aile, ocak ve sabah işleri." },
+  village_path: { label: "Köy Yolu", note: "Evleri, pazarı ve tarlayı bağlar." },
+  field_edge: { label: "Tarla Sınırı", note: "Gündelik emek ve köy işi." },
+  village_market: { label: "Köy Pazarı", note: "Ticaret, panis ve kısa pazarlıklar." },
+  teacher_corner: { label: "Öğretmen Köşesi", note: "Harfler ve ilk Latince sözler." },
+  veteran_bench: { label: "Veteran Bankı", note: "Disiplin ve eski sefer hikayeleri." },
+  scribe_table: { label: "Scriba Masası", note: "Tabula, stilus ve yazı işleri." },
+  shrine: { label: "Köy Sunağı", note: "Pietas ve kısa ritüel sözleri." }
 };
 
 const MOOD_LABELS: Record<string, { text: string; color: string; bg: string }> = {
@@ -40,7 +43,7 @@ export function MundusPanel() {
         <div className="location-list" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           {Object.entries(LOCATIONS_CONFIG).map(([id, info]) => {
             const state = locationStates.find(l => l.locationId === id);
-            const isDiscovered = state?.discovered ?? (id === "ludus_room" || id === "forum"); // Defaults
+            const isDiscovered = state?.discovered ?? (id === "home_hut" || id === "village_path"); // Defaults
             const visitCount = state?.visitCount ?? 0;
             const mood = state?.mood;
             const moodInfo = mood ? MOOD_LABELS[mood] : null;

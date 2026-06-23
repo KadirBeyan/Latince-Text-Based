@@ -8,12 +8,11 @@ export function VillageNpcPresencePanel({ nearbyNpcIds }: VillageNpcPresencePane
   const npcRoles: Record<string, { role: string; desc: string; icon: string }> = {
     mater: { role: "Mater", desc: "Sıcak ekmek kokusuyla seni karşılayan şefkatli annen.", icon: "👵" },
     pater: { role: "Pater", desc: "Tarlada veya işinin başında sessizce çalışan baban.", icon: "👨" },
-    avia: { role: "Avia", desc: "Eski Roma efsanelerini fısıldayan bilge büyükannen.", icon: "👵" },
     magister_ruralis: { role: "Magister", desc: "Gençlere okuma-yazma ve hesap öğreten sabırlı hoca.", icon: "👨‍🏫" },
     mercator_vicus: { role: "Mercator", desc: "Uzak şehirlerden getirdiği malları satan kurnaz tüccar.", icon: "🧑‍💼" },
     veteranus: { role: "Veteranus", desc: "Roma lejyonlarında savaşmış, yara izleriyle dolu ihtiyar.", icon: "🛡️" },
     scriba_vicus: { role: "Scriba", desc: "Resmi belgeleri ve mektupları Latince kaleme alan memur.", icon: "📜" },
-    ministra: { role: "Ministra", desc: "Sunaktaki kutsal ateşi koruyan tapınak hizmetkarı.", icon: "🔮" },
+    sacerdos_vicus: { role: "Sacerdos", desc: "Köy sunağındaki ritüel sözleri ve pietas duygusunu taşıyan rahip.", icon: "" },
     amicus: { role: "Amicus", desc: "Köyde birlikte koşturup oyun oynadığın sadık dostun.", icon: "🧑" }
   };
 

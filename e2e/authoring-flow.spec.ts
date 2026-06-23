@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test("authoring tree, validation, graph, and preview surfaces open", async ({ page, request }) => {
-  const response = await request.post("http://127.0.0.1:3016/api/game/new", { data: { playerName: `Author ${Date.now()}`, campaignId: "via-prima" } });
+  const response = await request.post("http://127.0.0.1:3016/api/game/new", { data: { playerName: `Author ${Date.now()}`, campaignId: "vicus_first_days" } });
   const state = await response.json() as { saveId: string };
   await page.addInitScript((saveId) => {
     localStorage.setItem("via-prima:last-save-id", saveId);

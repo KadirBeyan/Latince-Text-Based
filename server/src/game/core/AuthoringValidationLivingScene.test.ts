@@ -11,7 +11,7 @@ test("ContentValidator - validates invalid revisitVariants scene references", ()
   const mockContent: LoadedContent = {
     campaigns: [
       {
-        id: "via-prima",
+        id: "vicus_first_days",
         title: "Via Prima",
         chapters: [
           {
@@ -67,7 +67,8 @@ test("ContentValidator - validates invalid revisitVariants scene references", ()
     grammar: [],
     vocabulary: [],
     examples: [],
-    questTemplates: []
+    questTemplates: [],
+    conversations: []
   };
 
   const report = validator.validate(mockContent);

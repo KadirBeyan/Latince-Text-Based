@@ -10,7 +10,7 @@ import { VillageRestPanel } from "./VillageRestPanel";
 import forumHero from "../../assets/roman-forum-hero.png";
 
 export function VillageHub() {
-  const { gameState, submitChoice } = useGameStore();
+  const { gameState, submitChoice, startConversation } = useGameStore();
 
   if (!gameState || !gameState.villageLife) {
     return null;
@@ -28,8 +28,7 @@ export function VillageHub() {
     teacher_corner: forumHero,
     veteran_bench: forumHero,
     scribe_table: forumHero,
-    shrine: forumHero,
-    old_oak: forumHero
+    shrine: forumHero
   };
 
   const bannerImg = (currentScene.locationId && locationBannerImages[currentScene.locationId]) || forumHero;
@@ -66,6 +65,7 @@ export function VillageHub() {
             activities={villageLife.availableActivities || []}
             availableChoices={availableChoices}
             onSubmitChoice={submitChoice}
+            onStartConversation={startConversation}
             actionsUsed={dayState.actionsUsedThisPeriod}
             maxActions={dayState.maxActionsPerPeriod}
           />

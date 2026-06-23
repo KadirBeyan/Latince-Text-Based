@@ -1,0 +1,158 @@
+{
+  "id": "conv_evening_family_talk",
+  "titleTr": "Aileyle Akşam Sohbeti",
+  "startNodeId": "start",
+  "relatedActivityId": "evening_family_talk",
+  "npcIds": [
+    "mater"
+  ],
+  "locationIds": [
+    "home_hut"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "speakerNpcId": "mater",
+      "npcLineLatin": "Salve.",
+      "npcLineTr": "Aileyle Akşam Sohbeti için yanına çağrılıyorsun. Ocak başında günün olaylarını değerlendir.",
+      "playerContextTr": "Köyün gündelik akışı içinde küçük ama gerçek bir işle karşı karşıyasın.",
+      "options": [
+        {
+          "id": "ask_context",
+          "labelTr": "Ne yapılacağını sor",
+          "verb": "ask",
+          "requiresLatin": false,
+          "nextNodeId": "context"
+        },
+        {
+          "id": "inspect_place",
+          "labelTr": "Önce çevreyi incele",
+          "verb": "inspect",
+          "requiresLatin": false,
+          "nextNodeId": "inspect"
+        },
+        {
+          "id": "leave_now",
+          "labelTr": "Şimdilik uzaklaş",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "speakerNpcId": "mater",
+      "npcLineLatin": "Quid hodie fecisti?",
+      "npcLineTr": "Bugün ne yaptın?",
+      "options": [
+        {
+          "id": "try_latin",
+          "labelTr": "Kısa bir Latince cevap ver",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Bugün ne yaptın?",
+          "targetMeaningTr": "Bugün ne yaptın?",
+          "canonicalAnswers": [
+            "laboravi",
+            "aquam portavi",
+            "didici"
+          ],
+          "acceptedVariants": [
+            "laboravi",
+            "aquam portavi",
+            "didici"
+          ],
+          "successNextNodeId": "action",
+          "failureBehavior": "soft-fail",
+          "failureNextNodeId": "near_miss"
+        },
+        {
+          "id": "help_without_latin",
+          "labelTr": "Sözsüzce yardım etmeye başla",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "action"
+        }
+      ]
+    },
+    {
+      "id": "inspect",
+      "narrationTr": "Bir an durup insanların hareketlerini, kullanılan araçları ve söylenen kelimeleri izliyorsun. Küçük ayrıntılar işi daha anlaşılır kılıyor.",
+      "options": [
+        {
+          "id": "ask_after_inspect",
+          "labelTr": "Gördüklerinden sonra soru sor",
+          "verb": "ask",
+          "requiresLatin": false,
+          "nextNodeId": "context"
+        },
+        {
+          "id": "begin_after_inspect",
+          "labelTr": "Hazır olduğunu göster",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "action"
+        }
+      ]
+    },
+    {
+      "id": "near_miss",
+      "speakerNpcId": "mater",
+      "npcLineLatin": "Bene temptas. Iterum postea disces.",
+      "npcLineTr": "İyi deniyorsun. Zamanla daha doğru söyleyeceksin.",
+      "options": [
+        {
+          "id": "continue_softly",
+          "labelTr": "Düzeltmeyi kabul edip işe devam et",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "action"
+        }
+      ]
+    },
+    {
+      "id": "action",
+      "narrationTr": "İşi aceleye getirmeden tamamlıyorsun. Konuşma küçük tepkilerle uzuyor; biri yol gösteriyor, sen de köy yaşamının ritmine biraz daha uyuyorsun.",
+      "options": [
+        {
+          "id": "finish",
+          "labelTr": "Sohbeti ve işi tamamla",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "isEnding": true,
+      "endingSummaryTr": "Aileyle Akşam Sohbeti etkinliğini konuşarak tamamladın.",
+      "options": [],
+      "onEnterEffects": [
+        {
+          "type": "RECORD_VILLAGE_ACTIVITY",
+          "payload": {
+            "activityId": "evening_family_talk",
+            "npcIds": [
+              "mater",
+              "pater"
+            ],
+            "lifePathChanges": {
+              "villa": 2
+            },
+            "summaryTr": "Aileyle Akşam Sohbeti etkinliğini tamamladın."
+          }
+        },
+        {
+          "type": "ADD_LIFE_PATH_HINT",
+          "payload": {
+            "path": "villa",
+            "amount": 1,
+            "reasonTr": "Ocak başında günün olaylarını değerlendir."
+          }
+        }
+      ]
+    }
+  ]
+}

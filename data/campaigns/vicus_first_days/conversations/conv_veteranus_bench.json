@@ -1,0 +1,122 @@
+{
+  "id": "conv_veteranus_bench",
+  "titleTr": "Veteranus ile Askerlik Söyleşisi",
+  "startNodeId": "start",
+  "npcIds": [
+    "veteranus"
+  ],
+  "locationIds": [
+    "veteran_bench"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "speakerNpcId": "veteranus",
+      "npcLineLatin": "Ave! Quis ante me stat?",
+      "npcLineTr": "Selam! Karşımda kim duruyor?",
+      "options": [
+        {
+          "id": "opt_intro_vet",
+          "labelTr": "Kendini tanıt",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Ben Titus'um",
+          "targetMeaningTr": "Ben Titus'um",
+          "canonicalAnswers": [
+            "titus sum",
+            "ego sum titus"
+          ],
+          "successNextNodeId": "name_response",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_leave_vet",
+          "labelTr": "Geri dön",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "reflection"
+        }
+      ]
+    },
+    {
+      "id": "name_response",
+      "speakerNpcId": "veteranus",
+      "npcLineLatin": "Titus, in castris disciplina maxima est. Potesne salutare ut miles?",
+      "npcLineTr": "Titus, ordugahta disiplin en üstündür. Bir asker gibi selamlayabilir misin?",
+      "options": [
+        {
+          "id": "opt_salute_vet",
+          "labelTr": "Asker selamı ver",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Komutanı selamlıyorum",
+          "targetMeaningTr": "Selam komutanım!",
+          "canonicalAnswers": [
+            "ave imperator",
+            "salve imperator"
+          ],
+          "successNextNodeId": "salute_response",
+          "failureBehavior": "retry"
+        }
+      ]
+    },
+    {
+      "id": "salute_response",
+      "speakerNpcId": "veteranus",
+      "npcLineLatin": "Optime! Fortis et fidelis esto.",
+      "npcLineTr": "Harika! Cesur ve sadık ol.",
+      "options": [
+        {
+          "id": "opt_finish_vet",
+          "labelTr": "Söyleşiyi bitir",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "narrationTr": "Sohbet bitmeden önce kısa bir an durup öğrendiğin sözü ve yapılan işi zihninde tekrar ediyorsun.",
+      "options": [
+        {
+          "id": "finish_reflection",
+          "labelTr": "Konuşmayı tamamla",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "isEnding": true,
+      "endingSummaryTr": "Veteranus ile söyleşiyi tamamladın.",
+      "options": [],
+      "onEnterEffects": [
+        {
+          "type": "RECORD_VILLAGE_ACTIVITY",
+          "payload": {
+            "activityId": "listen_to_veteran",
+            "npcIds": [
+              "veteranus"
+            ],
+            "lifePathChanges": {
+              "castra": 1
+            },
+            "summaryTr": "Veteranus ile söyleşiyi tamamladın."
+          }
+        },
+        {
+          "type": "ADD_LIFE_PATH_HINT",
+          "payload": {
+            "path": "castra",
+            "amount": 1,
+            "reasonTr": "Askerlik anıları ve disiplin hakkında konuştun."
+          }
+        }
+      ]
+    }
+  ],
+  "relatedActivityId": "listen_to_veteran"
+}

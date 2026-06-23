@@ -10,6 +10,7 @@ import { DialogueTransitionFeedback } from "./dialogue/DialogueTransitionFeedbac
 import { SceneTransition } from "../cinematic/SceneTransition";
 import { InteractionLoop } from "./interaction/InteractionLoop";
 import { VillageHub } from "../village/VillageHub";
+import { ConversationStage } from "./conversation/ConversationStage";
 import {
   RevisitNotice,
   AmbientActionPanel,
@@ -32,8 +33,7 @@ export function GameScreen() {
     "vicus_005_teacher_corner",
     "vicus_006_veteran_bench",
     "vicus_007_scribe_table",
-    "vicus_008_shrine",
-    "vicus_009_old_oak"
+    "vicus_008_shrine"
   ]);
 
   const isVillageHubScene =
@@ -46,6 +46,16 @@ export function GameScreen() {
       <div className="game-screen">
         <SceneTransition>
           <VillageHub />
+        </SceneTransition>
+      </div>
+    );
+  }
+
+  if (gameState.activeConversation) {
+    return (
+      <div className="game-screen">
+        <SceneTransition>
+          <ConversationStage />
         </SceneTransition>
       </div>
     );

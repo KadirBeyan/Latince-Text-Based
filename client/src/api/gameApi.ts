@@ -50,7 +50,7 @@ export function listSaves(): Promise<SaveSummary[]> {
   return requestJson<SaveSummary[]>("/api/game/saves");
 }
 
-export function createNewGame(playerName: string, campaignId = "via-prima"): Promise<GameState> {
+export function createNewGame(playerName: string, campaignId = "vicus_first_days"): Promise<GameState> {
   return requestJson<GameState>("/api/game/new", {
     method: "POST",
     body: JSON.stringify({ playerName, campaignId }),
@@ -60,7 +60,7 @@ export function createNewGame(playerName: string, campaignId = "via-prima"): Pro
 export function createCharacterSave(payload: CharacterCreationPayload): Promise<GameState> {
   return requestJson<GameState>("/api/game/create-character-save", {
     method: "POST",
-    body: JSON.stringify({ ...payload, campaignId: payload.campaignId ?? "via-prima" }),
+    body: JSON.stringify({ ...payload, campaignId: payload.campaignId ?? "vicus_first_days" }),
   });
 }
 

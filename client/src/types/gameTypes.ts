@@ -20,7 +20,12 @@ export type GameAction =
   | { type: "USE_ITEM"; itemId: string }
   | { type: "START_QUEST"; questId: string }
   | { type: "OPEN_JOURNAL" }
-  | { type: "INTENT_SELECT"; saveId: string; sceneId: string; intentId: string };
+  | { type: "INTENT_SELECT"; saveId: string; sceneId: string; intentId: string }
+  | { type: "START_CONVERSATION"; saveId: string; flowId: string; sceneId?: string }
+  | { type: "CONVERSATION_OPTION_SELECT"; saveId: string; flowId: string; nodeId: string; optionId: string }
+  | { type: "CONVERSATION_TEXT_SUBMIT"; saveId: string; flowId: string; nodeId: string; optionId: string; answer: string }
+  | { type: "CONVERSATION_EXIT"; saveId: string; flowId: string }
+  | { type: "FREEFORM_ACTION_SUBMIT"; saveId: string; sceneId?: string; flowId?: string; nodeId?: string; inputText: string };
 
 export type SceneChoice = {
   id: string;
@@ -161,6 +166,7 @@ export interface VillageActivity {
   suggestedSkills?: RpgSkillId[];
   lifePathHints?: Record<LifePathId, number>;
   sceneId: string;
+  conversationFlowId?: string;
   repeatable: boolean;
   cooldownDays?: number;
   tags: string[];
@@ -207,6 +213,7 @@ export type DialogueEntry = {
   text: string;
   language?: "tr" | "la" | "system" | "en" | string;
   timestamp?: string;
+  translationTr?: string;
 };
 
 export type LatinEvaluation = {
@@ -489,6 +496,7 @@ export type GameState = {
   activeInteraction?: ActiveInteractionState;
   livingScene?: ActiveLivingSceneView;
   villageLife?: VillageLifeState;
+  activeConversation?: ConversationRuntimeState;
 };
 
 export type SaveSummary = {
@@ -506,6 +514,72 @@ export type NarrationResult = {
   objectiveReminderTr?: string;
   mode: "llm" | "fallback";
   worldMoodTr?: string;
+};
+
+export type ConversationRuntimeState = {
+  flowId: string;
+  currentNodeId: string;
+  startedAt: string;
+  visitedNodeIds: string[];
+  selectedOptionId?: string;
+  attempts: Record<string, number>;
+  completed: boolean;
+  currentNode?: ConversationNode;
+  options?: ConversationOption[];
+};
+
+export type ConversationFlow = {
+  id: string;
+  titleTr: string;
+  startNodeId: string;
+  relatedQuestId?: string;
+  relatedActivityId?: string;
+  npcIds: string[];
+  locationIds: string[];
+  nodes: ConversationNode[];
+  completionEffects?: any[];
+  completionNextSceneId?: string;
+};
+
+export type ConversationNode = {
+  id: string;
+  speakerNpcId?: string;
+  narrationTr?: string;
+  narrationLatin?: string;
+  npcLineLatin?: string;
+  npcLineTr?: string;
+  playerContextTr?: string;
+  options: ConversationOption[];
+  onEnterEffects?: any[];
+  conditions?: any[];
+  isEnding?: boolean;
+  endingSummaryTr?: string;
+};
+
+export type ConversationOption = {
+  id: string;
+  labelTr: string;
+  descriptionTr?: string;
+  verb: string;
+  requiresLatin: boolean;
+  playerIntentTr?: string;
+  targetMeaningTr?: string;
+  canonicalAnswers?: string[];
+  acceptedVariants?: string[];
+  conditions?: any[];
+  effects?: any[];
+  nextNodeId?: string;
+  successNextNodeId?: string;
+  failureNextNodeId?: string;
+  failureBehavior?: string;
+  npcReactions?: {
+    correct?: any;
+    nearMiss?: any;
+    wrong?: any;
+    contextWrong?: any;
+  };
+  resolutionTr?: string;
+  resolutionLatin?: string;
 };
 
 export type HintResult = {

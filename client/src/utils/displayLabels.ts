@@ -22,21 +22,14 @@ const skillLabels: Record<string, string> = {
 };
 
 const locationLabels: Record<string, string> = {
-  ludus_front: "Ludus",
-  ludus_room: "Ludus",
-  forum: "Forum",
-  domus: "Domus",
-  castra: "Castra",
-  bibliotheca: "Bibliotheca",
   home_hut: "Casa",
-  village_path: "Vicus",
+  village_path: "Via Vici",
   field_edge: "Ager",
-  village_market: "Mercatus Parvus",
-  shrine: "Sacellum",
-  old_oak: "Quercus Vetus",
+  village_market: "Mercatus Vici",
   teacher_corner: "Angulus Magistri",
   veteran_bench: "Subsellium Veterani",
   scribe_table: "Mensa Scribae",
+  shrine: "Sacellum",
 };
 
 const speakerLabels: Record<string, string> = {
@@ -46,12 +39,11 @@ const speakerLabels: Record<string, string> = {
   player: "Tu",
   mater: "Mater",
   pater: "Pater",
-  avia: "Avia",
   magister_ruralis: "Magister",
   mercator_vicus: "Mercator",
   veteranus: "Veteranus",
   scriba_vicus: "Scriba",
-  ministra: "Ministra",
+  sacerdos_vicus: "Sacerdos",
   amicus: "Amicus",
 };
 

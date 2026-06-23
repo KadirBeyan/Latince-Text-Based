@@ -26,7 +26,7 @@
   {
     "id": "mercator-amicus",
     "title": "Mercator Amicus",
-    "description": "Forumda Mercator ile ilişki gelişti",
+    "description": "Köy pazarında mercator ile ilişki gelişti",
     "unlocked": false
   },
   {
@@ -61,26 +61,26 @@
   },
   {
     "id": "prologus-perfectus",
-    "title": "Prologus Perfectus",
-    "description": "Prologus Perfectus basarimi acildi.",
+    "title": "Vicus Initium",
+    "description": "Vicus Initium basarimi acildi.",
     "unlocked": false
   },
   {
     "id": "domus-perfecta",
-    "title": "Domus Perfecta",
-    "description": "Domus Perfecta basarimi acildi.",
+    "title": "Familia Firma",
+    "description": "Familia Firma basarimi acildi.",
     "unlocked": false
   },
   {
     "id": "forum-victor",
-    "title": "Forum Victor",
-    "description": "Forum Victor basarimi acildi.",
+    "title": "Mercatus Amicus",
+    "description": "Mercatus Amicus basarimi acildi.",
     "unlocked": false
   },
   {
     "id": "bibliotheca-lecta",
-    "title": "Bibliotheca Lecta",
-    "description": "Bibliotheca Lecta basarimi acildi.",
+    "title": "Tabula Lecta",
+    "description": "Tabula Lecta basarimi acildi.",
     "unlocked": false
   },
   {

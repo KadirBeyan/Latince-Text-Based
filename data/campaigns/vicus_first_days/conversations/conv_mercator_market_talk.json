@@ -1,0 +1,129 @@
+{
+  "id": "conv_mercator_market_talk",
+  "titleTr": "Mercator ile Pazar Söyleşisi",
+  "startNodeId": "start",
+  "npcIds": [
+    "mercator_vicus"
+  ],
+  "locationIds": [
+    "village_market"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "speakerNpcId": "mercator_vicus",
+      "npcLineLatin": "Salve, amice. Visne panem frescum?",
+      "npcLineTr": "Merhaba dostum. Taze ekmek ister misin?",
+      "options": [
+        {
+          "id": "opt_ask_price",
+          "labelTr": "Ekmeğin fiyatını sor",
+          "verb": "ask",
+          "requiresLatin": true,
+          "playerIntentTr": "Ekmeğin fiyatı nedir?",
+          "targetMeaningTr": "Ekmeğin fiyatı nedir?",
+          "canonicalAnswers": [
+            "quanti constat panis",
+            "quanti est panis"
+          ],
+          "successNextNodeId": "ask_price",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_leave_market",
+          "labelTr": "Tüccarın yanından ayrıl",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "reflection"
+        }
+      ]
+    },
+    {
+      "id": "ask_price",
+      "speakerNpcId": "mercator_vicus",
+      "npcLineLatin": "Unus denarius. Habesne pecuniam?",
+      "npcLineTr": "Bir denarius. Paran var mı?",
+      "options": [
+        {
+          "id": "opt_say_no_money",
+          "labelTr": "Paran olmadığını söyle",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Param yok",
+          "targetMeaningTr": "Param yok",
+          "canonicalAnswers": [
+            "pecuniam non habeo",
+            "non habeo pecuniam"
+          ],
+          "successNextNodeId": "no_money_response",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_just_look",
+          "labelTr": "Sadece baktığını söyle",
+          "verb": "speak",
+          "requiresLatin": false,
+          "nextNodeId": "no_money_response"
+        }
+      ]
+    },
+    {
+      "id": "no_money_response",
+      "speakerNpcId": "mercator_vicus",
+      "npcLineLatin": "Sine pecunia nihil datur. Vale!",
+      "npcLineTr": "Para olmadan hiçbir şey verilmez. Hoşça kal!",
+      "options": [
+        {
+          "id": "opt_leave_merchant",
+          "labelTr": "Pazardan ayrıl",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "narrationTr": "Sohbet bitmeden önce kısa bir an durup öğrendiğin sözü ve yapılan işi zihninde tekrar ediyorsun.",
+      "options": [
+        {
+          "id": "finish_reflection",
+          "labelTr": "Konuşmayı tamamla",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "isEnding": true,
+      "endingSummaryTr": "Mercator ile ticaret ve pazar söyleşisini tamamladın.",
+      "options": [],
+      "onEnterEffects": [
+        {
+          "type": "RECORD_VILLAGE_ACTIVITY",
+          "payload": {
+            "activityId": "market_bargain",
+            "npcIds": [
+              "mercator_vicus"
+            ],
+            "lifePathChanges": {
+              "mercatura": 1
+            },
+            "summaryTr": "Mercator ile pazar söyleşisini tamamladın."
+          }
+        },
+        {
+          "type": "ADD_LIFE_PATH_HINT",
+          "payload": {
+            "path": "mercatura",
+            "amount": 1,
+            "reasonTr": "Pazar fiyatlarıyla ve ticaretle ilgilendin."
+          }
+        }
+      ]
+    }
+  ],
+  "relatedActivityId": "market_bargain"
+}

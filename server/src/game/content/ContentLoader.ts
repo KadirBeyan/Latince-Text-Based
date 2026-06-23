@@ -1,11 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Campaign, Chapter, ID, Quest, Scene, QuestTemplate } from "../types/gameTypes";
+import type { ConversationFlow } from "../types/ConversationTypes";
 import type { GrammarTopic, ItemDefinition, LatinExample, LoadedContent, NpcDefinition, SkillDefinition, VocabularyItem } from "../types/contentTypes";
 import { ContentOverrideService } from "../../content/ContentOverrideService";
 
 export class ContentLoader {
-  private content: LoadedContent = { campaigns: [], npcs: [], items: [], skills: [], grammar: [], vocabulary: [], examples: [], questTemplates: [] };
+  private content: LoadedContent = { campaigns: [], npcs: [], items: [], skills: [], grammar: [], vocabulary: [], examples: [], questTemplates: [], conversations: [] };
   private readonly overrides: ContentOverrideService;
 
   constructor(private readonly dataRoot = path.resolve(process.cwd(), "data"), overrideService?: ContentOverrideService) {
@@ -24,6 +25,13 @@ export class ContentLoader {
     const templateFiles = this.listMergedFiles("quest-templates");
     const questTemplates = templateFiles.flatMap((file) => this.readJson<QuestTemplate[]>(path.join(templatesDir, file)));
 
+    const conversationsDir = path.join(this.dataRoot, "campaigns", "vicus_first_days", "conversations");
+    const conversations: ConversationFlow[] = fs.existsSync(conversationsDir)
+      ? fs.readdirSync(conversationsDir)
+          .filter((file) => file.endsWith(".json"))
+          .map((file) => this.readJson<ConversationFlow>(path.join(conversationsDir, file)))
+      : [];
+
     this.content = {
       campaigns,
       npcs: this.mergeById(this.readJson<NpcDefinition[]>(path.join(this.dataRoot, "npcs.json")), this.readJsonDir<NpcDefinition>(path.join(this.dataRoot, "npcs"))),
@@ -32,7 +40,8 @@ export class ContentLoader {
       grammar: this.mergeById(this.readJson<GrammarTopic[]>(path.join(this.dataRoot, "latin", "grammar.json")), this.readJsonFiles<GrammarTopic>(path.join(this.dataRoot, "latin"), /^grammar-.+\.json$/)),
       vocabulary: this.mergeById(this.readJson<VocabularyItem[]>(path.join(this.dataRoot, "latin", "vocabulary.json")), this.readJsonFiles<VocabularyItem>(path.join(this.dataRoot, "latin"), /^vocabulary-.+\.json$/)),
       examples: this.readJson<LatinExample[]>(path.join(this.dataRoot, "latin", "examples.json")),
-      questTemplates
+      questTemplates,
+      conversations
     };
     return this.content;
   }
@@ -53,12 +62,41 @@ export class ContentLoader {
     return this.content.questTemplates.filter((template) => template.category === category);
   }
 
+  private checkLegacy(id: string | undefined): void {
+    if (!id) return;
+    if (
+      id === "via-prima" ||
+      id === "prologus" ||
+      id === "forum" ||
+      id === "castra" ||
+      id === "bibliotheca" ||
+      id === "domus" ||
+      id === "capitolium" ||
+      id === "via-appia" ||
+      id.startsWith("prologus_") ||
+      id.startsWith("forum_") ||
+      id.startsWith("castra_") ||
+      id.startsWith("bibliotheca_") ||
+      id.startsWith("domus_") ||
+      id.startsWith("capitolium_") ||
+      id.startsWith("via-appia_")
+    ) {
+      throw new Error("Legacy campaign reference removed; use vicus_first_days.");
+    }
+  }
+
   getCampaign(id: ID): Campaign | undefined {
+    this.checkLegacy(id);
     return this.content.campaigns.find((campaign) => campaign.id === id);
   }
 
   getDefaultCampaign(): Campaign | undefined {
-    return this.content.campaigns[0];
+    const vicus = this.content.campaigns.find((c) => c.id === "vicus_first_days");
+    return vicus || this.content.campaigns[0];
+  }
+
+  getConversationFlow(id: ID): ConversationFlow | undefined {
+    return this.content.conversations.find((flow) => flow.id === id);
   }
 
   getGrammarTopic(id: ID): GrammarTopic | undefined {
@@ -78,15 +116,21 @@ export class ContentLoader {
   }
 
   getChapter(campaignId: ID, chapterId: ID): Chapter | undefined {
+    this.checkLegacy(campaignId);
+    this.checkLegacy(chapterId);
     const normalizedChapterId = chapterId === "chapter_ludus" ? "prologus" : chapterId;
     return this.getCampaign(campaignId)?.chapters.find((chapter) => chapter.id === normalizedChapterId);
   }
 
   getQuest(campaignId: ID, questId: ID): Quest | undefined {
+    this.checkLegacy(campaignId);
+    this.checkLegacy(questId);
     return this.getCampaign(campaignId)?.chapters.flatMap((chapter) => chapter.quests).find((quest) => quest.id === questId);
   }
 
   getScene(campaignId: ID, sceneId: ID): Scene | undefined {
+    this.checkLegacy(campaignId);
+    this.checkLegacy(sceneId);
     return this.getCampaign(campaignId)?.chapters.flatMap((chapter) => chapter.quests).flatMap((quest) => quest.scenes).find((scene) => scene.id === sceneId);
   }
 

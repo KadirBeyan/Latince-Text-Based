@@ -5539,30 +5539,6 @@
     "exampleTr": "avus"
   },
   {
-    "id": "vocab-avia",
-    "latin": "avia",
-    "turkish": "avia",
-    "meaningTr": "avia",
-    "pos": "noun",
-    "gender": "f",
-    "declension": "1",
-    "principalParts": [],
-    "level": 1,
-    "chapterIds": [
-      "domus"
-    ],
-    "tags": [
-      "domus",
-      "noun",
-      "chapter"
-    ],
-    "examples": [
-      "avia - avia"
-    ],
-    "exampleLatin": "avia.",
-    "exampleTr": "avia"
-  },
-  {
     "id": "vocab-ianua",
     "latin": "ianua",
     "turkish": "ianua",

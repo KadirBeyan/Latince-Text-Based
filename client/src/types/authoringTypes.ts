@@ -1,6 +1,6 @@
 import type { LlmProviderConfig, Scene } from "./gameTypes";
 
-export type AuthoringContentKind = "campaign" | "chapter" | "quest" | "scene" | "npc" | "location" | "grammar" | "vocabulary" | "assessment-question" | "quest-template" | "village-activity";
+export type AuthoringContentKind = "campaign" | "chapter" | "quest" | "scene" | "npc" | "location" | "grammar" | "vocabulary" | "assessment-question" | "quest-template" | "village-activity" | "conversation";
 
 export type AuthoringIssue = {
   id: string;

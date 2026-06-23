@@ -4,7 +4,7 @@ import { VpBadge, VpButton, VpCard, VpInput, VpSectionHeader, VpTextarea } from 
 import { useAuthoringStore } from "../../stores/authoringStore";
 import type { LlmDraftKind } from "../../types/authoringTypes";
 
-const templates = ["A1 textChallenge scene uret", "Forum accusative side quest uret", "NPC dialogue draft uret", "Reading comprehension scene uret", "Assessment question uret", "Review quest uret"];
+const templates = ["Vicus conversation node uret", "Pazar kelime pratiği uret", "NPC dialogue draft uret", "Köy okuma sahnesi uret", "Assessment question uret", "Vicus review quest uret"];
 
 export function LlmDraftLab() {
   const { generateLlmDraft, llmDraftResult, applyLlmDraftToEditor, loading } = useAuthoringStore();

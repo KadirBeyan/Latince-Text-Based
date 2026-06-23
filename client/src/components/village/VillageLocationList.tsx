@@ -27,8 +27,7 @@ export function VillageLocationList({
     teacher_corner: "Magister'in çocuklara ders verdiği çınar altı.",
     veteran_bench: "Eski emekli askerlerin anılarını tazelediği gölgelik.",
     scribe_table: "Latince evrakları yazan memurun çalışma masası.",
-    shrine: "Yerel tanrılara adaklar sunulan mermer sunak.",
-    old_oak: "Köyün en yüksek yerindeki ulu ve kadim meşe ağacı."
+    shrine: "Yerel tanrılara adaklar sunulan mermer sunak."
   };
 
   const getLocIdFromChoiceId = (choiceId: string) => {

@@ -84,6 +84,7 @@ export interface VillageActivity {
   suggestedSkills?: RpgSkillId[];
   lifePathHints?: Record<LifePathId, number>;
   sceneId: string;
+  conversationFlowId?: string;
   repeatable: boolean;
   cooldownDays?: number;
   tags: string[];
@@ -139,6 +140,7 @@ export interface DialogueEntry {
   text: string;
   language: "la" | "tr" | "en" | string;
   sceneId?: ID;
+  translationTr?: string;
 }
 
 export interface GameEvent {
@@ -190,6 +192,7 @@ export interface PlayerSave {
   livingSceneStates?: Record<string, LivingSceneState>;
   characterProfile?: CharacterProfile;
   villageLife?: VillageLifeState;
+  activeConversation?: ConversationRuntimeState;
 }
 
 export interface ChapterProgress {
@@ -486,7 +489,12 @@ export type GameAction =
   | { type: "USE_ITEM"; itemId: ID }
   | { type: "START_QUEST"; questId: ID }
   | { type: "OPEN_JOURNAL" }
-  | { type: "INTENT_SELECT"; saveId: string; sceneId: string; intentId: string };
+  | { type: "INTENT_SELECT"; saveId: string; sceneId: string; intentId: string }
+  | { type: "START_CONVERSATION"; saveId: string; flowId: string; sceneId?: string }
+  | { type: "CONVERSATION_OPTION_SELECT"; saveId: string; flowId: string; nodeId: string; optionId: string }
+  | { type: "CONVERSATION_TEXT_SUBMIT"; saveId: string; flowId: string; nodeId: string; optionId: string; answer: string }
+  | { type: "CONVERSATION_EXIT"; saveId: string; flowId: string }
+  | { type: "FREEFORM_ACTION_SUBMIT"; saveId: string; sceneId?: string; flowId?: string; nodeId?: string; inputText: string };
 
 export interface GameEventTemplate {
   type: string;
@@ -531,6 +539,7 @@ export interface GameState {
   activeInteraction?: ActiveInteractionState;
   livingScene?: ActiveLivingSceneView;
   villageLife?: VillageLifeState;
+  activeConversation?: ConversationRuntimeState;
 }
 
 export interface SessionSummary { completedScenes: number; correctAnswers: number; wrongAnswers: number; xpGained: number; currencyGained: number; newSkills: string[]; newItems: string[]; improvedMastery: Array<{ targetId: string; targetType: MasteryTargetType; before?: number; after: number }>; weakTags: string[]; reviewSuggestions: string[]; }
@@ -1032,6 +1041,18 @@ export type ActiveInteractionState = {
   resolvedIntentIds: string[];
   activeTurnIndex?: number;
   tempOptions?: InteractionIntent[];
+};
+
+export type ConversationRuntimeState = {
+  flowId: string;
+  currentNodeId: string;
+  startedAt: string;
+  visitedNodeIds: string[];
+  selectedOptionId?: string;
+  attempts: Record<string, number>;
+  completed: boolean;
+  currentNode?: any;
+  options?: any[];
 };
 
 export type DialogueSequenceTurn = {

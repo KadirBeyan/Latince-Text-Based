@@ -38,6 +38,12 @@ export class ContentValidator {
     this.validateSideQuestTemplates(refs, issues);
     this.validateAssessmentContent(refs, issues);
 
+    if (content.conversations) {
+      for (const flow of content.conversations) {
+        this.validateConversationFlow(flow, refs, issues);
+      }
+    }
+
     const errors = issues.filter((issue) => issue.severity === "error");
     const warnings = issues.filter((issue) => issue.severity === "warning");
     return { ok: errors.length === 0, errors, warnings };
@@ -595,6 +601,98 @@ export class ContentValidator {
       }
     } catch (e: any) {
       this.push(issues, "warning", "SIDE_QUEST_TEMPLATES_CORRUPT", "side-quest-templates.json", `Could not parse side quest templates: ${e.message}`);
+    }
+  }
+
+  private validateConversationFlow(flow: any, refs: RefSets, issues: ValidationIssue[]): void {
+    const base = `conversations.${flow.id}`;
+    if (!flow.startNodeId) {
+      this.push(issues, "error", "MISSING_START_NODE", base, "Conversation flow is missing startNodeId.");
+    }
+    const nodeIds = new Set(flow.nodes.map((n: any) => n.id));
+    if (flow.startNodeId && !nodeIds.has(flow.startNodeId)) {
+      this.push(issues, "error", "INVALID_START_NODE", `${base}.startNodeId`, `Start node ${flow.startNodeId} not found.`, flow.startNodeId);
+    }
+    
+    const reachable = new Set<string>();
+    if (flow.startNodeId) {
+      const queue = [flow.startNodeId];
+      reachable.add(flow.startNodeId);
+      while (queue.length > 0) {
+        const current = queue.shift()!;
+        const node = flow.nodes.find((n: any) => n.id === current);
+        if (node && node.options) {
+          for (const opt of node.options) {
+            const targets = [opt.nextNodeId, opt.successNextNodeId, opt.failureNextNodeId].filter(Boolean) as string[];
+            for (const t of targets) {
+              if (!reachable.has(t)) {
+                reachable.add(t);
+                queue.push(t);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    for (const node of flow.nodes) {
+      const nodePath = `${base}.nodes.${node.id}`;
+      if (!reachable.has(node.id)) {
+        this.push(issues, "warning", "UNREACHABLE_NODE", nodePath, `Node ${node.id} is unreachable.`, node.id);
+      }
+
+      if (node.speakerNpcId && !refs.npcIds.has(node.speakerNpcId)) {
+        this.push(issues, "error", "UNKNOWN_NPC", `${nodePath}.speakerNpcId`, `Unknown NPC ${node.speakerNpcId}.`, node.speakerNpcId);
+      }
+
+      if (node.options) {
+        const optionIds = new Set(node.options.map((o: any) => o.id));
+        if (optionIds.size !== node.options.length) {
+          this.push(issues, "error", "DUPLICATE_OPTION_ID", `${nodePath}.options`, "Option IDs must be unique within a node.");
+        }
+        for (const opt of node.options) {
+          const optPath = `${nodePath}.options.${opt.id}`;
+          
+          if (opt.nextNodeId && !nodeIds.has(opt.nextNodeId)) {
+            this.push(issues, "error", "INVALID_NEXT_NODE", `${optPath}.nextNodeId`, `Next node ${opt.nextNodeId} not found.`, opt.nextNodeId);
+          }
+          if (opt.successNextNodeId && !nodeIds.has(opt.successNextNodeId)) {
+            this.push(issues, "error", "INVALID_NEXT_NODE", `${optPath}.successNextNodeId`, `Success next node ${opt.successNextNodeId} not found.`, opt.successNextNodeId);
+          }
+          if (opt.failureNextNodeId && !nodeIds.has(opt.failureNextNodeId)) {
+            this.push(issues, "error", "INVALID_NEXT_NODE", `${optPath}.failureNextNodeId`, `Failure next node ${opt.failureNextNodeId} not found.`, opt.failureNextNodeId);
+          }
+
+          if (opt.requiresLatin) {
+            if (!opt.targetMeaningTr) {
+              this.push(issues, "error", "MISSING_TARGET_MEANING", optPath, "requiresLatin true requires targetMeaningTr.");
+            }
+            if (!opt.canonicalAnswers || opt.canonicalAnswers.length === 0) {
+              this.push(issues, "error", "MISSING_CANONICAL_ANSWERS", optPath, "requiresLatin true requires canonicalAnswers.");
+            }
+          }
+
+          const formalKeywords = ["Latince yaz:", "Doğru cevabı gir", "Soru", "Expected answer"];
+          for (const word of formalKeywords) {
+            if (
+              (opt.labelTr && opt.labelTr.includes(word)) ||
+              (opt.descriptionTr && opt.descriptionTr.includes(word)) ||
+              (node.narrationTr && node.narrationTr.includes(word))
+            ) {
+              this.push(issues, "warning", "FORMAL_PHRASE_WARNING", optPath, `Avoid formal phrase '${word}' in role-playing conversation context.`);
+            }
+          }
+        }
+      }
+
+      if (!node.isEnding && (!node.options || node.options.length === 0)) {
+        this.push(issues, "error", "MISSING_OPTIONS_OR_ENDING", nodePath, `Node ${node.id} has no options and is not marked as ending.`);
+      }
+    }
+
+    const hasEnding = flow.nodes.some((n: any) => n.isEnding);
+    if (!hasEnding) {
+      this.push(issues, "error", "MISSING_ENDING_NODE", base, "Conversation flow must have at least one ending node.");
     }
   }
 }

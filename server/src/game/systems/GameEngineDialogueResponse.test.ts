@@ -84,7 +84,7 @@ test("GameEngine - TEXT_SUBMIT dialogue challenge success path", async () => {
     onEnterEvents: [],
   });
 
-  let state = await gameEngine.createNewGame("Player1", "via-prima");
+  let state = await gameEngine.createNewGame("Player1", "vicus_first_days");
   const saveId = state.saveId;
   assert.strictEqual(state.currentScene.id, "test_dialogue_scene");
 
@@ -122,7 +122,7 @@ test("GameEngine - TEXT_SUBMIT dialogue challenge near miss retryAllowed path", 
 
   const { gameEngine } = createTestEngineWithDialogueScene(challenge);
 
-  let state = await gameEngine.createNewGame("Player2", "via-prima");
+  let state = await gameEngine.createNewGame("Player2", "vicus_first_days");
   const saveId = state.saveId;
 
   // Submit incorrect but similar answer (near miss)
@@ -181,7 +181,7 @@ test("GameEngine - TEXT_SUBMIT dialogue challenge maxAttempts failure path", asy
     onEnterEvents: [],
   });
 
-  let state = await gameEngine.createNewGame("Player3", "via-prima");
+  let state = await gameEngine.createNewGame("Player3", "vicus_first_days");
   const saveId = state.saveId;
 
   // Submit incorrect answer (attempt 1)
@@ -228,7 +228,7 @@ test("GameEngine - hybrid dialogue persists selected intent in activeInteraction
   chapter.startQuestId = quest.id;
   campaign.startChapterId = chapter.id;
   const gameEngine = new GameEngine(contentLoader, new SaveRepository(db));
-  let state = await gameEngine.createNewGame("Player4", "via-prima");
+  let state = await gameEngine.createNewGame("Player4", "vicus_first_days");
 
   state = await gameEngine.submitAction(state.saveId, { type: "CHOICE_SELECT", choiceId: "want_bread" });
   assert.strictEqual(state.activeInteraction?.selectedIntentId, "want_bread");
@@ -273,7 +273,7 @@ test("GameEngine - hybrid dialogue migrates legacy selected intent from narrativ
   campaign.startChapterId = chapter.id;
   const saveRepository = new SaveRepository(db);
   const gameEngine = new GameEngine(contentLoader, saveRepository);
-  const state = await gameEngine.createNewGame("LegacyPlayer", "via-prima");
+  const state = await gameEngine.createNewGame("LegacyPlayer", "vicus_first_days");
   const raw = gameEngine.getRawSave(state.saveId);
   saveRepository.update({
     ...raw,
@@ -320,7 +320,7 @@ test("GameEngine - hybrid dialogue rejects text submit without selected intent",
   chapter.startQuestId = quest.id;
   campaign.startChapterId = chapter.id;
   const gameEngine = new GameEngine(contentLoader, new SaveRepository(db));
-  const state = await gameEngine.createNewGame("NoIntentPlayer", "via-prima");
+  const state = await gameEngine.createNewGame("NoIntentPlayer", "vicus_first_days");
 
   await assert.rejects(
     () => gameEngine.submitAction(state.saveId, { type: "TEXT_SUBMIT", text: "Panem volo." }),

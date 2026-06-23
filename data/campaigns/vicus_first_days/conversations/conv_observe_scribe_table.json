@@ -1,0 +1,156 @@
+{
+  "id": "conv_observe_scribe_table",
+  "titleTr": "Scriba Masasını İnceleme",
+  "startNodeId": "start",
+  "relatedActivityId": "observe_scribe_table",
+  "npcIds": [
+    "scriba_vicus"
+  ],
+  "locationIds": [
+    "scribe_table"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "speakerNpcId": "scriba_vicus",
+      "npcLineLatin": "Salve.",
+      "npcLineTr": "Yazıcının Masasını İncele için yanına çağrılıyorsun. Scriba'nın parşömen üzerindeki titiz çalışmasını izle.",
+      "playerContextTr": "Köyün gündelik akışı içinde küçük ama gerçek bir işle karşı karşıyasın.",
+      "options": [
+        {
+          "id": "ask_context",
+          "labelTr": "Ne yapılacağını sor",
+          "verb": "ask",
+          "requiresLatin": false,
+          "nextNodeId": "context"
+        },
+        {
+          "id": "inspect_place",
+          "labelTr": "Önce çevreyi incele",
+          "verb": "inspect",
+          "requiresLatin": false,
+          "nextNodeId": "inspect"
+        },
+        {
+          "id": "leave_now",
+          "labelTr": "Şimdilik uzaklaş",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "speakerNpcId": "scriba_vicus",
+      "npcLineLatin": "Ceram et stilum vide.",
+      "npcLineTr": "Balmumunu ve kalemi gör.",
+      "options": [
+        {
+          "id": "try_latin",
+          "labelTr": "Kısa bir Latince cevap ver",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Balmumunu ve kalemi gör.",
+          "targetMeaningTr": "Balmumunu ve kalemi gör.",
+          "canonicalAnswers": [
+            "ceram video",
+            "stilum video"
+          ],
+          "acceptedVariants": [
+            "ceram video",
+            "stilum video"
+          ],
+          "successNextNodeId": "action",
+          "failureBehavior": "soft-fail",
+          "failureNextNodeId": "near_miss"
+        },
+        {
+          "id": "help_without_latin",
+          "labelTr": "Sözsüzce yardım etmeye başla",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "action"
+        }
+      ]
+    },
+    {
+      "id": "inspect",
+      "narrationTr": "Bir an durup insanların hareketlerini, kullanılan araçları ve söylenen kelimeleri izliyorsun. Küçük ayrıntılar işi daha anlaşılır kılıyor.",
+      "options": [
+        {
+          "id": "ask_after_inspect",
+          "labelTr": "Gördüklerinden sonra soru sor",
+          "verb": "ask",
+          "requiresLatin": false,
+          "nextNodeId": "context"
+        },
+        {
+          "id": "begin_after_inspect",
+          "labelTr": "Hazır olduğunu göster",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "action"
+        }
+      ]
+    },
+    {
+      "id": "near_miss",
+      "speakerNpcId": "scriba_vicus",
+      "npcLineLatin": "Bene temptas. Iterum postea disces.",
+      "npcLineTr": "İyi deniyorsun. Zamanla daha doğru söyleyeceksin.",
+      "options": [
+        {
+          "id": "continue_softly",
+          "labelTr": "Düzeltmeyi kabul edip işe devam et",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "action"
+        }
+      ]
+    },
+    {
+      "id": "action",
+      "narrationTr": "İşi aceleye getirmeden tamamlıyorsun. Konuşma küçük tepkilerle uzuyor; biri yol gösteriyor, sen de köy yaşamının ritmine biraz daha uyuyorsun.",
+      "options": [
+        {
+          "id": "finish",
+          "labelTr": "Sohbeti ve işi tamamla",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "isEnding": true,
+      "endingSummaryTr": "Yazıcının Masasını İncele etkinliğini konuşarak tamamladın.",
+      "options": [],
+      "onEnterEffects": [
+        {
+          "type": "RECORD_VILLAGE_ACTIVITY",
+          "payload": {
+            "activityId": "observe_scribe_table",
+            "npcIds": [
+              "scriba_vicus"
+            ],
+            "lifePathChanges": {
+              "scriptura": 2,
+              "ludus": 1
+            },
+            "summaryTr": "Yazıcının Masasını İncele etkinliğini tamamladın."
+          }
+        },
+        {
+          "type": "ADD_LIFE_PATH_HINT",
+          "payload": {
+            "path": "scriptura",
+            "amount": 1,
+            "reasonTr": "Scriba'nın parşömen üzerindeki titiz çalışmasını izle."
+          }
+        }
+      ]
+    }
+  ]
+}

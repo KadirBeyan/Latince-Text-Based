@@ -22,10 +22,10 @@ function createTestSave(): PlayerSave {
     playerName: "Test Player",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
-    currentCampaignId: "via-prima",
-    currentChapterId: "chapter_ludus",
-    currentQuestId: "quest_prima_dies",
-    currentSceneId: "ludus_intro",
+    currentCampaignId: "vicus_first_days",
+    currentChapterId: "village_first_days",
+    currentQuestId: "vicus_prologue_main",
+    currentSceneId: "vicus_001_home_morning",
     level: 1,
     xp: 0,
     currency: 0,
@@ -48,7 +48,7 @@ function createTestSave(): PlayerSave {
         tag: "spelling-error",
         count: 2,
         lastSeenAt: new Date().toISOString(),
-        relatedSceneIds: ["ludus_intro"],
+        relatedSceneIds: ["vicus_001_home_morning"],
         relatedGrammarIds: ["greetings"],
         relatedVocabularyIds: ["vocab-salve"]
       }
@@ -59,10 +59,10 @@ function createTestSave(): PlayerSave {
     activeSideQuestSuggestions: [
       {
         id: "sug-1",
-        templateId: "tmpl_greetings",
+        templateId: "vicus_side_greetings_teacher",
         title: "Selamlaşma Pratiği",
-        npcId: "magister",
-        locationId: "ludus_room",
+        npcId: "magister_ruralis",
+        locationId: "teacher_corner",
         reason: "Selamlaşma zayıf",
         difficulty: "intro",
         status: "suggested",
@@ -82,10 +82,10 @@ test("QuestTemplateEngine scores templates correctly based on save and context",
   const save = createTestSave();
 
   // Test greetings review template
-  const templates = engine.getEligibleTemplates(save, { currentLocationId: "ludus_room", currentNpcId: "magister" });
+  const templates = engine.getEligibleTemplates(save, { currentLocationId: "teacher_corner", currentNpcId: "magister_ruralis" });
   assert.ok(templates.length > 0);
   
-  const greetingsTemplate = templates.find(t => t.template.id === "greetings_review_ludus");
+  const greetingsTemplate = templates.find(t => t.template.id === "vicus_greetings_teacher_review");
   assert.ok(greetingsTemplate);
   assert.ok(greetingsTemplate.score > 10, "Greetings template should have a boosted score due to weak grammar");
 
@@ -103,7 +103,7 @@ test("QuestTemplateEngine scores templates correctly based on save and context",
 test("GeneratedContentValidator verifies valid and flags invalid generated quests", () => {
   const save = createTestSave();
   const engine = new QuestTemplateEngine(loader);
-  const template = loader.getQuestTemplates().find(t => t.id === "greetings_review_ludus");
+  const template = loader.getQuestTemplates().find(t => t.id === "vicus_greetings_teacher_review");
   assert.ok(template);
 
   const quest = GeneratedSceneBuilder.buildQuestFromTemplate(template, save, loader, engine);
@@ -168,8 +168,8 @@ test("GeneratedContentSystem manages quest state and draft/active caps", () => {
 
   // 4. Complete quest and return to the previous campaign position
   save = GeneratedContentSystem.completeQuest(save, qId1);
-  assert.strictEqual(save.currentQuestId, "quest_prima_dies");
-  assert.strictEqual(save.currentSceneId, "ludus_intro");
+  assert.strictEqual(save.currentQuestId, "vicus_prologue_main");
+  assert.strictEqual(save.currentSceneId, "vicus_001_home_morning");
   assert.strictEqual(save.generatedQuests.find((q: any) => q.id === qId1)?.status, "completed");
 });
 
@@ -177,10 +177,10 @@ test("QuestTemplateEngine excludes duplicate active or draft templates", () => {
   const engine = new QuestTemplateEngine(loader);
   const save = createTestSave();
   save.generatedQuests = [{
-    ...GeneratedSceneBuilder.buildQuestFromTemplate(loader.getQuestTemplate("greetings_review_ludus")!, save, loader, engine),
-    sourceTemplateId: "greetings_review_ludus"
+    ...GeneratedSceneBuilder.buildQuestFromTemplate(loader.getQuestTemplate("vicus_greetings_teacher_review")!, save, loader, engine),
+    sourceTemplateId: "vicus_greetings_teacher_review"
   }];
-  assert.ok(!engine.getEligibleTemplates(save).some((entry) => entry.template.id === "greetings_review_ludus"));
+  assert.ok(!engine.getEligibleTemplates(save).some((entry) => entry.template.id === "vicus_greetings_teacher_review"));
 });
 
 test("GeneratedContentValidator enforces input modes, duplicate ids and allowed effects", () => {
@@ -271,8 +271,8 @@ test("GameEngine completes a generated quest and safely restores the main campai
     }
   }
 
-  assert.strictEqual(state.currentQuest.id, "quest_prima_dies");
-  assert.strictEqual(state.currentScene.id, "ludus_intro");
+  assert.strictEqual(state.currentQuest.id, "vicus_prologue_main");
+  assert.strictEqual(state.currentScene.id, "vicus_001_home_morning");
   assert.strictEqual(engine.getGeneratedQuest("test-save-id", quest.id)?.status, "completed");
   assert.ok(state.recentEvents.some((event) => event.type === "GENERATED_QUEST_COMPLETED"));
 });

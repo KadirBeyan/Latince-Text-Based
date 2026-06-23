@@ -1,0 +1,135 @@
+[
+  {
+    "id": "vicus_greetings_teacher_review",
+    "titleTemplate": "Magister ile Selamlaşma Tekrarı",
+    "descriptionTemplate": "Köy öğretmeniyle salve, vale ve kısa tanışma sözlerini RPG sahnesi içinde tekrar et.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "greetings"
+      ],
+      "locationId": "teacher_corner",
+      "npcId": "magister_ruralis",
+      "minLevel": 1
+    },
+    "suggestedLocationId": "teacher_corner",
+    "suggestedNpcId": "magister_ruralis",
+    "difficulty": "intro",
+    "learningFocus": {
+      "grammarIds": [
+        "greetings"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-vale"
+      ],
+      "skillIds": [
+        "lingua"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Magisterin yanına yaklaş ve neden çağırdığını sor.",
+        "choiceTemplates": [
+          {
+            "label": "Saygıyla yaklaş",
+            "correctness": "good"
+          },
+          {
+            "label": "Sessizce bekle",
+            "correctness": "neutral"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Magisteri Latince selamla.",
+        "expectedAnswerTemplates": [
+          "salve magister",
+          "salve"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Dersi kapat ve öğrendiğin sözü hatırla.",
+        "choiceTemplates": [
+          {
+            "label": "Teşekkür edip ayrıl",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "small",
+    "reasonTemplate": "Köydeki selamlaşma sözlerini güçlendirmek için magister kısa bir tekrar öneriyor."
+  },
+  {
+    "id": "vicus_market_words_practice",
+    "titleTemplate": "Pazar Sözleri Pratiği",
+    "descriptionTemplate": "Mercator vicus ile panis, aqua ve kısa alışveriş sözlerini çalış.",
+    "category": "vocabulary-practice",
+    "trigger": {
+      "weakVocabularyIds": [
+        "vocab-panis",
+        "vocab-aqua"
+      ],
+      "locationId": "village_market",
+      "npcId": "mercator_vicus",
+      "minLevel": 1
+    },
+    "suggestedLocationId": "village_market",
+    "suggestedNpcId": "mercator_vicus",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "simple-sentence-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-panis",
+        "vocab-aqua"
+      ],
+      "skillIds": [
+        "mercatura"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Mercatorun tezgahındaki malları incele.",
+        "choiceTemplates": [
+          {
+            "label": "Sepeti incele",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Ekmek istediğini basit Latinceyle söyle.",
+        "expectedAnswerTemplates": [
+          "panem volo",
+          "panis placet"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Pazar konuşmasını kapat.",
+        "choiceTemplates": [
+          {
+            "label": "Nazikçe ayrıl",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "normal",
+    "reasonTemplate": "Pazarda geçen temel kelimeleri gerçek konuşma içinde pekiştirmek iyi olur."
+  }
+]

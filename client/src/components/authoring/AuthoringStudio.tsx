@@ -22,6 +22,7 @@ import { SceneGraphEditor } from "./graph/SceneGraphEditor";
 import { OverrideStatusBadge } from "./OverrideStatusBadge";
 import { VillageActivityEditor } from "./village/VillageActivityEditor";
 import { VillageLoopPreview } from "./village/VillageLoopPreview";
+import { ConversationFlowEditor } from "./conversation/ConversationFlowEditor";
 
 type StudioTab = "editor" | "dashboard" | "validation" | "graph" | "llm" | "preview" | "village";
 
@@ -54,5 +55,6 @@ function renderEditor(kind: string | undefined, data: any, replace: (data: any) 
   if (kind === "location") return <LocationEditor data={data} onChange={patch} />;
   if (kind === "village-activity") return <VillageActivityEditor data={data} onChange={patch} />;
   if (kind === "grammar" || kind === "vocabulary" || kind === "assessment-question" || kind === "quest-template") return <LatinDataEditor data={data} kind={kind} onChange={onPatch} />;
+  if (kind === "conversation") return <ConversationFlowEditor data={data} onChange={patch} />;
   return null;
 }

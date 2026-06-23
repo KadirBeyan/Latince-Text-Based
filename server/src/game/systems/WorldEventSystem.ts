@@ -76,15 +76,15 @@ export class WorldEventSystem {
 
     let rumorData: Omit<WorldEvent, "id" | "createdAt"> | null = null;
 
-    if (locationId === "forum") {
+    if (locationId === "village_market") {
       rumorData = {
         type: "rumor",
-        title: "Forumda Yeni Bir Tüccar",
-        text: "Forumda yeni bir egzotik tüccar görülmüş.",
+        title: "Pazarda Yeni Bir Tezgah",
+        text: "Köy pazarında yabancı mallar taşıyan küçük bir tezgah açılmış.",
         importance: 30,
-        relatedLocationId: "forum"
+        relatedLocationId: "village_market"
       };
-    } else if (locationId === "ludus_room" || locationId === "ludus_front") {
+    } else if (locationId === "teacher_corner") {
       const sumMemory = save.errorMemory?.find(e => e.tag === "missing-sum");
       if (sumMemory && sumMemory.count >= 2) {
         rumorData = {
@@ -95,25 +95,25 @@ export class WorldEventSystem {
           relatedLocationId: locationId
         };
       }
-    } else if (locationId === "bibliotheca") {
+    } else if (locationId === "scribe_table") {
       rumorData = {
         type: "rumor",
-        title: "Kayıp Kodeks",
-        text: "Bibliotheca'da antik ve kayıp bir parşömen metni bulundu.",
+        title: "Eksik Balmumu Tablet",
+        text: "Scriba masasında kaybolan küçük bir nottan söz ediliyor.",
         importance: 50,
-        relatedLocationId: "bibliotheca"
+        relatedLocationId: "scribe_table"
       };
     }
 
-    const marcusMemory = save.npcMemories.find(m => m.npcId === "marcus");
+    const marcusMemory = save.npcMemories.find(m => m.npcId === "amicus");
     const trust = marcusMemory?.relationship.trust ?? 40;
     if (trust >= 60 && !rumorData) {
       rumorData = {
         type: "rumor",
-        title: "Marcus'un Arayışı",
-        text: "Marcus hararetli bir şekilde seni Forum civarında arıyor.",
+        title: "Amicusun Çağrısı",
+        text: "Amicus seni köy yolunda aceleyle arıyor.",
         importance: 60,
-        relatedNpcId: "marcus"
+        relatedNpcId: "amicus"
       };
     }
 

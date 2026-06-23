@@ -1,0 +1,230 @@
+{
+  "id": "conv_mater_bread_help",
+  "titleTr": "Mater'e Ekmek Taşımada Yardım Et",
+  "startNodeId": "start",
+  "npcIds": [
+    "mater",
+    "mercator_vicus",
+    "amicus"
+  ],
+  "locationIds": [
+    "home_hut",
+    "village_path",
+    "village_market"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "speakerNpcId": "mater",
+      "npcLineLatin": "Salve, fili. Potesne mihi auxilium ferre vehendis panibus?",
+      "npcLineTr": "Merhaba, evlat. Ekmekleri taşımamda bana yardım edebilir misin?",
+      "options": [
+        {
+          "id": "opt_accept",
+          "labelTr": "Yardım etmeyi kabul et",
+          "verb": "help",
+          "requiresLatin": true,
+          "playerIntentTr": "Yardım etmeyi kabul et",
+          "targetMeaningTr": "Sana yardım etmeyi istiyorum",
+          "canonicalAnswers": [
+            "te adiuvare volo",
+            "volo te adiuvare",
+            "adiuvare volo"
+          ],
+          "successNextNodeId": "accept_help",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_ask_dest",
+          "labelTr": "Nereye götüreceğini sor",
+          "verb": "ask",
+          "requiresLatin": true,
+          "playerIntentTr": "Nereye götüreceğini sor",
+          "targetMeaningTr": "Nereye gitmeliyim?",
+          "canonicalAnswers": [
+            "quo ire debeo",
+            "quo eundum est",
+            "quo feram"
+          ],
+          "successNextNodeId": "ask_destination",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_inspect",
+          "labelTr": "Sepeti incele",
+          "verb": "inspect",
+          "requiresLatin": false,
+          "nextNodeId": "inspect_basket"
+        }
+      ]
+    },
+    {
+      "id": "inspect_basket",
+      "narrationTr": "Sepetin içinde taze pişmiş yuvarlak panis'ler (ekmek) ve temiz keten bir örtü görünüyor.",
+      "options": [
+        {
+          "id": "opt_take_basket",
+          "labelTr": "Sepeti al ve yola çık",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "road_neighbor"
+        }
+      ]
+    },
+    {
+      "id": "ask_destination",
+      "speakerNpcId": "mater",
+      "npcLineLatin": "Ad forum in vico panem porta, quaeso. Mercator eum expectat.",
+      "npcLineTr": "Lütfen ekmeği köydeki pazara taşı. Tüccar onu bekliyor.",
+      "options": [
+        {
+          "id": "opt_take_basket_dest",
+          "labelTr": "Sepeti al ve pazar yoluna koyul",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "road_neighbor"
+        }
+      ]
+    },
+    {
+      "id": "accept_help",
+      "speakerNpcId": "mater",
+      "npcLineLatin": "Gratias tibi ago. Panis in cista est, fer ad forum.",
+      "npcLineTr": "Teşekkür ederim. Ekmek sepetin içinde, pazara götür.",
+      "options": [
+        {
+          "id": "opt_leave_hut",
+          "labelTr": "Sepeti alıp kulübeden çık",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "road_neighbor"
+        }
+      ]
+    },
+    {
+      "id": "road_neighbor",
+      "speakerNpcId": "amicus",
+      "npcLineLatin": "Salve! Quo vadis cum illa cista?",
+      "npcLineTr": "Merhaba! O sepetle nereye gidiyorsun?",
+      "options": [
+        {
+          "id": "opt_greet_neighbor",
+          "labelTr": "Selam ver",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Selam ver",
+          "targetMeaningTr": "Merhaba dostum!",
+          "canonicalAnswers": [
+            "salve",
+            "salve amice"
+          ],
+          "successNextNodeId": "market_delivery",
+          "failureBehavior": "continue"
+        },
+        {
+          "id": "opt_tell_dest",
+          "labelTr": "Nereye gittiğini söyle",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Pazara gittiğini söyle",
+          "targetMeaningTr": "Pazara gidiyorum",
+          "canonicalAnswers": [
+            "ad forum eo",
+            "ad mercatum eo"
+          ],
+          "successNextNodeId": "market_delivery",
+          "failureBehavior": "continue"
+        },
+        {
+          "id": "opt_ignore_neighbor",
+          "labelTr": "Sessizce başını salla ve devam et",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "market_delivery"
+        }
+      ]
+    },
+    {
+      "id": "market_delivery",
+      "speakerNpcId": "mercator_vicus",
+      "npcLineLatin": "Optime! Panis frescus advenit.",
+      "npcLineTr": "Çok iyi! Taze ekmek ulaştı.",
+      "options": [
+        {
+          "id": "opt_deliver",
+          "labelTr": "Ekmekleri teslim et ve eve dön",
+          "verb": "help",
+          "requiresLatin": false,
+          "nextNodeId": "return_home"
+        }
+      ]
+    },
+    {
+      "id": "return_home",
+      "speakerNpcId": "mater",
+      "npcLineLatin": "Rediisti! Num panem tradidisti?",
+      "npcLineTr": "Geri döndün! Ekmekleri teslim ettin mi?",
+      "options": [
+        {
+          "id": "opt_say_done",
+          "labelTr": "Görevi tamamladığını söyle",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Ekmekleri teslim ettim",
+          "targetMeaningTr": "Ekmeği teslim ettim",
+          "canonicalAnswers": [
+            "panem tradidi",
+            "panes tradidi"
+          ],
+          "successNextNodeId": "end",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_say_tired",
+          "labelTr": "Çok yorulduğunu ve dinlenmek istediğini söyle",
+          "verb": "refuse",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "isEnding": true,
+      "endingSummaryTr": "Mater'e ekmek taşımada başarıyla yardım ettin.",
+      "options": [],
+      "onEnterEffects": [
+        {
+          "type": "RECORD_VILLAGE_ACTIVITY",
+          "payload": {
+            "activityId": "help_mater_bread",
+            "npcIds": [
+              "mater"
+            ],
+            "lifePathChanges": {
+              "villa": 1
+            },
+            "summaryTr": "Mater'e ekmek taşımada yardım ettin."
+          }
+        },
+        {
+          "type": "ADD_LIFE_PATH_HINT",
+          "payload": {
+            "path": "villa",
+            "amount": 1,
+            "reasonTr": "Mater'e ev işlerinde yardımcı oldun."
+          }
+        },
+        {
+          "type": "UPDATE_NPC_RELATIONSHIP",
+          "npcId": "mater",
+          "delta": {
+            "trust": 2,
+            "familiarity": 1
+          }
+        }
+      ]
+    }
+  ],
+  "relatedActivityId": "help_mater_bread"
+}

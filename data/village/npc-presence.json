@@ -11,12 +11,6 @@
     "vesper": "village_path",
     "nox": "home_hut"
   },
-  "avia": {
-    "mane": "home_hut",
-    "meridies": "home_hut",
-    "vesper": "home_hut",
-    "nox": "home_hut"
-  },
   "magister_ruralis": {
     "mane": "teacher_corner",
     "meridies": "teacher_corner",
@@ -41,16 +35,16 @@
     "vesper": "scribe_table",
     "nox": "home_hut"
   },
-  "ministra": {
-    "mane": "shrine",
-    "meridies": "shrine",
-    "vesper": "shrine",
-    "nox": "home_hut"
-  },
   "amicus": {
     "mane": "village_path",
     "meridies": "field_edge",
     "vesper": "village_path",
+    "nox": "home_hut"
+  },
+  "sacerdos_vicus": {
+    "mane": "shrine",
+    "meridies": "shrine",
+    "vesper": "shrine",
     "nox": "home_hut"
   }
 }

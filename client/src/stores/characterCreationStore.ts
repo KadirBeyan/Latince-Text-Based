@@ -62,7 +62,7 @@ export function CharacterCreationProvider({ children }: { children: ReactNode })
 
   const goNext = useCallback(() => setStepIndex((current) => Math.min(STEPS.length - 1, current + 1)), []);
   const goBack = useCallback(() => setStepIndex((current) => Math.max(0, current - 1)), []);
-  const buildPayload = useCallback(() => ({ name: name.trim(), origin, traits, skillAllocations, campaignId: "via-prima" }), [name, origin, traits, skillAllocations]);
+  const buildPayload = useCallback(() => ({ name: name.trim(), origin, traits, skillAllocations, campaignId: "vicus_first_days" }), [name, origin, traits, skillAllocations]);
 
   const value = useMemo(() => ({
     step: STEPS[stepIndex], stepIndex, name, origin, traits, skillAllocations, pointsSpent, pointsRemaining,

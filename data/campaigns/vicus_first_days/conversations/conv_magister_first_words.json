@@ -1,0 +1,122 @@
+{
+  "id": "conv_magister_first_words",
+  "titleTr": "Magister ile İlk Latince Sözcükler",
+  "startNodeId": "start",
+  "npcIds": [
+    "magister_ruralis"
+  ],
+  "locationIds": [
+    "teacher_corner"
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "speakerNpcId": "magister_ruralis",
+      "npcLineLatin": "Salve, discipule. Quis es?",
+      "npcLineTr": "Merhaba, öğrenci. Sen kimsin?",
+      "options": [
+        {
+          "id": "opt_intro",
+          "labelTr": "Adını söyle",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Adımı söylerim",
+          "targetMeaningTr": "Benim adım Titus",
+          "canonicalAnswers": [
+            "mihi nomen est titus",
+            "titus sum",
+            "ego sum titus"
+          ],
+          "successNextNodeId": "name_response",
+          "failureBehavior": "retry"
+        },
+        {
+          "id": "opt_ignore_teacher",
+          "labelTr": "Sessiz kal ve ayrıl",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "reflection"
+        }
+      ]
+    },
+    {
+      "id": "name_response",
+      "speakerNpcId": "magister_ruralis",
+      "npcLineLatin": "Bene. Aspice hanc tabulam ceream. Potesne 'salve' scribere?",
+      "npcLineTr": "Güzel. Bu balmumu tablete bak. 'salve' yazabilir misin?",
+      "options": [
+        {
+          "id": "opt_write_salve",
+          "labelTr": "'salve' yaz",
+          "verb": "read",
+          "requiresLatin": true,
+          "playerIntentTr": "'salve' yazarım",
+          "targetMeaningTr": "salve",
+          "canonicalAnswers": [
+            "salve"
+          ],
+          "successNextNodeId": "write_word",
+          "failureBehavior": "retry"
+        }
+      ]
+    },
+    {
+      "id": "write_word",
+      "speakerNpcId": "magister_ruralis",
+      "npcLineLatin": "Optime! Litterae sunt clavis sapientiae.",
+      "npcLineTr": "Çok iyi! Harfler bilgeliğin anahtarıdır.",
+      "options": [
+        {
+          "id": "opt_finish_lesson",
+          "labelTr": "Dersi tamamla",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "narrationTr": "Sohbet bitmeden önce kısa bir an durup öğrendiğin sözü ve yapılan işi zihninde tekrar ediyorsun.",
+      "options": [
+        {
+          "id": "finish_reflection",
+          "labelTr": "Konuşmayı tamamla",
+          "verb": "leave",
+          "requiresLatin": false,
+          "nextNodeId": "end"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "isEnding": true,
+      "endingSummaryTr": "Magister ile ilk Latince dersini tamamladın.",
+      "options": [],
+      "onEnterEffects": [
+        {
+          "type": "RECORD_VILLAGE_ACTIVITY",
+          "payload": {
+            "activityId": "practice_with_magister",
+            "npcIds": [
+              "magister_ruralis"
+            ],
+            "lifePathChanges": {
+              "scriptura": 1
+            },
+            "summaryTr": "Magister ile ilk Latince dersini tamamladın."
+          }
+        },
+        {
+          "type": "ADD_LIFE_PATH_HINT",
+          "payload": {
+            "path": "scriptura",
+            "amount": 1,
+            "reasonTr": "Harfleri ve Latinceyi öğrenmeye heveslisin."
+          }
+        }
+      ]
+    }
+  ],
+  "relatedActivityId": "practice_with_magister"
+}

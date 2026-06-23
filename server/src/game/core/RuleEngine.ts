@@ -124,11 +124,10 @@ export class RuleEngine {
       "vicus_005_teacher_corner",
       "vicus_006_veteran_bench",
       "vicus_007_scribe_table",
-      "vicus_008_shrine",
-      "vicus_009_old_oak"
+      "vicus_008_shrine"
     ]);
 
-    if (save.currentChapterId === "vicus_prologue" && LOCATION_SCENE_IDS.has(scene.id) && save.villageLife) {
+    if (save.currentChapterId === "village_first_days" && LOCATION_SCENE_IDS.has(scene.id) && save.villageLife) {
       const VillageLifeSystem = require("../systems/VillageLifeSystem").VillageLifeSystem;
       const system = new VillageLifeSystem();
 
@@ -153,8 +152,7 @@ export class RuleEngine {
         teacher_corner: "Okul Köşesi",
         veteran_bench: "Gazi Bankı",
         scribe_table: "Yazıcı Masası",
-        shrine: "Tapınak Sunağı",
-        old_oak: "Koca Meşe"
+        shrine: "Tapınak Sunağı"
       };
 
       const LOCATION_SCENES: Record<string, string> = {
@@ -165,8 +163,7 @@ export class RuleEngine {
         teacher_corner: "vicus_005_teacher_corner",
         veteran_bench: "vicus_006_veteran_bench",
         scribe_table: "vicus_007_scribe_table",
-        shrine: "vicus_008_shrine",
-        old_oak: "vicus_009_old_oak"
+        shrine: "vicus_008_shrine"
       };
 
       const travelChoices: any[] = [];
@@ -211,7 +208,7 @@ export class RuleEngine {
       }
 
       // 4. Finish Village choice (Day 3+)
-      if (dayState.dayNumber >= 3 && (scene.locationId === "home_hut" || scene.locationId === "old_oak")) {
+      if (dayState.dayNumber >= 3 && (scene.locationId === "home_hut")) {
         timeChoices.push({
           id: "action_finish_village",
           label: "Köyden Ayrıl ve Yolunu Seç",

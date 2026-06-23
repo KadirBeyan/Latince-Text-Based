@@ -13,7 +13,7 @@ export function VillageTimeBadge({ dayNumber, timeOfDay, actionsUsed, maxActions
       case "mane":
         return { text: "SABAH", latin: "Mane", className: "village-time--mane", desc: "Güne dinç başla. Eğitim ve tarlalar canlanıyor." };
       case "meridies":
-        return { text: "ÖĞLE", latin: "Meridies", className: "village-time--meridies", desc: "Günün ortası. Forum ve pazar hareketli." };
+        return { text: "ÖĞLE", latin: "Meridies", className: "village-time--meridies", desc: "Günün ortası. Köy pazarı hareketli." };
       case "vesper":
         return { text: "AKŞAM", latin: "Vesper", className: "village-time--vesper", desc: "Gün batımı. İnsanlar dinleniyor, tapınak sakin." };
       case "nox":

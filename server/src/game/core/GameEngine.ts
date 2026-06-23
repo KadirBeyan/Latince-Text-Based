@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
-import type { GameAction, GameState, PlayerSave, SessionSummary } from "../types/gameTypes";
+import type { DialogueEntry, GameAction, GameState, PlayerSave, SessionSummary } from "../types/gameTypes";
+import { ConversationEngine } from "../conversation/ConversationEngine";
+import { FreeformActionInterpreter } from "../freeform/FreeformActionInterpreter";
 import { ContentLoader } from "../content/ContentLoader";
 import { SaveRepository, type SaveSummary } from "../save/SaveRepository";
 import { QuestSystem } from "../systems/QuestSystem";
@@ -43,6 +45,9 @@ export class GameEngine {
   private readonly characterCreationService = new CharacterCreationService();
   private readonly startingProfileService = new StartingProfileService();
 
+  private readonly conversationEngine: ConversationEngine;
+  private readonly freeformInterpreter: FreeformActionInterpreter;
+
   constructor(
     private readonly contentLoader: ContentLoader,
     private readonly saveRepository: SaveRepository
@@ -57,19 +62,21 @@ export class GameEngine {
     this.narrationSystem = new NarrationSystem(this.contentLoader);
     this.templateEngine = new QuestTemplateEngine(this.contentLoader);
     this.dynamicQuestSystem = new DynamicQuestSystem(this.contentLoader, this.templateEngine);
+    this.conversationEngine = new ConversationEngine(this.contentLoader, this.effectRunner, this.eventBus);
+    this.freeformInterpreter = new FreeformActionInterpreter();
   }
 
   async createNewGame(playerName: string, campaignId?: string, llmConfig?: LlmProviderConfig): Promise<GameState> {
-    const save = this.initializeSave(playerName, campaignId);
+    const save = this.initializeSave(playerName, campaignId || "vicus_first_days");
     const saved = this.saveRepository.create(save);
     return this.gameStateService.buildState(saved);
   }
 
   async createCharacterSave(input: CharacterCreationInput, campaignId?: string): Promise<GameState> {
     const result = this.characterCreationService.createProfile(input);
-    const save = this.initializeSave(result.playerName, campaignId, undefined, {
+    const save = this.initializeSave(result.playerName, campaignId || "vicus_first_days", undefined, {
       profile: result.profile,
-      startChapterId: "vicus_prologue",
+      startChapterId: "village_first_days",
       startQuestId: "vicus_prologue_main",
       startSceneId: "vicus_001_home_morning"
     });
@@ -100,6 +107,134 @@ export class GameEngine {
       case "TEXT_SUBMIT":
         nextSave = await this.sceneSystem.resolveTextChallenge(save, action.text, llmClient);
         break;
+      case "START_CONVERSATION": {
+        const result = this.conversationEngine.startConversation({
+          save,
+          flowId: action.flowId,
+          sceneId: action.sceneId
+        });
+        nextSave = result.save;
+        break;
+      }
+      case "CONVERSATION_OPTION_SELECT": {
+        const result = this.conversationEngine.selectConversationOption({
+          save,
+          flowId: action.flowId,
+          nodeId: action.nodeId,
+          optionId: action.optionId
+        });
+        nextSave = result.save;
+        break;
+      }
+      case "CONVERSATION_TEXT_SUBMIT": {
+        const result = await this.conversationEngine.submitConversationText({
+          save,
+          flowId: action.flowId,
+          nodeId: action.nodeId,
+          optionId: action.optionId,
+          answer: action.answer,
+          llmConfig
+        });
+        nextSave = result.save;
+        break;
+      }
+      case "CONVERSATION_EXIT": {
+        nextSave = { ...save };
+        if (nextSave.activeConversation) {
+          if (nextSave.activeConversation.selectedOptionId) {
+            nextSave.activeConversation = {
+              ...nextSave.activeConversation,
+              selectedOptionId: undefined
+            };
+          } else {
+            nextSave.activeConversation = undefined;
+          }
+        }
+        break;
+      }
+      case "FREEFORM_ACTION_SUBMIT": {
+        const activeConv = save.activeConversation;
+        let availableOptions: any[] = [];
+        let conversationFlow: any = undefined;
+        let currentNode: any = undefined;
+        
+        if (activeConv) {
+          conversationFlow = this.contentLoader.getConversationFlow(activeConv.flowId);
+          if (conversationFlow) {
+            currentNode = conversationFlow.nodes.find((n: any) => n.id === activeConv.currentNodeId);
+            if (currentNode) {
+              availableOptions = currentNode.options;
+            }
+          }
+        } else {
+          const scene = this.contentLoader.getScene(save.currentCampaignId, save.currentSceneId);
+          if (scene) {
+            if (scene.interactionModel && scene.interactionModel.intents) {
+              availableOptions = scene.interactionModel.intents;
+            } else if (scene.hybridDialogue && scene.hybridDialogue.intents) {
+              availableOptions = scene.hybridDialogue.intents;
+            }
+          }
+        }
+
+        const scene = this.contentLoader.getScene(save.currentCampaignId, save.currentSceneId);
+        const nearbyNpcs = scene ? scene.npcIds : [];
+        const locationId = scene ? scene.locationId : undefined;
+
+        const result = await this.freeformInterpreter.interpretFreeformAction({
+          inputText: action.inputText,
+          context: {
+            scene,
+            conversationFlow,
+            currentNode,
+            availableOptions,
+            nearbyNpcIds: nearbyNpcs,
+            locationId,
+            playerProfile: save.characterProfile
+          },
+          llmConfig
+        });
+
+        nextSave = { ...save };
+
+        if (result.ok && result.matchedOptionId) {
+          const optionId = result.matchedOptionId;
+          const flowId = activeConv!.flowId;
+          const nodeId = activeConv!.currentNodeId;
+          const node = conversationFlow.nodes.find((n: any) => n.id === nodeId);
+          const option = node.options.find((o: any) => o.id === optionId);
+          
+          if (option.requiresLatin) {
+            if (nextSave.activeConversation) {
+              nextSave.activeConversation = {
+                ...nextSave.activeConversation,
+                selectedOptionId: optionId
+              };
+            }
+          } else {
+            const optionResult = this.conversationEngine.selectConversationOption({
+              save: nextSave,
+              flowId,
+              nodeId,
+              optionId
+            });
+            nextSave = optionResult.save;
+          }
+        } else if (result.ok && result.matchedIntentId) {
+          nextSave = await this.sceneSystem.resolveIntentSelect(nextSave, result.matchedIntentId, save.currentSceneId);
+        } else {
+          const rejectionMessage = result.rejection?.messageTr || "Bunu şu an burada yapamazsın.";
+          const entry: DialogueEntry = {
+            id: randomUUID(),
+            speakerId: "narrator",
+            text: rejectionMessage,
+            language: "Turkish",
+            timestamp: new Date().toISOString()
+          };
+          nextSave.dialogueLog = [...nextSave.dialogueLog, entry];
+        }
+        break;
+      }
       case "REQUEST_HINT": {
         const scene = this.resolveScene(save);
         if (!scene) {

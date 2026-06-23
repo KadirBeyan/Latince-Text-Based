@@ -26,6 +26,7 @@ export class AuthoringContentService {
       { id: "assessment", title: "Assessment", kinds: ["assessment-question"] },
       { id: "templates", title: "Templates", kinds: ["quest-template"] },
       { id: "village", title: "Village Activities", kinds: ["village-activity"] },
+      { id: "conversations", title: "Conversations", kinds: ["conversation"] },
     ];
     return folders.map((folder) => ({
       id: folder.id,
@@ -56,6 +57,7 @@ export class AuthoringContentService {
     await this.pushArrayDocs(docs, "assessment-question", "data/assessment", includeValidation);
     await this.pushArrayDocs(docs, "quest-template", "data/quest-templates", includeValidation);
     await this.pushArrayDocs(docs, "village-activity", "data/village", includeValidation);
+    await this.pushFileDocs(docs, "conversation", "data/campaigns/vicus_first_days/conversations", includeValidation);
     return (kind ? docs.filter((doc) => doc.kind === kind) : docs).sort((a, b) => `${a.kind}:${a.title}`.localeCompare(`${b.kind}:${b.title}`));
   }
 

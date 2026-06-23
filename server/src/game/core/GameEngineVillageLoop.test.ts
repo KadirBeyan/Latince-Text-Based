@@ -26,9 +26,9 @@ test("GameEngine - full village loop flow", async () => {
       lingua: 3,
       memoria: 3
     }
-  }, "via-prima");
+  });
 
-  assert.strictEqual(state.currentChapter.id, "vicus_prologue");
+  assert.strictEqual(state.currentChapter.id, "village_first_days");
   assert.strictEqual(state.currentScene.id, "vicus_001_home_morning");
   assert.ok(state.villageLife);
   assert.strictEqual(state.villageLife!.dayState.dayNumber, 1);

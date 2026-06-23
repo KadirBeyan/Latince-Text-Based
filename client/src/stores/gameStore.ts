@@ -55,6 +55,11 @@ type GameContextValue = {
   acceptGeneratedQuest: (generatedQuestId: string) => Promise<void>;
   dismissGeneratedQuest: (generatedQuestId: string) => Promise<void>;
   startGeneratedQuest: (generatedQuestId: string) => Promise<void>;
+  startConversation: (flowId: string) => Promise<void>;
+  selectConversationOption: (optionId: string) => Promise<void>;
+  submitConversationText: (text: string) => Promise<void>;
+  exitConversation: () => Promise<void>;
+  submitFreeformAction: (text: string) => Promise<void>;
 };
 
 const GameContext = createContext<GameContextValue | null>(null);
@@ -521,6 +526,134 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }
   }, [currentSaveId, applyGameState]);
 
+  const startConversation = useCallback(async (flowId: string) => {
+    if (!currentSaveId) return;
+    setActionLoading(true);
+    setError(null);
+    try {
+      const state = await submitGameAction({
+        saveId: currentSaveId,
+        action: {
+          type: "START_CONVERSATION",
+          saveId: currentSaveId,
+          flowId,
+          sceneId: gameState?.currentScene?.id
+        },
+        llmConfig: getLlmConfigOrUndefined()
+      });
+      applyGameState(state);
+      setNarration(null);
+      setHint(null);
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [applyGameState, currentSaveId, getLlmConfigOrUndefined, gameState]);
+
+  const selectConversationOption = useCallback(async (optionId: string) => {
+    if (!currentSaveId || !gameState?.activeConversation) return;
+    setActionLoading(true);
+    setError(null);
+    try {
+      const state = await submitGameAction({
+        saveId: currentSaveId,
+        action: {
+          type: "CONVERSATION_OPTION_SELECT",
+          saveId: currentSaveId,
+          flowId: gameState.activeConversation.flowId,
+          nodeId: gameState.activeConversation.currentNodeId,
+          optionId
+        },
+        llmConfig: getLlmConfigOrUndefined()
+      });
+      applyGameState(state);
+      setNarration(null);
+      setHint(null);
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [applyGameState, currentSaveId, getLlmConfigOrUndefined, gameState]);
+
+  const submitConversationText = useCallback(async (text: string) => {
+    if (!currentSaveId || !gameState?.activeConversation || !gameState.activeConversation.selectedOptionId) return;
+    setActionLoading(true);
+    setError(null);
+    try {
+      const state = await submitGameAction({
+        saveId: currentSaveId,
+        action: {
+          type: "CONVERSATION_TEXT_SUBMIT",
+          saveId: currentSaveId,
+          flowId: gameState.activeConversation.flowId,
+          nodeId: gameState.activeConversation.currentNodeId,
+          optionId: gameState.activeConversation.selectedOptionId,
+          answer: text
+        },
+        llmConfig: getLlmConfigOrUndefined()
+      });
+      applyGameState(state);
+      setRightPanelTab("feedback");
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [applyGameState, currentSaveId, getLlmConfigOrUndefined, gameState]);
+
+  const exitConversation = useCallback(async () => {
+    if (!currentSaveId || !gameState?.activeConversation) return;
+    setActionLoading(true);
+    setError(null);
+    try {
+      const state = await submitGameAction({
+        saveId: currentSaveId,
+        action: {
+          type: "CONVERSATION_EXIT",
+          saveId: currentSaveId,
+          flowId: gameState.activeConversation.flowId
+        },
+        llmConfig: getLlmConfigOrUndefined()
+      });
+      applyGameState(state);
+      setNarration(null);
+      setHint(null);
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [applyGameState, currentSaveId, getLlmConfigOrUndefined, gameState]);
+
+  const submitFreeformAction = useCallback(async (text: string) => {
+    if (!currentSaveId) return;
+    setActionLoading(true);
+    setError(null);
+    try {
+      const state = await submitGameAction({
+        saveId: currentSaveId,
+        action: {
+          type: "FREEFORM_ACTION_SUBMIT",
+          saveId: currentSaveId,
+          sceneId: gameState?.currentScene?.id,
+          flowId: gameState?.activeConversation?.flowId,
+          nodeId: gameState?.activeConversation?.currentNodeId,
+          inputText: text
+        },
+        llmConfig: getLlmConfigOrUndefined()
+      });
+      applyGameState(state);
+      setNarration(null);
+      setHint(null);
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [applyGameState, currentSaveId, getLlmConfigOrUndefined, gameState]);
+
   const value = useMemo(() => ({
     currentSaveId,
     gameState,
@@ -562,6 +695,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
     acceptGeneratedQuest,
     dismissGeneratedQuest,
     startGeneratedQuest,
+    startConversation,
+    selectConversationOption,
+    submitConversationText,
+    exitConversation,
+    submitFreeformAction,
   }), [
     currentSaveId,
     gameState,
@@ -601,6 +739,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
     acceptGeneratedQuest,
     dismissGeneratedQuest,
     startGeneratedQuest,
+    startConversation,
+    selectConversationOption,
+    submitConversationText,
+    exitConversation,
+    submitFreeformAction,
   ]);
 
   return createElement(GameContext.Provider, { value }, children);

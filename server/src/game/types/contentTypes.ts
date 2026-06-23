@@ -54,6 +54,8 @@ export interface LatinExample {
   level: CurriculumLevel;
 }
 
+import type { ConversationFlow } from "./ConversationTypes";
+
 export interface LoadedContent {
   campaigns: Campaign[];
   npcs: NpcDefinition[];
@@ -63,6 +65,7 @@ export interface LoadedContent {
   vocabulary: VocabularyItem[];
   examples: LatinExample[];
   questTemplates: QuestTemplate[];
+  conversations: ConversationFlow[];
 }
 
 export type ContentValidationIssue = ValidationIssue;

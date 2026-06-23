@@ -80,7 +80,7 @@ export const ORIGIN_CONFIG: Record<CharacterOrigin, {
     summaryTr: "Ritüeller, aile sorumluluğu ve saygılı sözler karakterini şekillendirdi.",
     skillBonuses: { pietas: 1, memoria: 1 },
     pathHints: { templum: 2 },
-    knownPeople: ["mater", "ministra", "avia"]
+    knownPeople: ["mater", "sacerdos_vicus", "amicus"]
   },
   scribe_family: {
     titleTr: "Yazıcı ailesi",

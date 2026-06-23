@@ -10,12 +10,11 @@ export function VillageLoopPreview() {
   const npcPresence: Record<string, Record<string, string>> = {
     mater: { mane: "home_hut", meridies: "village_market", vesper: "home_hut", nox: "home_hut" },
     pater: { mane: "home_hut", meridies: "field_edge", vesper: "village_path", nox: "home_hut" },
-    avia: { mane: "home_hut", meridies: "home_hut", vesper: "home_hut", nox: "home_hut" },
     magister_ruralis: { mane: "teacher_corner", meridies: "teacher_corner", vesper: "village_path", nox: "home_hut" },
     mercator_vicus: { mane: "village_market", meridies: "village_market", vesper: "village_path", nox: "home_hut" },
     veteranus: { mane: "veteran_bench", meridies: "veteran_bench", vesper: "shrine", nox: "home_hut" },
     scriba_vicus: { mane: "scribe_table", meridies: "scribe_table", vesper: "scribe_table", nox: "home_hut" },
-    ministra: { mane: "shrine", meridies: "shrine", vesper: "shrine", nox: "home_hut" },
+    sacerdos_vicus: { mane: "shrine", meridies: "shrine", vesper: "shrine", nox: "home_hut" },
     amicus: { mane: "village_path", meridies: "field_edge", vesper: "village_path", nox: "home_hut" }
   };
 
@@ -27,8 +26,7 @@ export function VillageLoopPreview() {
     { id: "teacher_corner", name: "Okul (Angulus Magistri)", latin: "teacher_corner" },
     { id: "veteran_bench", name: "Gazi Bankı (Subsellium)", latin: "veteran_bench" },
     { id: "scribe_table", name: "Yazıcı (Mensa Scribae)", latin: "scribe_table" },
-    { id: "shrine", name: "Sunak (Sacellum)", latin: "shrine" },
-    { id: "old_oak", name: "Meşe (Quercus Vetus)", latin: "old_oak" }
+    { id: "shrine", name: "Sunak (Sacellum)", latin: "shrine" }
   ];
 
   const timeWindows = ["mane", "meridies", "vesper", "nox"];
