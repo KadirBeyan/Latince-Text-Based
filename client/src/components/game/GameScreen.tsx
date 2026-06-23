@@ -9,6 +9,7 @@ import { DialogueStage } from "./dialogue/DialogueStage";
 import { DialogueTransitionFeedback } from "./dialogue/DialogueTransitionFeedback";
 import { SceneTransition } from "../cinematic/SceneTransition";
 import { InteractionLoop } from "./interaction/InteractionLoop";
+import { VillageHub } from "../village/VillageHub";
 import {
   RevisitNotice,
   AmbientActionPanel,
@@ -21,6 +22,33 @@ export function GameScreen() {
   const { gameState } = useGameStore();
   if (!gameState) {
     return null;
+  }
+
+  const LOCATION_SCENE_IDS = new Set([
+    "vicus_001_home_morning",
+    "vicus_002_village_path",
+    "vicus_003_market_help",
+    "vicus_004_field_edge",
+    "vicus_005_teacher_corner",
+    "vicus_006_veteran_bench",
+    "vicus_007_scribe_table",
+    "vicus_008_shrine",
+    "vicus_009_old_oak"
+  ]);
+
+  const isVillageHubScene =
+    gameState.currentChapter?.id === "vicus_prologue" &&
+    !!gameState.villageLife &&
+    LOCATION_SCENE_IDS.has(gameState.currentScene.id);
+
+  if (isVillageHubScene) {
+    return (
+      <div className="game-screen">
+        <SceneTransition>
+          <VillageHub />
+        </SceneTransition>
+      </div>
+    );
   }
 
   const mode = gameState.currentScene.inputMode;
@@ -52,3 +80,4 @@ export function GameScreen() {
     </div>
   );
 }
+

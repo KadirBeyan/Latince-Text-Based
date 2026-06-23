@@ -4,9 +4,20 @@ import { BookOpenText, Columns, Scroll, Sun } from "@phosphor-icons/react";
 
 const icons = [BookOpenText, Scroll, Columns, Sun];
 
+const pathLines: Record<string, string> = {
+  ludus: "Magister sende öğrenme isteği görüyor.",
+  castra: "Veteranus sende disiplin fark ediyor.",
+  mercatura: "Mercator pazarlığa yatkın olduğunu sezdi.",
+  scriptura: "Scriba harflere yaklaşımını not etti.",
+  templum: "Ministra sende saygılı bir dikkat görüyor.",
+  villa: "Ailen köy yaşamına bağlılığını fark ediyor."
+};
+
 export function SkillPanel() {
   const { gameState } = useGameStore();
   const skills = gameState?.skills ?? [];
+  const lifePathHints = gameState?.player?.characterProfile?.lifePathHints;
+  const visibleHints = lifePathHints ? Object.entries(lifePathHints).filter(([, value]) => Number(value) > 0).sort((a, b) => Number(b[1]) - Number(a[1])).slice(0, 3) : [];
 
   return (
     <section className="panel-card skill-panel">
@@ -47,6 +58,12 @@ export function SkillPanel() {
           );
         })}
       </div>
+      {visibleHints.length ? (
+        <div className="life-path-hints">
+          <p className="eyebrow">Inclinationes</p>
+          {visibleHints.map(([path]) => <span key={path}>{pathLines[path] ?? path}</span>)}
+        </div>
+      ) : null}
     </section>
   );
 }

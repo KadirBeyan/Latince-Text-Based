@@ -195,7 +195,7 @@ test("GameEngine - TEXT_SUBMIT dialogue challenge maxAttempts failure path", asy
   assert.strictEqual(state.currentScene.id, "failure_target_scene");
 });
 
-test("GameEngine - hybrid dialogue persists selected intent in narrativeFlags", async () => {
+test("GameEngine - hybrid dialogue persists selected intent in activeInteraction", async () => {
   const db = openDatabase(":memory:");
   initDatabase(db);
   const contentLoader = new ContentLoader();
@@ -231,9 +231,99 @@ test("GameEngine - hybrid dialogue persists selected intent in narrativeFlags", 
   let state = await gameEngine.createNewGame("Player4", "via-prima");
 
   state = await gameEngine.submitAction(state.saveId, { type: "CHOICE_SELECT", choiceId: "want_bread" });
-  assert.strictEqual(state.narrativeFlags?.selected_intent_test_hybrid_dialogue_scene, "want_bread");
+  assert.strictEqual(state.activeInteraction?.selectedIntentId, "want_bread");
+  assert.strictEqual(state.narrativeFlags?.selected_intent_test_hybrid_dialogue_scene, undefined);
   assert.strictEqual(state.availableChoices.length, 0);
 
   state = await gameEngine.submitAction(state.saveId, { type: "TEXT_SUBMIT", text: "Panem volo." });
   assert.ok(gameEngine.getRawSave(state.saveId).completedSceneIds.includes(scene.id));
+});
+
+test("GameEngine - hybrid dialogue migrates legacy selected intent from narrativeFlags", async () => {
+  const db = openDatabase(":memory:");
+  initDatabase(db);
+  const contentLoader = new ContentLoader();
+  contentLoader.load();
+  const campaign = contentLoader.getContent().campaigns[0];
+  const chapter = campaign.chapters[0];
+  const quest = chapter.quests[0];
+  const scene: Scene = {
+    id: "legacy_hybrid_dialogue_scene",
+    title: "Legacy Hybrid Dialogue",
+    locationId: "ludus",
+    npcIds: ["magister"],
+    description: "Eski save migration.",
+    objective: "Ekmek iste.",
+    inputMode: "hybrid-dialogue",
+    choices: [],
+    hybridDialogue: {
+      speakerNpcId: "magister",
+      npcPromptLatin: "Quid vis?",
+      npcPromptTr: "Ne istiyorsun?",
+      intents: [{ id: "want_bread", labelTr: "Ekmek istiyorum", targetMeaningTr: "Ekmek istiyorum.", canonicalAnswers: ["Panem volo."] }],
+    },
+    conditions: [],
+    effects: [],
+    rewards: [],
+    onEnterEvents: [],
+  };
+  quest.scenes = [scene, ...quest.scenes];
+  quest.startSceneId = scene.id;
+  chapter.startQuestId = quest.id;
+  campaign.startChapterId = chapter.id;
+  const saveRepository = new SaveRepository(db);
+  const gameEngine = new GameEngine(contentLoader, saveRepository);
+  const state = await gameEngine.createNewGame("LegacyPlayer", "via-prima");
+  const raw = gameEngine.getRawSave(state.saveId);
+  saveRepository.update({
+    ...raw,
+    activeInteraction: undefined,
+    narrativeFlags: { ...raw.narrativeFlags, selected_intent_legacy_hybrid_dialogue_scene: "want_bread" },
+  });
+
+  const nextState = await gameEngine.submitAction(state.saveId, { type: "TEXT_SUBMIT", text: "Panem volo." });
+  assert.ok(gameEngine.getRawSave(state.saveId).completedSceneIds.includes(scene.id));
+  assert.strictEqual(nextState.narrativeFlags?.selected_intent_legacy_hybrid_dialogue_scene, undefined);
+  assert.strictEqual(gameEngine.getRawSave(state.saveId).activeInteraction?.selectedIntentId, "want_bread");
+});
+
+test("GameEngine - hybrid dialogue rejects text submit without selected intent", async () => {
+  const db = openDatabase(":memory:");
+  initDatabase(db);
+  const contentLoader = new ContentLoader();
+  contentLoader.load();
+  const campaign = contentLoader.getContent().campaigns[0];
+  const chapter = campaign.chapters[0];
+  const quest = chapter.quests[0];
+  const scene: Scene = {
+    id: "missing_intent_hybrid_dialogue_scene",
+    title: "Missing Intent Hybrid Dialogue",
+    locationId: "ludus",
+    npcIds: ["magister"],
+    description: "Intent secilmedi.",
+    objective: "Ekmek iste.",
+    inputMode: "hybrid-dialogue",
+    choices: [],
+    hybridDialogue: {
+      speakerNpcId: "magister",
+      npcPromptLatin: "Quid vis?",
+      npcPromptTr: "Ne istiyorsun?",
+      intents: [{ id: "want_bread", labelTr: "Ekmek istiyorum", targetMeaningTr: "Ekmek istiyorum.", canonicalAnswers: ["Panem volo."] }],
+    },
+    conditions: [],
+    effects: [],
+    rewards: [],
+    onEnterEvents: [],
+  };
+  quest.scenes = [scene, ...quest.scenes];
+  quest.startSceneId = scene.id;
+  chapter.startQuestId = quest.id;
+  campaign.startChapterId = chapter.id;
+  const gameEngine = new GameEngine(contentLoader, new SaveRepository(db));
+  const state = await gameEngine.createNewGame("NoIntentPlayer", "via-prima");
+
+  await assert.rejects(
+    () => gameEngine.submitAction(state.saveId, { type: "TEXT_SUBMIT", text: "Panem volo." }),
+    /requires a selected dialogue intent/,
+  );
 });

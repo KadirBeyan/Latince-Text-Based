@@ -1,4 +1,4 @@
-import type { Effect, PlayerSave } from "../types/gameTypes";
+import type { Effect, PlayerSave, RpgSkillId } from "../types/gameTypes";
 import type { EffectContext } from "../types/eventTypes";
 import { ContentLoader } from "../content/ContentLoader";
 import { DialogueSystem } from "../systems/DialogueSystem";
@@ -18,6 +18,7 @@ import { CampaignProgressSystem } from "../systems/CampaignProgressSystem";
 
 import { GeneratedContentSystem } from "../systems/GeneratedContentSystem";
 import { LivingSceneSystem } from "../systems/LivingSceneSystem";
+import { VillageLifeSystem } from "../systems/VillageLifeSystem";
 
 export class EffectRunner {
   constructor(
@@ -245,6 +246,136 @@ export class EffectRunner {
           }
         };
         nextSave = this.eventBus.emit(nextSave, "NPC_INTERACTION_INCREMENTED", { npcId: effect.npcId, count: Number(current) + 1 });
+        break;
+      }
+      case "INCREMENT_RPG_SKILL": {
+        const profile = save.characterProfile;
+        if (!profile) break;
+        const current = profile.skills[effect.payload.skillId] ?? 0;
+        const amount = effect.payload.amount ?? 1;
+        nextSave = {
+          ...save,
+          characterProfile: {
+            ...profile,
+            skills: { ...profile.skills, [effect.payload.skillId]: Math.max(0, Math.min(5, current + amount)) }
+          }
+        };
+        nextSave = this.eventBus.emit(nextSave, "RPG_SKILL_INCREMENTED", { skillId: effect.payload.skillId, amount, total: Math.max(0, Math.min(5, current + amount)) });
+        break;
+      }
+      case "ADD_LIFE_PATH_HINT": {
+        const profile = save.characterProfile;
+        if (!profile) break;
+        const current = profile.lifePathHints[effect.payload.path] ?? 0;
+        nextSave = {
+          ...save,
+          characterProfile: {
+            ...profile,
+            lifePathHints: { ...profile.lifePathHints, [effect.payload.path]: Math.max(0, current + effect.payload.amount) }
+          }
+        };
+        nextSave = this.eventBus.emit(nextSave, "LIFE_PATH_HINT_ADDED", { ...effect.payload, total: Math.max(0, current + effect.payload.amount) });
+        break;
+      }
+      case "SET_LIFE_PHASE":
+        if (!save.characterProfile) break;
+        nextSave = {
+          ...save,
+          characterProfile: { ...save.characterProfile, currentLifePhase: effect.payload.phase }
+        };
+        nextSave = this.eventBus.emit(nextSave, "LIFE_PHASE_SET", { phase: effect.payload.phase });
+        break;
+      case "ADVANCE_VILLAGE_TIME": {
+        const result = new VillageLifeSystem().advanceTime({ save: nextSave, reasonTr: effect.reasonTr });
+        nextSave = result.save;
+        break;
+      }
+      case "START_NEW_VILLAGE_DAY": {
+        nextSave = new VillageLifeSystem().startNewVillageDay({ save: nextSave, summaryTr: effect.summaryTr });
+        break;
+      }
+      case "RECORD_VILLAGE_ACTIVITY": {
+        nextSave = new VillageLifeSystem().recordVillageActivity({
+          save: nextSave,
+          activityId: effect.payload.activityId,
+          npcIds: effect.payload.npcIds,
+          lifePathChanges: effect.payload.lifePathChanges,
+          summaryTr: effect.payload.summaryTr
+        });
+        break;
+      }
+      case "SET_VILLAGE_DAY_FLAG": {
+        nextSave = new VillageLifeSystem().setVillageDayFlag({ save: nextSave, key: effect.key, value: effect.value });
+        break;
+      }
+      case "ADD_DAILY_ACTIVITY": {
+        const system = new VillageLifeSystem();
+        const villageLife = { ...system.getVillageLife(nextSave) };
+        const dayState = { ...villageLife.dayState };
+        if (!dayState.availableActivityIds.includes(effect.activityId)) {
+          dayState.availableActivityIds = [...dayState.availableActivityIds, effect.activityId];
+        }
+        villageLife.dayState = dayState;
+        nextSave = { ...nextSave, villageLife };
+        break;
+      }
+      case "COMPLETE_DAILY_ACTIVITY": {
+        const system = new VillageLifeSystem();
+        const villageLife = { ...system.getVillageLife(nextSave) };
+        const dayState = { ...villageLife.dayState };
+        if (!dayState.completedDailyActivityIds.includes(effect.activityId)) {
+          dayState.completedDailyActivityIds = [...dayState.completedDailyActivityIds, effect.activityId];
+        }
+        villageLife.dayState = dayState;
+        nextSave = { ...nextSave, villageLife };
+        break;
+      }
+      case "ADD_RPG_SKILL_PROGRESS": {
+        const profile = nextSave.characterProfile;
+        if (!profile) break;
+        const skillProgress: Record<RpgSkillId, number> = {
+          lingua: 0,
+          memoria: 0,
+          observatio: 0,
+          urbanitas: 0,
+          auctoritas: 0,
+          mercatura: 0,
+          disciplina: 0,
+          labor: 0,
+          scriptura: 0,
+          pietas: 0,
+          ...(profile.skillProgress || {})
+        };
+        const skills: Record<RpgSkillId, number> = { ...profile.skills };
+        const skillId = effect.payload.skillId;
+        const amount = effect.payload.amount;
+
+        const currentProgress = skillProgress[skillId] ?? 0;
+        const totalProgress = currentProgress + amount;
+
+        const levelsGained = Math.floor(totalProgress / 100);
+        const remainingProgress = totalProgress % 100;
+
+        skillProgress[skillId] = remainingProgress;
+        if (levelsGained > 0) {
+          const currentLevel = skills[skillId] ?? 0;
+          skills[skillId] = Math.min(5, currentLevel + levelsGained);
+        }
+
+        nextSave = {
+          ...nextSave,
+          characterProfile: {
+            ...profile,
+            skills,
+            skillProgress
+          }
+        };
+        nextSave = this.eventBus.emit(nextSave, "RPG_SKILL_PROGRESS_ADDED", {
+          skillId,
+          amount,
+          totalProgress: remainingProgress,
+          levelsGained
+        });
         break;
       }
     }

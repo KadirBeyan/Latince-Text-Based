@@ -1,5 +1,5 @@
 import { createContext, createElement, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from "react";
-import { createNewGame, getGameState, listSaves, requestHint as requestHintApi, requestNarration as requestNarrationApi, resetGame, submitGameAction, getSessionSummary } from "../api/gameApi";
+import { createCharacterSave, createNewGame, getGameState, listSaves, requestHint as requestHintApi, requestNarration as requestNarrationApi, resetGame, submitGameAction, getSessionSummary } from "../api/gameApi";
 import { refreshSideQuestSuggestions, acceptSideQuestSuggestion, dismissSideQuestSuggestion } from "../api/sideQuestApi";
 import {
   generateQuestFromSuggestion as apiGenerateQuestFromSuggestion,
@@ -9,6 +9,7 @@ import {
   startGeneratedQuest as apiStartGeneratedQuest
 } from "../api/generatedQuestApi";
 import type { GameState, HintResult, NarrationResult, SaveSummary, GameEvent, SessionSummary } from "../types/gameTypes";
+import type { CharacterCreationPayload } from "../types/characterTypes";
 import { useSettingsStore } from "./settingsStore";
 
 export type RightPanelTab = "feedback" | "journal" | "hint" | "inventory" | "skills" | "settings" | "events" | "mastery" | "lingua" | "rota" | "tabula" | "gloria" | "mundus" | "personae";
@@ -30,6 +31,7 @@ type GameContextValue = {
   sessionSummary: SessionSummary | null;
   loadSaves: () => Promise<void>;
   createGame: (playerName: string) => Promise<void>;
+  createCharacterGame: (payload: CharacterCreationPayload) => Promise<void>;
   loadGame: (saveId: string) => Promise<void>;
   submitChoice: (choiceId: string) => Promise<void>;
   submitText: (text: string) => Promise<void>;
@@ -201,6 +203,22 @@ export function GameProvider({ children }: { children: ReactNode }) {
     setError(null);
     try {
       const state = await createNewGame(playerName);
+      applyGameState(state);
+      setNarration(null);
+      setHint(null);
+      setSaves(await listSaves());
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [applyGameState]);
+
+  const createCharacterGame = useCallback(async (payload: CharacterCreationPayload) => {
+    setActionLoading(true);
+    setError(null);
+    try {
+      const state = await createCharacterSave(payload);
       applyGameState(state);
       setNarration(null);
       setHint(null);
@@ -520,6 +538,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     sessionSummary,
     loadSaves,
     createGame,
+    createCharacterGame,
     loadGame,
     submitChoice,
     submitText,

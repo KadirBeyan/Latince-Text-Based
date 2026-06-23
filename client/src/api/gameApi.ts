@@ -1,4 +1,5 @@
 import type { GameAction, GameState, HintResult, LlmProviderConfig, NarrationResult, SaveSummary, SessionSummary } from "../types/gameTypes";
+import type { CharacterCreationPayload } from "../types/characterTypes";
 import { getApiBase } from "./apiBase";
 
 type ErrorPayload = {
@@ -53,6 +54,13 @@ export function createNewGame(playerName: string, campaignId = "via-prima"): Pro
   return requestJson<GameState>("/api/game/new", {
     method: "POST",
     body: JSON.stringify({ playerName, campaignId }),
+  });
+}
+
+export function createCharacterSave(payload: CharacterCreationPayload): Promise<GameState> {
+  return requestJson<GameState>("/api/game/create-character-save", {
+    method: "POST",
+    body: JSON.stringify({ ...payload, campaignId: payload.campaignId ?? "via-prima" }),
   });
 }
 

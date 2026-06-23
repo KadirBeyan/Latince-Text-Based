@@ -20,6 +20,10 @@ import { SideQuestSystem } from "../systems/SideQuestSystem";
 import { GeneratedContentSystem } from "../systems/GeneratedContentSystem";
 import { QuestTemplateEngine } from "../content/QuestTemplateEngine";
 import { DynamicQuestSystem } from "../systems/DynamicQuestSystem";
+import { CharacterCreationService } from "../character/CharacterCreationService";
+import { StartingProfileService } from "../character/StartingProfileService";
+import type { CharacterCreationInput } from "../character/CharacterTypes";
+import type { CharacterProfile } from "../types/gameTypes";
 
 export class GameEngine {
   private readonly eventBus: EventBus;
@@ -36,6 +40,8 @@ export class GameEngine {
   private readonly progressionSystem = new ProgressionSystem();
   private readonly sessionSummarySystem = new SessionSummarySystem();
   private readonly sideQuestSystem = new SideQuestSystem();
+  private readonly characterCreationService = new CharacterCreationService();
+  private readonly startingProfileService = new StartingProfileService();
 
   constructor(
     private readonly contentLoader: ContentLoader,
@@ -55,6 +61,18 @@ export class GameEngine {
 
   async createNewGame(playerName: string, campaignId?: string, llmConfig?: LlmProviderConfig): Promise<GameState> {
     const save = this.initializeSave(playerName, campaignId);
+    const saved = this.saveRepository.create(save);
+    return this.gameStateService.buildState(saved);
+  }
+
+  async createCharacterSave(input: CharacterCreationInput, campaignId?: string): Promise<GameState> {
+    const result = this.characterCreationService.createProfile(input);
+    const save = this.initializeSave(result.playerName, campaignId, undefined, {
+      profile: result.profile,
+      startChapterId: "vicus_prologue",
+      startQuestId: "vicus_prologue_main",
+      startSceneId: "vicus_001_home_morning"
+    });
     const saved = this.saveRepository.create(save);
     return this.gameStateService.buildState(saved);
   }
@@ -212,22 +230,28 @@ export class GameEngine {
     return this.gameStateService.buildState(updated);
   }
 
-  private initializeSave(playerName: string, requestedCampaignId?: string, saveId: string = randomUUID()): PlayerSave {
+  private initializeSave(playerName: string, requestedCampaignId?: string, saveId: string = randomUUID(), options?: { profile?: CharacterProfile; startChapterId?: string; startQuestId?: string; startSceneId?: string }): PlayerSave {
     const campaign = requestedCampaignId ? this.contentLoader.getCampaign(requestedCampaignId) : this.contentLoader.getDefaultCampaign();
     if (!campaign) {
       throw new Error(requestedCampaignId ? `Campaign ${requestedCampaignId} was not found.` : "No campaigns are loaded.");
     }
-    const chapter = campaign.chapters.find((candidate) => candidate.id === campaign.startChapterId);
+    const chapterId = options?.startChapterId ?? campaign.startChapterId;
+    const chapter = campaign.chapters.find((candidate) => candidate.id === chapterId);
     if (!chapter) {
-      throw new Error(`Campaign ${campaign.id} points to missing start chapter ${campaign.startChapterId}.`);
+      throw new Error(`Campaign ${campaign.id} points to missing start chapter ${chapterId}.`);
     }
-    const quest = chapter.quests.find((candidate) => candidate.id === chapter.startQuestId);
+    const questId = options?.startQuestId ?? chapter.startQuestId;
+    const quest = chapter.quests.find((candidate) => candidate.id === questId);
     if (!quest) {
-      throw new Error(`Chapter ${chapter.id} points to missing start quest ${chapter.startQuestId}.`);
+      throw new Error(`Chapter ${chapter.id} points to missing start quest ${questId}.`);
     }
     const now = new Date().toISOString();
+    const characterProfile = options?.profile ?? this.startingProfileService.buildProfile({ name: playerName, origin: "unknown_origin", traits: ["curious", "practical"], skillAllocations: { lingua: 1, memoria: 1, observatio: 1, urbanitas: 1, labor: 1, pietas: 1 } }, now);
+    if (!characterProfile.skillProgress) {
+      characterProfile.skillProgress = { lingua: 0, memoria: 0, observatio: 0, urbanitas: 0, auctoritas: 0, mercatura: 0, disciplina: 0, labor: 0, scriptura: 0, pietas: 0 };
+    }
     const baseSave: PlayerSave = {
-      schemaVersion: 5,
+      schemaVersion: 6,
       id: saveId,
       playerName,
       createdAt: now,
@@ -235,7 +259,7 @@ export class GameEngine {
       currentCampaignId: campaign.id,
       currentChapterId: chapter.id,
       currentQuestId: quest.id,
-      currentSceneId: quest.startSceneId,
+      currentSceneId: options?.startSceneId ?? quest.startSceneId,
       level: 1,
       xp: 0,
       currency: 0,
@@ -261,11 +285,25 @@ export class GameEngine {
       assessmentAttempts: [],
       achievements: [],
       analyticsSnapshots: [],
-      chapterProgress: { [chapter.id]: { chapterId: chapter.id, unlocked: true, completed: false, completedSceneIds: [], completedQuestIds: [], progressPercent: 0 } }
+      characterProfile,
+      chapterProgress: { [chapter.id]: { chapterId: chapter.id, unlocked: true, completed: false, completedSceneIds: [], completedQuestIds: [], progressPercent: 0 } },
+      villageLife: {
+        dayState: {
+          dayNumber: 1,
+          timeOfDay: "mane",
+          actionsUsedThisPeriod: 0,
+          maxActionsPerPeriod: 3,
+          completedDailyActivityIds: [],
+          availableActivityIds: [],
+          dayFlags: {}
+        },
+        routineHistory: []
+      }
     };
 
+    baseSave.skills = this.startingProfileService.toPlayerSkills(characterProfile);
     const activeQuest = this.questSystem.startQuest(baseSave, quest.id);
-    const enteredScene = this.sceneSystem.enterScene(activeQuest, quest.startSceneId);
+    const enteredScene = this.sceneSystem.enterScene(activeQuest, options?.startSceneId ?? quest.startSceneId);
     return this.eventBus.emit(enteredScene, "game.created", { playerName, campaignId: campaign.id });
   }
 

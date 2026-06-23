@@ -11,7 +11,8 @@ export type AuthoringContentKind =
   | "grammar"
   | "vocabulary"
   | "assessment-question"
-  | "quest-template";
+  | "quest-template"
+  | "village-activity";
 
 export type AuthoringDocument = {
   id: string;

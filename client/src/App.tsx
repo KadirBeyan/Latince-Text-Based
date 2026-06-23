@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { EditorShell } from "./components/editor/EditorShell";
-import { AuthoringStudio } from "./components/authoring/AuthoringStudio";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { AppShell } from "./components/layout/AppShell";
 import { StartScreen } from "./components/start/StartScreen";
 import { GameProvider, useGameStore } from "./stores/gameStore";
@@ -9,6 +7,13 @@ import { SessionSummaryModal } from "./components/game/SessionSummaryModal";
 import { ErrorBoundary } from "./components/system/ErrorBoundary";
 import { CinematicProvider } from "./components/cinematic/CinematicProvider";
 import { CinematicStoreProvider } from "./stores/cinematicStore";
+
+const EditorShell = lazy(() => import("./components/editor/EditorShell").then((module) => ({ default: module.EditorShell })));
+const AuthoringStudio = lazy(() => import("./components/authoring/AuthoringStudio").then((module) => ({ default: module.AuthoringStudio })));
+
+function WorkspaceLoading() {
+  return <div className="loading-screen">Yükleniyor...</div>;
+}
 
 function AppContent() {
   const { gameState, loading, error, clearError, loadSaves } = useGameStore();
@@ -24,8 +29,12 @@ function AppContent() {
   useEffect(() => { const open = () => setRightPanelTab("settings"); window.addEventListener("open-systema-panel", open); return () => window.removeEventListener("open-systema-panel", open); }, [setRightPanelTab]);
   useEffect(() => { if (localStorage.getItem("via-prima-open-systema") === "1") { localStorage.removeItem("via-prima-open-systema"); setRightPanelTab("settings"); } }, [setRightPanelTab]);
 
-  if (editorOpen && import.meta.env.DEV) return <EditorShell onClose={() => setEditorOpen(false)} />;
-  if (authoringOpen) return <AuthoringStudio onClose={() => setAuthoringOpen(false)} />;
+  if (editorOpen && import.meta.env.DEV) {
+    return <Suspense fallback={<WorkspaceLoading />}><EditorShell onClose={() => setEditorOpen(false)} /></Suspense>;
+  }
+  if (authoringOpen) {
+    return <Suspense fallback={<WorkspaceLoading />}><AuthoringStudio onClose={() => setAuthoringOpen(false)} /></Suspense>;
+  }
 
   return (
     <div className="app-root">

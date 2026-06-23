@@ -1,14 +1,14 @@
 import os from "node:os";
 import path from "node:path";
 import { Router, type NextFunction, type Request, type Response } from "express";
-import { discoverAllLocalModels, discoverLmStudioModels, discoverOllamaModels, type ModelDiscoveryConfig } from "../llm/ModelDiscoveryService";
+import { discoverAllLocalModels, discoverLmStudioModels, discoverOllamaModels, expandHomePath, getDefaultLmStudioModelsPaths, getDefaultOllamaModelsPath, normalizeModelPaths, type ModelDiscoveryConfig } from "../llm/ModelDiscoveryService";
 
 type RouteHandler = (req: Request, res: Response, next: NextFunction) => void | Promise<void>;
 
 export const DEFAULT_MODEL_DISCOVERY_CONFIG: ModelDiscoveryConfig = {
   ollamaBaseUrl: "http://localhost:11434",
-  ollamaModelsPath: path.join(os.homedir(), ".ollama", "models"),
-  lmStudioModelsPaths: [path.join(os.homedir(), ".cache", "lm-studio", "models"), path.join(os.homedir(), ".lmstudio", "models")],
+  ollamaModelsPath: getDefaultOllamaModelsPath(),
+  lmStudioModelsPaths: getDefaultLmStudioModelsPaths(),
 };
 
 export function createLlmRoutes(initialConfig: ModelDiscoveryConfig = DEFAULT_MODEL_DISCOVERY_CONFIG): Router {
@@ -45,18 +45,19 @@ function validateConfig(raw: ModelDiscoveryConfig): ModelDiscoveryConfig {
   if (!raw || typeof raw.ollamaBaseUrl !== "string") throw new Error("ollamaBaseUrl is required.");
   const url = new URL(raw.ollamaBaseUrl);
   if (!["localhost", "127.0.0.1", "::1"].includes(url.hostname)) throw new Error("Ollama discovery URL must target localhost.");
-  if (!Array.isArray(raw.lmStudioModelsPaths) || raw.lmStudioModelsPaths.length > 4) throw new Error("lmStudioModelsPaths must contain at most 4 paths.");
+  if (!Array.isArray(raw.lmStudioModelsPaths) || raw.lmStudioModelsPaths.length > 12) throw new Error("lmStudioModelsPaths must contain at most 12 paths.");
   return {
     ollamaBaseUrl: url.origin,
     ollamaModelsPath: raw.ollamaModelsPath ? validateLocalModelPath(raw.ollamaModelsPath) : undefined,
-    lmStudioModelsPaths: raw.lmStudioModelsPaths.map(validateLocalModelPath),
+    lmStudioModelsPaths: normalizeModelPaths([...getDefaultLmStudioModelsPaths(), ...raw.lmStudioModelsPaths.map(validateLocalModelPath)]),
   };
 }
 
 function validateLocalModelPath(candidate: string): string {
   if (typeof candidate !== "string" || !candidate.trim() || candidate.length > 1_024 || candidate.includes("\0")) throw new Error("Model path is invalid.");
-  if (!path.isAbsolute(candidate)) throw new Error("Model paths must be absolute.");
-  const resolved = path.resolve(candidate);
+  const expanded = expandHomePath(candidate);
+  if (!expanded || !path.isAbsolute(expanded)) throw new Error("Model paths must be absolute or start with ~.");
+  const resolved = path.resolve(expanded);
   const home = path.resolve(os.homedir());
   const relative = path.relative(home, resolved);
   if (relative.startsWith("..") || path.isAbsolute(relative)) throw new Error("Model paths must stay inside the current user's home directory.");

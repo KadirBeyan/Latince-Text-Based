@@ -12,6 +12,7 @@ const ALLOWED_ROOTS = [
   "data/quests",
   "data/assessment",
   "data/quest-templates",
+  "data/village",
 ];
 
 export class AuthoringFileService {

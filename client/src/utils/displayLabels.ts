@@ -9,6 +9,16 @@ const skillLabels: Record<string, string> = {
   vocabula: "Vocabula",
   rhetorica: "Rhetorica",
   historia: "Historia",
+  lingua: "Lingua",
+  memoria: "Memoria",
+  observatio: "Observatio",
+  urbanitas: "Urbanitas",
+  auctoritas: "Auctoritas",
+  mercatura: "Mercatura",
+  disciplina: "Disciplina",
+  labor: "Labor",
+  scriptura: "Scriptura",
+  pietas: "Pietas",
 };
 
 const locationLabels: Record<string, string> = {
@@ -18,6 +28,15 @@ const locationLabels: Record<string, string> = {
   domus: "Domus",
   castra: "Castra",
   bibliotheca: "Bibliotheca",
+  home_hut: "Casa",
+  village_path: "Vicus",
+  field_edge: "Ager",
+  village_market: "Mercatus Parvus",
+  shrine: "Sacellum",
+  old_oak: "Quercus Vetus",
+  teacher_corner: "Angulus Magistri",
+  veteran_bench: "Subsellium Veterani",
+  scribe_table: "Mensa Scribae",
 };
 
 const speakerLabels: Record<string, string> = {
@@ -25,6 +44,15 @@ const speakerLabels: Record<string, string> = {
   marcus: "Marcus",
   system: "Systema",
   player: "Tu",
+  mater: "Mater",
+  pater: "Pater",
+  avia: "Avia",
+  magister_ruralis: "Magister",
+  mercator_vicus: "Mercator",
+  veteranus: "Veteranus",
+  scriba_vicus: "Scriba",
+  ministra: "Ministra",
+  amicus: "Amicus",
 };
 
 const tabLabels: Record<RightPanelTab, string> = {

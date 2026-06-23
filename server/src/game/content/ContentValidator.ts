@@ -307,34 +307,82 @@ export class ContentValidator {
   }
 
   private validateGraph(questId: ID, startId: ID, scenes: Scene[], issues: ValidationIssue[]): void {
+    const sceneById = new Map(scenes.map((scene) => [scene.id, scene]));
     const edges = new Map(scenes.map((scene) => [scene.id, this.sceneEdges(scene)]));
     const reachable = new Set<ID>();
     const visiting = new Set<ID>();
     const visited = new Set<ID>();
-    let cycle = false;
+    const stack: ID[] = [];
+    const reportedCycles = new Set<string>();
     const walk = (id: ID): void => {
       reachable.add(id);
-      if (visiting.has(id)) { cycle = true; return; }
+      if (visiting.has(id)) return;
       if (visited.has(id)) return;
       visiting.add(id);
-      for (const next of edges.get(id) ?? []) if (edges.has(next)) walk(next);
-      visiting.delete(id); visited.add(id);
+      stack.push(id);
+      for (const edge of edges.get(id) ?? []) {
+        if (!edges.has(edge.targetSceneId)) continue;
+        if (visiting.has(edge.targetSceneId)) {
+          const cycleStart = stack.indexOf(edge.targetSceneId);
+          const cyclePath = [...stack.slice(Math.max(cycleStart, 0)), edge.targetSceneId];
+          const cycleKey = cyclePath.join("->");
+          if (!reportedCycles.has(cycleKey)) {
+            reportedCycles.add(cycleKey);
+            this.pushCycleIssue(questId, edge, cyclePath, sceneById, issues);
+          }
+          continue;
+        }
+        walk(edge.targetSceneId);
+      }
+      stack.pop();
+      visiting.delete(id);
+      visited.add(id);
     };
     walk(startId);
     for (const scene of scenes) if (!reachable.has(scene.id)) this.push(issues, "warning", "UNREACHABLE_SCENE", `quests.${questId}.scenes.${scene.id}`, `Scene ${scene.id} is unreachable from ${startId}.`, scene.id);
-    if (cycle) this.push(issues, "warning", "SCENE_GRAPH_CYCLE", `quests.${questId}.scenes`, "Scene graph contains a cycle.");
   }
 
-  private sceneEdges(scene: Scene): ID[] {
+  private sceneEdges(scene: Scene): SceneGraphEdge[] {
     return [
-      scene.successNextSceneId,
-      scene.failureNextSceneId,
-      ...scene.choices.map((c) => c.nextSceneId),
-      scene.textChallenge?.successNextSceneId,
-      scene.textChallenge?.failureNextSceneId,
-      scene.dialogueChallenge?.successNextSceneId,
-      scene.dialogueChallenge?.failureNextSceneId,
-    ].filter((id): id is ID => Boolean(id));
+      this.edge(scene, "scene.successNextSceneId", scene.successNextSceneId, scene),
+      this.edge(scene, "scene.failureNextSceneId", scene.failureNextSceneId, scene),
+      ...scene.choices.map((choice) => this.edge(scene, `choice.${choice.id}`, choice.nextSceneId, choice, choice.conditions)),
+      this.edge(scene, "textChallenge.successNextSceneId", scene.textChallenge?.successNextSceneId, scene.textChallenge ?? undefined),
+      this.edge(scene, "textChallenge.failureNextSceneId", scene.textChallenge?.failureNextSceneId, scene.textChallenge ?? undefined),
+      this.edge(scene, "dialogueChallenge.successNextSceneId", scene.dialogueChallenge?.successNextSceneId, scene.dialogueChallenge ?? undefined),
+      this.edge(scene, "dialogueChallenge.failureNextSceneId", scene.dialogueChallenge?.failureNextSceneId, scene.dialogueChallenge ?? undefined),
+    ].filter((edge): edge is SceneGraphEdge => Boolean(edge));
+  }
+
+  private edge(sourceScene: Scene, transitionId: string, targetSceneId?: ID, metadata?: CycleMetadata, conditions?: Condition[]): SceneGraphEdge | undefined {
+    if (!targetSceneId) return undefined;
+    return {
+      sourceSceneId: sourceScene.id,
+      targetSceneId,
+      transitionId,
+      conditions: conditions && conditions.length > 0 ? JSON.stringify(conditions) : undefined,
+      intentional: Boolean(metadata?.allowCycle || metadata?.intentionalCycle || sourceScene.allowCycle || sourceScene.intentionalCycle),
+      loopPurpose: metadata?.loopPurpose || sourceScene.loopPurpose,
+    };
+  }
+
+  private pushCycleIssue(questId: ID, edge: SceneGraphEdge, cyclePath: ID[], sceneById: Map<ID, Scene>, issues: ValidationIssue[]): void {
+    const targetScene = sceneById.get(edge.targetSceneId);
+    const intentional = edge.intentional || Boolean(targetScene?.allowCycle || targetScene?.intentionalCycle);
+    const loopPurpose = edge.loopPurpose || targetScene?.loopPurpose;
+    const conditionText = edge.conditions ? ` condition=${edge.conditions}` : "";
+    const purposeText = intentional ? ` intentional=true${loopPurpose ? ` loopPurpose=${loopPurpose}` : ""}` : " intentional=false";
+    this.push(
+      issues,
+      "warning",
+      "SCENE_GRAPH_CYCLE",
+      `quests.${questId}.scenes.${edge.sourceSceneId}`,
+      `Quest ${questId} scene graph cycle: path=${cyclePath.join(" -> ")} source=${edge.sourceSceneId} target=${edge.targetSceneId} transition=${edge.transitionId}${conditionText}${purposeText}.`,
+      edge.targetSceneId,
+    );
+    if (intentional && !loopPurpose?.trim()) {
+      this.push(issues, "warning", "SCENE_GRAPH_CYCLE_MISSING_PURPOSE", `quests.${questId}.scenes.${edge.sourceSceneId}`, "Intentional cycle should explain loopPurpose", edge.targetSceneId);
+    }
   }
 
   private validateConditions(conditions: Condition[], path: string, refs: RefSets, questIds: Set<ID>, sceneIds: Set<ID>, issues: ValidationIssue[]): void {
@@ -558,4 +606,19 @@ interface RefSets {
   grammarIds: Set<ID>;
   vocabularyIds: Set<ID>;
   locationIds: Set<ID>;
+}
+
+interface CycleMetadata {
+  allowCycle?: boolean;
+  intentionalCycle?: boolean;
+  loopPurpose?: string;
+}
+
+interface SceneGraphEdge {
+  sourceSceneId: ID;
+  targetSceneId: ID;
+  transitionId: string;
+  conditions?: string;
+  intentional: boolean;
+  loopPurpose?: string;
 }

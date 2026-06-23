@@ -11,7 +11,7 @@ export type ContentOverrideEntry = {
   size?: number;
 };
 
-const OVERRIDE_ROOTS = ["campaigns", "npcs", "locations", "latin", "quests", "assessment", "quest-templates"];
+const OVERRIDE_ROOTS = ["campaigns", "npcs", "locations", "latin", "quests", "assessment", "quest-templates", "village"];
 const OVERRIDE_ROOT_FILES = ["npcs.json", "items.json", "skills.json"];
 
 export class ContentOverrideService {

@@ -7,6 +7,7 @@ import { NpcRelationshipSystem } from "../systems/NpcRelationshipSystem";
 import { NpcMemorySystem } from "../systems/NpcMemorySystem";
 import { LocationStateSystem } from "../systems/LocationStateSystem";
 import { LivingSceneSystem } from "../systems/LivingSceneSystem";
+import { getSelectedIntentId } from "../systems/SelectedIntentState";
 
 export class RuleEngine {
   constructor(
@@ -69,6 +70,28 @@ export class RuleEngine {
         const count = save.narrativeFlags[`npc_interaction_count_${condition.npcId}`] || 0;
         return Number(count) >= condition.count;
       }
+      case "RPG_SKILL_MIN":
+        return (save.characterProfile?.skills?.[condition.payload.skillId] ?? 0) >= condition.payload.value;
+      case "VILLAGE_TIME_EQUALS":
+        return (save.villageLife?.dayState.timeOfDay ?? "mane") === condition.timeOfDay;
+      case "VILLAGE_DAY_MIN":
+        return (save.villageLife?.dayState.dayNumber ?? 1) >= condition.dayNumber;
+      case "VILLAGE_ACTIVITY_COMPLETED":
+        return save.villageLife?.dayState.completedDailyActivityIds.includes(condition.activityId) ||
+          save.villageLife?.routineHistory.some(h => h.activityIds.includes(condition.activityId)) || false;
+      case "VILLAGE_ACTIVITY_NOT_COMPLETED":
+        return !(save.villageLife?.dayState.completedDailyActivityIds.includes(condition.activityId) ||
+          save.villageLife?.routineHistory.some(h => h.activityIds.includes(condition.activityId)));
+      case "VILLAGE_DAY_FLAG_EQUALS":
+        return save.villageLife?.dayState.dayFlags[condition.key] === condition.value;
+      case "VILLAGE_ACTIONS_AVAILABLE":
+        return (save.villageLife?.dayState.actionsUsedThisPeriod ?? 0) < (save.villageLife?.dayState.maxActionsPerPeriod ?? 3);
+      case "LIFE_PATH_HINT_MIN":
+        return (save.characterProfile?.lifePathHints?.[condition.path] ?? 0) >= condition.value;
+      case "CHARACTER_TRAIT_HAS":
+        return save.characterProfile?.traits.includes(condition.trait) ?? false;
+      case "CHARACTER_ORIGIN_EQUALS":
+        return save.characterProfile?.origin === condition.origin;
     }
   }
 
@@ -78,7 +101,7 @@ export class RuleEngine {
 
   getAvailableChoices(save: PlayerSave, scene: Scene): SceneChoice[] {
     if (scene.inputMode === "hybrid-dialogue" && scene.hybridDialogue) {
-      const selected = save.narrativeFlags[`selected_intent_${scene.id}`];
+      const selected = getSelectedIntentId(save, scene);
       if (!selected) {
         return scene.hybridDialogue.intents.map(intent => ({
           id: intent.id,
@@ -90,7 +113,120 @@ export class RuleEngine {
       }
       return [];
     }
-    return (scene.choices || []).filter((choice) => this.checkConditions(save, choice.conditions || []));
+    
+    let choices = (scene.choices || []).filter((choice) => this.checkConditions(save, choice.conditions || []));
+
+    const LOCATION_SCENE_IDS = new Set([
+      "vicus_001_home_morning",
+      "vicus_002_village_path",
+      "vicus_003_market_help",
+      "vicus_004_field_edge",
+      "vicus_005_teacher_corner",
+      "vicus_006_veteran_bench",
+      "vicus_007_scribe_table",
+      "vicus_008_shrine",
+      "vicus_009_old_oak"
+    ]);
+
+    if (save.currentChapterId === "vicus_prologue" && LOCATION_SCENE_IDS.has(scene.id) && save.villageLife) {
+      const VillageLifeSystem = require("../systems/VillageLifeSystem").VillageLifeSystem;
+      const system = new VillageLifeSystem();
+
+      // 1. Available activities
+      const activities = system.getAvailableVillageActivities({ save, currentLocationId: scene.locationId });
+      const activityChoices = activities.map((activity: any) => ({
+        id: `activity_${activity.id}`,
+        label: activity.titleTr,
+        description: activity.descriptionTr,
+        conditions: [],
+        effects: [
+          { type: "GO_TO_SCENE", sceneId: activity.sceneId }
+        ]
+      }));
+
+      // 2. Travel choices
+      const LOCATION_NAMES: Record<string, string> = {
+        home_hut: "Ev (Home)",
+        village_path: "Köy Yolu",
+        village_market: "Pazar Yeri",
+        field_edge: "Tarla Sınırı",
+        teacher_corner: "Okul Köşesi",
+        veteran_bench: "Gazi Bankı",
+        scribe_table: "Yazıcı Masası",
+        shrine: "Tapınak Sunağı",
+        old_oak: "Koca Meşe"
+      };
+
+      const LOCATION_SCENES: Record<string, string> = {
+        home_hut: "vicus_001_home_morning",
+        village_path: "vicus_002_village_path",
+        village_market: "vicus_003_market_help",
+        field_edge: "vicus_004_field_edge",
+        teacher_corner: "vicus_005_teacher_corner",
+        veteran_bench: "vicus_006_veteran_bench",
+        scribe_table: "vicus_007_scribe_table",
+        shrine: "vicus_008_shrine",
+        old_oak: "vicus_009_old_oak"
+      };
+
+      const travelChoices: any[] = [];
+      for (const [locId, targetSceneId] of Object.entries(LOCATION_SCENES)) {
+        if (locId !== scene.locationId) {
+          travelChoices.push({
+            id: `travel_${locId}`,
+            label: `${LOCATION_NAMES[locId]} Bölgesine Git`,
+            description: "Köyde başka bir bölgeye geçiş yap.",
+            conditions: [],
+            effects: [
+              { type: "GO_TO_SCENE", sceneId: targetSceneId }
+            ]
+          });
+        }
+      }
+
+      // 3. Time controls
+      const timeChoices: any[] = [];
+      const dayState = save.villageLife.dayState;
+
+      if (dayState.timeOfDay !== "nox") {
+        timeChoices.push({
+          id: "action_advance_time",
+          label: "Zamanı İlerlet (Dinlen)",
+          description: "Köyde zamanı bir sonraki vakte geçirir.",
+          conditions: [],
+          effects: [
+            { type: "ADVANCE_VILLAGE_TIME" }
+          ]
+        });
+      } else if (scene.locationId === "home_hut") {
+        timeChoices.push({
+          id: "action_start_new_day",
+          label: "Uyu ve Yeni Günü Başlat",
+          description: "Günü bitirip sabah uyan.",
+          conditions: [],
+          effects: [
+            { type: "START_NEW_VILLAGE_DAY" }
+          ]
+        });
+      }
+
+      // 4. Finish Village choice (Day 3+)
+      if (dayState.dayNumber >= 3 && (scene.locationId === "home_hut" || scene.locationId === "old_oak")) {
+        timeChoices.push({
+          id: "action_finish_village",
+          label: "Köyden Ayrıl ve Yolunu Seç",
+          description: "Köydeki günleri tamamla ve hayat yoluna karar ver.",
+          conditions: [],
+          effects: [
+            { type: "GO_TO_SCENE", sceneId: "vicus_018_prologue_close" }
+          ]
+        });
+      }
+
+      choices = [...choices, ...activityChoices, ...travelChoices, ...timeChoices];
+    }
+
+    return choices;
   }
 
   canEnterScene(save: PlayerSave, scene: Scene): boolean {

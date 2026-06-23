@@ -48,5 +48,50 @@
     "id": "lucius",
     "name": "Lucius",
     "description": "Prologus ve Capitolium'da kisa tekrar sorulari soran genc Romali."
+  },
+  {
+    "id": "mater",
+    "name": "Mater Livia",
+    "description": "Vicus'taki evin sıcak ama dikkatli sesi; saygı ve gündelik Latinceyi doğal konuşur."
+  },
+  {
+    "id": "pater",
+    "name": "Pater Decimus",
+    "description": "Tarla, aile sorumluluğu ve pratik işlerde oyuncuyu sınayan baba."
+  },
+  {
+    "id": "avia",
+    "name": "Avia Tertia",
+    "description": "Aile hatıralarını, ritüelleri ve eski sözleri hatırlatan yaşlı aile üyesi."
+  },
+  {
+    "id": "magister_ruralis",
+    "name": "Magister Aelius Ruralis",
+    "description": "Köy köşesinde çocuklara kısa Latince cümleler öğreten sabırlı magister."
+  },
+  {
+    "id": "mercator_vicus",
+    "name": "Mercator Publius Vicinus",
+    "description": "Küçük pazarda panis, aqua ve denarius üzerinden pazarlık dili öğreten tüccar."
+  },
+  {
+    "id": "veteranus",
+    "name": "Veteranus Gaius",
+    "description": "Emekli asker; emirleri, düzeni ve sabrı sessiz bir ciddiyetle aktarır."
+  },
+  {
+    "id": "scriba_vicus",
+    "name": "Scriba Titus Vicinus",
+    "description": "Köy masasında tabula ve stilus ile yazı işlerini tutan dikkatli scriba."
+  },
+  {
+    "id": "ministra",
+    "name": "Ministra Flavia",
+    "description": "Küçük tapınakta ritüel sözleri, selamları ve pietas duygusunu taşıyan görevli."
+  },
+  {
+    "id": "amicus",
+    "name": "Amicus Sextus",
+    "description": "Oyuncunun çocukluk arkadaşı; köy dışına dair merakı konuşmaya açar."
   }
 ]

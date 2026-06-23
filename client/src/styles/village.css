@@ -1,0 +1,739 @@
+/* Village Life RPG Loop Stylesheet */
+
+.village-hub-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-6);
+  width: 100%;
+  max-width: var(--vp-content-max);
+  margin: 0 auto;
+  padding: var(--vp-space-4) 0;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Banner Styling */
+.village-banner-card {
+  margin-bottom: 0;
+}
+
+.village-hero {
+  border-radius: var(--vp-radius-lg) var(--vp-radius-lg) 0 0;
+}
+
+/* Grid Layout */
+.village-grid-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--vp-space-6);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .village-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Base Panel Card */
+.village-panel-card {
+  background-color: var(--vp-surface-1);
+  border: 1px solid var(--vp-border);
+  border-radius: var(--vp-radius-md);
+  padding: var(--vp-space-5);
+  box-shadow: var(--vp-shadow-card);
+  margin-bottom: var(--vp-space-4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.village-panel-title {
+  font-family: var(--vp-font-serif);
+  font-size: 1.15rem;
+  color: var(--vp-roman-red);
+  margin: 0 0 var(--vp-space-1) 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.village-panel-subtitle {
+  font-size: 0.85rem;
+  color: var(--vp-text-muted);
+  margin: 0 0 var(--vp-space-4) 0;
+}
+
+/* Activity Board */
+.village-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-3);
+}
+
+.village-activity-card {
+  background-color: var(--vp-surface-2);
+  border: 1px solid var(--vp-border-soft);
+  border-radius: var(--vp-radius-sm);
+  padding: var(--vp-space-4);
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-3);
+}
+
+.village-activity-card.clickable:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-gold-2);
+  box-shadow: 0 4px 12px rgba(185, 130, 45, 0.12);
+  cursor: pointer;
+}
+
+.village-activity-card.disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+.activity-title {
+  font-family: var(--vp-font-serif);
+  font-size: 1.05rem;
+  color: var(--vp-text-strong);
+  margin: 0 0 var(--vp-space-1) 0;
+}
+
+.activity-desc {
+  font-size: 0.88rem;
+  color: var(--vp-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.activity-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-2);
+  border-top: 1px dashed var(--vp-border-soft);
+  padding-top: var(--vp-space-2);
+}
+
+.activity-badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--vp-space-2);
+  font-size: 0.78rem;
+}
+
+.badge-label {
+  color: var(--vp-text-faint);
+  font-weight: 500;
+}
+
+.activity-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.badge-skill {
+  background-color: var(--vp-roman-red-soft);
+  color: var(--vp-roman-red);
+  border: 1px solid rgba(139, 47, 37, 0.2);
+}
+
+.badge-path {
+  background-color: var(--accent-soft);
+  color: var(--vp-gold-3);
+  border: 1px solid rgba(185, 130, 45, 0.25);
+}
+
+.activity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vp-space-2);
+  margin-top: var(--vp-space-1);
+}
+
+.activity-tag {
+  font-size: 0.72rem;
+  color: var(--vp-text-faint);
+  background-color: rgba(92, 55, 29, 0.05);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.activity-tag.tag-once {
+  color: var(--vp-roman-red);
+  background-color: var(--vp-roman-red-soft);
+  font-weight: 500;
+}
+
+.activity-tag.tag-cooldown {
+  color: var(--vp-info);
+  background-color: rgba(79, 111, 145, 0.08);
+}
+
+.activity-board-empty {
+  text-align: center;
+  padding: var(--vp-space-8) var(--vp-space-4);
+}
+
+.empty-text {
+  font-style: italic;
+  color: var(--vp-text-faint);
+  font-size: 0.9rem;
+}
+
+/* Fast travel locations grid */
+.village-location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--vp-space-3);
+}
+
+@media (max-width: 600px) {
+  .village-location-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.village-location-card {
+  background-color: var(--vp-surface-2);
+  border: 1px solid var(--vp-border-soft);
+  border-radius: var(--vp-radius-sm);
+  padding: var(--vp-space-4);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--vp-space-2);
+}
+
+.village-location-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-roman-red);
+  box-shadow: 0 4px 10px rgba(139, 47, 37, 0.08);
+  cursor: pointer;
+}
+
+.location-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--vp-space-2);
+}
+
+.location-icon {
+  font-size: 1.1rem;
+}
+
+.location-name {
+  font-family: var(--vp-font-serif);
+  font-size: 0.98rem;
+  color: var(--vp-text-strong);
+  margin: 0;
+}
+
+.location-desc {
+  font-size: 0.78rem;
+  color: var(--vp-text-muted);
+  margin: 0;
+  line-height: 1.35;
+  flex-grow: 1;
+}
+
+.travel-action-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vp-roman-red);
+  align-self: flex-end;
+}
+
+/* Time Badge with solar / twilight background gradients */
+.village-time-badge {
+  border-radius: var(--vp-radius-md);
+  padding: var(--vp-space-5);
+  color: #fff;
+  box-shadow: var(--vp-shadow-soft);
+  margin-bottom: var(--vp-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mane: Soft Morning Sunrise */
+.village-time--mane {
+  background: linear-gradient(135deg, #dfa352, #8b4e28);
+  border: 1px solid #dfa352;
+}
+
+/* Meridies: Bright Solar Noon */
+.village-time--meridies {
+  background: linear-gradient(135deg, #d6a84f, #a06b18);
+  border: 1px solid #d6a84f;
+}
+
+/* Vesper: Warm Orange Sunset */
+.village-time--vesper {
+  background: linear-gradient(135deg, #a7452d, #522015);
+  border: 1px solid #a7452d;
+}
+
+/* Nox: Deep Twilight Night */
+.village-time--nox {
+  background: linear-gradient(135deg, #281a30, #140b1b);
+  border: 1px solid #281a30;
+}
+
+.village-time-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.village-time-day-label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  opacity: 0.95;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.village-time-period-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.village-time-period-latin {
+  font-family: var(--vp-font-serif);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.village-time-period-tr {
+  font-size: 0.72rem;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.village-time-desc {
+  font-size: 0.82rem;
+  opacity: 0.9;
+  line-height: 1.4;
+  margin: 0;
+  padding-bottom: var(--vp-space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.village-action-dots-container {
+  display: flex;
+  align-items: center;
+  gap: var(--vp-space-2);
+  font-size: 0.85rem;
+}
+
+.village-actions-label {
+  opacity: 0.85;
+}
+
+.village-action-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.village-action-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.village-action-dot.available {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.village-action-dot.used {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.village-actions-fraction {
+  font-weight: 600;
+  margin-left: auto;
+}
+
+/* Warnings and alerts inside panels */
+.village-alert-warning {
+  background-color: var(--vp-roman-red-soft);
+  border: 1px solid rgba(139, 47, 37, 0.15);
+  color: var(--vp-roman-red);
+  padding: var(--vp-space-3);
+  border-radius: var(--vp-radius-sm);
+  font-size: 0.82rem;
+  margin-bottom: var(--vp-space-4);
+  line-height: 1.35;
+}
+
+/* Resting and sleeping controls */
+.rest-panel-card {
+  border-color: rgba(137, 85, 40, 0.3);
+}
+
+.rest-actions-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--vp-space-3);
+  margin-bottom: var(--vp-space-3);
+}
+
+.rest-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--vp-space-3) var(--vp-space-4);
+  border-radius: var(--vp-radius-sm);
+  text-align: center;
+  height: 58px;
+}
+
+.rest-button span {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.rest-button small {
+  font-size: 0.72rem;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.rest-notice-text {
+  font-size: 0.75rem;
+  color: var(--vp-text-muted);
+  text-align: center;
+  margin: var(--vp-space-2) 0 0 0;
+  line-height: 1.4;
+}
+
+.finish-village-section {
+  margin-top: var(--vp-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-3);
+}
+
+.divider-line {
+  border-top: 1px solid var(--vp-border);
+  width: 100%;
+}
+
+.finish-text {
+  font-size: 0.82rem;
+  color: var(--vp-success);
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* NPC Citizens List */
+.village-npc-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-4);
+}
+
+.village-npc-row {
+  display: flex;
+  gap: var(--vp-space-3);
+  align-items: flex-start;
+  padding-bottom: var(--vp-space-3);
+  border-bottom: 1px dashed var(--vp-border-soft);
+}
+
+.village-npc-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.npc-avatar {
+  font-size: 1.4rem;
+  background-color: var(--vp-surface-2);
+  border: 1px solid var(--vp-border-soft);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.npc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+}
+
+.npc-name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--vp-space-2);
+}
+
+.npc-name {
+  font-family: var(--vp-font-serif);
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--vp-text-strong);
+}
+
+.npc-role-tag {
+  font-size: 0.68rem;
+  color: var(--vp-text-muted);
+  border: 1px solid var(--vp-border-soft);
+  padding: 0 4px;
+  border-radius: 3px;
+  background-color: rgba(92, 55, 29, 0.02);
+}
+
+.npc-desc {
+  font-size: 0.78rem;
+  color: var(--vp-text-muted);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Life Path Affinity Panel */
+.path-commentary {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--vp-text-muted);
+  line-height: 1.45;
+  margin-bottom: var(--vp-space-4);
+  padding: var(--vp-space-3);
+  background-color: var(--vp-surface-2);
+  border-left: 3px solid var(--vp-gold-2);
+  border-radius: 0 var(--vp-radius-sm) var(--vp-radius-sm) 0;
+}
+
+.village-path-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-4);
+}
+
+.village-path-row-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.path-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.path-icon-label {
+  color: var(--vp-text-strong);
+}
+
+.path-icon-label .latin-sub {
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--vp-text-muted);
+}
+
+.path-value-label {
+  font-weight: bold;
+  color: var(--vp-text-strong);
+}
+
+.path-bar-bg {
+  height: 8px;
+  background-color: rgba(92, 55, 29, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(92, 55, 29, 0.04);
+}
+
+.path-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease-out;
+}
+
+.path-desc-tiny {
+  font-size: 0.72rem;
+  color: var(--vp-text-faint);
+  margin: 2px 0 0 0;
+}
+
+/* Timeline */
+.village-timeline {
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--vp-space-2);
+}
+
+.village-timeline-item {
+  display: flex;
+  gap: var(--vp-space-4);
+  position: relative;
+}
+
+.timeline-marker-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16px;
+}
+
+.timeline-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--vp-roman-red);
+  border: 2px solid var(--vp-surface-1);
+  box-shadow: 0 0 0 2px var(--vp-roman-red);
+  z-index: 2;
+  margin-top: 5px;
+}
+
+.timeline-marker.pulse {
+  background-color: var(--vp-gold-2);
+  box-shadow: 0 0 0 2px var(--vp-gold-2);
+  animation: pulseMarker 2s infinite;
+}
+
+.timeline-marker-line::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--vp-border);
+  z-index: 1;
+}
+
+.village-timeline-item:last-child .timeline-marker-line::after {
+  display: none;
+}
+
+.timeline-content {
+  padding-bottom: var(--vp-space-4);
+  flex-grow: 1;
+}
+
+.timeline-time-label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--vp-text-faint);
+}
+
+.timeline-act-title {
+  font-family: var(--vp-font-serif);
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--vp-text-strong);
+  margin: 1px 0 2px 0;
+}
+
+.timeline-act-desc {
+  font-size: 0.78rem;
+  color: var(--vp-text-muted);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* History logs list */
+.village-day-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-4);
+}
+
+.village-day-history-card {
+  background-color: var(--vp-surface-2);
+  border: 1px solid var(--vp-border-soft);
+  border-radius: var(--vp-radius-sm);
+  padding: var(--vp-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--vp-space-2);
+}
+
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--vp-border-soft);
+  padding-bottom: 4px;
+}
+
+.history-day-label {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--vp-roman-red);
+}
+
+.history-summary {
+  font-size: 0.85rem;
+  color: var(--vp-text-strong);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.history-details-row {
+  display: flex;
+  gap: var(--vp-space-2);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.details-label {
+  font-weight: 600;
+  color: var(--vp-text-muted);
+  min-width: 80px;
+}
+
+.details-value {
+  color: var(--vp-text-strong);
+}
+
+.history-path-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vp-space-2);
+  margin-top: 4px;
+}
+
+.history-path-change-badge {
+  font-size: 0.7rem;
+  background-color: var(--accent-soft);
+  color: var(--vp-gold-3);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(185, 130, 45, 0.15);
+  font-weight: 500;
+}
+
+/* Keyframes animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseMarker {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(185, 130, 45, 0.4); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(185, 130, 45, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(185, 130, 45, 0); }
+}

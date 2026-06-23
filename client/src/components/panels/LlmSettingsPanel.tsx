@@ -23,6 +23,14 @@ export function LlmSettingsPanel({ compact = false }: { compact?: boolean }) {
     updateSettings({ lmStudioModelsPaths: next });
   }
 
+  function addLmStudioPath() {
+    updateSettings({ lmStudioModelsPaths: [...settings.lmStudioModelsPaths, ""] });
+  }
+
+  function removeLmStudioPath(index: number) {
+    updateSettings({ lmStudioModelsPaths: settings.lmStudioModelsPaths.filter((_, itemIndex) => itemIndex !== index) });
+  }
+
   async function chooseOllamaPath() {
     const directory = await pickDirectory();
     if (directory) updateSettings({ ollamaModelsPath: directory });
@@ -102,9 +110,13 @@ export function LlmSettingsPanel({ compact = false }: { compact?: boolean }) {
             LM Studio model path {index + 1}
             <input value={modelsPath} onChange={(event) => updateLmStudioPath(index, event.target.value)} />
           </label>
-          <div className="settings-actions"><button type="button" onClick={() => void chooseLmStudioPath(index)}>Klasör Seç</button></div>
+          <div className="settings-actions">
+            <button type="button" onClick={() => void chooseLmStudioPath(index)}>Klasör Seç</button>
+            <button type="button" onClick={() => removeLmStudioPath(index)}>Kaldır</button>
+          </div>
         </div>
       ))}
+      <div className="settings-actions"><button type="button" onClick={addLmStudioPath}>LM Studio path ekle</button></div>
       <label>
         API key
         <input type="password" value={settings.apiKey} onChange={(event) => updateSettings({ apiKey: event.target.value })} />

@@ -15,6 +15,106 @@ export interface PlayerSkill {
   unlocked: boolean;
 }
 
+export type RpgSkillId =
+  | "lingua"
+  | "memoria"
+  | "observatio"
+  | "urbanitas"
+  | "auctoritas"
+  | "mercatura"
+  | "disciplina"
+  | "labor"
+  | "scriptura"
+  | "pietas";
+
+export type CharacterOrigin =
+  | "rural_family"
+  | "trader_family"
+  | "veteran_family"
+  | "temple_family"
+  | "scribe_family"
+  | "unknown_origin";
+
+export type CharacterTrait =
+  | "curious"
+  | "polite"
+  | "bold"
+  | "diligent"
+  | "observant"
+  | "practical"
+  | "pious"
+  | "restless";
+
+export type LifePathId = "ludus" | "castra" | "mercatura" | "scriptura" | "templum" | "villa";
+
+export type VillageTimeOfDay = "mane" | "meridies" | "vesper" | "nox";
+
+export interface VillageDayState {
+  dayNumber: number;
+  timeOfDay: VillageTimeOfDay;
+  actionsUsedThisPeriod: number;
+  maxActionsPerPeriod: number;
+  completedDailyActivityIds: string[];
+  availableActivityIds: string[];
+  dayFlags: Record<string, string | number | boolean>;
+}
+
+export interface VillageLifeState {
+  dayState: VillageDayState;
+  routineHistory: {
+    dayNumber: number;
+    activityIds: string[];
+    notableNpcIds: string[];
+    lifePathChanges: Record<string, number>;
+    summaryTr: string;
+  }[];
+  availableActivities?: VillageActivity[];
+  nearbyNpcs?: string[];
+  ambientEvents?: VillageAmbientEvent[];
+}
+
+export interface VillageActivity {
+  id: string;
+  titleTr: string;
+  descriptionTr: string;
+  locationId: string;
+  timeWindows: VillageTimeOfDay[];
+  relatedNpcIds: string[];
+  requiredConditions?: Condition[];
+  suggestedSkills?: RpgSkillId[];
+  lifePathHints?: Record<LifePathId, number>;
+  sceneId: string;
+  repeatable: boolean;
+  cooldownDays?: number;
+  tags: string[];
+}
+
+export interface VillageAmbientEvent {
+  id: string;
+  titleTr: string;
+  bodyTr: string;
+  locationId?: string;
+  timeWindows?: VillageTimeOfDay[];
+  conditions?: Condition[];
+  once: boolean;
+  effects?: Effect[];
+}
+
+export interface CharacterProfile {
+  name: string;
+  displayName: string;
+  origin: CharacterOrigin;
+  traits: CharacterTrait[];
+  skills: Record<RpgSkillId, number>;
+  backgroundSummaryTr: string;
+  createdAt: ISODateString;
+  lifePathHints: Record<LifePathId, number>;
+  knownPeople: string[];
+  homeLocationId: string;
+  currentLifePhase: "village_childhood" | "village_youth" | "path_selection" | "apprenticeship";
+  skillProgress?: Record<RpgSkillId, number>;
+}
+
 export interface QuestState {
   questId: ID;
   status: QuestStatus;
@@ -88,6 +188,8 @@ export interface PlayerSave {
   chapterProgress?: Record<ID, ChapterProgress>;
   activeInteraction?: ActiveInteractionState;
   livingSceneStates?: Record<string, LivingSceneState>;
+  characterProfile?: CharacterProfile;
+  villageLife?: VillageLifeState;
 }
 
 export interface ChapterProgress {
@@ -252,6 +354,9 @@ export interface Scene {
   interactionModel?: SceneInteractionModel;
   dialogueSequence?: DialogueSequence;
   revisitVariants?: RevisitVariant[];
+  allowCycle?: boolean;
+  intentionalCycle?: boolean;
+  loopPurpose?: string;
 }
 
 export interface LearningFocus {
@@ -275,6 +380,9 @@ export interface SceneChoice {
   conditions: Condition[];
   effects: Effect[];
   nextSceneId?: ID;
+  allowCycle?: boolean;
+  intentionalCycle?: boolean;
+  loopPurpose?: string;
 }
 
 export interface TextChallenge {
@@ -288,6 +396,9 @@ export interface TextChallenge {
   acceptedVariants?: string[];
   strictness?: "loose" | "normal" | "strict";
   evaluationMode?: "deterministic" | "llm-assisted" | "hybrid";
+  allowCycle?: boolean;
+  intentionalCycle?: boolean;
+  loopPurpose?: string;
 }
 
 export type Condition =
@@ -311,7 +422,17 @@ export type Condition =
   | { type: "SCENE_READ"; sceneId: ID; readId: string }
   | { type: "SCENE_CLUE_DISCOVERED"; sceneId: ID; clueId: string }
   | { type: "SCENE_VOCAB_DISCOVERED"; sceneId: ID; vocabularyId: string }
-  | { type: "NPC_INTERACTION_COUNT_MIN"; npcId: ID; count: number };
+  | { type: "NPC_INTERACTION_COUNT_MIN"; npcId: ID; count: number }
+  | { type: "RPG_SKILL_MIN"; payload: { skillId: RpgSkillId; value: number } }
+  | { type: "VILLAGE_TIME_EQUALS"; timeOfDay: VillageTimeOfDay }
+  | { type: "VILLAGE_DAY_MIN"; dayNumber: number }
+  | { type: "VILLAGE_ACTIVITY_COMPLETED"; activityId: string }
+  | { type: "VILLAGE_ACTIVITY_NOT_COMPLETED"; activityId: string }
+  | { type: "VILLAGE_DAY_FLAG_EQUALS"; key: string; value: FlagValue }
+  | { type: "VILLAGE_ACTIONS_AVAILABLE" }
+  | { type: "LIFE_PATH_HINT_MIN"; path: LifePathId; value: number }
+  | { type: "CHARACTER_TRAIT_HAS"; trait: CharacterTrait }
+  | { type: "CHARACTER_ORIGIN_EQUALS"; origin: CharacterOrigin };
 
 export type Effect =
   | { type: "ADD_XP"; amount: number }
@@ -346,7 +467,17 @@ export type Effect =
   | { type: "MARK_SCENE_READ"; sceneId: ID; readId: string; vocabularyIds?: string[]; grammarIds?: string[]; clueIds?: string[] }
   | { type: "ADD_SCENE_DISCOVERED_VOCAB"; sceneId: ID; vocabularyId: string }
   | { type: "ADD_SCENE_DISCOVERED_GRAMMAR"; sceneId: ID; grammarId: string }
-  | { type: "INCREMENT_NPC_INTERACTION_COUNT"; npcId: ID };
+  | { type: "INCREMENT_NPC_INTERACTION_COUNT"; npcId: ID }
+  | { type: "INCREMENT_RPG_SKILL"; payload: { skillId: RpgSkillId; amount?: number } }
+  | { type: "ADD_LIFE_PATH_HINT"; payload: { path: LifePathId; amount: number; reasonTr?: string } }
+  | { type: "SET_LIFE_PHASE"; payload: { phase: CharacterProfile["currentLifePhase"] } }
+  | { type: "ADVANCE_VILLAGE_TIME"; reasonTr?: string }
+  | { type: "START_NEW_VILLAGE_DAY"; summaryTr?: string }
+  | { type: "RECORD_VILLAGE_ACTIVITY"; payload: { activityId: string; npcIds?: string[]; lifePathChanges?: Record<string, number>; summaryTr: string } }
+  | { type: "SET_VILLAGE_DAY_FLAG"; key: string; value: FlagValue }
+  | { type: "ADD_DAILY_ACTIVITY"; activityId: string }
+  | { type: "COMPLETE_DAILY_ACTIVITY"; activityId: string }
+  | { type: "ADD_RPG_SKILL_PROGRESS"; payload: { skillId: RpgSkillId; amount: number; reasonTr?: string } };
 
 export type GameAction =
   | { type: "CHOICE_SELECT"; choiceId: ID }
@@ -370,6 +501,7 @@ export interface GameState {
     xp: number;
     currency: number;
     streak: PlayerStreak;
+    characterProfile?: CharacterProfile;
   };
   currentCampaign: Campaign;
   currentChapter: Chapter;
@@ -398,6 +530,7 @@ export interface GameState {
   unlockedChapters?: ID[];
   activeInteraction?: ActiveInteractionState;
   livingScene?: ActiveLivingSceneView;
+  villageLife?: VillageLifeState;
 }
 
 export interface SessionSummary { completedScenes: number; correctAnswers: number; wrongAnswers: number; xpGained: number; currencyGained: number; newSkills: string[]; newItems: string[]; improvedMastery: Array<{ targetId: string; targetType: MasteryTargetType; before?: number; after: number }>; weakTags: string[]; reviewSuggestions: string[]; }
@@ -680,6 +813,9 @@ export type DialogueResponseChallenge = {
   failureNextSceneId?: string;
   successEffects?: Effect[];
   failureEffects?: Effect[];
+  allowCycle?: boolean;
+  intentionalCycle?: boolean;
+  loopPurpose?: string;
 };
 
 export type HybridDialogueConfig = {
@@ -962,4 +1098,3 @@ export interface ActiveLivingSceneView {
   npcReactions: NpcMemoryReaction[];
   ambientActions: InteractionIntent[];
 }
-

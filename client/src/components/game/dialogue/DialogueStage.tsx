@@ -18,7 +18,10 @@ export function DialogueStage() {
   const hybridDialogue = scene.hybridDialogue;
 
   // Check if intent is selected in hybrid-dialogue mode
-  const selectedIntentId = gameState.narrativeFlags?.[`selected_intent_${scene.id}`] as string | undefined;
+  const legacySelectedIntentId = gameState.narrativeFlags?.[`selected_intent_${scene.id}`] as string | undefined;
+  const selectedIntentId = gameState.activeInteraction?.sceneId === scene.id
+    ? gameState.activeInteraction.selectedIntentId ?? legacySelectedIntentId
+    : legacySelectedIntentId;
   const isHybridWithoutIntent = scene.inputMode === "hybrid-dialogue" && !selectedIntentId;
 
   // Find selected intent details

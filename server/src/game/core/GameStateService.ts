@@ -9,6 +9,7 @@ import { CampaignProgressSystem } from "../systems/CampaignProgressSystem";
 import { LivingSceneSystem } from "../systems/LivingSceneSystem";
 import { NpcMemoryReactionSystem } from "../systems/NpcMemoryReactionSystem";
 import { AmbientActionTemplates } from "../content/AmbientActionTemplates";
+import { VillageLifeSystem } from "../systems/VillageLifeSystem";
 
 export class GameStateService {
   private readonly reviewSystem = new ReviewSystem();
@@ -123,7 +124,7 @@ export class GameStateService {
 
     return {
       saveId: save.id,
-      player: { name: save.playerName, level: save.level, xp: save.xp, currency: save.currency, streak: save.streak },
+      player: { name: save.playerName, level: save.level, xp: save.xp, currency: save.currency, streak: save.streak, characterProfile: save.characterProfile },
       currentCampaign,
       currentChapter,
       currentQuest,
@@ -150,7 +151,18 @@ export class GameStateService {
       chapterProgress,
       unlockedChapters,
       activeInteraction: save.activeInteraction,
-      livingScene
+      livingScene,
+      villageLife: (() => {
+        const system = new VillageLifeSystem();
+        const saveLife = save.villageLife ? system.getVillageLife(save) : undefined;
+        if (!saveLife) return undefined;
+        return {
+          ...saveLife,
+          availableActivities: system.getAvailableVillageActivities({ save, currentLocationId: currentScene.locationId }),
+          nearbyNpcs: system.getNearbyNpcs(save, currentScene.locationId),
+          ambientEvents: system.getCuratedAmbientEvents(save, currentScene.locationId)
+        };
+      })()
     };
   }
 

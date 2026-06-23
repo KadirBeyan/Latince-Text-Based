@@ -2,12 +2,66 @@
   "id": "via-prima",
   "title": "Via Prima",
   "subtitle": "Roma'da Latinceye Ilk Yolculuk",
-  "description": "Oyuncu, Roma dunyasinda bir discipulus olarak temel Latinceyi gorevler, konusmalar ve kisa metinlerle ogrenir.",
-  "descriptionTr": "Oyuncu, Roma dunyasinda bir discipulus olarak temel Latinceyi gorevler, konusmalar ve kisa metinlerle ogrenir.",
-  "startChapterId": "prologus",
-  "startSceneId": "prologus_001_arrival",
+  "description": "Oyuncu, Roma dunyasinda once kucuk bir vicus sakini olarak karakterini kurar; Latinceyi dunya icinde konusarak, okuyarak ve iliski kurarak ogrenir.",
+  "descriptionTr": "Oyuncu, Roma dunyasinda once kucuk bir vicus sakini olarak karakterini kurar; Latinceyi dunya icinde konusarak, okuyarak ve iliski kurarak ogrenir.",
+  "startChapterId": "vicus_prologue",
+  "startSceneId": "vicus_001_home_morning",
   "recommendedLevel": "A1",
   "chapters": [
+    {
+      "id": "vicus_prologue",
+      "title": "Köyde İlk Günler",
+      "titleTr": "Köyde İlk Günler",
+      "titleLatin": "In Vico",
+      "description": "Roma dünyasına küçük bir köyde sıradan biri olarak başlıyorsun.",
+      "descriptionTr": "Roma dünyasına küçük bir köyde sıradan biri olarak başlıyorsun.",
+      "order": 0,
+      "startQuestId": "vicus_prologue_main",
+      "startSceneId": "vicus_001_home_morning",
+      "locationIds": [
+        "home_hut",
+        "village_path",
+        "field_edge",
+        "village_market",
+        "shrine",
+        "old_oak",
+        "teacher_corner",
+        "veteran_bench",
+        "scribe_table"
+      ],
+      "npcIds": [
+        "mater",
+        "pater",
+        "avia",
+        "magister_ruralis",
+        "mercator_vicus",
+        "veteranus",
+        "scriba_vicus",
+        "ministra",
+        "amicus"
+      ],
+      "grammarFocus": [
+        "greetings-basic",
+        "sum-esse-present",
+        "ego-tu-basic",
+        "simple-sentence-basic"
+      ],
+      "vocabularyFocus": [
+        "vocab-salve",
+        "vocab-vale",
+        "vocab-nomen",
+        "vocab-mihi",
+        "vocab-aqua",
+        "vocab-panis"
+      ],
+      "estimatedSceneCount": 18,
+      "unlockConditions": [],
+      "mainQuests": [
+        "vicus_prologue_main"
+      ],
+      "sideQuests": [],
+      "reviewQuests": []
+    },
     {
       "id": "prologus",
       "title": "Prologus",

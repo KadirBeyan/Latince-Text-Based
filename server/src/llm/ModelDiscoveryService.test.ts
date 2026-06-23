@@ -6,6 +6,8 @@ import path from "node:path";
 import {
   discoverLmStudioModels,
   discoverOllamaModels,
+  getDefaultLmStudioModelsPaths,
+  normalizeModelPaths,
   scanModelDirectory,
   type ModelDiscoveryConfig,
 } from "./ModelDiscoveryService";
@@ -59,8 +61,20 @@ test("filesystem scan finds .gguf files recursively", async () => {
 test("missing LM Studio path returns an error instead of crashing", async () => {
   const result = await discoverLmStudioModels({ ...baseConfig(), lmStudioModelsPaths: [path.join(os.tmpdir(), "does-not-exist-lmstudio")] });
   assert.deepStrictEqual(result.models, []);
-  assert.strictEqual(result.errors.length, 1);
-  assert.strictEqual(result.errors[0].provider, "lmstudio");
+  assert.deepStrictEqual(result.errors, []);
+});
+
+test("macOS LM Studio defaults include Application Support paths", () => {
+  const paths = getDefaultLmStudioModelsPaths("darwin", "/Users/example", {});
+  assert.ok(paths.includes("/Users/example/.cache/lm-studio/models"));
+  assert.ok(paths.includes("/Users/example/.lmstudio/models"));
+  assert.ok(paths.includes("/Users/example/Library/Application Support/LM Studio/models"));
+  assert.ok(paths.includes("/Users/example/Library/Application Support/lm-studio/models"));
+});
+
+test("model paths expand home and remove duplicates", () => {
+  const paths = normalizeModelPaths(["~/models", "/Users/example/models", "", undefined], "/Users/example");
+  assert.deepStrictEqual(paths, ["/Users/example/models"]);
 });
 
 test("duplicate filesystem models are removed", async () => {

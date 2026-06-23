@@ -313,7 +313,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Marcus librum videt."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -537,7 +539,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Julia bene scribit."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -824,7 +828,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Salve, amici."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -972,7 +978,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Marcus librum videt."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -1120,7 +1128,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Veni ad templum."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -1357,7 +1367,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Discipulus viae primae es."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         }
       ],
@@ -1631,7 +1643,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Marcus librum videt."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -1868,7 +1882,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Julia bene scribit."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -2142,7 +2158,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Salve, amici."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -2317,7 +2335,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Marcus librum videt."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -2465,7 +2485,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Veni ad templum."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -2739,7 +2761,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Discipulus viae primae es."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -2976,7 +3000,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Marcus librum videt."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         }
       ],
@@ -3250,7 +3276,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Julia bene scribit."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         }
       ],
@@ -3537,7 +3565,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Salve, amici."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         }
       ],
@@ -3735,7 +3765,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Marcus librum videt."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         },
         {
@@ -3883,7 +3915,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Veni ad templum."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Retry loop lets the player correct the Latin answer without leaving the scene."
           }
         }
       ],
@@ -4234,7 +4268,9 @@
                 "title": "Cevap ipucu",
                 "body": "Hedef kalip: Discipulus viae primae es."
               }
-            ]
+            ],
+            "allowCycle": true,
+            "loopPurpose": "Review loop keeps the player on the recap prompt until the answer is accepted."
           }
         }
       ],

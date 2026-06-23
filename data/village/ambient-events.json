@@ -1,0 +1,98 @@
+[
+  {
+    "id": "market_dispute",
+    "titleTr": "Pazarda Tartışma",
+    "bodyTr": "Tüccar ile bir alıcı ekmek fiyatı yüzünden yüksek sesle tartışıyor. Latince 'denarius' kelimesi havada uçuşuyor.",
+    "locationId": "village_market",
+    "timeWindows": ["meridies"],
+    "once": false
+  },
+  {
+    "id": "veteran_military_drill",
+    "titleTr": "Veteranus'un Talimi",
+    "bodyTr": "Eski lejyoner bastonunu sallayarak gençlere eski savaş nizamlarını anlatıyor: 'Disciplina!'",
+    "locationId": "veteran_bench",
+    "timeWindows": ["mane"],
+    "once": false
+  },
+  {
+    "id": "scribe_new_parchment",
+    "titleTr": "Yeni Parşömen",
+    "bodyTr": "Yazıcı masasında parıldayan taze bir balmumu tableti düzeltiyor, stilusunu gururla parlatıyor.",
+    "locationId": "scribe_table",
+    "timeWindows": ["meridies"],
+    "once": false
+  },
+  {
+    "id": "shrine_procession",
+    "titleTr": "Tapınak Töreni",
+    "bodyTr": "Köyün gençleri ellerinde çiçeklerle sunağa doğru yürüyor. Sessiz ve saygılı bir hava hakim.",
+    "locationId": "shrine",
+    "timeWindows": ["vesper"],
+    "once": false
+  },
+  {
+    "id": "path_stranger",
+    "titleTr": "Yabancı Yolcu",
+    "bodyTr": "Köy yolundan sırtında heybesiyle geçen bir yolcu selam verip su istiyor: 'Aquam volo.'",
+    "locationId": "village_path",
+    "timeWindows": ["vesper"],
+    "once": false
+  },
+  {
+    "id": "field_storm_clouds",
+    "titleTr": "Fırtına Bulutları",
+    "bodyTr": "Tarlanın üzerini gri, ağır bulutlar kaplıyor. Pater gökyüzüne bakıp acele etmeniz gerektiğini söylüyor.",
+    "locationId": "field_edge",
+    "timeWindows": ["vesper"],
+    "once": false
+  },
+  {
+    "id": "home_old_tales",
+    "titleTr": "Eski Anlatılar",
+    "bodyTr": "Avia ocağın sönen közlerine bakıp Roma'nın kurucuları hakkında fısıltıyla eski bir efsane fısıldıyor.",
+    "locationId": "home_hut",
+    "timeWindows": ["nox"],
+    "once": true
+  },
+  {
+    "id": "teacher_good_pupil",
+    "titleTr": "Çalışkan Öğrenci",
+    "bodyTr": "Magister bir çocuğun yazdığı harfleri göstererek diğerlerine örnek sunuyor: 'Bene, bene!'",
+    "locationId": "teacher_corner",
+    "timeWindows": ["mane"],
+    "once": false
+  },
+  {
+    "id": "market_rare_coin",
+    "titleTr": "Nadir Gümüş",
+    "bodyTr": "Mercator cebinden çıkardığı parıldayan bir denariusu gösterip İmparatorun yüzünü tasvir ediyor.",
+    "locationId": "village_market",
+    "timeWindows": ["meridies"],
+    "once": false
+  },
+  {
+    "id": "shrine_silent_prayer",
+    "titleTr": "Sessiz Dua",
+    "bodyTr": "Ministra sunağın üzerindeki külleri temizlerken içinden sessizce tanrılara şükrediyor.",
+    "locationId": "shrine",
+    "timeWindows": ["mane"],
+    "once": false
+  },
+  {
+    "id": "path_merchant_wagon",
+    "titleTr": "Tüccar Arabası",
+    "bodyTr": "Köy yolundan gıcırdayarak geçen bir yük arabası pazar meydanına doğru ilerliyor.",
+    "locationId": "village_path",
+    "timeWindows": ["meridies"],
+    "once": false
+  },
+  {
+    "id": "field_wild_boar",
+    "titleTr": "Yaban İzleri",
+    "bodyTr": "Tarlanın nemli çamurunda yaban domuzuna ait taze ayak izleri görüyorsunuz. Amicus dikkatli olmanızı söylüyor.",
+    "locationId": "field_edge",
+    "timeWindows": ["mane"],
+    "once": false
+  }
+]

@@ -5,6 +5,7 @@ import { ContentLoader } from "../game/content/ContentLoader";
 import { ContentValidator } from "../game/content/ContentValidator";
 import { GameEngine } from "../game/core/GameEngine";
 import type { LlmProviderConfig } from "../llm/LlmTypes";
+import type { CharacterCreationInput } from "../game/character/CharacterTypes";
 import { LlmProviderFactory } from "../llm/LlmProviderFactory";
 import fs from "node:fs";
 import path from "node:path";
@@ -29,6 +30,17 @@ export function createGameRoutes(gameEngine: GameEngine, contentLoader: ContentL
       return;
     }
     const state = await gameEngine.createNewGame(body.playerName.trim(), body.campaignId, body.llmConfig);
+    res.status(201).json(state);
+  }));
+
+  router.post("/api/game/create-character-save", asyncHandler(async (req, res) => {
+    const body = req.body as CharacterCreationInput & { campaignId?: string };
+    const state = await gameEngine.createCharacterSave({
+      name: body.name,
+      origin: body.origin,
+      traits: body.traits,
+      skillAllocations: body.skillAllocations
+    }, body.campaignId);
     res.status(201).json(state);
   }));
 

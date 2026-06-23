@@ -1,0 +1,324 @@
+[
+  {
+    "id": "help_mater_bread",
+    "titleTr": "Mater'e Ekmek Taşımada Yardım Et",
+    "descriptionTr": "Annenle birlikte taze ekmekleri pazar yerine götür.",
+    "locationId": "home_hut",
+    "timeWindows": ["mane", "meridies"],
+    "relatedNpcIds": ["mater"],
+    "suggestedSkills": ["labor", "urbanitas"],
+    "lifePathHints": {
+      "villa": 2,
+      "mercatura": 1
+    },
+    "sceneId": "vicus_activity_help_mater",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["family", "labor"]
+  },
+  {
+    "id": "inspect_village_signs",
+    "titleTr": "Köy Girişindeki Tabelaları İncele",
+    "descriptionTr": "Yazıları ve işaretleri yakından oku.",
+    "locationId": "village_path",
+    "timeWindows": ["mane", "meridies", "vesper"],
+    "relatedNpcIds": ["amicus"],
+    "suggestedSkills": ["observatio", "lingua"],
+    "lifePathHints": {
+      "ludus": 1,
+      "scriptura": 1
+    },
+    "sceneId": "vicus_activity_inspect_signs",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["study", "observatio"]
+  },
+  {
+    "id": "carry_water",
+    "titleTr": "Kuyudan Su Taşı",
+    "descriptionTr": "Ev halkı için kuyudan su çek ve kovaları doldur.",
+    "locationId": "home_hut",
+    "timeWindows": ["mane", "vesper"],
+    "relatedNpcIds": ["pater"],
+    "suggestedSkills": ["labor", "disciplina"],
+    "lifePathHints": {
+      "villa": 1,
+      "castra": 1
+    },
+    "sceneId": "vicus_activity_carry_water",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["labor"]
+  },
+  {
+    "id": "listen_to_veteran",
+    "titleTr": "Veteranus'un Hikayesini Dinle",
+    "descriptionTr": "Eski askerin anlattığı lejyon disiplinini dinle.",
+    "locationId": "veteran_bench",
+    "timeWindows": ["mane", "vesper"],
+    "relatedNpcIds": ["veteranus"],
+    "suggestedSkills": ["memoria", "disciplina"],
+    "lifePathHints": {
+      "castra": 2,
+      "auctoritas": 1
+    },
+    "sceneId": "vicus_activity_listen_veteran",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["military", "narrative"]
+  },
+  {
+    "id": "help_mercator_market",
+    "titleTr": "Mercator'a Tezgâhta Yardım Et",
+    "descriptionTr": "Gelen malları tasnif et ve fiyatları yaz.",
+    "locationId": "village_market",
+    "timeWindows": ["meridies"],
+    "relatedNpcIds": ["mercator_vicus"],
+    "suggestedSkills": ["mercatura", "urbanitas"],
+    "lifePathHints": {
+      "mercatura": 2
+    },
+    "sceneId": "vicus_activity_help_mercator",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["trade", "labor"]
+  },
+  {
+    "id": "observe_scribe_table",
+    "titleTr": "Yazıcının Masasını İncele",
+    "descriptionTr": "Scriba'nın parşömen üzerindeki titiz çalışmasını izle.",
+    "locationId": "scribe_table",
+    "timeWindows": ["meridies", "vesper"],
+    "relatedNpcIds": ["scriba_vicus"],
+    "suggestedSkills": ["scriptura", "observatio"],
+    "lifePathHints": {
+      "scriptura": 2,
+      "ludus": 1
+    },
+    "sceneId": "vicus_activity_observe_scribe",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["study", "writing"]
+  },
+  {
+    "id": "greet_at_shrine",
+    "titleTr": "Tapınak Girişinde Selam Ver",
+    "descriptionTr": "Koruyucu ruhlara Pietas ile yaklaş.",
+    "locationId": "shrine",
+    "timeWindows": ["mane", "vesper"],
+    "relatedNpcIds": ["ministra"],
+    "suggestedSkills": ["pietas", "urbanitas"],
+    "lifePathHints": {
+      "templum": 2
+    },
+    "sceneId": "vicus_activity_greet_shrine",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["ritual", "pietas"]
+  },
+  {
+    "id": "practice_with_magister",
+    "titleTr": "Magister ile Harf Pratiği",
+    "descriptionTr": " Ruralis öğretmen ile basit heceleri oku.",
+    "locationId": "teacher_corner",
+    "timeWindows": ["mane", "meridies"],
+    "relatedNpcIds": ["magister_ruralis"],
+    "suggestedSkills": ["lingua", "memoria"],
+    "lifePathHints": {
+      "ludus": 2,
+      "scriptura": 1
+    },
+    "sceneId": "vicus_activity_practice_magister",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["study", "language"]
+  },
+  {
+    "id": "follow_friend_to_fields",
+    "titleTr": "Arkadaşınla Tarlaya Git",
+    "descriptionTr": "Tarla sınırındaki işleri yapıp sohbet et.",
+    "locationId": "field_edge",
+    "timeWindows": ["mane", "meridies"],
+    "relatedNpcIds": ["amicus"],
+    "suggestedSkills": ["labor", "urbanitas"],
+    "lifePathHints": {
+      "villa": 2
+    },
+    "sceneId": "vicus_activity_follow_friend",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["social", "labor"]
+  },
+  {
+    "id": "evening_family_talk",
+    "titleTr": "Aileyle Akşam Sohbeti",
+    "descriptionTr": "Ocak başında günün olaylarını değerlendir.",
+    "locationId": "home_hut",
+    "timeWindows": ["vesper", "nox"],
+    "relatedNpcIds": ["mater", "pater", "avia"],
+    "suggestedSkills": ["memoria", "urbanitas"],
+    "lifePathHints": {
+      "villa": 2
+    },
+    "sceneId": "vicus_activity_family_talk",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["family", "narrative"]
+  },
+  {
+    "id": "ask_about_ludus",
+    "titleTr": "Magister'a Okulu Sor",
+    "descriptionTr": "Gelecekte Roma'da eğitim alma yollarını araştır.",
+    "locationId": "teacher_corner",
+    "timeWindows": ["mane"],
+    "relatedNpcIds": ["magister_ruralis"],
+    "suggestedSkills": ["urbanitas", "lingua"],
+    "lifePathHints": {
+      "ludus": 3
+    },
+    "sceneId": "vicus_activity_ask_ludus",
+    "repeatable": false,
+    "tags": ["narrative", "path"]
+  },
+  {
+    "id": "ask_about_castra",
+    "titleTr": "Veteranus'a Castra Hayatını Sor",
+    "descriptionTr": "Askeri kamplarda hayatın nasıl olduğunu öğren.",
+    "locationId": "veteran_bench",
+    "timeWindows": ["vesper"],
+    "relatedNpcIds": ["veteranus"],
+    "suggestedSkills": ["auctoritas", "disciplina"],
+    "lifePathHints": {
+      "castra": 3
+    },
+    "sceneId": "vicus_activity_ask_castra",
+    "repeatable": false,
+    "tags": ["narrative", "path"]
+  },
+  {
+    "id": "ask_about_trade",
+    "titleTr": "Mercator ile Ticaret Konuş",
+    "descriptionTr": "Malların taşınması ve büyük şehir pazarlarını öğren.",
+    "locationId": "village_market",
+    "timeWindows": ["meridies"],
+    "relatedNpcIds": ["mercator_vicus"],
+    "suggestedSkills": ["mercatura", "urbanitas"],
+    "lifePathHints": {
+      "mercatura": 3
+    },
+    "sceneId": "vicus_activity_ask_trade",
+    "repeatable": false,
+    "tags": ["narrative", "path"]
+  },
+  {
+    "id": "collect_herbs",
+    "titleTr": "Tarla Kenarından Ot Topla",
+    "descriptionTr": "Avia'nın ilaçları için şifalı otlar topla.",
+    "locationId": "field_edge",
+    "timeWindows": ["mane", "meridies"],
+    "relatedNpcIds": ["avia"],
+    "suggestedSkills": ["observatio", "labor"],
+    "lifePathHints": {
+      "villa": 1
+    },
+    "sceneId": "vicus_activity_collect_herbs",
+    "repeatable": true,
+    "cooldownDays": 2,
+    "tags": ["labor"]
+  },
+  {
+    "id": "scribe_wax",
+    "titleTr": "Balmumu Tablete Harf Kazı",
+    "descriptionTr": "Scriba'nın gözetiminde Latince kelimeleri yaz.",
+    "locationId": "scribe_table",
+    "timeWindows": ["meridies"],
+    "relatedNpcIds": ["scriba_vicus"],
+    "suggestedSkills": ["scriptura", "memoria"],
+    "lifePathHints": {
+      "scriptura": 2
+    },
+    "sceneId": "vicus_activity_scribe_wax",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["study", "writing"]
+  },
+  {
+    "id": "shrine_offering",
+    "titleTr": "Sunak Hediyesi Bırak",
+    "descriptionTr": "Küçük bir denarius veya buğday sun.",
+    "locationId": "shrine",
+    "timeWindows": ["meridies"],
+    "relatedNpcIds": ["ministra"],
+    "suggestedSkills": ["pietas", "disciplina"],
+    "lifePathHints": {
+      "templum": 3
+    },
+    "sceneId": "vicus_activity_shrine_offering",
+    "repeatable": true,
+    "cooldownDays": 2,
+    "tags": ["ritual", "pietas"]
+  },
+  {
+    "id": "veteran_story",
+    "titleTr": "Veteranus'tan Kartaca Savaşları",
+    "descriptionTr": "Eski askerin anlattığı büyük sefer hikayesini dinle.",
+    "locationId": "veteran_bench",
+    "timeWindows": ["mane"],
+    "relatedNpcIds": ["veteranus"],
+    "suggestedSkills": ["memoria", "lingua"],
+    "lifePathHints": {
+      "castra": 2
+    },
+    "sceneId": "vicus_activity_veteran_story",
+    "repeatable": false,
+    "tags": ["narrative", "military"]
+  },
+  {
+    "id": "market_bargain",
+    "titleTr": "Pazarlık Pratiği Yap",
+    "descriptionTr": "Mercator ile küçük bir zeytinyağı testisi için pazarlık yap.",
+    "locationId": "village_market",
+    "timeWindows": ["meridies"],
+    "relatedNpcIds": ["mercator_vicus"],
+    "suggestedSkills": ["mercatura", "urbanitas"],
+    "lifePathHints": {
+      "mercatura": 2
+    },
+    "sceneId": "vicus_activity_market_bargain",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["trade", "language"]
+  },
+  {
+    "id": "field_labor",
+    "titleTr": "Tarlada Ağır Çalışma",
+    "descriptionTr": "Toprağı çapalayarak labor gücünü kanıtla.",
+    "locationId": "field_edge",
+    "timeWindows": ["meridies"],
+    "relatedNpcIds": ["pater"],
+    "suggestedSkills": ["labor", "disciplina"],
+    "lifePathHints": {
+      "villa": 2
+    },
+    "sceneId": "vicus_activity_field_labor",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["labor"]
+  },
+  {
+    "id": "morning_prayer",
+    "titleTr": "Sabah Duası",
+    "descriptionTr": "Günün bereketli geçmesi için Lares sunaklarında dua et.",
+    "locationId": "shrine",
+    "timeWindows": ["mane"],
+    "relatedNpcIds": ["ministra"],
+    "suggestedSkills": ["pietas", "memoria"],
+    "lifePathHints": {
+      "templum": 2
+    },
+    "sceneId": "vicus_activity_morning_prayer",
+    "repeatable": true,
+    "cooldownDays": 1,
+    "tags": ["ritual", "pietas"]
+  }
+]

@@ -28,5 +28,65 @@
     "name": "Latin Forms",
     "description": "Noun and verb form recognition.",
     "maxLevel": 10
+  },
+  {
+    "id": "lingua",
+    "name": "Lingua",
+    "description": "Latince konuşma ve ifade becerisi.",
+    "maxLevel": 5
+  },
+  {
+    "id": "memoria",
+    "name": "Memoria",
+    "description": "Kelimeleri, kalıpları ve önceki olayları hatırlama.",
+    "maxLevel": 5
+  },
+  {
+    "id": "observatio",
+    "name": "Observatio",
+    "description": "Çevreyi, yazıları, nesneleri ve ipuçlarını fark etme.",
+    "maxLevel": 5
+  },
+  {
+    "id": "urbanitas",
+    "name": "Urbanitas",
+    "description": "Kibar, sosyal ve uygun konuşma.",
+    "maxLevel": 5
+  },
+  {
+    "id": "auctoritas",
+    "name": "Auctoritas",
+    "description": "İkna, güçlü ifade ve otorite kurma.",
+    "maxLevel": 5
+  },
+  {
+    "id": "mercatura",
+    "name": "Mercatura",
+    "description": "Pazarlık, ticaret, fiyat ve alışveriş dili.",
+    "maxLevel": 5
+  },
+  {
+    "id": "disciplina",
+    "name": "Disciplina",
+    "description": "Askerî düzen, emirleri anlama ve dayanıklılık.",
+    "maxLevel": 5
+  },
+  {
+    "id": "labor",
+    "name": "Labor",
+    "description": "Köy işi, beden gücü ve gündelik pratik beceri.",
+    "maxLevel": 5
+  },
+  {
+    "id": "scriptura",
+    "name": "Scriptura",
+    "description": "Okuma-yazma, yazıt ve belge çözme.",
+    "maxLevel": 5
+  },
+  {
+    "id": "pietas",
+    "name": "Pietas",
+    "description": "Gelenek, ritüel, saygı ve aile sorumluluğu.",
+    "maxLevel": 5
   }
 ]

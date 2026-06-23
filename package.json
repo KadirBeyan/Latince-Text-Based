@@ -25,6 +25,7 @@
     "desktop:dev": "npm run tauri:dev",
     "desktop:build": "npm run tauri:build",
     "desktop:clean": "rm -rf src-tauri/target client/dist dist",
+    "desktop:doctor": "node scripts/desktop-doctor.mjs",
     "desktop:check": "npm run typecheck && npm --prefix client run typecheck && cargo check --manifest-path src-tauri/Cargo.toml"
   },
   "dependencies": {

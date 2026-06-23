@@ -5,6 +5,7 @@ import "./styles/tokens.css";
 import "./styles/base.css";
 import "./styles/globals.css";
 import "./styles/game.css";
+import "./styles/village.css";
 import "./styles/cinematic.css";
 import "./styles/components.css";
 import "./styles/screens.css";

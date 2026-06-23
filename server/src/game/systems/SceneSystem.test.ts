@@ -25,6 +25,14 @@ function createTestEngine(): { gameEngine: GameEngine; saveRepository: SaveRepos
 
 async function reachFirstLatinQuestion(gameEngine: GameEngine): Promise<GameState> {
   let gameState = await gameEngine.createNewGame("TestPlayer", "via-prima");
+  gameState = gameEngine.getGameState(
+    gameEngine.debugUpdate(gameState.saveId, "jump_old_prologue", (s) => ({
+      ...s,
+      currentChapterId: "prologus",
+      currentQuestId: "prologus_main_prima",
+      currentSceneId: "prologus_001_arrival"
+    })).id
+  );
   const saveId = gameState.saveId;
   for (let step = 0; step < 12 && !gameState.currentScene.dialogueChallenge; step++) {
     const nextChoice = gameState.currentScene.choices.find((choice) => choice.nextSceneId) ?? gameState.currentScene.choices[0];
@@ -46,6 +54,14 @@ test("SceneSystem & GameEngine - DIALOGUE_RESPONSE evaluation integration", asyn
 
   // 1. The Stage 11 campaign starts at the real Via Prima prologue.
   let gameState = await gameEngine.createNewGame("StartCheck", "via-prima");
+  gameState = gameEngine.getGameState(
+    gameEngine.debugUpdate(gameState.saveId, "jump_old_prologue", (s) => ({
+      ...s,
+      currentChapterId: "prologus",
+      currentQuestId: "prologus_main_prima",
+      currentSceneId: "prologus_001_arrival"
+    })).id
+  );
   assert.strictEqual(gameState.currentScene.id, "prologus_001_arrival");
 
   // 2. Resolve choices to get to the first text challenge scene.

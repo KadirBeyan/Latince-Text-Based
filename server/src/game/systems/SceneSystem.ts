@@ -1,11 +1,9 @@
-import type { PlayerSave, Scene, TextChallenge, DialogueResponseChallenge, ActiveInteractionState } from "../types/gameTypes";
+import type { PlayerSave, Scene, DialogueResponseChallenge, ActiveInteractionState } from "../types/gameTypes";
 import { ContentLoader } from "../content/ContentLoader";
 import { EffectRunner } from "../core/EffectRunner";
 import { EventBus } from "../core/EventBus";
 import { RuleEngine } from "../core/RuleEngine";
 import type { LlmClient } from "../../llm/LlmClient";
-import { evaluateTextChallenge } from "../../latin/LatinEvaluator";
-import { evaluateDialogueResponse } from "../../latin/SemanticLatinEvaluator";
 import { NpcDialogueSystem } from "./NpcDialogueSystem";
 import { DialogueSystem } from "./DialogueSystem";
 import { ErrorMemorySystem } from "./ErrorMemorySystem";
@@ -16,12 +14,23 @@ import { NpcRelationshipSystem } from "./NpcRelationshipSystem";
 import { WorldEventSystem } from "./WorldEventSystem";
 import { GeneratedContentSystem } from "./GeneratedContentSystem";
 import { LivingSceneSystem } from "./LivingSceneSystem";
+import { migrateSelectedIntentToActiveInteraction, withSelectedIntent } from "./SelectedIntentState";
+import { DialogueChallengeResolver } from "./DialogueChallengeResolver";
+import { MasteryEvaluationService } from "./MasteryEvaluationService";
+import { NpcSceneReactionService } from "./NpcSceneReactionService";
+import { SceneProgressionService } from "./SceneProgressionService";
+import { TextChallengeResolver } from "./TextChallengeResolver";
 
 export class SceneSystem {
   private readonly dialogueSystem = new DialogueSystem();
   private readonly npcDialogueSystem: NpcDialogueSystem;
   private readonly errorMemorySystem = new ErrorMemorySystem();
   private readonly masterySystem = new MasterySystem();
+  private readonly dialogueChallengeResolver = new DialogueChallengeResolver();
+  private readonly masteryEvaluationService = new MasteryEvaluationService();
+  private readonly npcSceneReactionService = new NpcSceneReactionService();
+  private readonly progressionService = new SceneProgressionService();
+  private readonly textChallengeResolver: TextChallengeResolver;
 
   constructor(
     private readonly contentLoader: ContentLoader,
@@ -30,6 +39,7 @@ export class SceneSystem {
     private readonly eventBus: EventBus
   ) {
     this.npcDialogueSystem = new NpcDialogueSystem(this.contentLoader);
+    this.textChallengeResolver = new TextChallengeResolver(this.contentLoader);
   }
 
   enterScene(save: PlayerSave, sceneId: string): PlayerSave {
@@ -91,17 +101,11 @@ export class SceneSystem {
   }
 
   markSceneVisited(save: PlayerSave, sceneId: string): PlayerSave {
-    if (save.visitedSceneIds.includes(sceneId)) {
-      return save;
-    }
-    return { ...save, visitedSceneIds: [...save.visitedSceneIds, sceneId] };
+    return this.progressionService.markVisited(save, sceneId);
   }
 
   markSceneCompleted(save: PlayerSave, sceneId: string): PlayerSave {
-    if (save.completedSceneIds.includes(sceneId)) {
-      return save;
-    }
-    return { ...save, completedSceneIds: [...save.completedSceneIds, sceneId] };
+    return this.progressionService.markCompleted(save, sceneId);
   }
 
   resolveChoice(save: PlayerSave, choiceId: string): PlayerSave {
@@ -114,13 +118,7 @@ export class SceneSystem {
     if (scene.inputMode === "hybrid-dialogue" && scene.hybridDialogue) {
       const intent = scene.hybridDialogue.intents.find(i => i.id === choiceId);
       if (intent) {
-        const nextSave = {
-          ...save,
-          narrativeFlags: {
-            ...save.narrativeFlags,
-            [`selected_intent_${scene.id}`]: choiceId,
-          },
-        };
+        const nextSave = withSelectedIntent(save, scene, choiceId);
         return this.eventBus.emit(nextSave, "action.choice_selected", {
           choiceId,
           sceneId: scene.id,
@@ -148,66 +146,17 @@ export class SceneSystem {
 
   async resolveTextChallenge(save: PlayerSave, text: string, llmClient?: LlmClient): Promise<PlayerSave> {
     const scene = this.requireCurrentScene(save);
+    const workingSave = migrateSelectedIntentToActiveInteraction(save, scene);
 
-    if (save.activeInteraction?.selectedIntentId) {
-      return this.resolveIntentTextChallenge(save, text, llmClient);
+    if (workingSave.activeInteraction?.selectedIntentId && (scene.interactionModel || scene.dialogueSequence)) {
+      return this.resolveIntentTextChallenge(workingSave, text, llmClient);
     }
 
     // Dialogue Challenge flow
-    const dialogueChallenge = scene.dialogueChallenge || (scene.inputMode === "hybrid-dialogue" && scene.hybridDialogue ? (() => {
-      const selectedIntentId = save.narrativeFlags[`selected_intent_${scene.id}`];
-      if (!selectedIntentId) return null;
-      const intent = scene.hybridDialogue.intents.find(i => i.id === selectedIntentId);
-      if (!intent) return null;
-      return {
-        mode: "dialogue-response" as const,
-        speakerNpcId: scene.hybridDialogue.speakerNpcId,
-        npcPromptLatin: scene.hybridDialogue.npcPromptLatin,
-        npcPromptTr: scene.hybridDialogue.npcPromptTr,
-        playerIntentTr: intent.labelTr,
-        targetMeaningTr: intent.targetMeaningTr,
-        canonicalAnswers: intent.canonicalAnswers,
-        grammarFocusIds: intent.grammarFocusIds,
-        vocabularyFocusIds: intent.vocabularyFocusIds,
-        successNextSceneId: scene.successNextSceneId,
-        failureNextSceneId: scene.failureNextSceneId,
-        retryAllowed: true,
-        maxAttempts: 3,
-        evaluation: {
-          allowEquivalentMeaning: true,
-          allowWordOrderVariation: true,
-          requireContextMatch: true,
-          useLlmSemanticJudge: true,
-          minimumConfidence: 0.5
-        }
-      } as DialogueResponseChallenge;
-    })() : null);
+    const dialogueChallenge = this.dialogueChallengeResolver.challengeForScene(workingSave, scene);
 
     if (dialogueChallenge) {
-      const sceneContext = {
-        sceneId: scene.id,
-        titleTr: scene.title,
-        locationId: scene.locationId,
-        npcIds: scene.npcIds,
-        previousDialogue: save.dialogueLog,
-      };
-
-      const playerContext = {
-        level: save.level,
-        assessmentLevel: save.assessmentProfile?.estimatedLevel || "A0",
-        knownGrammarIds: save.masteryStates.filter(s => s.targetType === "grammar" && s.mastery >= 50).map(s => s.targetId),
-        knownVocabularyIds: save.masteryStates.filter(s => s.targetType === "vocabulary" && s.mastery >= 50).map(s => s.targetId),
-      };
-
-      const llmConfig = (llmClient as any)?.config;
-
-      const evaluation = await evaluateDialogueResponse({
-        answer: text,
-        challenge: dialogueChallenge,
-        sceneContext,
-        playerContext,
-        llmConfig,
-      });
+      const evaluation = await this.dialogueChallengeResolver.evaluate(workingSave, scene, dialogueChallenge, text, llmClient);
 
       const isCorrect = evaluation.acceptedAsCorrect;
       let nextSceneId = isCorrect
@@ -215,8 +164,8 @@ export class SceneSystem {
         : dialogueChallenge.failureNextSceneId || scene.failureNextSceneId;
 
       const attemptsKey = `dialogue_attempts_${scene.id}`;
-      const attempts = (save.flags[attemptsKey] as number || 0) + 1;
-      let nextSave = { ...save };
+      const attempts = (workingSave.flags[attemptsKey] as number || 0) + 1;
+      let nextSave = { ...workingSave };
       nextSave.flags[attemptsKey] = attempts;
 
       if (!isCorrect) {
@@ -247,66 +196,8 @@ export class SceneSystem {
         confidence: evaluation.confidence,
       };
 
-      const beforeMastery = new Map(nextSave.masteryStates.map(state => [`${state.targetType}:${state.targetId}`, state.mastery]));
-      nextSave = this.masterySystem.recordEvaluation({ save: nextSave, evaluation: mockEvaluation as any, scene });
-      const focusGrammar = scene.learningFocus?.grammarIds || [];
-      const focusVocab = scene.learningFocus?.vocabularyIds || [];
-      const focusSkill = scene.learningFocus?.skillIds || [];
-      for (const state of nextSave.masteryStates) {
-        const before = beforeMastery.get(`${state.targetType}:${state.targetId}`);
-        const isFocused = (state.targetType === "grammar" && focusGrammar.includes(state.targetId)) ||
-                          (state.targetType === "vocabulary" && focusVocab.includes(state.targetId)) ||
-                          (state.targetType === "skill" && focusSkill.includes(state.targetId));
-        if (before !== state.mastery || (isFocused && before === undefined)) {
-          nextSave = this.eventBus.emit(nextSave, "MASTERY_UPDATED", { targetId: state.targetId, targetType: state.targetType, before, after: state.mastery });
-        }
-      }
-
-      // Update NPC Memory and relationships
-      if (scene.npcIds && scene.npcIds.length > 0) {
-        const relationshipSystem = new NpcRelationshipSystem();
-        const memorySystem = new NpcMemorySystem();
-
-        for (const npcId of scene.npcIds) {
-          if (isCorrect) {
-            nextSave = relationshipSystem.updateRelationship({
-              save: nextSave,
-              npcId,
-              delta: { familiarity: 1, respect: npcId === "magister" ? 2 : 1 },
-              reason: "Doğru diyalog cevabı verdi.",
-              eventBus: this.eventBus
-            });
-            nextSave = memorySystem.addNpcMemoryFact({
-              save: nextSave,
-              npcId,
-              text: `Öğrenci bu sahnede doğru diyalog cevabı verdi: ${text.slice(0, 60)}`,
-              importance: 30,
-              relatedSceneId: scene.id,
-              relatedQuestId: nextSave.currentQuestId,
-              tags: ["correct-answer"],
-              eventBus: this.eventBus
-            });
-          } else {
-            nextSave = relationshipSystem.updateRelationship({
-              save: nextSave,
-              npcId,
-              delta: { familiarity: 1 },
-              reason: "Yanlış diyalog cevabı verdi.",
-              eventBus: this.eventBus
-            });
-            nextSave = memorySystem.addNpcMemoryFact({
-              save: nextSave,
-              npcId,
-              text: `Öğrenci bu sahnede diyalog cevabında zorlandı.`,
-              importance: 40,
-              relatedSceneId: scene.id,
-              relatedQuestId: nextSave.currentQuestId,
-              tags: ["struggled"],
-              eventBus: this.eventBus
-            });
-          }
-        }
-      }
+      nextSave = this.masteryEvaluationService.recordEvaluationAndEmit(nextSave, mockEvaluation, scene, this.eventBus);
+      nextSave = this.npcSceneReactionService.applyAnswerReaction({ save: nextSave, scene, isCorrect, text, errorTags, mode: "dialogue", eventBus: this.eventBus });
 
       if (isCorrect) {
         nextSave = this.markSceneCompleted(nextSave, scene.id);
@@ -361,6 +252,10 @@ export class SceneSystem {
       return nextSave;
     }
 
+    if (scene.inputMode === "hybrid-dialogue") {
+      throw new Error(`Scene ${scene.id} requires a selected dialogue intent before submitting text.`);
+    }
+
     // Default Text Challenge flow
     if (!scene.textChallenge) {
       throw new Error(`Scene ${scene.id} does not have a text challenge.`);
@@ -368,18 +263,7 @@ export class SceneSystem {
     const challenge = scene.textChallenge;
 
     // Evaluate answer via LatinEvaluator
-    const evaluation = await evaluateTextChallenge({
-      playerAnswer: text,
-      expectedAnswers: [...challenge.expectedAnswers, ...(challenge.acceptedVariants ?? [])],
-      prompt: challenge.prompt,
-      sceneId: scene.id,
-      questId: save.currentQuestId,
-      playerLevel: save.level,
-      unlockedSkills: save.skills.filter((s) => s.unlocked).map((s) => s.skillId),
-      context: { strictness: challenge.strictness, evaluationMode: challenge.evaluationMode },
-      llmClient: challenge.evaluationMode === "deterministic" ? undefined : llmClient,
-      contentLoader: this.contentLoader,
-    });
+    const evaluation = await this.textChallengeResolver.evaluate(workingSave, scene, challenge, text, llmClient);
 
     const nextSceneId = evaluation.isCorrect
       ? challenge.successNextSceneId ?? scene.successNextSceneId
@@ -387,78 +271,10 @@ export class SceneSystem {
 
     const effects = evaluation.isCorrect ? challenge.successEffects : challenge.failureEffects;
 
-    let nextSave = this.effectRunner.applyEffects(save, effects, this.contextFor(save));
+    let nextSave = this.effectRunner.applyEffects(workingSave, effects, this.contextFor(workingSave));
     nextSave = this.errorMemorySystem.record(nextSave, evaluation.errorTags, scene);
-    const beforeMastery = new Map(nextSave.masteryStates.map(state => [`${state.targetType}:${state.targetId}`, state.mastery]));
-    nextSave = this.masterySystem.recordEvaluation({ save: nextSave, evaluation, scene });
-    const focusGrammar = scene.learningFocus?.grammarIds || [];
-    const focusVocab = scene.learningFocus?.vocabularyIds || [];
-    const focusSkill = scene.learningFocus?.skillIds || [];
-    for (const state of nextSave.masteryStates) {
-      const before = beforeMastery.get(`${state.targetType}:${state.targetId}`);
-      const isFocused = (state.targetType === "grammar" && focusGrammar.includes(state.targetId)) ||
-                        (state.targetType === "vocabulary" && focusVocab.includes(state.targetId)) ||
-                        (state.targetType === "skill" && focusSkill.includes(state.targetId));
-      if (before !== state.mastery || (isFocused && before === undefined)) {
-        nextSave = this.eventBus.emit(nextSave, "MASTERY_UPDATED", { targetId: state.targetId, targetType: state.targetType, before, after: state.mastery });
-      }
-    }
-    
-    // Stage 6: Update NPC Memory and relationships based on correctness
-    if (scene.npcIds && scene.npcIds.length > 0) {
-      const relationshipSystem = new NpcRelationshipSystem();
-      const memorySystem = new NpcMemorySystem();
-
-      for (const npcId of scene.npcIds) {
-        if (evaluation.isCorrect) {
-          const delta = {
-            familiarity: 1,
-            respect: npcId === "magister" ? 2 : 1
-          };
-          nextSave = relationshipSystem.updateRelationship({
-            save: nextSave,
-            npcId,
-            delta,
-            reason: "Doğru Latince cevabı verdi.",
-            eventBus: this.eventBus
-          });
-
-          nextSave = memorySystem.addNpcMemoryFact({
-            save: nextSave,
-            npcId,
-            text: `Öğrenci bu sahnede doğru Latince cevap verdi: ${text.slice(0, 60)}`,
-            importance: 30,
-            relatedSceneId: scene.id,
-            relatedQuestId: nextSave.currentQuestId,
-            tags: ["correct-answer"],
-            eventBus: this.eventBus
-          });
-        } else {
-          nextSave = relationshipSystem.updateRelationship({
-            save: nextSave,
-            npcId,
-            delta: { familiarity: 1 },
-            reason: "Yanlış Latince cevabı verdi.",
-            eventBus: this.eventBus
-          });
-
-          const tagsStr = evaluation.errorTags && evaluation.errorTags.length > 0
-            ? evaluation.errorTags.join(", ")
-            : "bilinmeyen konular";
-
-          nextSave = memorySystem.addNpcMemoryFact({
-            save: nextSave,
-            npcId,
-            text: `Öğrenci bu sahnede ${tagsStr} konusunda zorlandı.`,
-            importance: 40,
-            relatedSceneId: scene.id,
-            relatedQuestId: nextSave.currentQuestId,
-            tags: ["struggled", ...evaluation.errorTags],
-            eventBus: this.eventBus
-          });
-        }
-      }
-    }
+    nextSave = this.masteryEvaluationService.recordEvaluationAndEmit(nextSave, evaluation, scene, this.eventBus);
+    nextSave = this.npcSceneReactionService.applyAnswerReaction({ save: nextSave, scene, isCorrect: evaluation.isCorrect, text, errorTags: evaluation.errorTags, mode: "latin", eventBus: this.eventBus });
 
     if (evaluation.isCorrect) {
       nextSave = this.markSceneCompleted(nextSave, scene.id);
@@ -684,30 +500,7 @@ export class SceneSystem {
       reactions: intent.responseReactions
     };
 
-    const sceneContext = {
-      sceneId: scene.id,
-      titleTr: scene.title,
-      locationId: scene.locationId,
-      npcIds: scene.npcIds,
-      previousDialogue: save.dialogueLog,
-    };
-
-    const playerContext = {
-      level: save.level,
-      assessmentLevel: save.assessmentProfile?.estimatedLevel || "A0",
-      knownGrammarIds: save.masteryStates.filter(s => s.targetType === "grammar" && s.mastery >= 50).map(s => s.targetId),
-      knownVocabularyIds: save.masteryStates.filter(s => s.targetType === "vocabulary" && s.mastery >= 50).map(s => s.targetId),
-    };
-
-    const llmConfig = (llmClient as any)?.config;
-
-    const evaluation = await evaluateDialogueResponse({
-      answer: text,
-      challenge: dialogueChallenge,
-      sceneContext,
-      playerContext,
-      llmConfig,
-    });
+    const evaluation = await this.dialogueChallengeResolver.evaluate(save, scene, dialogueChallenge, text, llmClient);
 
     const isCorrect = evaluation.acceptedAsCorrect;
     const attempts = { ...(activeInteraction.attempts || {}) };
@@ -729,20 +522,7 @@ export class SceneSystem {
       confidence: evaluation.confidence,
     };
 
-    const beforeMastery = new Map(nextSave.masteryStates.map(state => [`${state.targetType}:${state.targetId}`, state.mastery]));
-    nextSave = this.masterySystem.recordEvaluation({ save: nextSave, evaluation: mockEvaluation as any, scene });
-    const focusGrammar = scene.learningFocus?.grammarIds || [];
-    const focusVocab = scene.learningFocus?.vocabularyIds || [];
-    const focusSkill = scene.learningFocus?.skillIds || [];
-    for (const state of nextSave.masteryStates) {
-      const before = beforeMastery.get(`${state.targetType}:${state.targetId}`);
-      const isFocused = (state.targetType === "grammar" && focusGrammar.includes(state.targetId)) ||
-                        (state.targetType === "vocabulary" && focusVocab.includes(state.targetId)) ||
-                        (state.targetType === "skill" && focusSkill.includes(state.targetId));
-      if (before !== state.mastery || (isFocused && before === undefined)) {
-        nextSave = this.eventBus.emit(nextSave, "MASTERY_UPDATED", { targetId: state.targetId, targetType: state.targetType, before, after: state.mastery });
-      }
-    }
+    nextSave = this.masteryEvaluationService.recordEvaluationAndEmit(nextSave, mockEvaluation, scene, this.eventBus);
 
     if (scene.npcIds && scene.npcIds.length > 0) {
       const relationshipSystem = new NpcRelationshipSystem();

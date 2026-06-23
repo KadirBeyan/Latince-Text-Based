@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs";
+import os from "node:os";
 import path from "node:path";
 
 export type DiscoveredModel = {
@@ -35,6 +36,59 @@ const MAX_SCANNED_ENTRIES = 5_000;
 const MAX_DISCOVERED_MODELS = 500;
 const SCAN_TIMEOUT_MS = 5_000;
 const API_TIMEOUT_MS = 3_000;
+
+export function getDefaultOllamaModelsPath(homeDir = os.homedir()): string {
+  return path.join(homeDir, ".ollama", "models");
+}
+
+export function getDefaultLmStudioModelsPaths(platform = process.platform, homeDir = os.homedir(), env: NodeJS.ProcessEnv = process.env): string[] {
+  if (platform === "win32") {
+    return normalizeModelPaths([
+      path.join(env.USERPROFILE || homeDir, ".lmstudio", "models"),
+      env.APPDATA ? path.join(env.APPDATA, "LM Studio", "models") : undefined,
+      env.LOCALAPPDATA ? path.join(env.LOCALAPPDATA, "LM Studio", "models") : undefined,
+    ], homeDir);
+  }
+
+  const common = [
+    path.join(homeDir, ".cache", "lm-studio", "models"),
+    path.join(homeDir, ".lmstudio", "models"),
+  ];
+
+  if (platform === "darwin") {
+    common.push(
+      path.join(homeDir, "Library", "Application Support", "LM Studio", "models"),
+      path.join(homeDir, "Library", "Application Support", "lm-studio", "models"),
+    );
+  }
+
+  return normalizeModelPaths(common, homeDir);
+}
+
+export function expandHomePath(candidate: string, homeDir = os.homedir()): string | undefined {
+  if (typeof candidate !== "string") return undefined;
+  const trimmed = candidate.trim();
+  if (!trimmed || trimmed.includes("\0")) return undefined;
+  if (trimmed === "~") return homeDir;
+  if (trimmed.startsWith(`~${path.sep}`) || trimmed.startsWith("~/")) return path.join(homeDir, trimmed.slice(2));
+  return trimmed;
+}
+
+export function normalizeModelPaths(candidates: Array<string | undefined>, homeDir = os.homedir()): string[] {
+  const seen = new Set<string>();
+  const normalized: string[] = [];
+  for (const candidate of candidates) {
+    if (!candidate) continue;
+    const expanded = expandHomePath(candidate, homeDir);
+    if (!expanded) continue;
+    const resolved = path.resolve(expanded);
+    const key = process.platform === "win32" ? resolved.toLowerCase() : resolved;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    normalized.push(resolved);
+  }
+  return normalized;
+}
 
 export async function scanModelDirectory(directoryPath: string): Promise<RawDiscoveredModel[]> {
   const root = path.resolve(directoryPath);
@@ -106,11 +160,12 @@ export async function discoverOllamaModels(config: ModelDiscoveryConfig): Promis
 export async function discoverLmStudioModels(config: ModelDiscoveryConfig): Promise<ModelDiscoveryResult> {
   const models: DiscoveredModel[] = [];
   const errors: ModelDiscoveryError[] = [];
-  for (const modelsPath of config.lmStudioModelsPaths) {
+  for (const modelsPath of normalizeModelPaths(config.lmStudioModelsPaths)) {
     try {
       const rawModels = await scanModelDirectory(modelsPath);
       models.push(...rawModels.map((raw) => normalizeDiscoveredModel({ ...raw, provider: "lmstudio", source: "filesystem" })));
     } catch (error) {
+      if (isSkippableFilesystemError(error)) continue;
       errors.push({ provider: "lmstudio", message: `LM Studio filesystem discovery failed for ${modelsPath}: ${errorMessage(error)}` });
     }
   }
@@ -139,6 +194,12 @@ function deduplicateModels(models: DiscoveredModel[]): DiscoveredModel[] {
 
 function withPresetOllamaModels(models: DiscoveredModel[]): DiscoveredModel[] {
   return deduplicateModels([...models, ...PRESET_OLLAMA_MODELS]);
+}
+
+function isSkippableFilesystemError(error: unknown): boolean {
+  if (!(error instanceof Error)) return false;
+  const code = (error as NodeJS.ErrnoException).code;
+  return code === "ENOENT" || code === "EACCES" || code === "EPERM" || code === "ENOTDIR";
 }
 
 function sourcePriority(source: DiscoveredModel["source"]): number {
