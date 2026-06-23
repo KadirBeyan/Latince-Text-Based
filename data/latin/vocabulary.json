@@ -1,0 +1,8273 @@
+[
+  {
+    "id": "vocab-salve",
+    "latin": "salve",
+    "turkish": "merhaba",
+    "meaningTr": "merhaba",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "salve - merhaba"
+    ],
+    "exampleLatin": "salve.",
+    "exampleTr": "merhaba"
+  },
+  {
+    "id": "vocab-vale",
+    "latin": "vale",
+    "turkish": "hosca kal",
+    "meaningTr": "hosca kal",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "vale - hosca kal"
+    ],
+    "exampleLatin": "vale.",
+    "exampleTr": "hosca kal"
+  },
+  {
+    "id": "vocab-magister",
+    "latin": "magister",
+    "turkish": "ogretmen",
+    "meaningTr": "ogretmen",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "magister - ogretmen"
+    ],
+    "exampleLatin": "magister.",
+    "exampleTr": "ogretmen"
+  },
+  {
+    "id": "vocab-discipulus",
+    "latin": "discipulus",
+    "turkish": "ogrenci",
+    "meaningTr": "ogrenci",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "discipulus - ogrenci"
+    ],
+    "exampleLatin": "discipulus.",
+    "exampleTr": "ogrenci"
+  },
+  {
+    "id": "vocab-discipula",
+    "latin": "discipula",
+    "turkish": "kiz ogrenci",
+    "meaningTr": "kiz ogrenci",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "discipula - kiz ogrenci"
+    ],
+    "exampleLatin": "discipula.",
+    "exampleTr": "kiz ogrenci"
+  },
+  {
+    "id": "vocab-amicus",
+    "latin": "amicus",
+    "turkish": "arkadas",
+    "meaningTr": "arkadas",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "amicus - arkadas"
+    ],
+    "exampleLatin": "amicus.",
+    "exampleTr": "arkadas"
+  },
+  {
+    "id": "vocab-amica",
+    "latin": "amica",
+    "turkish": "amica",
+    "meaningTr": "amica",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "amica - amica"
+    ],
+    "exampleLatin": "amica.",
+    "exampleTr": "amica"
+  },
+  {
+    "id": "vocab-puer",
+    "latin": "puer",
+    "turkish": "cocuk",
+    "meaningTr": "cocuk",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "puer - cocuk"
+    ],
+    "exampleLatin": "puer.",
+    "exampleTr": "cocuk"
+  },
+  {
+    "id": "vocab-puella",
+    "latin": "puella",
+    "turkish": "kiz",
+    "meaningTr": "kiz",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "puella - kiz"
+    ],
+    "exampleLatin": "puella.",
+    "exampleTr": "kiz"
+  },
+  {
+    "id": "vocab-vir",
+    "latin": "vir",
+    "turkish": "adam",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "vir — adam"
+    ]
+  },
+  {
+    "id": "vocab-femina",
+    "latin": "femina",
+    "turkish": "kadın",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "femina — kadın"
+    ]
+  },
+  {
+    "id": "vocab-homo",
+    "latin": "homo",
+    "turkish": "insan",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "homo"
+    ],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "verb"
+    ],
+    "examples": [
+      "homo — insan"
+    ]
+  },
+  {
+    "id": "vocab-pater",
+    "latin": "pater",
+    "turkish": "baba",
+    "meaningTr": "baba",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "pater - baba"
+    ],
+    "exampleLatin": "pater.",
+    "exampleTr": "baba"
+  },
+  {
+    "id": "vocab-mater",
+    "latin": "mater",
+    "turkish": "anne",
+    "meaningTr": "anne",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "mater - anne"
+    ],
+    "exampleLatin": "mater.",
+    "exampleTr": "anne"
+  },
+  {
+    "id": "vocab-frater",
+    "latin": "frater",
+    "turkish": "frater",
+    "meaningTr": "frater",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "frater - frater"
+    ],
+    "exampleLatin": "frater.",
+    "exampleTr": "frater"
+  },
+  {
+    "id": "vocab-soror",
+    "latin": "soror",
+    "turkish": "soror",
+    "meaningTr": "soror",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "soror - soror"
+    ],
+    "exampleLatin": "soror.",
+    "exampleTr": "soror"
+  },
+  {
+    "id": "vocab-filius",
+    "latin": "filius",
+    "turkish": "ogul",
+    "meaningTr": "ogul",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "filius - ogul"
+    ],
+    "exampleLatin": "filius.",
+    "exampleTr": "ogul"
+  },
+  {
+    "id": "vocab-filia",
+    "latin": "filia",
+    "turkish": "kiz evlat",
+    "meaningTr": "kiz evlat",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "filia - kiz evlat"
+    ],
+    "exampleLatin": "filia.",
+    "exampleTr": "kiz evlat"
+  },
+  {
+    "id": "vocab-dominus",
+    "latin": "dominus",
+    "turkish": "efendi",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "dominus — efendi"
+    ]
+  },
+  {
+    "id": "vocab-domina",
+    "latin": "domina",
+    "turkish": "hanım",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "domina — hanım"
+    ]
+  },
+  {
+    "id": "vocab-servus",
+    "latin": "servus",
+    "turkish": "hizmetkar",
+    "meaningTr": "hizmetkar",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "servus - hizmetkar"
+    ],
+    "exampleLatin": "servus.",
+    "exampleTr": "hizmetkar"
+  },
+  {
+    "id": "vocab-ancilla",
+    "latin": "ancilla",
+    "turkish": "hizmetci",
+    "meaningTr": "hizmetci",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "ancilla - hizmetci"
+    ],
+    "exampleLatin": "ancilla.",
+    "exampleTr": "hizmetci"
+  },
+  {
+    "id": "vocab-rex",
+    "latin": "rex",
+    "turkish": "kral",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "rex — kral"
+    ]
+  },
+  {
+    "id": "vocab-regina",
+    "latin": "regina",
+    "turkish": "kraliçe",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "regina — kraliçe"
+    ]
+  },
+  {
+    "id": "vocab-civis",
+    "latin": "civis",
+    "turkish": "yurttaş",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "civis — yurttaş"
+    ]
+  },
+  {
+    "id": "vocab-miles",
+    "latin": "miles",
+    "turkish": "asker",
+    "meaningTr": "asker",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "miles - asker"
+    ],
+    "exampleLatin": "miles.",
+    "exampleTr": "asker"
+  },
+  {
+    "id": "vocab-poeta",
+    "latin": "poeta",
+    "turkish": "poeta",
+    "meaningTr": "poeta",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "poeta - poeta"
+    ],
+    "exampleLatin": "poeta.",
+    "exampleTr": "poeta"
+  },
+  {
+    "id": "vocab-agricola",
+    "latin": "agricola",
+    "turkish": "çiftçi",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "agricola — çiftçi"
+    ]
+  },
+  {
+    "id": "vocab-nauta",
+    "latin": "nauta",
+    "turkish": "denizci",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "nauta — denizci"
+    ]
+  },
+  {
+    "id": "vocab-mercator",
+    "latin": "mercator",
+    "turkish": "tuccar",
+    "meaningTr": "tuccar",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "mercator - tuccar"
+    ],
+    "exampleLatin": "mercator.",
+    "exampleTr": "tuccar"
+  },
+  {
+    "id": "vocab-medicus",
+    "latin": "medicus",
+    "turkish": "hekim",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "medicus — hekim"
+    ]
+  },
+  {
+    "id": "vocab-scriba",
+    "latin": "scriba",
+    "turkish": "yazici",
+    "meaningTr": "yazici",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "scriba - yazici"
+    ],
+    "exampleLatin": "scriba.",
+    "exampleTr": "yazici"
+  },
+  {
+    "id": "vocab-liber",
+    "latin": "liber",
+    "turkish": "kitap",
+    "meaningTr": "kitap",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "liber - kitap"
+    ],
+    "exampleLatin": "liber.",
+    "exampleTr": "kitap"
+  },
+  {
+    "id": "vocab-tabula",
+    "latin": "tabula",
+    "turkish": "tablet",
+    "meaningTr": "tablet",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "tabula - tablet"
+    ],
+    "exampleLatin": "tabula.",
+    "exampleTr": "tablet"
+  },
+  {
+    "id": "vocab-stilus",
+    "latin": "stilus",
+    "turkish": "stilus",
+    "meaningTr": "stilus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "stilus - stilus"
+    ],
+    "exampleLatin": "stilus.",
+    "exampleTr": "stilus"
+  },
+  {
+    "id": "vocab-charta",
+    "latin": "charta",
+    "turkish": "kâğıt",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "charta — kâğıt"
+    ]
+  },
+  {
+    "id": "vocab-littera",
+    "latin": "littera",
+    "turkish": "harf",
+    "meaningTr": "harf",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "littera - harf"
+    ],
+    "exampleLatin": "littera.",
+    "exampleTr": "harf"
+  },
+  {
+    "id": "vocab-verbum",
+    "latin": "verbum",
+    "turkish": "verbum",
+    "meaningTr": "verbum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "verbum - verbum"
+    ],
+    "exampleLatin": "verbum.",
+    "exampleTr": "verbum"
+  },
+  {
+    "id": "vocab-sententia",
+    "latin": "sententia",
+    "turkish": "sententia",
+    "meaningTr": "sententia",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "sententia - sententia"
+    ],
+    "exampleLatin": "sententia.",
+    "exampleTr": "sententia"
+  },
+  {
+    "id": "vocab-lingua",
+    "latin": "lingua",
+    "turkish": "dil",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "lingua — dil"
+    ]
+  },
+  {
+    "id": "vocab-nomen",
+    "latin": "nomen",
+    "turkish": "ad",
+    "meaningTr": "ad",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "nomen - ad"
+    ],
+    "exampleLatin": "nomen.",
+    "exampleTr": "ad"
+  },
+  {
+    "id": "vocab-numerus",
+    "latin": "numerus",
+    "turkish": "sayı",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "numerus — sayı"
+    ]
+  },
+  {
+    "id": "vocab-schola",
+    "latin": "schola",
+    "turkish": "schola",
+    "meaningTr": "schola",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "schola - schola"
+    ],
+    "exampleLatin": "schola.",
+    "exampleTr": "schola"
+  },
+  {
+    "id": "vocab-ludus",
+    "latin": "ludus",
+    "turkish": "okul/oyun",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "ludus — okul/oyun"
+    ]
+  },
+  {
+    "id": "vocab-forum",
+    "latin": "forum",
+    "turkish": "forum",
+    "meaningTr": "forum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "forum - forum"
+    ],
+    "exampleLatin": "forum.",
+    "exampleTr": "forum"
+  },
+  {
+    "id": "vocab-domus",
+    "latin": "domus",
+    "turkish": "ev",
+    "meaningTr": "ev",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "domus - ev"
+    ],
+    "exampleLatin": "domus.",
+    "exampleTr": "ev"
+  },
+  {
+    "id": "vocab-villa",
+    "latin": "villa",
+    "turkish": "villa",
+    "meaningTr": "villa",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "villa - villa"
+    ],
+    "exampleLatin": "villa.",
+    "exampleTr": "villa"
+  },
+  {
+    "id": "vocab-via",
+    "latin": "via",
+    "turkish": "yol",
+    "meaningTr": "yol",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "via - yol"
+    ],
+    "exampleLatin": "via.",
+    "exampleTr": "yol"
+  },
+  {
+    "id": "vocab-porta",
+    "latin": "porta",
+    "turkish": "kapi/tasi",
+    "meaningTr": "kapi/tasi",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "porta - kapi/tasi"
+    ],
+    "exampleLatin": "porta.",
+    "exampleTr": "kapi/tasi"
+  },
+  {
+    "id": "vocab-fenestra",
+    "latin": "fenestra",
+    "turkish": "fenestra",
+    "meaningTr": "fenestra",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "fenestra - fenestra"
+    ],
+    "exampleLatin": "fenestra.",
+    "exampleTr": "fenestra"
+  },
+  {
+    "id": "vocab-murus",
+    "latin": "murus",
+    "turkish": "duvar",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "murus — duvar"
+    ]
+  },
+  {
+    "id": "vocab-templum",
+    "latin": "templum",
+    "turkish": "tapinak",
+    "meaningTr": "tapinak",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "templum - tapinak"
+    ],
+    "exampleLatin": "templum.",
+    "exampleTr": "tapinak"
+  },
+  {
+    "id": "vocab-basilica",
+    "latin": "basilica",
+    "turkish": "bazilika",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "basilica — bazilika"
+    ]
+  },
+  {
+    "id": "vocab-taberna",
+    "latin": "taberna",
+    "turkish": "dukkan",
+    "meaningTr": "dukkan",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "taberna - dukkan"
+    ],
+    "exampleLatin": "taberna.",
+    "exampleTr": "dukkan"
+  },
+  {
+    "id": "vocab-hortus",
+    "latin": "hortus",
+    "turkish": "bahce",
+    "meaningTr": "bahce",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "hortus - bahce"
+    ],
+    "exampleLatin": "hortus.",
+    "exampleTr": "bahce"
+  },
+  {
+    "id": "vocab-ager",
+    "latin": "ager",
+    "turkish": "tarla",
+    "meaningTr": "tarla",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "ager - tarla"
+    ],
+    "exampleLatin": "ager.",
+    "exampleTr": "tarla"
+  },
+  {
+    "id": "vocab-silva",
+    "latin": "silva",
+    "turkish": "silva",
+    "meaningTr": "silva",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "silva - silva"
+    ],
+    "exampleLatin": "silva.",
+    "exampleTr": "silva"
+  },
+  {
+    "id": "vocab-mons",
+    "latin": "mons",
+    "turkish": "mons",
+    "meaningTr": "mons",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "mons - mons"
+    ],
+    "exampleLatin": "mons.",
+    "exampleTr": "mons"
+  },
+  {
+    "id": "vocab-collis",
+    "latin": "collis",
+    "turkish": "tepe",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "collis — tepe"
+    ]
+  },
+  {
+    "id": "vocab-fluvius",
+    "latin": "fluvius",
+    "turkish": "nehir",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "fluvius — nehir"
+    ]
+  },
+  {
+    "id": "vocab-mare",
+    "latin": "mare",
+    "turkish": "deniz",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "mare"
+    ],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "verb"
+    ],
+    "examples": [
+      "mare — deniz"
+    ]
+  },
+  {
+    "id": "vocab-aqua",
+    "latin": "aqua",
+    "turkish": "su",
+    "meaningTr": "su",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "aqua - su"
+    ],
+    "exampleLatin": "aqua.",
+    "exampleTr": "su"
+  },
+  {
+    "id": "vocab-terra",
+    "latin": "terra",
+    "turkish": "toprak",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "terra — toprak"
+    ]
+  },
+  {
+    "id": "vocab-caelum",
+    "latin": "caelum",
+    "turkish": "caelum",
+    "meaningTr": "caelum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "caelum - caelum"
+    ],
+    "exampleLatin": "caelum.",
+    "exampleTr": "caelum"
+  },
+  {
+    "id": "vocab-sol",
+    "latin": "sol",
+    "turkish": "sol",
+    "meaningTr": "sol",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "sol - sol"
+    ],
+    "exampleLatin": "sol.",
+    "exampleTr": "sol"
+  },
+  {
+    "id": "vocab-luna",
+    "latin": "luna",
+    "turkish": "luna",
+    "meaningTr": "luna",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "luna - luna"
+    ],
+    "exampleLatin": "luna.",
+    "exampleTr": "luna"
+  },
+  {
+    "id": "vocab-stella",
+    "latin": "stella",
+    "turkish": "yıldız",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "stella — yıldız"
+    ]
+  },
+  {
+    "id": "vocab-ignis",
+    "latin": "ignis",
+    "turkish": "ateş",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "ignis — ateş"
+    ]
+  },
+  {
+    "id": "vocab-ventus",
+    "latin": "ventus",
+    "turkish": "rüzgâr",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "ventus — rüzgâr"
+    ]
+  },
+  {
+    "id": "vocab-pluvia",
+    "latin": "pluvia",
+    "turkish": "yağmur",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "ludus",
+      "core"
+    ],
+    "examples": [
+      "pluvia — yağmur"
+    ]
+  },
+  {
+    "id": "vocab-dies",
+    "latin": "dies",
+    "turkish": "gün",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "dies — gün"
+    ]
+  },
+  {
+    "id": "vocab-nox",
+    "latin": "nox",
+    "turkish": "gece",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "nox — gece"
+    ]
+  },
+  {
+    "id": "vocab-hora",
+    "latin": "hora",
+    "turkish": "saat",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "hora — saat"
+    ]
+  },
+  {
+    "id": "vocab-tempus",
+    "latin": "tempus",
+    "turkish": "zaman",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "tempus — zaman"
+    ]
+  },
+  {
+    "id": "vocab-annus",
+    "latin": "annus",
+    "turkish": "yıl",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "annus — yıl"
+    ]
+  },
+  {
+    "id": "vocab-mane",
+    "latin": "mane",
+    "turkish": "mane",
+    "meaningTr": "mane",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "mane - mane"
+    ],
+    "exampleLatin": "mane.",
+    "exampleTr": "mane"
+  },
+  {
+    "id": "vocab-vesper",
+    "latin": "vesper",
+    "turkish": "vesper",
+    "meaningTr": "vesper",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "vesper - vesper"
+    ],
+    "exampleLatin": "vesper.",
+    "exampleTr": "vesper"
+  },
+  {
+    "id": "vocab-hodie",
+    "latin": "hodie",
+    "turkish": "hodie",
+    "meaningTr": "hodie",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "hodie - hodie"
+    ],
+    "exampleLatin": "hodie.",
+    "exampleTr": "hodie"
+  },
+  {
+    "id": "vocab-heri",
+    "latin": "heri",
+    "turkish": "heri",
+    "meaningTr": "heri",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "heri - heri"
+    ],
+    "exampleLatin": "heri.",
+    "exampleTr": "heri"
+  },
+  {
+    "id": "vocab-cras",
+    "latin": "cras",
+    "turkish": "cras",
+    "meaningTr": "cras",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "cras - cras"
+    ],
+    "exampleLatin": "cras.",
+    "exampleTr": "cras"
+  },
+  {
+    "id": "vocab-panis",
+    "latin": "panis",
+    "turkish": "ekmek",
+    "meaningTr": "ekmek",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "panis - ekmek"
+    ],
+    "exampleLatin": "panis.",
+    "exampleTr": "ekmek"
+  },
+  {
+    "id": "vocab-vinum",
+    "latin": "vinum",
+    "turkish": "sarap",
+    "meaningTr": "sarap",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "vinum - sarap"
+    ],
+    "exampleLatin": "vinum.",
+    "exampleTr": "sarap"
+  },
+  {
+    "id": "vocab-lac",
+    "latin": "lac",
+    "turkish": "lac",
+    "meaningTr": "lac",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "lac - lac"
+    ],
+    "exampleLatin": "lac.",
+    "exampleTr": "lac"
+  },
+  {
+    "id": "vocab-caseus",
+    "latin": "caseus",
+    "turkish": "peynir",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "caseus — peynir"
+    ]
+  },
+  {
+    "id": "vocab-malum",
+    "latin": "malum",
+    "turkish": "elma",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "malum — elma"
+    ]
+  },
+  {
+    "id": "vocab-uva",
+    "latin": "uva",
+    "turkish": "üzüm",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "uva — üzüm"
+    ]
+  },
+  {
+    "id": "vocab-cibus",
+    "latin": "cibus",
+    "turkish": "yiyecek",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "cibus — yiyecek"
+    ]
+  },
+  {
+    "id": "vocab-cena",
+    "latin": "cena",
+    "turkish": "cena",
+    "meaningTr": "cena",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "cena - cena"
+    ],
+    "exampleLatin": "cena.",
+    "exampleTr": "cena"
+  },
+  {
+    "id": "vocab-mensa",
+    "latin": "mensa",
+    "turkish": "masa",
+    "meaningTr": "masa",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "mensa - masa"
+    ],
+    "exampleLatin": "mensa.",
+    "exampleTr": "masa"
+  },
+  {
+    "id": "vocab-sella",
+    "latin": "sella",
+    "turkish": "sandalye",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "sella — sandalye"
+    ]
+  },
+  {
+    "id": "vocab-lectus",
+    "latin": "lectus",
+    "turkish": "lectus",
+    "meaningTr": "lectus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "lectus - lectus"
+    ],
+    "exampleLatin": "lectus.",
+    "exampleTr": "lectus"
+  },
+  {
+    "id": "vocab-culina",
+    "latin": "culina",
+    "turkish": "culina",
+    "meaningTr": "culina",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "culina - culina"
+    ],
+    "exampleLatin": "culina.",
+    "exampleTr": "culina"
+  },
+  {
+    "id": "vocab-atrium",
+    "latin": "atrium",
+    "turkish": "atrium",
+    "meaningTr": "atrium",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "atrium - atrium"
+    ],
+    "exampleLatin": "atrium.",
+    "exampleTr": "atrium"
+  },
+  {
+    "id": "vocab-cubiculum",
+    "latin": "cubiculum",
+    "turkish": "cubiculum",
+    "meaningTr": "cubiculum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "cubiculum - cubiculum"
+    ],
+    "exampleLatin": "cubiculum.",
+    "exampleTr": "cubiculum"
+  },
+  {
+    "id": "vocab-vestis",
+    "latin": "vestis",
+    "turkish": "giysi",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "vestis — giysi"
+    ]
+  },
+  {
+    "id": "vocab-tunica",
+    "latin": "tunica",
+    "turkish": "tunica",
+    "meaningTr": "tunica",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "tunica - tunica"
+    ],
+    "exampleLatin": "tunica.",
+    "exampleTr": "tunica"
+  },
+  {
+    "id": "vocab-toga",
+    "latin": "toga",
+    "turkish": "toga",
+    "meaningTr": "toga",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "toga - toga"
+    ],
+    "exampleLatin": "toga.",
+    "exampleTr": "toga"
+  },
+  {
+    "id": "vocab-calceus",
+    "latin": "calceus",
+    "turkish": "ayakkabı",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "calceus — ayakkabı"
+    ]
+  },
+  {
+    "id": "vocab-pecunia",
+    "latin": "pecunia",
+    "turkish": "para",
+    "meaningTr": "para",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "pecunia - para"
+    ],
+    "exampleLatin": "pecunia.",
+    "exampleTr": "para"
+  },
+  {
+    "id": "vocab-denarius",
+    "latin": "denarius",
+    "turkish": "denarius",
+    "meaningTr": "denarius",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "denarius - denarius"
+    ],
+    "exampleLatin": "denarius.",
+    "exampleTr": "denarius"
+  },
+  {
+    "id": "vocab-gladius",
+    "latin": "gladius",
+    "turkish": "kilic",
+    "meaningTr": "kilic",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "gladius - kilic"
+    ],
+    "exampleLatin": "gladius.",
+    "exampleTr": "kilic"
+  },
+  {
+    "id": "vocab-scutum",
+    "latin": "scutum",
+    "turkish": "kalkan",
+    "meaningTr": "kalkan",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "scutum - kalkan"
+    ],
+    "exampleLatin": "scutum.",
+    "exampleTr": "kalkan"
+  },
+  {
+    "id": "vocab-hasta",
+    "latin": "hasta",
+    "turkish": "mızrak",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "hasta — mızrak"
+    ]
+  },
+  {
+    "id": "vocab-equus",
+    "latin": "equus",
+    "turkish": "equus",
+    "meaningTr": "equus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "equus - equus"
+    ],
+    "exampleLatin": "equus.",
+    "exampleTr": "equus"
+  },
+  {
+    "id": "vocab-canis",
+    "latin": "canis",
+    "turkish": "canis",
+    "meaningTr": "canis",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "canis - canis"
+    ],
+    "exampleLatin": "canis.",
+    "exampleTr": "canis"
+  },
+  {
+    "id": "vocab-felis",
+    "latin": "felis",
+    "turkish": "kedi",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "felis — kedi"
+    ]
+  },
+  {
+    "id": "vocab-avis",
+    "latin": "avis",
+    "turkish": "kuş",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "avis — kuş"
+    ]
+  },
+  {
+    "id": "vocab-piscis",
+    "latin": "piscis",
+    "turkish": "piscis",
+    "meaningTr": "piscis",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "piscis - piscis"
+    ],
+    "exampleLatin": "piscis.",
+    "exampleTr": "piscis"
+  },
+  {
+    "id": "vocab-leo",
+    "latin": "leo",
+    "turkish": "aslan",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "leo"
+    ],
+    "level": 1,
+    "tags": [
+      "forum",
+      "verb"
+    ],
+    "examples": [
+      "leo — aslan"
+    ]
+  },
+  {
+    "id": "vocab-lupus",
+    "latin": "lupus",
+    "turkish": "kurt",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "lupus — kurt"
+    ]
+  },
+  {
+    "id": "vocab-bonus",
+    "latin": "bonus",
+    "turkish": "bonus",
+    "meaningTr": "bonus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "bonus - bonus"
+    ],
+    "exampleLatin": "bonus.",
+    "exampleTr": "bonus"
+  },
+  {
+    "id": "vocab-malus",
+    "latin": "malus",
+    "turkish": "kötü",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "malus — kötü"
+    ]
+  },
+  {
+    "id": "vocab-magnus",
+    "latin": "magnus",
+    "turkish": "magnus",
+    "meaningTr": "magnus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "magnus - magnus"
+    ],
+    "exampleLatin": "magnus.",
+    "exampleTr": "magnus"
+  },
+  {
+    "id": "vocab-parvus",
+    "latin": "parvus",
+    "turkish": "parvus",
+    "meaningTr": "parvus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "parvus - parvus"
+    ],
+    "exampleLatin": "parvus.",
+    "exampleTr": "parvus"
+  },
+  {
+    "id": "vocab-longus",
+    "latin": "longus",
+    "turkish": "longus",
+    "meaningTr": "longus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "adjective",
+      "chapter"
+    ],
+    "examples": [
+      "longus - longus"
+    ],
+    "exampleLatin": "longus.",
+    "exampleTr": "longus"
+  },
+  {
+    "id": "vocab-brevis",
+    "latin": "brevis",
+    "turkish": "brevis",
+    "meaningTr": "brevis",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "adjective",
+      "chapter"
+    ],
+    "examples": [
+      "brevis - brevis"
+    ],
+    "exampleLatin": "brevis.",
+    "exampleTr": "brevis"
+  },
+  {
+    "id": "vocab-novus",
+    "latin": "novus",
+    "turkish": "novus",
+    "meaningTr": "novus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "novus - novus"
+    ],
+    "exampleLatin": "novus.",
+    "exampleTr": "novus"
+  },
+  {
+    "id": "vocab-antiquus",
+    "latin": "antiquus",
+    "turkish": "eski",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "antiquus — eski"
+    ]
+  },
+  {
+    "id": "vocab-pulcher",
+    "latin": "pulcher",
+    "turkish": "güzel",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "pulcher — güzel"
+    ]
+  },
+  {
+    "id": "vocab-clarus",
+    "latin": "clarus",
+    "turkish": "parlak/ünlü",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "clarus — parlak/ünlü"
+    ]
+  },
+  {
+    "id": "vocab-fortis",
+    "latin": "fortis",
+    "turkish": "cesur",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "fortis — cesur"
+    ]
+  },
+  {
+    "id": "vocab-laetus",
+    "latin": "laetus",
+    "turkish": "mutlu",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "laetus — mutlu"
+    ]
+  },
+  {
+    "id": "vocab-tristis",
+    "latin": "tristis",
+    "turkish": "üzgün",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "tristis — üzgün"
+    ]
+  },
+  {
+    "id": "vocab-facilis",
+    "latin": "facilis",
+    "turkish": "kolay",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "facilis — kolay"
+    ]
+  },
+  {
+    "id": "vocab-difficilis",
+    "latin": "difficilis",
+    "turkish": "zor",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "difficilis — zor"
+    ]
+  },
+  {
+    "id": "vocab-primus",
+    "latin": "primus",
+    "turkish": "primus",
+    "meaningTr": "primus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "adjective",
+      "chapter"
+    ],
+    "examples": [
+      "primus - primus"
+    ],
+    "exampleLatin": "primus.",
+    "exampleTr": "primus"
+  },
+  {
+    "id": "vocab-ultimus",
+    "latin": "ultimus",
+    "turkish": "son",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "ultimus — son"
+    ]
+  },
+  {
+    "id": "vocab-unus",
+    "latin": "unus",
+    "turkish": "bir",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "unus — bir"
+    ]
+  },
+  {
+    "id": "vocab-duo",
+    "latin": "duo",
+    "turkish": "iki",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "duo"
+    ],
+    "level": 3,
+    "tags": [
+      "forum",
+      "verb"
+    ],
+    "examples": [
+      "duo — iki"
+    ]
+  },
+  {
+    "id": "vocab-tres",
+    "latin": "tres",
+    "turkish": "üç",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "tres — üç"
+    ]
+  },
+  {
+    "id": "vocab-quattuor",
+    "latin": "quattuor",
+    "turkish": "dört",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "quattuor — dört"
+    ]
+  },
+  {
+    "id": "vocab-quinque",
+    "latin": "quinque",
+    "turkish": "beş",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "quinque"
+    ],
+    "level": 3,
+    "tags": [
+      "forum",
+      "verb"
+    ],
+    "examples": [
+      "quinque — beş"
+    ]
+  },
+  {
+    "id": "vocab-sex",
+    "latin": "sex",
+    "turkish": "altı",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "sex — altı"
+    ]
+  },
+  {
+    "id": "vocab-septem",
+    "latin": "septem",
+    "turkish": "yedi",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "septem — yedi"
+    ]
+  },
+  {
+    "id": "vocab-octo",
+    "latin": "octo",
+    "turkish": "sekiz",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "octo"
+    ],
+    "level": 3,
+    "tags": [
+      "forum",
+      "verb"
+    ],
+    "examples": [
+      "octo — sekiz"
+    ]
+  },
+  {
+    "id": "vocab-novem",
+    "latin": "novem",
+    "turkish": "dokuz",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "novem — dokuz"
+    ]
+  },
+  {
+    "id": "vocab-decem",
+    "latin": "decem",
+    "turkish": "on",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "decem — on"
+    ]
+  },
+  {
+    "id": "vocab-ego",
+    "latin": "ego",
+    "turkish": "ben",
+    "meaningTr": "ben",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "ego - ben"
+    ],
+    "exampleLatin": "ego.",
+    "exampleTr": "ben"
+  },
+  {
+    "id": "vocab-tu",
+    "latin": "tu",
+    "turkish": "sen",
+    "meaningTr": "sen",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "tu - sen"
+    ],
+    "exampleLatin": "tu.",
+    "exampleTr": "sen"
+  },
+  {
+    "id": "vocab-nos",
+    "latin": "nos",
+    "turkish": "biz",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "forum",
+      "core"
+    ],
+    "examples": [
+      "nos — biz"
+    ]
+  },
+  {
+    "id": "vocab-vos",
+    "latin": "vos",
+    "turkish": "siz",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "vos — siz"
+    ]
+  },
+  {
+    "id": "vocab-hic",
+    "latin": "hic",
+    "turkish": "bu",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "hic — bu"
+    ]
+  },
+  {
+    "id": "vocab-ille",
+    "latin": "ille",
+    "turkish": "o",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ille"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "ille — o"
+    ]
+  },
+  {
+    "id": "vocab-quis",
+    "latin": "quis",
+    "turkish": "kim",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "quis — kim"
+    ]
+  },
+  {
+    "id": "vocab-quid",
+    "latin": "quid",
+    "turkish": "ne",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "quid — ne"
+    ]
+  },
+  {
+    "id": "vocab-ubi",
+    "latin": "ubi",
+    "turkish": "nerede",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "ubi — nerede"
+    ]
+  },
+  {
+    "id": "vocab-quo",
+    "latin": "quo",
+    "turkish": "nereye",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "quo"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "quo — nereye"
+    ]
+  },
+  {
+    "id": "vocab-cur",
+    "latin": "cur",
+    "turkish": "neden",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "cur — neden"
+    ]
+  },
+  {
+    "id": "vocab-quomodo",
+    "latin": "quomodo",
+    "turkish": "nasıl",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "quomodo"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "quomodo — nasıl"
+    ]
+  },
+  {
+    "id": "vocab-quando",
+    "latin": "quando",
+    "turkish": "ne zaman",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "quando"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "quando — ne zaman"
+    ]
+  },
+  {
+    "id": "vocab-et",
+    "latin": "et",
+    "turkish": "ve",
+    "meaningTr": "ve",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "et - ve"
+    ],
+    "exampleLatin": "et.",
+    "exampleTr": "ve"
+  },
+  {
+    "id": "vocab-sed",
+    "latin": "sed",
+    "turkish": "ama",
+    "meaningTr": "ama",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "sed - ama"
+    ],
+    "exampleLatin": "sed.",
+    "exampleTr": "ama"
+  },
+  {
+    "id": "vocab-aut",
+    "latin": "aut",
+    "turkish": "veya",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "aut — veya"
+    ]
+  },
+  {
+    "id": "vocab-quia",
+    "latin": "quia",
+    "turkish": "çünkü",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "quia — çünkü"
+    ]
+  },
+  {
+    "id": "vocab-non",
+    "latin": "non",
+    "turkish": "degil",
+    "meaningTr": "degil",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "non - degil"
+    ],
+    "exampleLatin": "non.",
+    "exampleTr": "degil"
+  },
+  {
+    "id": "vocab-iam",
+    "latin": "iam",
+    "turkish": "şimdi/artık",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "iam — şimdi/artık"
+    ]
+  },
+  {
+    "id": "vocab-etiam",
+    "latin": "etiam",
+    "turkish": "ayrıca",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "etiam — ayrıca"
+    ]
+  },
+  {
+    "id": "vocab-semper",
+    "latin": "semper",
+    "turkish": "her zaman",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "semper — her zaman"
+    ]
+  },
+  {
+    "id": "vocab-numquam",
+    "latin": "numquam",
+    "turkish": "asla",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "numquam — asla"
+    ]
+  },
+  {
+    "id": "vocab-saepe",
+    "latin": "saepe",
+    "turkish": "sık sık",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "saepe"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "saepe — sık sık"
+    ]
+  },
+  {
+    "id": "vocab-bene",
+    "latin": "bene",
+    "turkish": "iyi",
+    "meaningTr": "iyi",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "bene - iyi"
+    ],
+    "exampleLatin": "bene.",
+    "exampleTr": "iyi"
+  },
+  {
+    "id": "vocab-male",
+    "latin": "male",
+    "turkish": "kotu",
+    "meaningTr": "kotu",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "male - kotu"
+    ],
+    "exampleLatin": "male.",
+    "exampleTr": "kotu"
+  },
+  {
+    "id": "vocab-hic-163",
+    "latin": "hic",
+    "turkish": "burada",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "hic — burada"
+    ]
+  },
+  {
+    "id": "vocab-ibi",
+    "latin": "ibi",
+    "turkish": "orada",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "ibi — orada"
+    ]
+  },
+  {
+    "id": "vocab-ad",
+    "latin": "ad",
+    "turkish": "e dogru",
+    "meaningTr": "e dogru",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "ad - e dogru"
+    ],
+    "exampleLatin": "ad.",
+    "exampleTr": "e dogru"
+  },
+  {
+    "id": "vocab-in",
+    "latin": "in",
+    "turkish": "icinde",
+    "meaningTr": "icinde",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "in - icinde"
+    ],
+    "exampleLatin": "in.",
+    "exampleTr": "icinde"
+  },
+  {
+    "id": "vocab-cum",
+    "latin": "cum",
+    "turkish": "ile",
+    "meaningTr": "ile",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "cum - ile"
+    ],
+    "exampleLatin": "cum.",
+    "exampleTr": "ile"
+  },
+  {
+    "id": "vocab-sine",
+    "latin": "sine",
+    "turkish": "siz",
+    "meaningTr": "siz",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "sine - siz"
+    ],
+    "exampleLatin": "sine.",
+    "exampleTr": "siz"
+  },
+  {
+    "id": "vocab-ex",
+    "latin": "ex",
+    "turkish": "-den dışarı",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "ex — -den dışarı"
+    ]
+  },
+  {
+    "id": "vocab-de",
+    "latin": "de",
+    "turkish": "-den/hakkında",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "de"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "de — -den/hakkında"
+    ]
+  },
+  {
+    "id": "vocab-pro",
+    "latin": "pro",
+    "turkish": "için/önünde",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "pro"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "pro — için/önünde"
+    ]
+  },
+  {
+    "id": "vocab-per",
+    "latin": "per",
+    "turkish": "boyunca",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "per — boyunca"
+    ]
+  },
+  {
+    "id": "vocab-sub",
+    "latin": "sub",
+    "turkish": "altında",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "sub — altında"
+    ]
+  },
+  {
+    "id": "vocab-sum",
+    "latin": "sum",
+    "turkish": "benim",
+    "meaningTr": "benim",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sum"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "sum - benim"
+    ],
+    "exampleLatin": "sum.",
+    "exampleTr": "benim"
+  },
+  {
+    "id": "vocab-esse",
+    "latin": "esse",
+    "turkish": "olmak (mastar)",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "esse"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "esse — olmak (mastar)"
+    ]
+  },
+  {
+    "id": "vocab-est",
+    "latin": "est",
+    "turkish": "dir",
+    "meaningTr": "dir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "est"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "est - dir"
+    ],
+    "exampleLatin": "est.",
+    "exampleTr": "dir"
+  },
+  {
+    "id": "vocab-sunt",
+    "latin": "sunt",
+    "turkish": "dirler",
+    "meaningTr": "dirler",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sunt"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "sunt - dirler"
+    ],
+    "exampleLatin": "sunt.",
+    "exampleTr": "dirler"
+  },
+  {
+    "id": "vocab-habeo",
+    "latin": "habeo",
+    "turkish": "sahip olmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "habeo"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "habeo — sahip olmak"
+    ]
+  },
+  {
+    "id": "vocab-video",
+    "latin": "video",
+    "turkish": "görmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "video"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "video — görmek"
+    ]
+  },
+  {
+    "id": "vocab-audio",
+    "latin": "audio",
+    "turkish": "duymak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "audio"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "audio — duymak"
+    ]
+  },
+  {
+    "id": "vocab-dico",
+    "latin": "dico",
+    "turkish": "söylemek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "dico"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "dico — söylemek"
+    ]
+  },
+  {
+    "id": "vocab-loquor",
+    "latin": "loquor",
+    "turkish": "konuşmak",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "loquor — konuşmak"
+    ]
+  },
+  {
+    "id": "vocab-lego",
+    "latin": "lego",
+    "turkish": "okumak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "lego"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "lego — okumak"
+    ]
+  },
+  {
+    "id": "vocab-scribo",
+    "latin": "scribo",
+    "turkish": "yazmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "scribo"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "scribo — yazmak"
+    ]
+  },
+  {
+    "id": "vocab-do",
+    "latin": "do",
+    "turkish": "vermek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "do"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "do — vermek"
+    ]
+  },
+  {
+    "id": "vocab-porto",
+    "latin": "porto",
+    "turkish": "taşımak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "porto"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "porto — taşımak"
+    ]
+  },
+  {
+    "id": "vocab-amo",
+    "latin": "amo",
+    "turkish": "sevmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "amo"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "amo — sevmek"
+    ]
+  },
+  {
+    "id": "vocab-laudo",
+    "latin": "laudo",
+    "turkish": "övmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "laudo"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "laudo — övmek"
+    ]
+  },
+  {
+    "id": "vocab-voco",
+    "latin": "voco",
+    "turkish": "çağırmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "voco"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "voco — çağırmak"
+    ]
+  },
+  {
+    "id": "vocab-saluto",
+    "latin": "saluto",
+    "turkish": "selamlamak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "saluto"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "saluto — selamlamak"
+    ]
+  },
+  {
+    "id": "vocab-ambulo",
+    "latin": "ambulo",
+    "turkish": "yürümek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ambulo"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "ambulo — yürümek"
+    ]
+  },
+  {
+    "id": "vocab-venio",
+    "latin": "venio",
+    "turkish": "gelmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "venio"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "venio — gelmek"
+    ]
+  },
+  {
+    "id": "vocab-eo",
+    "latin": "eo",
+    "turkish": "gitmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "eo"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "eo — gitmek"
+    ]
+  },
+  {
+    "id": "vocab-curro",
+    "latin": "curro",
+    "turkish": "koşmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "curro"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "curro — koşmak"
+    ]
+  },
+  {
+    "id": "vocab-sedeo",
+    "latin": "sedeo",
+    "turkish": "oturmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sedeo"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "sedeo — oturmak"
+    ]
+  },
+  {
+    "id": "vocab-sto",
+    "latin": "sto",
+    "turkish": "durmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sto"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "sto — durmak"
+    ]
+  },
+  {
+    "id": "vocab-dormio",
+    "latin": "dormio",
+    "turkish": "uyumak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "dormio"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "dormio — uyumak"
+    ]
+  },
+  {
+    "id": "vocab-laboro",
+    "latin": "laboro",
+    "turkish": "çalışmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "laboro"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "laboro — çalışmak"
+    ]
+  },
+  {
+    "id": "vocab-disco",
+    "latin": "disco",
+    "turkish": "öğrenmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "disco"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "disco — öğrenmek"
+    ]
+  },
+  {
+    "id": "vocab-doceo",
+    "latin": "doceo",
+    "turkish": "öğretmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "doceo"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "doceo — öğretmek"
+    ]
+  },
+  {
+    "id": "vocab-quaero",
+    "latin": "quaero",
+    "turkish": "aramak/sormak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "quaero"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "quaero — aramak/sormak"
+    ]
+  },
+  {
+    "id": "vocab-respondeo",
+    "latin": "respondeo",
+    "turkish": "cevap vermek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "respondeo"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "respondeo — cevap vermek"
+    ]
+  },
+  {
+    "id": "vocab-aperio",
+    "latin": "aperio",
+    "turkish": "açmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "aperio"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "aperio — açmak"
+    ]
+  },
+  {
+    "id": "vocab-claudo",
+    "latin": "claudo",
+    "turkish": "kapatmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "claudo"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "claudo — kapatmak"
+    ]
+  },
+  {
+    "id": "vocab-capio",
+    "latin": "capio",
+    "turkish": "almak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "capio"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "capio — almak"
+    ]
+  },
+  {
+    "id": "vocab-pono",
+    "latin": "pono",
+    "turkish": "koymak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "pono"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "pono — koymak"
+    ]
+  },
+  {
+    "id": "vocab-facio",
+    "latin": "facio",
+    "turkish": "yapmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "facio"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "facio — yapmak"
+    ]
+  },
+  {
+    "id": "vocab-paro",
+    "latin": "paro",
+    "turkish": "hazırlamak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "paro"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "paro — hazırlamak"
+    ]
+  },
+  {
+    "id": "vocab-maneo",
+    "latin": "maneo",
+    "turkish": "kalmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "maneo"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "maneo — kalmak"
+    ]
+  },
+  {
+    "id": "vocab-habito",
+    "latin": "habito",
+    "turkish": "ikamet etmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "habito"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "habito — ikamet etmek"
+    ]
+  },
+  {
+    "id": "vocab-specto",
+    "latin": "specto",
+    "turkish": "seyretmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "specto"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "specto — seyretmek"
+    ]
+  },
+  {
+    "id": "vocab-invenio",
+    "latin": "invenio",
+    "turkish": "bulmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "invenio"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "invenio — bulmak"
+    ]
+  },
+  {
+    "id": "vocab-intellego",
+    "latin": "intellego",
+    "turkish": "anlamak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "intellego"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "intellego — anlamak"
+    ]
+  },
+  {
+    "id": "vocab-cogito",
+    "latin": "cogito",
+    "turkish": "düşünmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "cogito"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "cogito — düşünmek"
+    ]
+  },
+  {
+    "id": "vocab-scio",
+    "latin": "scio",
+    "turkish": "bilmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "scio"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "scio — bilmek"
+    ]
+  },
+  {
+    "id": "vocab-possum",
+    "latin": "possum",
+    "turkish": "yapabilmek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "possum"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "possum — yapabilmek"
+    ]
+  },
+  {
+    "id": "vocab-volo",
+    "latin": "volo",
+    "turkish": "istemek",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "volo"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "volo — istemek"
+    ]
+  },
+  {
+    "id": "vocab-debeo",
+    "latin": "debeo",
+    "turkish": "zorunda olmak",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "debeo"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "debeo — zorunda olmak"
+    ]
+  },
+  {
+    "id": "vocab-placet",
+    "latin": "placet",
+    "turkish": "hoşa gider",
+    "pos": "noun/other",
+    "gender": "unknown",
+    "declension": null,
+    "principalParts": [],
+    "level": 3,
+    "tags": [
+      "domus",
+      "core"
+    ],
+    "examples": [
+      "placet — hoşa gider"
+    ]
+  },
+  {
+    "id": "vocab-lege",
+    "latin": "lege",
+    "turkish": "oku",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "lege"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "lege — oku"
+    ]
+  },
+  {
+    "id": "vocab-scribe",
+    "latin": "scribe",
+    "turkish": "yaz",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "scribe"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "scribe — yaz"
+    ]
+  },
+  {
+    "id": "vocab-audi",
+    "latin": "audi",
+    "turkish": "dinle",
+    "meaningTr": "dinle",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "audi"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "audi - dinle"
+    ],
+    "exampleLatin": "audi.",
+    "exampleTr": "dinle"
+  },
+  {
+    "id": "vocab-veni",
+    "latin": "veni",
+    "turkish": "gel",
+    "meaningTr": "gel",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "veni"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "veni - gel"
+    ],
+    "exampleLatin": "veni.",
+    "exampleTr": "gel"
+  },
+  {
+    "id": "vocab-ite",
+    "latin": "ite",
+    "turkish": "gidin",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ite"
+    ],
+    "level": 2,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "ite — gidin"
+    ]
+  },
+  {
+    "id": "vocab-salvete",
+    "latin": "salvete",
+    "turkish": "merhaba (çoğul)",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "salvete"
+    ],
+    "level": 3,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "salvete — merhaba (çoğul)"
+    ]
+  },
+  {
+    "id": "vocab-valete",
+    "latin": "valete",
+    "turkish": "hoşça kalın",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "valete"
+    ],
+    "level": 1,
+    "tags": [
+      "domus",
+      "verb"
+    ],
+    "examples": [
+      "valete — hoşça kalın"
+    ]
+  },
+  {
+    "id": "vocab-roma",
+    "latin": "Roma",
+    "turkish": "Roma",
+    "meaningTr": "Roma",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "Roma - Roma"
+    ],
+    "exampleLatin": "Roma.",
+    "exampleTr": "Roma"
+  },
+  {
+    "id": "vocab-es",
+    "latin": "es",
+    "turkish": "sensin",
+    "meaningTr": "sensin",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "es"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "es - sensin"
+    ],
+    "exampleLatin": "es.",
+    "exampleTr": "sensin"
+  },
+  {
+    "id": "vocab-mihi",
+    "latin": "mihi",
+    "turkish": "bana",
+    "meaningTr": "bana",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "mihi - bana"
+    ],
+    "exampleLatin": "mihi.",
+    "exampleTr": "bana"
+  },
+  {
+    "id": "vocab-bona",
+    "latin": "bona",
+    "turkish": "bona",
+    "meaningTr": "bona",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "bona - bona"
+    ],
+    "exampleLatin": "bona.",
+    "exampleTr": "bona"
+  },
+  {
+    "id": "vocab-antiqua",
+    "latin": "antiqua",
+    "turkish": "antiqua",
+    "meaningTr": "antiqua",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "antiqua - antiqua"
+    ],
+    "exampleLatin": "antiqua.",
+    "exampleTr": "antiqua"
+  },
+  {
+    "id": "vocab-magna",
+    "latin": "magna",
+    "turkish": "magna",
+    "meaningTr": "magna",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "magna - magna"
+    ],
+    "exampleLatin": "magna.",
+    "exampleTr": "magna"
+  },
+  {
+    "id": "vocab-parva",
+    "latin": "parva",
+    "turkish": "parva",
+    "meaningTr": "parva",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "parva - parva"
+    ],
+    "exampleLatin": "parva.",
+    "exampleTr": "parva"
+  },
+  {
+    "id": "vocab-cera",
+    "latin": "cera",
+    "turkish": "cera",
+    "meaningTr": "cera",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "cera - cera"
+    ],
+    "exampleLatin": "cera.",
+    "exampleTr": "cera"
+  },
+  {
+    "id": "vocab-legit",
+    "latin": "legit",
+    "turkish": "okur",
+    "meaningTr": "okur",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "legit"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "legit - okur"
+    ],
+    "exampleLatin": "legit.",
+    "exampleTr": "okur"
+  },
+  {
+    "id": "vocab-scribit",
+    "latin": "scribit",
+    "turkish": "yazar",
+    "meaningTr": "yazar",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "scribit"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "scribit - yazar"
+    ],
+    "exampleLatin": "scribit.",
+    "exampleTr": "yazar"
+  },
+  {
+    "id": "vocab-docet",
+    "latin": "docet",
+    "turkish": "ogretir",
+    "meaningTr": "ogretir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "docet"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "docet - ogretir"
+    ],
+    "exampleLatin": "docet.",
+    "exampleTr": "ogretir"
+  },
+  {
+    "id": "vocab-discit",
+    "latin": "discit",
+    "turkish": "ogrenir",
+    "meaningTr": "ogrenir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "discit"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "discit - ogrenir"
+    ],
+    "exampleLatin": "discit.",
+    "exampleTr": "ogrenir"
+  },
+  {
+    "id": "vocab-audit",
+    "latin": "audit",
+    "turkish": "dinler",
+    "meaningTr": "dinler",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "audit"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "audit - dinler"
+    ],
+    "exampleLatin": "audit.",
+    "exampleTr": "dinler"
+  },
+  {
+    "id": "vocab-respondet",
+    "latin": "respondet",
+    "turkish": "respondet",
+    "meaningTr": "respondet",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "respondet"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "respondet - respondet"
+    ],
+    "exampleLatin": "respondet.",
+    "exampleTr": "respondet"
+  },
+  {
+    "id": "vocab-lectio",
+    "latin": "lectio",
+    "turkish": "lectio",
+    "meaningTr": "lectio",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "lectio - lectio"
+    ],
+    "exampleLatin": "lectio.",
+    "exampleTr": "lectio"
+  },
+  {
+    "id": "vocab-scamnum",
+    "latin": "scamnum",
+    "turkish": "scamnum",
+    "meaningTr": "scamnum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "scamnum - scamnum"
+    ],
+    "exampleLatin": "scamnum.",
+    "exampleTr": "scamnum"
+  },
+  {
+    "id": "vocab-magistra",
+    "latin": "magistra",
+    "turkish": "magistra",
+    "meaningTr": "magistra",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "magistra - magistra"
+    ],
+    "exampleLatin": "magistra.",
+    "exampleTr": "magistra"
+  },
+  {
+    "id": "vocab-exemplum",
+    "latin": "exemplum",
+    "turkish": "exemplum",
+    "meaningTr": "exemplum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "exemplum - exemplum"
+    ],
+    "exampleLatin": "exemplum.",
+    "exampleTr": "exemplum"
+  },
+  {
+    "id": "vocab-regula",
+    "latin": "regula",
+    "turkish": "regula",
+    "meaningTr": "regula",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "regula - regula"
+    ],
+    "exampleLatin": "regula.",
+    "exampleTr": "regula"
+  },
+  {
+    "id": "vocab-recte",
+    "latin": "recte",
+    "turkish": "recte",
+    "meaningTr": "recte",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "recte - recte"
+    ],
+    "exampleLatin": "recte.",
+    "exampleTr": "recte"
+  },
+  {
+    "id": "vocab-lente",
+    "latin": "lente",
+    "turkish": "lente",
+    "meaningTr": "lente",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "lente - lente"
+    ],
+    "exampleLatin": "lente.",
+    "exampleTr": "lente"
+  },
+  {
+    "id": "vocab-clare",
+    "latin": "clare",
+    "turkish": "clare",
+    "meaningTr": "clare",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "clare - clare"
+    ],
+    "exampleLatin": "clare.",
+    "exampleTr": "clare"
+  },
+  {
+    "id": "vocab-quaestio",
+    "latin": "quaestio",
+    "turkish": "quaestio",
+    "meaningTr": "quaestio",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "quaestio - quaestio"
+    ],
+    "exampleLatin": "quaestio.",
+    "exampleTr": "quaestio"
+  },
+  {
+    "id": "vocab-responsum",
+    "latin": "responsum",
+    "turkish": "responsum",
+    "meaningTr": "responsum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "responsum - responsum"
+    ],
+    "exampleLatin": "responsum.",
+    "exampleTr": "responsum"
+  },
+  {
+    "id": "vocab-pagina",
+    "latin": "pagina",
+    "turkish": "sayfa",
+    "meaningTr": "sayfa",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "pagina - sayfa"
+    ],
+    "exampleLatin": "pagina.",
+    "exampleTr": "sayfa"
+  },
+  {
+    "id": "vocab-cito",
+    "latin": "cito",
+    "turkish": "cito",
+    "meaningTr": "cito",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "cito - cito"
+    ],
+    "exampleLatin": "cito.",
+    "exampleTr": "cito"
+  },
+  {
+    "id": "vocab-rursus",
+    "latin": "rursus",
+    "turkish": "rursus",
+    "meaningTr": "rursus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "rursus - rursus"
+    ],
+    "exampleLatin": "rursus.",
+    "exampleTr": "rursus"
+  },
+  {
+    "id": "vocab-tace",
+    "latin": "tace",
+    "turkish": "tace",
+    "meaningTr": "tace",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "tace - tace"
+    ],
+    "exampleLatin": "tace.",
+    "exampleTr": "tace"
+  },
+  {
+    "id": "vocab-familia",
+    "latin": "familia",
+    "turkish": "aile",
+    "meaningTr": "aile",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "familia - aile"
+    ],
+    "exampleLatin": "familia.",
+    "exampleTr": "aile"
+  },
+  {
+    "id": "vocab-avus",
+    "latin": "avus",
+    "turkish": "avus",
+    "meaningTr": "avus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "avus - avus"
+    ],
+    "exampleLatin": "avus.",
+    "exampleTr": "avus"
+  },
+  {
+    "id": "vocab-avia",
+    "latin": "avia",
+    "turkish": "avia",
+    "meaningTr": "avia",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "avia - avia"
+    ],
+    "exampleLatin": "avia.",
+    "exampleTr": "avia"
+  },
+  {
+    "id": "vocab-ianua",
+    "latin": "ianua",
+    "turkish": "ianua",
+    "meaningTr": "ianua",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "ianua - ianua"
+    ],
+    "exampleLatin": "ianua.",
+    "exampleTr": "ianua"
+  },
+  {
+    "id": "vocab-focus",
+    "latin": "focus",
+    "turkish": "focus",
+    "meaningTr": "focus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "focus - focus"
+    ],
+    "exampleLatin": "focus.",
+    "exampleTr": "focus"
+  },
+  {
+    "id": "vocab-oleum",
+    "latin": "oleum",
+    "turkish": "oleum",
+    "meaningTr": "oleum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "oleum - oleum"
+    ],
+    "exampleLatin": "oleum.",
+    "exampleTr": "oleum"
+  },
+  {
+    "id": "vocab-arbor",
+    "latin": "arbor",
+    "turkish": "arbor",
+    "meaningTr": "arbor",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "arbor - arbor"
+    ],
+    "exampleLatin": "arbor.",
+    "exampleTr": "arbor"
+  },
+  {
+    "id": "vocab-flos",
+    "latin": "flos",
+    "turkish": "flos",
+    "meaningTr": "flos",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "flos - flos"
+    ],
+    "exampleLatin": "flos.",
+    "exampleTr": "flos"
+  },
+  {
+    "id": "vocab-rosa",
+    "latin": "rosa",
+    "turkish": "rosa",
+    "meaningTr": "rosa",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "rosa - rosa"
+    ],
+    "exampleLatin": "rosa.",
+    "exampleTr": "rosa"
+  },
+  {
+    "id": "vocab-paries",
+    "latin": "paries",
+    "turkish": "paries",
+    "meaningTr": "paries",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "paries - paries"
+    ],
+    "exampleLatin": "paries.",
+    "exampleTr": "paries"
+  },
+  {
+    "id": "vocab-sedes",
+    "latin": "sedes",
+    "turkish": "sedes",
+    "meaningTr": "sedes",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "domus"
+    ],
+    "tags": [
+      "domus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "sedes - sedes"
+    ],
+    "exampleLatin": "sedes.",
+    "exampleTr": "sedes"
+  },
+  {
+    "id": "vocab-panem",
+    "latin": "panem",
+    "turkish": "ekmegi",
+    "meaningTr": "ekmegi",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "panem - ekmegi"
+    ],
+    "exampleLatin": "panem.",
+    "exampleTr": "ekmegi"
+  },
+  {
+    "id": "vocab-librum",
+    "latin": "librum",
+    "turkish": "kitabi",
+    "meaningTr": "kitabi",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "librum - kitabi"
+    ],
+    "exampleLatin": "librum.",
+    "exampleTr": "kitabi"
+  },
+  {
+    "id": "vocab-tabulam",
+    "latin": "tabulam",
+    "turkish": "tableti",
+    "meaningTr": "tableti",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "tabulam - tableti"
+    ],
+    "exampleLatin": "tabulam.",
+    "exampleTr": "tableti"
+  },
+  {
+    "id": "vocab-emit",
+    "latin": "emit",
+    "turkish": "satin alir",
+    "meaningTr": "satin alir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "emit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "emit - satin alir"
+    ],
+    "exampleLatin": "emit.",
+    "exampleTr": "satin alir"
+  },
+  {
+    "id": "vocab-videt",
+    "latin": "videt",
+    "turkish": "gorur",
+    "meaningTr": "gorur",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "videt"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "videt - gorur"
+    ],
+    "exampleLatin": "videt.",
+    "exampleTr": "gorur"
+  },
+  {
+    "id": "vocab-amat",
+    "latin": "amat",
+    "turkish": "sever",
+    "meaningTr": "sever",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "amat"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "amat - sever"
+    ],
+    "exampleLatin": "amat.",
+    "exampleTr": "sever"
+  },
+  {
+    "id": "vocab-portat",
+    "latin": "portat",
+    "turkish": "tasir",
+    "meaningTr": "tasir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "portat"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "portat - tasir"
+    ],
+    "exampleLatin": "portat.",
+    "exampleTr": "tasir"
+  },
+  {
+    "id": "vocab-habet",
+    "latin": "habet",
+    "turkish": "sahiptir",
+    "meaningTr": "sahiptir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "habet"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "habet - sahiptir"
+    ],
+    "exampleLatin": "habet.",
+    "exampleTr": "sahiptir"
+  },
+  {
+    "id": "vocab-quaerit",
+    "latin": "quaerit",
+    "turkish": "arar",
+    "meaningTr": "arar",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "quaerit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "quaerit - arar"
+    ],
+    "exampleLatin": "quaerit.",
+    "exampleTr": "arar"
+  },
+  {
+    "id": "vocab-vendo",
+    "latin": "vendo",
+    "turkish": "vendo",
+    "meaningTr": "vendo",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "vendo"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "vendo - vendo"
+    ],
+    "exampleLatin": "vendo.",
+    "exampleTr": "vendo"
+  },
+  {
+    "id": "vocab-emo",
+    "latin": "emo",
+    "turkish": "emo",
+    "meaningTr": "emo",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "emo"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "emo - emo"
+    ],
+    "exampleLatin": "emo.",
+    "exampleTr": "emo"
+  },
+  {
+    "id": "vocab-pretium",
+    "latin": "pretium",
+    "turkish": "pretium",
+    "meaningTr": "pretium",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "pretium - pretium"
+    ],
+    "exampleLatin": "pretium.",
+    "exampleTr": "pretium"
+  },
+  {
+    "id": "vocab-sacculus",
+    "latin": "sacculus",
+    "turkish": "sacculus",
+    "meaningTr": "sacculus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "sacculus - sacculus"
+    ],
+    "exampleLatin": "sacculus.",
+    "exampleTr": "sacculus"
+  },
+  {
+    "id": "vocab-pomum",
+    "latin": "pomum",
+    "turkish": "pomum",
+    "meaningTr": "pomum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "pomum - pomum"
+    ],
+    "exampleLatin": "pomum.",
+    "exampleTr": "pomum"
+  },
+  {
+    "id": "vocab-oliva",
+    "latin": "oliva",
+    "turkish": "oliva",
+    "meaningTr": "oliva",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "oliva - oliva"
+    ],
+    "exampleLatin": "oliva.",
+    "exampleTr": "oliva"
+  },
+  {
+    "id": "vocab-caro",
+    "latin": "caro",
+    "turkish": "caro",
+    "meaningTr": "caro",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "caro - caro"
+    ],
+    "exampleLatin": "caro.",
+    "exampleTr": "caro"
+  },
+  {
+    "id": "vocab-vas",
+    "latin": "vas",
+    "turkish": "vas",
+    "meaningTr": "vas",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "vas - vas"
+    ],
+    "exampleLatin": "vas.",
+    "exampleTr": "vas"
+  },
+  {
+    "id": "vocab-urna",
+    "latin": "urna",
+    "turkish": "urna",
+    "meaningTr": "urna",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "urna - urna"
+    ],
+    "exampleLatin": "urna.",
+    "exampleTr": "urna"
+  },
+  {
+    "id": "vocab-copia",
+    "latin": "copia",
+    "turkish": "copia",
+    "meaningTr": "copia",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "copia - copia"
+    ],
+    "exampleLatin": "copia.",
+    "exampleTr": "copia"
+  },
+  {
+    "id": "vocab-turba",
+    "latin": "turba",
+    "turkish": "turba",
+    "meaningTr": "turba",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "turba - turba"
+    ],
+    "exampleLatin": "turba.",
+    "exampleTr": "turba"
+  },
+  {
+    "id": "vocab-clamor",
+    "latin": "clamor",
+    "turkish": "clamor",
+    "meaningTr": "clamor",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "clamor - clamor"
+    ],
+    "exampleLatin": "clamor.",
+    "exampleTr": "clamor"
+  },
+  {
+    "id": "vocab-argentum",
+    "latin": "argentum",
+    "turkish": "argentum",
+    "meaningTr": "argentum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "argentum - argentum"
+    ],
+    "exampleLatin": "argentum.",
+    "exampleTr": "argentum"
+  },
+  {
+    "id": "vocab-aurum",
+    "latin": "aurum",
+    "turkish": "aurum",
+    "meaningTr": "aurum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "aurum - aurum"
+    ],
+    "exampleLatin": "aurum.",
+    "exampleTr": "aurum"
+  },
+  {
+    "id": "vocab-donum",
+    "latin": "donum",
+    "turkish": "donum",
+    "meaningTr": "donum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "donum - donum"
+    ],
+    "exampleLatin": "donum.",
+    "exampleTr": "donum"
+  },
+  {
+    "id": "vocab-quaeso",
+    "latin": "quaeso",
+    "turkish": "quaeso",
+    "meaningTr": "quaeso",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "quaeso - quaeso"
+    ],
+    "exampleLatin": "quaeso.",
+    "exampleTr": "quaeso"
+  },
+  {
+    "id": "vocab-accipe",
+    "latin": "accipe",
+    "turkish": "accipe",
+    "meaningTr": "accipe",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "accipe"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "accipe - accipe"
+    ],
+    "exampleLatin": "accipe.",
+    "exampleTr": "accipe"
+  },
+  {
+    "id": "vocab-pecuniam",
+    "latin": "pecuniam",
+    "turkish": "parayi",
+    "meaningTr": "parayi",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "forum"
+    ],
+    "tags": [
+      "forum",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "pecuniam - parayi"
+    ],
+    "exampleLatin": "pecuniam.",
+    "exampleTr": "parayi"
+  },
+  {
+    "id": "vocab-bibliotheca",
+    "latin": "bibliotheca",
+    "turkish": "kutuphane",
+    "meaningTr": "kutuphane",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "bibliotheca - kutuphane"
+    ],
+    "exampleLatin": "bibliotheca.",
+    "exampleTr": "kutuphane"
+  },
+  {
+    "id": "vocab-capitulum",
+    "latin": "capitulum",
+    "turkish": "bolum",
+    "meaningTr": "bolum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "capitulum - bolum"
+    ],
+    "exampleLatin": "capitulum.",
+    "exampleTr": "bolum"
+  },
+  {
+    "id": "vocab-volumen",
+    "latin": "volumen",
+    "turkish": "volumen",
+    "meaningTr": "volumen",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "volumen - volumen"
+    ],
+    "exampleLatin": "volumen.",
+    "exampleTr": "volumen"
+  },
+  {
+    "id": "vocab-nota",
+    "latin": "nota",
+    "turkish": "nota",
+    "meaningTr": "nota",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "nota - nota"
+    ],
+    "exampleLatin": "nota.",
+    "exampleTr": "nota"
+  },
+  {
+    "id": "vocab-cerata",
+    "latin": "cerata",
+    "turkish": "cerata",
+    "meaningTr": "cerata",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "cerata - cerata"
+    ],
+    "exampleLatin": "cerata.",
+    "exampleTr": "cerata"
+  },
+  {
+    "id": "vocab-atramentum",
+    "latin": "atramentum",
+    "turkish": "atramentum",
+    "meaningTr": "atramentum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "atramentum - atramentum"
+    ],
+    "exampleLatin": "atramentum.",
+    "exampleTr": "atramentum"
+  },
+  {
+    "id": "vocab-calamus",
+    "latin": "calamus",
+    "turkish": "calamus",
+    "meaningTr": "calamus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "calamus - calamus"
+    ],
+    "exampleLatin": "calamus.",
+    "exampleTr": "calamus"
+  },
+  {
+    "id": "vocab-memoria",
+    "latin": "memoria",
+    "turkish": "memoria",
+    "meaningTr": "memoria",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "memoria - memoria"
+    ],
+    "exampleLatin": "memoria.",
+    "exampleTr": "memoria"
+  },
+  {
+    "id": "vocab-titulus",
+    "latin": "titulus",
+    "turkish": "titulus",
+    "meaningTr": "titulus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "titulus - titulus"
+    ],
+    "exampleLatin": "titulus.",
+    "exampleTr": "titulus"
+  },
+  {
+    "id": "vocab-initium",
+    "latin": "initium",
+    "turkish": "initium",
+    "meaningTr": "initium",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "initium - initium"
+    ],
+    "exampleLatin": "initium.",
+    "exampleTr": "initium"
+  },
+  {
+    "id": "vocab-finis",
+    "latin": "finis",
+    "turkish": "finis",
+    "meaningTr": "finis",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "finis - finis"
+    ],
+    "exampleLatin": "finis.",
+    "exampleTr": "finis"
+  },
+  {
+    "id": "vocab-error",
+    "latin": "error",
+    "turkish": "error",
+    "meaningTr": "error",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "error - error"
+    ],
+    "exampleLatin": "error.",
+    "exampleTr": "error"
+  },
+  {
+    "id": "vocab-emendat",
+    "latin": "emendat",
+    "turkish": "emendat",
+    "meaningTr": "emendat",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "emendat"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "emendat - emendat"
+    ],
+    "exampleLatin": "emendat.",
+    "exampleTr": "emendat"
+  },
+  {
+    "id": "vocab-recitat",
+    "latin": "recitat",
+    "turkish": "recitat",
+    "meaningTr": "recitat",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "recitat"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "recitat - recitat"
+    ],
+    "exampleLatin": "recitat.",
+    "exampleTr": "recitat"
+  },
+  {
+    "id": "vocab-narrat",
+    "latin": "narrat",
+    "turkish": "narrat",
+    "meaningTr": "narrat",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "narrat"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "narrat - narrat"
+    ],
+    "exampleLatin": "narrat.",
+    "exampleTr": "narrat"
+  },
+  {
+    "id": "vocab-fabula",
+    "latin": "fabula",
+    "turkish": "fabula",
+    "meaningTr": "fabula",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "fabula - fabula"
+    ],
+    "exampleLatin": "fabula.",
+    "exampleTr": "fabula"
+  },
+  {
+    "id": "vocab-historia",
+    "latin": "historia",
+    "turkish": "historia",
+    "meaningTr": "historia",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "historia - historia"
+    ],
+    "exampleLatin": "historia.",
+    "exampleTr": "historia"
+  },
+  {
+    "id": "vocab-versus",
+    "latin": "versus",
+    "turkish": "versus",
+    "meaningTr": "versus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "versus - versus"
+    ],
+    "exampleLatin": "versus.",
+    "exampleTr": "versus"
+  },
+  {
+    "id": "vocab-forma",
+    "latin": "forma",
+    "turkish": "forma",
+    "meaningTr": "forma",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "forma - forma"
+    ],
+    "exampleLatin": "forma.",
+    "exampleTr": "forma"
+  },
+  {
+    "id": "vocab-radix",
+    "latin": "radix",
+    "turkish": "radix",
+    "meaningTr": "radix",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "radix - radix"
+    ],
+    "exampleLatin": "radix.",
+    "exampleTr": "radix"
+  },
+  {
+    "id": "vocab-sensus",
+    "latin": "sensus",
+    "turkish": "sensus",
+    "meaningTr": "sensus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "sensus - sensus"
+    ],
+    "exampleLatin": "sensus.",
+    "exampleTr": "sensus"
+  },
+  {
+    "id": "vocab-discipulos",
+    "latin": "discipulos",
+    "turkish": "discipulos",
+    "meaningTr": "discipulos",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "bibliotheca"
+    ],
+    "tags": [
+      "bibliotheca",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "discipulos - discipulos"
+    ],
+    "exampleLatin": "discipulos.",
+    "exampleTr": "discipulos"
+  },
+  {
+    "id": "vocab-castra",
+    "latin": "castra",
+    "turkish": "kamp",
+    "meaningTr": "kamp",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "castra - kamp"
+    ],
+    "exampleLatin": "castra.",
+    "exampleTr": "kamp"
+  },
+  {
+    "id": "vocab-ducit",
+    "latin": "ducit",
+    "turkish": "goturur",
+    "meaningTr": "goturur",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ducit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "ducit - goturur"
+    ],
+    "exampleLatin": "ducit.",
+    "exampleTr": "goturur"
+  },
+  {
+    "id": "vocab-currit",
+    "latin": "currit",
+    "turkish": "kosar",
+    "meaningTr": "kosar",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "currit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "currit - kosar"
+    ],
+    "exampleLatin": "currit.",
+    "exampleTr": "kosar"
+  },
+  {
+    "id": "vocab-venit",
+    "latin": "venit",
+    "turkish": "gelir",
+    "meaningTr": "gelir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "venit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "venit - gelir"
+    ],
+    "exampleLatin": "venit.",
+    "exampleTr": "gelir"
+  },
+  {
+    "id": "vocab-sta",
+    "latin": "sta",
+    "turkish": "dur",
+    "meaningTr": "dur",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sta"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "sta - dur"
+    ],
+    "exampleLatin": "sta.",
+    "exampleTr": "dur"
+  },
+  {
+    "id": "vocab-ducite",
+    "latin": "ducite",
+    "turkish": "goturun",
+    "meaningTr": "goturun",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ducite"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "ducite - goturun"
+    ],
+    "exampleLatin": "ducite.",
+    "exampleTr": "goturun"
+  },
+  {
+    "id": "vocab-audite",
+    "latin": "audite",
+    "turkish": "dinleyin",
+    "meaningTr": "dinleyin",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "audite"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "audite - dinleyin"
+    ],
+    "exampleLatin": "audite.",
+    "exampleTr": "dinleyin"
+  },
+  {
+    "id": "vocab-state",
+    "latin": "state",
+    "turkish": "durun",
+    "meaningTr": "durun",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "state"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "state - durun"
+    ],
+    "exampleLatin": "state.",
+    "exampleTr": "durun"
+  },
+  {
+    "id": "vocab-signum",
+    "latin": "signum",
+    "turkish": "signum",
+    "meaningTr": "signum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "signum - signum"
+    ],
+    "exampleLatin": "signum.",
+    "exampleTr": "signum"
+  },
+  {
+    "id": "vocab-vallum",
+    "latin": "vallum",
+    "turkish": "vallum",
+    "meaningTr": "vallum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "vallum - vallum"
+    ],
+    "exampleLatin": "vallum.",
+    "exampleTr": "vallum"
+  },
+  {
+    "id": "vocab-tuba",
+    "latin": "tuba",
+    "turkish": "tuba",
+    "meaningTr": "tuba",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "tuba - tuba"
+    ],
+    "exampleLatin": "tuba.",
+    "exampleTr": "tuba"
+  },
+  {
+    "id": "vocab-ordo",
+    "latin": "ordo",
+    "turkish": "ordo",
+    "meaningTr": "ordo",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "ordo - ordo"
+    ],
+    "exampleLatin": "ordo.",
+    "exampleTr": "ordo"
+  },
+  {
+    "id": "vocab-disciplina",
+    "latin": "disciplina",
+    "turkish": "disciplina",
+    "meaningTr": "disciplina",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "disciplina - disciplina"
+    ],
+    "exampleLatin": "disciplina.",
+    "exampleTr": "disciplina"
+  },
+  {
+    "id": "vocab-exerce",
+    "latin": "exerce",
+    "turkish": "exerce",
+    "meaningTr": "exerce",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "exerce - exerce"
+    ],
+    "exampleLatin": "exerce.",
+    "exampleTr": "exerce"
+  },
+  {
+    "id": "vocab-ambulare",
+    "latin": "ambulare",
+    "turkish": "ambulare",
+    "meaningTr": "ambulare",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "ambulare - ambulare"
+    ],
+    "exampleLatin": "ambulare.",
+    "exampleTr": "ambulare"
+  },
+  {
+    "id": "vocab-custos",
+    "latin": "custos",
+    "turkish": "custos",
+    "meaningTr": "custos",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "custos - custos"
+    ],
+    "exampleLatin": "custos.",
+    "exampleTr": "custos"
+  },
+  {
+    "id": "vocab-dextra",
+    "latin": "dextra",
+    "turkish": "dextra",
+    "meaningTr": "dextra",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "dextra - dextra"
+    ],
+    "exampleLatin": "dextra.",
+    "exampleTr": "dextra"
+  },
+  {
+    "id": "vocab-sinistra",
+    "latin": "sinistra",
+    "turkish": "sinistra",
+    "meaningTr": "sinistra",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "sinistra - sinistra"
+    ],
+    "exampleLatin": "sinistra.",
+    "exampleTr": "sinistra"
+  },
+  {
+    "id": "vocab-ante",
+    "latin": "ante",
+    "turkish": "ante",
+    "meaningTr": "ante",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "ante - ante"
+    ],
+    "exampleLatin": "ante.",
+    "exampleTr": "ante"
+  },
+  {
+    "id": "vocab-post",
+    "latin": "post",
+    "turkish": "post",
+    "meaningTr": "post",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "post - post"
+    ],
+    "exampleLatin": "post.",
+    "exampleTr": "post"
+  },
+  {
+    "id": "vocab-intra",
+    "latin": "intra",
+    "turkish": "intra",
+    "meaningTr": "intra",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "intra - intra"
+    ],
+    "exampleLatin": "intra.",
+    "exampleTr": "intra"
+  },
+  {
+    "id": "vocab-extra",
+    "latin": "extra",
+    "turkish": "extra",
+    "meaningTr": "extra",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "extra - extra"
+    ],
+    "exampleLatin": "extra.",
+    "exampleTr": "extra"
+  },
+  {
+    "id": "vocab-puerum",
+    "latin": "puerum",
+    "turkish": "puerum",
+    "meaningTr": "puerum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "puerum - puerum"
+    ],
+    "exampleLatin": "puerum.",
+    "exampleTr": "puerum"
+  },
+  {
+    "id": "vocab-portam",
+    "latin": "portam",
+    "turkish": "portam",
+    "meaningTr": "portam",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "portam - portam"
+    ],
+    "exampleLatin": "portam.",
+    "exampleTr": "portam"
+  },
+  {
+    "id": "vocab-urbs",
+    "latin": "urbs",
+    "turkish": "sehir",
+    "meaningTr": "sehir",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "urbs - sehir"
+    ],
+    "exampleLatin": "urbs.",
+    "exampleTr": "sehir"
+  },
+  {
+    "id": "vocab-viator",
+    "latin": "viator",
+    "turkish": "yolcu",
+    "meaningTr": "yolcu",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "viator - yolcu"
+    ],
+    "exampleLatin": "viator.",
+    "exampleTr": "yolcu"
+  },
+  {
+    "id": "vocab-ambulat",
+    "latin": "ambulat",
+    "turkish": "yurur",
+    "meaningTr": "yurur",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ambulat"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "ambulat - yurur"
+    ],
+    "exampleLatin": "ambulat.",
+    "exampleTr": "yurur"
+  },
+  {
+    "id": "vocab-intrat",
+    "latin": "intrat",
+    "turkish": "girer",
+    "meaningTr": "girer",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "intrat"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "intrat - girer"
+    ],
+    "exampleLatin": "intrat.",
+    "exampleTr": "girer"
+  },
+  {
+    "id": "vocab-exit",
+    "latin": "exit",
+    "turkish": "cikar",
+    "meaningTr": "cikar",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "exit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "exit - cikar"
+    ],
+    "exampleLatin": "exit.",
+    "exampleTr": "cikar"
+  },
+  {
+    "id": "vocab-prope",
+    "latin": "prope",
+    "turkish": "prope",
+    "meaningTr": "prope",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "prope - prope"
+    ],
+    "exampleLatin": "prope.",
+    "exampleTr": "prope"
+  },
+  {
+    "id": "vocab-longe",
+    "latin": "longe",
+    "turkish": "longe",
+    "meaningTr": "longe",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "longe - longe"
+    ],
+    "exampleLatin": "longe.",
+    "exampleTr": "longe"
+  },
+  {
+    "id": "vocab-huc",
+    "latin": "huc",
+    "turkish": "huc",
+    "meaningTr": "huc",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "huc - huc"
+    ],
+    "exampleLatin": "huc.",
+    "exampleTr": "huc"
+  },
+  {
+    "id": "vocab-illuc",
+    "latin": "illuc",
+    "turkish": "illuc",
+    "meaningTr": "illuc",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "illuc - illuc"
+    ],
+    "exampleLatin": "illuc.",
+    "exampleTr": "illuc"
+  },
+  {
+    "id": "vocab-iter",
+    "latin": "iter",
+    "turkish": "iter",
+    "meaningTr": "iter",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "iter - iter"
+    ],
+    "exampleLatin": "iter.",
+    "exampleTr": "iter"
+  },
+  {
+    "id": "vocab-rivus",
+    "latin": "rivus",
+    "turkish": "rivus",
+    "meaningTr": "rivus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "rivus - rivus"
+    ],
+    "exampleLatin": "rivus.",
+    "exampleTr": "rivus"
+  },
+  {
+    "id": "vocab-pons",
+    "latin": "pons",
+    "turkish": "pons",
+    "meaningTr": "pons",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "pons - pons"
+    ],
+    "exampleLatin": "pons.",
+    "exampleTr": "pons"
+  },
+  {
+    "id": "vocab-campus",
+    "latin": "campus",
+    "turkish": "campus",
+    "meaningTr": "campus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "campus - campus"
+    ],
+    "exampleLatin": "campus.",
+    "exampleTr": "campus"
+  },
+  {
+    "id": "vocab-carrus",
+    "latin": "carrus",
+    "turkish": "carrus",
+    "meaningTr": "carrus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "carrus - carrus"
+    ],
+    "exampleLatin": "carrus.",
+    "exampleTr": "carrus"
+  },
+  {
+    "id": "vocab-rota",
+    "latin": "rota",
+    "turkish": "rota",
+    "meaningTr": "rota",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "rota - rota"
+    ],
+    "exampleLatin": "rota.",
+    "exampleTr": "rota"
+  },
+  {
+    "id": "vocab-lapis",
+    "latin": "lapis",
+    "turkish": "lapis",
+    "meaningTr": "lapis",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "lapis - lapis"
+    ],
+    "exampleLatin": "lapis.",
+    "exampleTr": "lapis"
+  },
+  {
+    "id": "vocab-tabernam",
+    "latin": "tabernam",
+    "turkish": "tabernam",
+    "meaningTr": "tabernam",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "tabernam - tabernam"
+    ],
+    "exampleLatin": "tabernam.",
+    "exampleTr": "tabernam"
+  },
+  {
+    "id": "vocab-marco",
+    "latin": "Marco",
+    "turkish": "Marco",
+    "meaningTr": "Marco",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "via-appia"
+    ],
+    "tags": [
+      "via-appia",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "Marco - Marco"
+    ],
+    "exampleLatin": "Marco.",
+    "exampleTr": "Marco"
+  },
+  {
+    "id": "vocab-capitolium",
+    "latin": "capitolium",
+    "turkish": "Capitolium",
+    "meaningTr": "Capitolium",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "capitolium - Capitolium"
+    ],
+    "exampleLatin": "capitolium.",
+    "exampleTr": "Capitolium"
+  },
+  {
+    "id": "vocab-victoria",
+    "latin": "victoria",
+    "turkish": "zafer",
+    "meaningTr": "zafer",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "victoria - zafer"
+    ],
+    "exampleLatin": "victoria.",
+    "exampleTr": "zafer"
+  },
+  {
+    "id": "vocab-corona",
+    "latin": "corona",
+    "turkish": "cicek taci",
+    "meaningTr": "cicek taci",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "corona - cicek taci"
+    ],
+    "exampleLatin": "corona.",
+    "exampleTr": "cicek taci"
+  },
+  {
+    "id": "vocab-gradus",
+    "latin": "gradus",
+    "turkish": "gradus",
+    "meaningTr": "gradus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "gradus - gradus"
+    ],
+    "exampleLatin": "gradus.",
+    "exampleTr": "gradus"
+  },
+  {
+    "id": "vocab-testis",
+    "latin": "testis",
+    "turkish": "testis",
+    "meaningTr": "testis",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "testis - testis"
+    ],
+    "exampleLatin": "testis.",
+    "exampleTr": "testis"
+  },
+  {
+    "id": "vocab-rostrum",
+    "latin": "rostrum",
+    "turkish": "rostrum",
+    "meaningTr": "rostrum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "rostrum - rostrum"
+    ],
+    "exampleLatin": "rostrum.",
+    "exampleTr": "rostrum"
+  },
+  {
+    "id": "vocab-laus",
+    "latin": "laus",
+    "turkish": "laus",
+    "meaningTr": "laus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "laus - laus"
+    ],
+    "exampleLatin": "laus.",
+    "exampleTr": "laus"
+  },
+  {
+    "id": "vocab-gratia",
+    "latin": "gratia",
+    "turkish": "tesekkur",
+    "meaningTr": "tesekkur",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "gratia - tesekkur"
+    ],
+    "exampleLatin": "gratia.",
+    "exampleTr": "tesekkur"
+  },
+  {
+    "id": "vocab-populus",
+    "latin": "populus",
+    "turkish": "populus",
+    "meaningTr": "populus",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "populus - populus"
+    ],
+    "exampleLatin": "populus.",
+    "exampleTr": "populus"
+  },
+  {
+    "id": "vocab-prima",
+    "latin": "prima",
+    "turkish": "prima",
+    "meaningTr": "prima",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "adjective",
+      "chapter"
+    ],
+    "examples": [
+      "prima - prima"
+    ],
+    "exampleLatin": "prima.",
+    "exampleTr": "prima"
+  },
+  {
+    "id": "vocab-viae",
+    "latin": "viae",
+    "turkish": "yolun",
+    "meaningTr": "yolun",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "viae - yolun"
+    ],
+    "exampleLatin": "viae.",
+    "exampleTr": "yolun"
+  },
+  {
+    "id": "vocab-amici",
+    "latin": "amici",
+    "turkish": "arkadaslar",
+    "meaningTr": "arkadaslar",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "capitolium"
+    ],
+    "tags": [
+      "capitolium",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "amici - arkadaslar"
+    ],
+    "exampleLatin": "amici.",
+    "exampleTr": "arkadaslar"
+  }
+]

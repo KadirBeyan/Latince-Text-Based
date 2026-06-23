@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Via Prima",
+  "version": "0.1.0",
+  "identifier": "com.kadirbeyan.viaprima",
+  "build": {
+    "beforeDevCommand": "npm run desktop:predev",
+    "beforeBuildCommand": "npm run desktop:prebuild",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../client/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Via Prima",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1100,
+        "minHeight": 720,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": ["../dist/server", "../data", "../package.json", "../node_modules"],
+    "icon": []
+  }
+}

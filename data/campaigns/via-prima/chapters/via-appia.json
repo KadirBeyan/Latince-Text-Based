@@ -1,0 +1,3564 @@
+{
+  "id": "via-appia",
+  "title": "Via Appia",
+  "titleTr": "Via Appia",
+  "titleLatin": "Via Appia",
+  "description": "Via Appia chapter, A2 duzeyinde Via Prima ogrenme yolu.",
+  "descriptionTr": "Via Appia chapter, A2 duzeyinde Via Prima ogrenme yolu.",
+  "order": 7,
+  "startQuestId": "via-appia_main_prima",
+  "startSceneId": "via-appia_001_arrival",
+  "locationIds": [
+    "via-appia",
+    "porta"
+  ],
+  "npcIds": [
+    "lydia",
+    "flavius"
+  ],
+  "grammarFocus": [
+    "prepositions-in-ad-cum-sine",
+    "ablative-intro",
+    "present-active-basic",
+    "accusative-basic"
+  ],
+  "vocabularyFocus": [
+    "vocab-via",
+    "vocab-porta",
+    "vocab-villa",
+    "vocab-ager",
+    "vocab-urbs",
+    "vocab-taberna",
+    "vocab-cum",
+    "vocab-sine",
+    "vocab-in",
+    "vocab-ad",
+    "vocab-venit",
+    "vocab-ambulat",
+    "vocab-intrat",
+    "vocab-exit",
+    "vocab-currit"
+  ],
+  "estimatedSceneCount": 25,
+  "unlockConditions": [
+    {
+      "type": "FLAG_EQUALS",
+      "key": "chapter.castra.completed",
+      "value": true
+    }
+  ],
+  "mainQuests": [
+    "via-appia_main_prima",
+    "via-appia_main_secunda",
+    "via-appia_main_tertia",
+    "via-appia_main_quarta"
+  ],
+  "sideQuests": [
+    "via-appia_side_auxilium",
+    "via-appia_side_amicus",
+    "via-appia_side_nota",
+    "via-appia_side_brevis",
+    "via-appia_side_memoria"
+  ],
+  "reviewQuests": [
+    "via-appia_review_recapitulatio"
+  ],
+  "quests": [
+    {
+      "id": "via-appia_main_prima",
+      "type": "main",
+      "title": "Via Appia: prima",
+      "titleTr": "Via Appia: prima",
+      "titleLatin": "prima",
+      "description": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_001_arrival",
+      "scenes": [
+        {
+          "id": "via-appia_001_arrival",
+          "title": "Via Appia 001",
+          "titleTr": "Via Appia 001",
+          "titleLatin": "Exercitatio",
+          "locationId": "porta",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "objective": "Marcus ad portam venit. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_001_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_002_practice"
+            },
+            {
+              "id": "via-appia_001_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [
+            {
+              "type": "DISCOVER_LOCATION",
+              "locationId": "via-appia"
+            }
+          ],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_001_arrival",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-via",
+              "vocab-porta",
+              "vocab-villa"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Marcus ad portam venit."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "via-appia_002_practice",
+          "title": "Via Appia 002",
+          "titleTr": "Via Appia 002",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "objective": "Puella in villa est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_002_practice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ablative-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-porta",
+              "vocab-villa",
+              "vocab-ager"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella in villa est."
+            ]
+          },
+          "reviewTags": [
+            "ablative-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella in villa est.",
+            "canonicalAnswers": [
+              "Puella in villa est.",
+              "Puella in villa est",
+              "puella in villa est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ablative-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-porta",
+              "vocab-villa",
+              "vocab-ager"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_003_voice",
+            "failureNextSceneId": "via-appia_002_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella in villa est."
+              }
+            ]
+          }
+        },
+        {
+          "id": "via-appia_003_voice",
+          "title": "Via Appia 003",
+          "titleTr": "Via Appia 003",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "objective": "Puer cum Marco ambulat. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_003_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_004_reply"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_003_voice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-villa",
+              "vocab-ager",
+              "vocab-urbs"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer cum Marco ambulat."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        },
+        {
+          "id": "via-appia_004_reply",
+          "title": "Via Appia 004",
+          "titleTr": "Via Appia 004",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "objective": "Servus sine gladio venit. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_004_reply",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "accusative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ager",
+              "vocab-urbs",
+              "vocab-taberna"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Servus sine gladio venit."
+            ]
+          },
+          "reviewTags": [
+            "accusative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Servus sine gladio venit.",
+            "canonicalAnswers": [
+              "Servus sine gladio venit.",
+              "Servus sine gladio venit",
+              "servus sine gladio venit."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "accusative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ager",
+              "vocab-urbs",
+              "vocab-taberna"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_005_review",
+            "failureNextSceneId": "via-appia_004_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Servus sine gladio venit."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_004_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_main_secunda",
+      "type": "main",
+      "title": "Via Appia: secunda",
+      "titleTr": "Via Appia: secunda",
+      "titleLatin": "secunda",
+      "description": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_005_review",
+      "scenes": [
+        {
+          "id": "via-appia_005_review",
+          "title": "Via Appia 005",
+          "titleTr": "Via Appia 005",
+          "titleLatin": "Exercitatio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "objective": "Viator tabernam intrat. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_005_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_006_path"
+            },
+            {
+              "id": "via-appia_005_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_005_review",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-urbs",
+              "vocab-taberna",
+              "vocab-cum"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Viator tabernam intrat."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "via-appia_006_path",
+          "title": "Via Appia 006",
+          "titleTr": "Via Appia 006",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "objective": "Marcus ad portam venit. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_006_path",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ablative-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-taberna",
+              "vocab-cum",
+              "vocab-sine"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Marcus ad portam venit."
+            ]
+          },
+          "reviewTags": [
+            "ablative-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Marcus ad portam venit.",
+            "canonicalAnswers": [
+              "Marcus ad portam venit.",
+              "Marcus ad portam venit",
+              "marcus ad portam venit."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ablative-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-taberna",
+              "vocab-cum",
+              "vocab-sine"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_007_arrival",
+            "failureNextSceneId": "via-appia_006_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Marcus ad portam venit."
+              }
+            ]
+          }
+        },
+        {
+          "id": "via-appia_007_arrival",
+          "title": "Via Appia 007",
+          "titleTr": "Via Appia 007",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "objective": "Puella in villa est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_007_arrival",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-cum",
+              "vocab-sine",
+              "vocab-in"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella in villa est."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "lydia",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella in villa est.",
+            "canonicalAnswers": [
+              "Puella in villa est.",
+              "Puella in villa est",
+              "puella in villa est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "present-active-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-cum",
+              "vocab-sine",
+              "vocab-in"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_008_practice",
+            "failureNextSceneId": "via-appia_007_arrival",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella in villa est."
+              }
+            ]
+          }
+        },
+        {
+          "id": "via-appia_008_practice",
+          "title": "Via Appia 008",
+          "titleTr": "Via Appia 008",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "objective": "Puer cum Marco ambulat. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_008_practice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "accusative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-sine",
+              "vocab-in",
+              "vocab-ad"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer cum Marco ambulat."
+            ]
+          },
+          "reviewTags": [
+            "accusative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puer cum Marco ambulat.",
+            "canonicalAnswers": [
+              "Puer cum Marco ambulat.",
+              "Puer cum Marco ambulat",
+              "puer cum marco ambulat."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "accusative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-sine",
+              "vocab-in",
+              "vocab-ad"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_009_voice",
+            "failureNextSceneId": "via-appia_008_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puer cum Marco ambulat."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_008_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_main_tertia",
+      "type": "main",
+      "title": "Via Appia: tertia",
+      "titleTr": "Via Appia: tertia",
+      "titleLatin": "tertia",
+      "description": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_009_voice",
+      "scenes": [
+        {
+          "id": "via-appia_009_voice",
+          "title": "Via Appia 009",
+          "titleTr": "Via Appia 009",
+          "titleLatin": "Exercitatio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "objective": "Servus sine gladio venit. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_009_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_010_reply"
+            },
+            {
+              "id": "via-appia_009_voice_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_009_voice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-in",
+              "vocab-ad",
+              "vocab-venit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Servus sine gladio venit."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "via-appia_010_reply",
+          "title": "Via Appia 010",
+          "titleTr": "Via Appia 010",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "objective": "Viator tabernam intrat. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_010_reply",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ablative-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-ad",
+              "vocab-venit",
+              "vocab-ambulat"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Viator tabernam intrat."
+            ]
+          },
+          "reviewTags": [
+            "ablative-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Viator tabernam intrat.",
+            "canonicalAnswers": [
+              "Viator tabernam intrat.",
+              "Viator tabernam intrat",
+              "viator tabernam intrat."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ablative-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ad",
+              "vocab-venit",
+              "vocab-ambulat"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_011_review",
+            "failureNextSceneId": "via-appia_010_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Viator tabernam intrat."
+              }
+            ]
+          }
+        },
+        {
+          "id": "via-appia_011_review",
+          "title": "Via Appia 011",
+          "titleTr": "Via Appia 011",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "objective": "Marcus ad portam venit. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_011_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_012_path"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_011_review",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-venit",
+              "vocab-ambulat",
+              "vocab-intrat"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Marcus ad portam venit."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        },
+        {
+          "id": "via-appia_012_path",
+          "title": "Via Appia 012",
+          "titleTr": "Via Appia 012",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "objective": "Puella in villa est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_012_path",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "accusative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ambulat",
+              "vocab-intrat",
+              "vocab-exit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella in villa est."
+            ]
+          },
+          "reviewTags": [
+            "accusative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella in villa est.",
+            "canonicalAnswers": [
+              "Puella in villa est.",
+              "Puella in villa est",
+              "puella in villa est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "accusative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ambulat",
+              "vocab-intrat",
+              "vocab-exit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_013_arrival",
+            "failureNextSceneId": "via-appia_012_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella in villa est."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_012_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_main_quarta",
+      "type": "main",
+      "title": "Via Appia: quarta",
+      "titleTr": "Via Appia: quarta",
+      "titleLatin": "quarta",
+      "description": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia main quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_013_arrival",
+      "scenes": [
+        {
+          "id": "via-appia_013_arrival",
+          "title": "Via Appia 013",
+          "titleTr": "Via Appia 013",
+          "titleLatin": "Exercitatio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "objective": "Puer cum Marco ambulat. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_013_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_014_practice"
+            },
+            {
+              "id": "via-appia_013_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_013_arrival",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-via",
+              "vocab-porta",
+              "vocab-villa"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer cum Marco ambulat."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "via-appia_014_practice",
+          "title": "Via Appia 014",
+          "titleTr": "Via Appia 014",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "objective": "Servus sine gladio venit. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_014_practice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ablative-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-porta",
+              "vocab-villa",
+              "vocab-ager"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Servus sine gladio venit."
+            ]
+          },
+          "reviewTags": [
+            "ablative-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Servus sine gladio venit.",
+            "canonicalAnswers": [
+              "Servus sine gladio venit.",
+              "Servus sine gladio venit",
+              "servus sine gladio venit."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ablative-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-porta",
+              "vocab-villa",
+              "vocab-ager"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_015_voice",
+            "failureNextSceneId": "via-appia_014_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Servus sine gladio venit."
+              }
+            ]
+          }
+        },
+        {
+          "id": "via-appia_015_voice",
+          "title": "Via Appia 015",
+          "titleTr": "Via Appia 015",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "objective": "Viator tabernam intrat. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_015_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_016_reply"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_015_voice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-villa",
+              "vocab-ager",
+              "vocab-urbs"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Viator tabernam intrat."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        },
+        {
+          "id": "via-appia_016_reply",
+          "title": "Via Appia 016",
+          "titleTr": "Via Appia 016",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "objective": "Marcus ad portam venit. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_016_reply",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "accusative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ager",
+              "vocab-urbs",
+              "vocab-taberna"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Marcus ad portam venit."
+            ]
+          },
+          "reviewTags": [
+            "accusative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Marcus ad portam venit.",
+            "canonicalAnswers": [
+              "Marcus ad portam venit.",
+              "Marcus ad portam venit",
+              "marcus ad portam venit."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "accusative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ager",
+              "vocab-urbs",
+              "vocab-taberna"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_017_review",
+            "failureNextSceneId": "via-appia_016_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Marcus ad portam venit."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_016_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_side_auxilium",
+      "type": "side",
+      "title": "Via Appia: auxilium",
+      "titleTr": "Via Appia: auxilium",
+      "titleLatin": "auxilium",
+      "description": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_017_review",
+      "scenes": [
+        {
+          "id": "via-appia_017_review",
+          "title": "Via Appia 017",
+          "titleTr": "Via Appia 017",
+          "titleLatin": "Exercitatio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "objective": "Puella in villa est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [
+            {
+              "id": "via-appia_017_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_018_path"
+            },
+            {
+              "id": "via-appia_017_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_017_review",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-urbs",
+              "vocab-taberna",
+              "vocab-cum"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella in villa est."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "lydia",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella in villa est.",
+            "canonicalAnswers": [
+              "Puella in villa est.",
+              "Puella in villa est",
+              "puella in villa est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-urbs",
+              "vocab-taberna",
+              "vocab-cum"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_018_path",
+            "failureNextSceneId": "via-appia_017_review",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella in villa est."
+              }
+            ]
+          }
+        },
+        {
+          "id": "via-appia_018_path",
+          "title": "Via Appia 018",
+          "titleTr": "Via Appia 018",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "objective": "Puer cum Marco ambulat. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_018_path",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ablative-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-taberna",
+              "vocab-cum",
+              "vocab-sine"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer cum Marco ambulat."
+            ]
+          },
+          "reviewTags": [
+            "ablative-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puer cum Marco ambulat.",
+            "canonicalAnswers": [
+              "Puer cum Marco ambulat.",
+              "Puer cum Marco ambulat",
+              "puer cum marco ambulat."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ablative-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-taberna",
+              "vocab-cum",
+              "vocab-sine"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_019_arrival",
+            "failureNextSceneId": "via-appia_018_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puer cum Marco ambulat."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_018_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_side_amicus",
+      "type": "side",
+      "title": "Via Appia: amicus",
+      "titleTr": "Via Appia: amicus",
+      "titleLatin": "amicus",
+      "description": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_019_arrival",
+      "scenes": [
+        {
+          "id": "via-appia_019_arrival",
+          "title": "Via Appia 019",
+          "titleTr": "Via Appia 019",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "objective": "Servus sine gladio venit. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_019_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_020_practice"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_019_arrival",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-cum",
+              "vocab-sine",
+              "vocab-in"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Servus sine gladio venit."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        },
+        {
+          "id": "via-appia_020_practice",
+          "title": "Via Appia 020",
+          "titleTr": "Via Appia 020",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "objective": "Viator tabernam intrat. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_020_practice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "accusative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-sine",
+              "vocab-in",
+              "vocab-ad"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Viator tabernam intrat."
+            ]
+          },
+          "reviewTags": [
+            "accusative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Viator tabernam intrat.",
+            "canonicalAnswers": [
+              "Viator tabernam intrat.",
+              "Viator tabernam intrat",
+              "viator tabernam intrat."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "accusative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-sine",
+              "vocab-in",
+              "vocab-ad"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_021_voice",
+            "failureNextSceneId": "via-appia_020_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Viator tabernam intrat."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_020_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_side_nota",
+      "type": "side",
+      "title": "Via Appia: nota",
+      "titleTr": "Via Appia: nota",
+      "titleLatin": "nota",
+      "description": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_021_voice",
+      "scenes": [
+        {
+          "id": "via-appia_021_voice",
+          "title": "Via Appia 021",
+          "titleTr": "Via Appia 021",
+          "titleLatin": "Exercitatio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Marcus ad portam venit.",
+          "objective": "Marcus ad portam venit. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_021_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_022_reply"
+            },
+            {
+              "id": "via-appia_021_voice_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_021_voice",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-in",
+              "vocab-ad",
+              "vocab-venit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Marcus ad portam venit."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "via-appia_022_reply",
+          "title": "Via Appia 022",
+          "titleTr": "Via Appia 022",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puella in villa est.",
+          "objective": "Puella in villa est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_022_reply",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ablative-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-ad",
+              "vocab-venit",
+              "vocab-ambulat"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella in villa est."
+            ]
+          },
+          "reviewTags": [
+            "ablative-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella in villa est.",
+            "canonicalAnswers": [
+              "Puella in villa est.",
+              "Puella in villa est",
+              "puella in villa est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ablative-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ad",
+              "vocab-venit",
+              "vocab-ambulat"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_023_review",
+            "failureNextSceneId": "via-appia_022_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella in villa est."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_022_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_side_brevis",
+      "type": "side",
+      "title": "Via Appia: brevis",
+      "titleTr": "Via Appia: brevis",
+      "titleLatin": "brevis",
+      "description": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_023_review",
+      "scenes": [
+        {
+          "id": "via-appia_023_review",
+          "title": "Via Appia 023",
+          "titleTr": "Via Appia 023",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Puer cum Marco ambulat.",
+          "objective": "Puer cum Marco ambulat. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_023_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_024_path"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_023_review",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-venit",
+              "vocab-ambulat",
+              "vocab-intrat"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer cum Marco ambulat."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_023_review"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_side_memoria",
+      "type": "side",
+      "title": "Via Appia: memoria",
+      "titleTr": "Via Appia: memoria",
+      "titleLatin": "memoria",
+      "description": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia side quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_024_path",
+      "scenes": [
+        {
+          "id": "via-appia_024_path",
+          "title": "Via Appia 024",
+          "titleTr": "Via Appia 024",
+          "titleLatin": "Lectio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "flavius"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Servus sine gladio venit.",
+          "objective": "Servus sine gladio venit. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_024_path",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "accusative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ambulat",
+              "vocab-intrat",
+              "vocab-exit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Servus sine gladio venit."
+            ]
+          },
+          "reviewTags": [
+            "accusative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "flavius",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Servus sine gladio venit.",
+            "canonicalAnswers": [
+              "Servus sine gladio venit.",
+              "Servus sine gladio venit",
+              "servus sine gladio venit."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "accusative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ambulat",
+              "vocab-intrat",
+              "vocab-exit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "via-appia_025_arrival",
+            "failureNextSceneId": "via-appia_024_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 35
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Servus sine gladio venit."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_024_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "via-appia_review_recapitulatio",
+      "type": "review",
+      "title": "Via Appia: recapitulatio",
+      "titleTr": "Via Appia: recapitulatio",
+      "titleLatin": "recapitulatio",
+      "description": "Via Appia review quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Via Appia review quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+      "startSceneId": "via-appia_025_arrival",
+      "scenes": [
+        {
+          "id": "via-appia_025_arrival",
+          "title": "Via Appia 025",
+          "titleTr": "Via Appia 025",
+          "titleLatin": "Exercitatio",
+          "locationId": "via-appia",
+          "npcIds": [
+            "lydia"
+          ],
+          "description": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "descriptionTr": "Via Appia bolumunde kisa bir ogrenme ani. Hedef cumle: Viator tabernam intrat.",
+          "objective": "Viator tabernam intrat. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "via-appia_025_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "capitolium_001_arrival"
+            },
+            {
+              "id": "via-appia_025_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            },
+            {
+              "type": "SET_FLAG",
+              "key": "chapter.via-appia.completed",
+              "value": true
+            },
+            {
+              "type": "COMPLETE_CHAPTER",
+              "chapterId": "via-appia"
+            },
+            {
+              "type": "UNLOCK_CHAPTER",
+              "chapterId": "capitolium"
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "via-appia_025_arrival",
+                "chapterId": "via-appia"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-via",
+              "vocab-porta",
+              "vocab-villa"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Viator tabernam intrat."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "type": "ADD_XP",
+          "amount": 20
+        }
+      ],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "via-appia_025_arrival"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "prepositions-in-ad-cum-sine",
+          "ablative-intro",
+          "present-active-basic",
+          "accusative-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-via",
+          "vocab-porta",
+          "vocab-villa",
+          "vocab-ager",
+          "vocab-urbs",
+          "vocab-taberna",
+          "vocab-cum",
+          "vocab-sine"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    }
+  ]
+}

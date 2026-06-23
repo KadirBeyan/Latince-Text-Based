@@ -1,0 +1,2 @@
+import type { PlayerSave } from "../../types/gameTypes";
+export function v1ToV2(save: Record<string, unknown>): PlayerSave { return { ...save, schemaVersion: 2, currency: typeof save.currency === "number" ? save.currency : 0, masteryStates: Array.isArray(save.masteryStates) ? save.masteryStates : [], streak: typeof save.streak === "object" && save.streak ? save.streak : { current: 0, best: 0 }, seenRewardEventIds: Array.isArray(save.seenRewardEventIds) ? save.seenRewardEventIds : [], errorMemory: Array.isArray(save.errorMemory) ? save.errorMemory : [] } as PlayerSave; }

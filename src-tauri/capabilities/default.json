@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default permissions for Via Prima local-first shell.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

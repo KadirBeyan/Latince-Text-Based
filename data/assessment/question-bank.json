@@ -1,0 +1,2568 @@
+[
+  {
+    "id": "assess_greet_001",
+    "type": "latin-input",
+    "promptTr": "Merhaba de.",
+    "skillIds": [
+      "latin_greetings"
+    ],
+    "expectedAnswers": [
+      "Salve!",
+      "Salve."
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_greet_002",
+    "type": "latin-input",
+    "promptTr": "Hoşça kal de.",
+    "skillIds": [
+      "latin_greetings"
+    ],
+    "expectedAnswers": [
+      "Vale!",
+      "Vale."
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-vale"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_greet_003",
+    "type": "latin-input",
+    "promptTr": "Öğretmene merhaba de.",
+    "skillIds": [
+      "latin_greetings"
+    ],
+    "expectedAnswers": [
+      "Salve, magister!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-magister"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_greet_004",
+    "type": "latin-input",
+    "promptTr": "Arkadaşına merhaba de.",
+    "skillIds": [
+      "latin_greetings"
+    ],
+    "expectedAnswers": [
+      "Salve, amice!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-amicus"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_greet_005",
+    "type": "latin-input",
+    "promptTr": "Birden fazla kişiye hoşça kal de.",
+    "skillIds": [
+      "latin_greetings"
+    ],
+    "expectedAnswers": [
+      "Valete!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-vale"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_sum_001",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Ben öğrenciyim.",
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "expectedAnswers": [
+      "Sum discipulus.",
+      "Ego sum discipulus."
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_sum_002",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Sen öğretmensin.",
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "expectedAnswers": [
+      "Tu es magister."
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-magister"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_sum_003",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Marcus arkadaştır.",
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "expectedAnswers": [
+      "Marcus est amicus."
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-amicus"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_sum_004",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Biz öğrenciyiz.",
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "expectedAnswers": [
+      "Nos sumus discipuli."
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_sum_005",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Siz arkadaşsınız.",
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "expectedAnswers": [
+      "Vos estis amici."
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-amicus"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_nom_001",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Kız okur.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puella legit."
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-puella"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_nom_002",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Çocuk çalışır.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puer laborat."
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-puer"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_nom_003",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Öğretmen öğretir.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Magister docet."
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-magister"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_nom_004",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Öğrenci dinler.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Discipulus audit."
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_nom_005",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Kadın yürür.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Femina ambulat."
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-femina"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_acc_001",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Çocuk kitabı okur.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puer librum legit."
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-puer",
+      "vocab-liber"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_acc_002",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Kız tableti görür.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puella tabulam videt."
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-puella",
+      "vocab-tabula"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_acc_003",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Köle efendiyi selamlar.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Servus dominum salutat."
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-servus",
+      "vocab-dominus"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_acc_004",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Öğretmen öğrenciyi dinler.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Magister discipulum audit."
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-magister",
+      "vocab-discipulus"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_acc_005",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Tüccar kağıdı taşır.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Mercator chartam portat."
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-mercator",
+      "vocab-charta"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl1_001",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Kız suyu taşır.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puella aquam portat."
+    ],
+    "grammarIds": [
+      "first-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-puella"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl1_002",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Hizmetçi tableti tutar.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Ancilla tabulam tenet."
+    ],
+    "grammarIds": [
+      "first-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-ancilla",
+      "vocab-tabula"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl1_003",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Hanım kızı görür.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Domina puellam videt."
+    ],
+    "grammarIds": [
+      "first-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-domina",
+      "vocab-puella"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl1_004",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Kraliçe mektubu okur.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Regina litteram legit."
+    ],
+    "grammarIds": [
+      "first-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-regina",
+      "vocab-littera"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl1_005",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Kız arkadaş kağıdı yazar.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Amica chartam scribit."
+    ],
+    "grammarIds": [
+      "first-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-amica",
+      "vocab-charta"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl2_001",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Efendi köleyi çağırır.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Dominus servum vocat."
+    ],
+    "grammarIds": [
+      "second-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-dominus",
+      "vocab-servus"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl2_002",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Öğrenci kitabı tutar/sahiptir.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Discipulus librum habet."
+    ],
+    "grammarIds": [
+      "second-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus",
+      "vocab-liber"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl2_003",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Arkadaş çocuğu görür.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Amicus puerum videt."
+    ],
+    "grammarIds": [
+      "second-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-amicus",
+      "vocab-puer"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl2_004",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Doktor adamı iyileştirir.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Medicus virum curat."
+    ],
+    "grammarIds": [
+      "second-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-medicus",
+      "vocab-vir"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_decl2_005",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Yazıcı kalemi tutar.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Scriba stilum tenet."
+    ],
+    "grammarIds": [
+      "second-declension-nouns"
+    ],
+    "vocabularyIds": [
+      "vocab-scriba",
+      "vocab-stilus"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_verb_001",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Çalışıyorum.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Laboro."
+    ],
+    "grammarIds": [
+      "present-active-verbs"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_verb_002",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Okuyorsun.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Legis."
+    ],
+    "grammarIds": [
+      "present-active-verbs"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_verb_003",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Dinler.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Audit."
+    ],
+    "grammarIds": [
+      "present-active-verbs"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_verb_004",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Taşıyoruz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Portamus."
+    ],
+    "grammarIds": [
+      "present-active-verbs"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_verb_005",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Görürler.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Vident."
+    ],
+    "grammarIds": [
+      "present-active-verbs"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_imp_001",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Oku!",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Lege!"
+    ],
+    "grammarIds": [
+      "imperative-singular"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_imp_002",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Dinle!",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Audi!"
+    ],
+    "grammarIds": [
+      "imperative-singular"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_imp_003",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Taşı!",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Porta!"
+    ],
+    "grammarIds": [
+      "imperative-singular"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_imp_004",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Selamla!",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Saluta!"
+    ],
+    "grammarIds": [
+      "imperative-singular"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_imp_005",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Yaz!",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Scribe!"
+    ],
+    "grammarIds": [
+      "imperative-singular"
+    ],
+    "vocabularyIds": [],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_read_001",
+    "type": "latin-input",
+    "promptTr": "Türkçeye çevir: Magister discipulum salutat.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Öğretmen öğrenciyi selamlar.",
+      "Öğretmen öğrenciyi selamlıyor."
+    ],
+    "grammarIds": [
+      "simple-reading-strategy"
+    ],
+    "vocabularyIds": [
+      "vocab-magister",
+      "vocab-discipulus"
+    ],
+    "difficulty": "review",
+    "level": "A1"
+  },
+  {
+    "id": "assess_read_002",
+    "type": "latin-input",
+    "promptTr": "Türkçeye çevir: Puella librum legit.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Kız kitabı okur.",
+      "Kız kitap okur."
+    ],
+    "grammarIds": [
+      "simple-reading-strategy"
+    ],
+    "vocabularyIds": [
+      "vocab-puella",
+      "vocab-liber"
+    ],
+    "difficulty": "review",
+    "level": "A1"
+  },
+  {
+    "id": "assess_read_003",
+    "type": "latin-input",
+    "promptTr": "Türkçeye çevir: Amicus tabulam videt.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Arkadaş tableti görür."
+    ],
+    "grammarIds": [
+      "simple-reading-strategy"
+    ],
+    "vocabularyIds": [
+      "vocab-amicus",
+      "vocab-tabula"
+    ],
+    "difficulty": "review",
+    "level": "A1"
+  },
+  {
+    "id": "assess_read_004",
+    "type": "latin-input",
+    "promptTr": "Türkçeye çevir: Discipuli audiunt.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Öğrenciler dinler.",
+      "Öğrenciler dinliyor."
+    ],
+    "grammarIds": [
+      "simple-reading-strategy"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "difficulty": "review",
+    "level": "A1"
+  },
+  {
+    "id": "assess_read_005",
+    "type": "latin-input",
+    "promptTr": "Türkçeye çevir: Salve, magister.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Merhaba öğretmen.",
+      "Selam öğretmen."
+    ],
+    "grammarIds": [
+      "simple-reading-strategy"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-magister"
+    ],
+    "difficulty": "review",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_001_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_001_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_001_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_002_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_002_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_002_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_003_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_003_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_003_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_004_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_004_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_004_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_005_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_005_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_005_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_006_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_006_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_006_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_007_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_007_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_007_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_008_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_008_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "assess_mix_008_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_009_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_009_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_009_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_010_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_010_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_010_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_011_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_011_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_011_parse",
+    "type": "parse-word",
+    "promptTr": "\"discipulum\" kelimesinin hâlini yaz.",
+    "latinText": "discipulum",
+    "expectedAnswers": [
+      "accusative",
+      "accusativus",
+      "belirtme"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-discipulus"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "review",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_012_mc",
+    "type": "multiple-choice",
+    "promptTr": "Doğru Latince karşılığı seç.",
+    "choices": [
+      "Salve!",
+      "Librum legit.",
+      "Vale!",
+      "Aquam portat."
+    ],
+    "expectedAnswers": [
+      "Salve!"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_basics"
+    ],
+    "difficulty": "intro",
+    "level": "A2"
+  },
+  {
+    "id": "assess_mix_012_fill",
+    "type": "fill-blank",
+    "promptTr": "Boşluğu doldur: Ego ___ discipulus.",
+    "latinText": "Ego ___ discipulus.",
+    "expectedAnswers": [
+      "sum"
+    ],
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [
+      "vocab-salve"
+    ],
+    "skillIds": [
+      "latin_sum_esse"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_prologus_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Salve, magister.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Salve, magister.",
+      "Salve magister"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "greetings-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-vale"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_prologus_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Ego sum discipulus.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Ego sum discipulus.",
+      "Ego sum discipulus"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-vale"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_prologus_03",
+    "type": "parse-word",
+    "promptTr": "\"Tu\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Tu es Marcus.",
+      "Tu es Marcus"
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-vale"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_prologus_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Mihi nomen est.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Mihi nomen est.",
+      "Mihi nomen est"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "ego-tu-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-vale"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_prologus_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Vale, amice.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Vale, amice.",
+      "Vale amice"
+    ],
+    "grammarIds": [
+      "simple-sentence-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-salve",
+      "vocab-vale"
+    ],
+    "difficulty": "challenge",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_ludus_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Puer est discipulus.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puer est discipulus.",
+      "Puer est discipulus"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-liber",
+      "vocab-tabula"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_ludus_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Puella est bona.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puella est bona.",
+      "Puella est bona"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-liber",
+      "vocab-tabula"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_ludus_03",
+    "type": "parse-word",
+    "promptTr": "\"Liber\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Liber est novus.",
+      "Liber est novus"
+    ],
+    "grammarIds": [
+      "noun-gender-intro"
+    ],
+    "vocabularyIds": [
+      "vocab-liber",
+      "vocab-tabula"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_ludus_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Ego sum discipulus.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Ego sum discipulus.",
+      "Ego sum discipulus"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "adjective-agreement-intro"
+    ],
+    "vocabularyIds": [
+      "vocab-liber",
+      "vocab-tabula"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_ludus_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Tu es magister.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Tu es magister.",
+      "Tu es magister"
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-liber",
+      "vocab-tabula"
+    ],
+    "difficulty": "challenge",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_domus_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Mater est bona.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Mater est bona.",
+      "Mater est bona"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-mater",
+      "vocab-pater"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_domus_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Pater est magnus.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Pater est magnus.",
+      "Pater est magnus"
+    ],
+    "grammarIds": [
+      "genitive-intro"
+    ],
+    "vocabularyIds": [
+      "vocab-mater",
+      "vocab-pater"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_domus_03",
+    "type": "parse-word",
+    "promptTr": "\"Filia\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Filia est parva.",
+      "Filia est parva"
+    ],
+    "grammarIds": [
+      "adjective-agreement-intro"
+    ],
+    "vocabularyIds": [
+      "vocab-mater",
+      "vocab-pater"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_domus_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Servus est in domo.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Servus est in domo.",
+      "Servus est in domo"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-mater",
+      "vocab-pater"
+    ],
+    "difficulty": "practice",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_domus_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Familia est magna.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Familia est magna.",
+      "Familia est magna"
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-mater",
+      "vocab-pater"
+    ],
+    "difficulty": "challenge",
+    "level": "A1"
+  },
+  {
+    "id": "stage11_forum_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Puer librum videt.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puer librum videt.",
+      "Puer librum videt"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-forum",
+      "vocab-mercator"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_forum_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Puella panem portat.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puella panem portat.",
+      "Puella panem portat"
+    ],
+    "grammarIds": [
+      "direct-object-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-forum",
+      "vocab-mercator"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_forum_03",
+    "type": "parse-word",
+    "promptTr": "\"Marcus\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Marcus tabulam habet.",
+      "Marcus tabulam habet"
+    ],
+    "grammarIds": [
+      "present-active-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-forum",
+      "vocab-mercator"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_forum_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Mercator pecuniam quaerit.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Mercator pecuniam quaerit.",
+      "Mercator pecuniam quaerit"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "negation-non"
+    ],
+    "vocabularyIds": [
+      "vocab-forum",
+      "vocab-mercator"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_forum_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Non vinum emo.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Non vinum emo.",
+      "Non vinum emo"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-forum",
+      "vocab-mercator"
+    ],
+    "difficulty": "challenge",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_bibliotheca_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Puer librum legit.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puer librum legit.",
+      "Puer librum legit"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "reading-comprehension-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-bibliotheca",
+      "vocab-liber"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_bibliotheca_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Puella tabulam scribit.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puella tabulam scribit.",
+      "Puella tabulam scribit"
+    ],
+    "grammarIds": [
+      "conjunctions-et-sed"
+    ],
+    "vocabularyIds": [
+      "vocab-bibliotheca",
+      "vocab-liber"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_bibliotheca_03",
+    "type": "parse-word",
+    "promptTr": "\"Magister\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Magister discipulos docet.",
+      "Magister discipulos docet"
+    ],
+    "grammarIds": [
+      "present-active-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-bibliotheca",
+      "vocab-liber"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_bibliotheca_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Marcus legit et Julia scribit.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Marcus legit et Julia scribit.",
+      "Marcus legit et Julia scribit"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-bibliotheca",
+      "vocab-liber"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_bibliotheca_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Scriba bene scribit.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Scriba bene scribit.",
+      "Scriba bene scribit"
+    ],
+    "grammarIds": [
+      "reading-comprehension-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-bibliotheca",
+      "vocab-liber"
+    ],
+    "difficulty": "challenge",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_castra_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Veni!\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Veni!",
+      "Veni"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "imperative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-castra",
+      "vocab-miles"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_castra_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Audi, Marce!",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Audi, Marce!",
+      "Audi Marce"
+    ],
+    "grammarIds": [
+      "present-active-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-castra",
+      "vocab-miles"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_castra_03",
+    "type": "parse-word",
+    "promptTr": "\"Porta\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Porta scutum.",
+      "Porta scutum"
+    ],
+    "grammarIds": [
+      "prepositions-in-ad-cum-sine"
+    ],
+    "vocabularyIds": [
+      "vocab-castra",
+      "vocab-miles"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_castra_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Ducite puerum.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Ducite puerum.",
+      "Ducite puerum"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "imperative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-castra",
+      "vocab-miles"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_castra_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: State ad portam.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "State ad portam.",
+      "State ad portam"
+    ],
+    "grammarIds": [
+      "present-active-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-castra",
+      "vocab-miles"
+    ],
+    "difficulty": "challenge",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_via-appia_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Marcus ad portam venit.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Marcus ad portam venit.",
+      "Marcus ad portam venit"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "prepositions-in-ad-cum-sine"
+    ],
+    "vocabularyIds": [
+      "vocab-via",
+      "vocab-porta"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_via-appia_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Puella in villa est.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puella in villa est.",
+      "Puella in villa est"
+    ],
+    "grammarIds": [
+      "ablative-intro"
+    ],
+    "vocabularyIds": [
+      "vocab-via",
+      "vocab-porta"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_via-appia_03",
+    "type": "parse-word",
+    "promptTr": "\"Puer\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Puer cum Marco ambulat.",
+      "Puer cum Marco ambulat"
+    ],
+    "grammarIds": [
+      "present-active-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-via",
+      "vocab-porta"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_via-appia_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Servus sine gladio venit.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Servus sine gladio venit.",
+      "Servus sine gladio venit"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-via",
+      "vocab-porta"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_via-appia_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Viator tabernam intrat.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Viator tabernam intrat.",
+      "Viator tabernam intrat"
+    ],
+    "grammarIds": [
+      "prepositions-in-ad-cum-sine"
+    ],
+    "vocabularyIds": [
+      "vocab-via",
+      "vocab-porta"
+    ],
+    "difficulty": "challenge",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_capitolium_01",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Salve, amici.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Salve, amici.",
+      "Salve amici"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "greetings-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-capitolium",
+      "vocab-templum"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_capitolium_02",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Marcus librum videt.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Marcus librum videt.",
+      "Marcus librum videt"
+    ],
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [
+      "vocab-capitolium",
+      "vocab-templum"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_capitolium_03",
+    "type": "parse-word",
+    "promptTr": "\"Veni\" kelimesini cozumle.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Veni ad templum.",
+      "Veni ad templum"
+    ],
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-capitolium",
+      "vocab-templum"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_capitolium_04",
+    "type": "translate-to-turkish",
+    "promptTr": "\"Julia bene scribit.\" cumlesinin temel anlamini sec/yaz.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Julia bene scribit.",
+      "Julia bene scribit"
+    ],
+    "choices": [
+      "Dogru temel anlam",
+      "Yanlis ozne",
+      "Yanlis nesne"
+    ],
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-capitolium",
+      "vocab-templum"
+    ],
+    "difficulty": "practice",
+    "level": "A2"
+  },
+  {
+    "id": "stage11_capitolium_05",
+    "type": "latin-input",
+    "promptTr": "Latince yaz: Discipulus viae primae es.",
+    "skillIds": [
+      "latin_basics"
+    ],
+    "expectedAnswers": [
+      "Discipulus viae primae es.",
+      "Discipulus viae primae es"
+    ],
+    "grammarIds": [
+      "present-active-basic"
+    ],
+    "vocabularyIds": [
+      "vocab-capitolium",
+      "vocab-templum"
+    ],
+    "difficulty": "challenge",
+    "level": "A2"
+  }
+]

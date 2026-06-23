@@ -1,0 +1,48 @@
+{
+  "name": "latin-rpg",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch server/src/index.ts",
+    "server:dev": "tsx watch server/src/index.ts",
+    "client:dev": "npm --prefix client run dev",
+    "start": "node dist/server/src/index.js",
+    "server:build": "tsc -p tsconfig.json",
+    "client:build": "npm --prefix client run build",
+    "build": "npm run server:build && npm run client:build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx --test server/src/**/*.test.ts server/src/**/**/*.test.ts",
+    "test:e2e": "playwright test",
+    "test:smoke": "tsx scripts/smoke-test.ts",
+    "qa:check": "tsx scripts/qa-check.ts",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "check:saves": "tsx scripts/check-saves.ts",
+    "beta:report": "tsx scripts/generate-beta-report.ts",
+    "desktop:predev": "concurrently -k -n server,client \"npm run server:dev\" \"npm run client:dev\"",
+    "desktop:prebuild": "npm run server:build && npm run client:build",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "desktop:dev": "npm run tauri:dev",
+    "desktop:build": "npm run tauri:build",
+    "desktop:clean": "rm -rf src-tauri/target client/dist dist",
+    "desktop:check": "npm run typecheck && npm --prefix client run typecheck && cargo check --manifest-path src-tauri/Cargo.toml"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "cors": "^2.8.5",
+    "dagre": "^0.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0",
+    "@playwright/test": "^1.53.1",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/cors": "^2.8.17",
+    "@types/dagre": "^0.7.54",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,8 @@
+import { VpBadge, VpButton } from "../../ui";
+import { NumberField, TextField, split } from "./editorUtils";
+
+export function RewardBundleEditor({ value = {}, onChange }: { value?: any; onChange: (value: any) => void }) {
+  const high = Number(value.xp ?? 0) > 250 || Number(value.currency ?? 0) > 150;
+  const balance = () => onChange({ ...value, xp: Math.min(Number(value.xp ?? 50), 120), currency: Math.min(Number(value.currency ?? 10), 60) });
+  return <div className="authoring-form-grid"><NumberField label="XP" value={value.xp ?? 0} min={0} max={500} onChange={(xp) => onChange({ ...value, xp })} /><NumberField label="currency" value={value.currency ?? 0} min={0} max={250} onChange={(currency) => onChange({ ...value, currency })} /><TextField label="items" value={(value.items ?? []).map((item: any) => item.itemId ?? item).join(", ")} onChange={(items) => onChange({ ...value, items: split(items).map((itemId) => ({ itemId, quantity: 1 })) })} /><TextField label="skill increments" value={(value.skillIncrements ?? []).map((item: any) => item.skillId).join(", ")} onChange={(ids) => onChange({ ...value, skillIncrements: split(ids).map((skillId) => ({ skillId, amount: 1 })) })} /><TextField label="mastery targets" value={(value.masteryTargets ?? []).map((item: any) => item.targetId).join(", ")} onChange={(ids) => onChange({ ...value, masteryTargets: split(ids).map((targetId) => ({ targetId, targetType: "grammar", amount: 5 })) })} /><div className="authoring-chip-row"><VpBadge variant={high ? "gold" : "success"}>{high ? "Asiri odul olabilir" : "Dengeli"}</VpBadge><VpButton type="button" variant="ghost" onClick={balance}>Odulu otomatik dengele</VpButton></div></div>;
+}

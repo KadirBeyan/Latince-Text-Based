@@ -1,0 +1,24 @@
+{
+  "id": "magister",
+  "name": "Magister Aelius",
+  "latinName": "Aelius",
+  "role": "teacher",
+  "description": "Sakin, pedagojik ve hatalari kisa ipuclariyla duzelten ogretmen.",
+  "descriptionTr": "Sakin, pedagojik ve hatalari kisa ipuclariyla duzelten ogretmen.",
+  "personality": "calm, precise, encouraging",
+  "defaultLocationId": "ludus",
+  "teachingStyle": "gives one clear target per scene",
+  "preferredGrammarIds": [
+    "greetings-basic",
+    "sum-esse-present"
+  ],
+  "preferredVocabularyIds": [
+    "vocab-magister",
+    "vocab-discipulus"
+  ],
+  "relationshipDefaults": {
+    "trust": 30,
+    "respect": 30,
+    "familiarity": 20
+  }
+}

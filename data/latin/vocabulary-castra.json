@@ -1,0 +1,788 @@
+[
+  {
+    "id": "vocab-castra",
+    "latin": "castra",
+    "turkish": "kamp",
+    "meaningTr": "kamp",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "castra - kamp"
+    ],
+    "exampleLatin": "castra.",
+    "exampleTr": "kamp"
+  },
+  {
+    "id": "vocab-miles",
+    "latin": "miles",
+    "turkish": "asker",
+    "meaningTr": "asker",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "miles - asker"
+    ],
+    "exampleLatin": "miles.",
+    "exampleTr": "asker"
+  },
+  {
+    "id": "vocab-gladius",
+    "latin": "gladius",
+    "turkish": "kilic",
+    "meaningTr": "kilic",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "gladius - kilic"
+    ],
+    "exampleLatin": "gladius.",
+    "exampleTr": "kilic"
+  },
+  {
+    "id": "vocab-scutum",
+    "latin": "scutum",
+    "turkish": "kalkan",
+    "meaningTr": "kalkan",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "scutum - kalkan"
+    ],
+    "exampleLatin": "scutum.",
+    "exampleTr": "kalkan"
+  },
+  {
+    "id": "vocab-porta",
+    "latin": "porta",
+    "turkish": "kapi/tasi",
+    "meaningTr": "kapi/tasi",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "porta - kapi/tasi"
+    ],
+    "exampleLatin": "porta.",
+    "exampleTr": "kapi/tasi"
+  },
+  {
+    "id": "vocab-via",
+    "latin": "via",
+    "turkish": "yol",
+    "meaningTr": "yol",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "via - yol"
+    ],
+    "exampleLatin": "via.",
+    "exampleTr": "yol"
+  },
+  {
+    "id": "vocab-ducit",
+    "latin": "ducit",
+    "turkish": "goturur",
+    "meaningTr": "goturur",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ducit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "ducit - goturur"
+    ],
+    "exampleLatin": "ducit.",
+    "exampleTr": "goturur"
+  },
+  {
+    "id": "vocab-currit",
+    "latin": "currit",
+    "turkish": "kosar",
+    "meaningTr": "kosar",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "currit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "currit - kosar"
+    ],
+    "exampleLatin": "currit.",
+    "exampleTr": "kosar"
+  },
+  {
+    "id": "vocab-venit",
+    "latin": "venit",
+    "turkish": "gelir",
+    "meaningTr": "gelir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "venit"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "venit - gelir"
+    ],
+    "exampleLatin": "venit.",
+    "exampleTr": "gelir"
+  },
+  {
+    "id": "vocab-sta",
+    "latin": "sta",
+    "turkish": "dur",
+    "meaningTr": "dur",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sta"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "sta - dur"
+    ],
+    "exampleLatin": "sta.",
+    "exampleTr": "dur"
+  },
+  {
+    "id": "vocab-veni",
+    "latin": "veni",
+    "turkish": "gel",
+    "meaningTr": "gel",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "veni"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "veni - gel"
+    ],
+    "exampleLatin": "veni.",
+    "exampleTr": "gel"
+  },
+  {
+    "id": "vocab-audi",
+    "latin": "audi",
+    "turkish": "dinle",
+    "meaningTr": "dinle",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "audi"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "audi - dinle"
+    ],
+    "exampleLatin": "audi.",
+    "exampleTr": "dinle"
+  },
+  {
+    "id": "vocab-porta",
+    "latin": "porta",
+    "turkish": "kapi/tasi",
+    "meaningTr": "kapi/tasi",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "ludus"
+    ],
+    "tags": [
+      "ludus",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "porta - kapi/tasi"
+    ],
+    "exampleLatin": "porta.",
+    "exampleTr": "kapi/tasi"
+  },
+  {
+    "id": "vocab-ducite",
+    "latin": "ducite",
+    "turkish": "goturun",
+    "meaningTr": "goturun",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "ducite"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "ducite - goturun"
+    ],
+    "exampleLatin": "ducite.",
+    "exampleTr": "goturun"
+  },
+  {
+    "id": "vocab-audite",
+    "latin": "audite",
+    "turkish": "dinleyin",
+    "meaningTr": "dinleyin",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "audite"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "audite - dinleyin"
+    ],
+    "exampleLatin": "audite.",
+    "exampleTr": "dinleyin"
+  },
+  {
+    "id": "vocab-state",
+    "latin": "state",
+    "turkish": "durun",
+    "meaningTr": "durun",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "state"
+    ],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "verb",
+      "chapter"
+    ],
+    "examples": [
+      "state - durun"
+    ],
+    "exampleLatin": "state.",
+    "exampleTr": "durun"
+  },
+  {
+    "id": "vocab-signum",
+    "latin": "signum",
+    "turkish": "signum",
+    "meaningTr": "signum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "signum - signum"
+    ],
+    "exampleLatin": "signum.",
+    "exampleTr": "signum"
+  },
+  {
+    "id": "vocab-vallum",
+    "latin": "vallum",
+    "turkish": "vallum",
+    "meaningTr": "vallum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "vallum - vallum"
+    ],
+    "exampleLatin": "vallum.",
+    "exampleTr": "vallum"
+  },
+  {
+    "id": "vocab-tuba",
+    "latin": "tuba",
+    "turkish": "tuba",
+    "meaningTr": "tuba",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "tuba - tuba"
+    ],
+    "exampleLatin": "tuba.",
+    "exampleTr": "tuba"
+  },
+  {
+    "id": "vocab-ordo",
+    "latin": "ordo",
+    "turkish": "ordo",
+    "meaningTr": "ordo",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "ordo - ordo"
+    ],
+    "exampleLatin": "ordo.",
+    "exampleTr": "ordo"
+  },
+  {
+    "id": "vocab-disciplina",
+    "latin": "disciplina",
+    "turkish": "disciplina",
+    "meaningTr": "disciplina",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "disciplina - disciplina"
+    ],
+    "exampleLatin": "disciplina.",
+    "exampleTr": "disciplina"
+  },
+  {
+    "id": "vocab-exerce",
+    "latin": "exerce",
+    "turkish": "exerce",
+    "meaningTr": "exerce",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "exerce - exerce"
+    ],
+    "exampleLatin": "exerce.",
+    "exampleTr": "exerce"
+  },
+  {
+    "id": "vocab-ambulare",
+    "latin": "ambulare",
+    "turkish": "ambulare",
+    "meaningTr": "ambulare",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "ambulare - ambulare"
+    ],
+    "exampleLatin": "ambulare.",
+    "exampleTr": "ambulare"
+  },
+  {
+    "id": "vocab-custos",
+    "latin": "custos",
+    "turkish": "custos",
+    "meaningTr": "custos",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "custos - custos"
+    ],
+    "exampleLatin": "custos.",
+    "exampleTr": "custos"
+  },
+  {
+    "id": "vocab-dextra",
+    "latin": "dextra",
+    "turkish": "dextra",
+    "meaningTr": "dextra",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "dextra - dextra"
+    ],
+    "exampleLatin": "dextra.",
+    "exampleTr": "dextra"
+  },
+  {
+    "id": "vocab-sinistra",
+    "latin": "sinistra",
+    "turkish": "sinistra",
+    "meaningTr": "sinistra",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "sinistra - sinistra"
+    ],
+    "exampleLatin": "sinistra.",
+    "exampleTr": "sinistra"
+  },
+  {
+    "id": "vocab-ante",
+    "latin": "ante",
+    "turkish": "ante",
+    "meaningTr": "ante",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "ante - ante"
+    ],
+    "exampleLatin": "ante.",
+    "exampleTr": "ante"
+  },
+  {
+    "id": "vocab-post",
+    "latin": "post",
+    "turkish": "post",
+    "meaningTr": "post",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "post - post"
+    ],
+    "exampleLatin": "post.",
+    "exampleTr": "post"
+  },
+  {
+    "id": "vocab-intra",
+    "latin": "intra",
+    "turkish": "intra",
+    "meaningTr": "intra",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "intra - intra"
+    ],
+    "exampleLatin": "intra.",
+    "exampleTr": "intra"
+  },
+  {
+    "id": "vocab-extra",
+    "latin": "extra",
+    "turkish": "extra",
+    "meaningTr": "extra",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "function",
+      "chapter"
+    ],
+    "examples": [
+      "extra - extra"
+    ],
+    "exampleLatin": "extra.",
+    "exampleTr": "extra"
+  },
+  {
+    "id": "vocab-puerum",
+    "latin": "puerum",
+    "turkish": "puerum",
+    "meaningTr": "puerum",
+    "pos": "noun",
+    "gender": "n",
+    "declension": "2",
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "puerum - puerum"
+    ],
+    "exampleLatin": "puerum.",
+    "exampleTr": "puerum"
+  },
+  {
+    "id": "vocab-portam",
+    "latin": "portam",
+    "turkish": "portam",
+    "meaningTr": "portam",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 2,
+    "chapterIds": [
+      "castra"
+    ],
+    "tags": [
+      "castra",
+      "noun",
+      "chapter"
+    ],
+    "examples": [
+      "portam - portam"
+    ],
+    "exampleLatin": "portam.",
+    "exampleTr": "portam"
+  }
+]

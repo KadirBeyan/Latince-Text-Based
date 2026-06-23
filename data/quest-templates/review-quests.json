@@ -1,0 +1,739 @@
+[
+  {
+    "id": "greetings_review_ludus",
+    "titleTemplate": "Selamlaşma Tekrarı: {playerName}",
+    "descriptionTemplate": "Magister Aelius, selamlaşma konusundaki hatalarını gözden geçirmek istiyor.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "greetings"
+      ],
+      "minLevel": 1
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "magister",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "greetings"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-vale",
+        "vocab-magister",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Magister Aelius'un yanına git.",
+        "choiceTemplates": [
+          {
+            "label": "Magister'a yaklaş ve selam ver",
+            "correctness": "good"
+          },
+          {
+            "label": "Sessizce sıraya geç",
+            "correctness": "neutral"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Magister'a Latince 'Selam, öğretmen!' de.",
+        "expectedAnswerTemplates": [
+          "salve magister",
+          "salve, magister!"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "Magister sana 'Valete, discipuli!' dediğinde nasıl karşılık verirsin? (Tekil veda)",
+        "expectedAnswerTemplates": [
+          "vale magister",
+          "vale, magister!"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Dersi başarıyla tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Teşekkür et ve ayrıl",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "Selamlaşma konusunda takıldığın için Magister Aelius seni çalışmaya çağırıyor."
+  },
+  {
+    "id": "sum_esse_review_ludus",
+    "titleTemplate": "Sum/Esse ve Varlık: {playerName}",
+    "descriptionTemplate": "Varlık ve kimlik bildiren sum/esse fiil çekimlerini tekrar etme vakti.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "sum-esse-present"
+      ],
+      "minLevel": 1
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "marcus",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "sum-esse-present"
+      ],
+      "vocabularyIds": [
+        "vocab-sum",
+        "vocab-amicus",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Marcus ile konuş.",
+        "choiceTemplates": [
+          {
+            "label": "\"Ben Marcus'un arkadaşıyım\" demek için hazırlan.",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Ben bir öğrenciyim\" (ego ... sum) boşluğunu doldur veya Latince yaz.",
+        "expectedAnswerTemplates": [
+          "ego discipulus sum",
+          "discipulus sum"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Marcus arkadaştır\" (Marcus ... est) cümlesini tamamla.",
+        "expectedAnswerTemplates": [
+          "marcus amicus est",
+          "marcus est amicus"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Marcus ile selamlaşıp çalışmayı bitir.",
+        "choiceTemplates": [
+          {
+            "label": "Çalışmayı tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "Sum/esse çekimlerinde zayıflık saptandı, Marcus ile pratik yap."
+  },
+  {
+    "id": "nominative_review_ludus",
+    "titleTemplate": "Yalın Hal (Nominativus) Tekrarı",
+    "descriptionTemplate": "Cümlenin öznesi olan yalın hali (nominativus) tekrar gözden geçir.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "nominative-basic"
+      ],
+      "minLevel": 1
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "magister",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "nominative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-puella",
+        "vocab-puer",
+        "vocab-liber"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Magister'ın tahtaya yazdığı cümleyi incele.",
+        "choiceTemplates": [
+          {
+            "label": "Dikkatle izle",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Kız okur\" cümlesini Latinceye çevir. (puella ...)",
+        "expectedAnswerTemplates": [
+          "puella legit"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Oğlan okur\" cümlesini Latinceye çevir. (puer ...)",
+        "expectedAnswerTemplates": [
+          "puer legit"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Yalın halin önemini kavrayarak dersi bitir.",
+        "choiceTemplates": [
+          {
+            "label": "Dersi tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "Temel Nominativus (yalın hal) konusundaki eksikleri kapat."
+  },
+  {
+    "id": "accusative_review_forum",
+    "titleTemplate": "Belirtme Hali (Accusativus) Tekrarı",
+    "descriptionTemplate": "Cümlenin nesnesi olan belirtme halini (accusativus) tekrar et.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "accusative-basic"
+      ],
+      "minLevel": 2
+    },
+    "suggestedLocationId": "forum",
+    "suggestedNpcId": "mercator",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "accusative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-puer",
+        "vocab-liber",
+        "vocab-puella"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tüccarın getirdiği kitap rulolarına bak.",
+        "choiceTemplates": [
+          {
+            "label": "Kitapları incele",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Oğlan kitap okur\" cümlesini Latince yaz. (puer librum ...)",
+        "expectedAnswerTemplates": [
+          "puer librum legit"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Kız kitap okur\" cümlesini Latince yaz.",
+        "expectedAnswerTemplates": [
+          "puella librum legit"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Accusativus (librum) çekimini öğrendiğini göstererek ayrıl.",
+        "choiceTemplates": [
+          {
+            "label": "Kitabı teslim al",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "Accusativus (belirtme hali) kullanımındaki hataları gidermek için tekrar yap."
+  },
+  {
+    "id": "ludus_sum_review",
+    "titleTemplate": "ludus sum review: {playerName}",
+    "descriptionTemplate": "Via Prima chapter review gorevi.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "sum-esse-present"
+      ],
+      "minLevel": 1,
+      "locationId": "ludus",
+      "npcId": "magister"
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "magister",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "sum-esse-present"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "NPC ile kisa tekrar calismasina basla.",
+        "choiceTemplates": [
+          {
+            "label": "Tekrara basla",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Kisa Latince cevap yaz.",
+        "expectedAnswerTemplates": [
+          "Salve.",
+          "Ego sum discipulus."
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tekrari tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "sum-esse-present zayifsa bu chapter review onerilir."
+  },
+  {
+    "id": "forum_accusative_review",
+    "titleTemplate": "forum accusative review: {playerName}",
+    "descriptionTemplate": "Via Prima chapter review gorevi.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "accusative-basic"
+      ],
+      "minLevel": 1,
+      "locationId": "forum",
+      "npcId": "mercator"
+    },
+    "suggestedLocationId": "forum",
+    "suggestedNpcId": "mercator",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "accusative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "NPC ile kisa tekrar calismasina basla.",
+        "choiceTemplates": [
+          {
+            "label": "Tekrara basla",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Kisa Latince cevap yaz.",
+        "expectedAnswerTemplates": [
+          "Salve.",
+          "Ego sum discipulus."
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tekrari tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "accusative-basic zayifsa bu chapter review onerilir."
+  },
+  {
+    "id": "domus_family_vocab_review",
+    "titleTemplate": "domus family vocab review: {playerName}",
+    "descriptionTemplate": "Via Prima chapter review gorevi.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "genitive-intro"
+      ],
+      "minLevel": 1,
+      "locationId": "domus",
+      "npcId": "cornelia"
+    },
+    "suggestedLocationId": "domus",
+    "suggestedNpcId": "cornelia",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "genitive-intro"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "NPC ile kisa tekrar calismasina basla.",
+        "choiceTemplates": [
+          {
+            "label": "Tekrara basla",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Kisa Latince cevap yaz.",
+        "expectedAnswerTemplates": [
+          "Salve.",
+          "Ego sum discipulus."
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tekrari tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "genitive-intro zayifsa bu chapter review onerilir."
+  },
+  {
+    "id": "bibliotheca_reading_review",
+    "titleTemplate": "bibliotheca reading review: {playerName}",
+    "descriptionTemplate": "Via Prima chapter review gorevi.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "reading-comprehension-basic"
+      ],
+      "minLevel": 1,
+      "locationId": "bibliotheca",
+      "npcId": "scriba"
+    },
+    "suggestedLocationId": "bibliotheca",
+    "suggestedNpcId": "scriba",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "reading-comprehension-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "NPC ile kisa tekrar calismasina basla.",
+        "choiceTemplates": [
+          {
+            "label": "Tekrara basla",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Kisa Latince cevap yaz.",
+        "expectedAnswerTemplates": [
+          "Salve.",
+          "Ego sum discipulus."
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tekrari tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "reading-comprehension-basic zayifsa bu chapter review onerilir."
+  },
+  {
+    "id": "castra_imperative_review",
+    "titleTemplate": "castra imperative review: {playerName}",
+    "descriptionTemplate": "Via Prima chapter review gorevi.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "imperative-basic"
+      ],
+      "minLevel": 1,
+      "locationId": "castra",
+      "npcId": "miles"
+    },
+    "suggestedLocationId": "castra",
+    "suggestedNpcId": "miles",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "imperative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "NPC ile kisa tekrar calismasina basla.",
+        "choiceTemplates": [
+          {
+            "label": "Tekrara basla",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Kisa Latince cevap yaz.",
+        "expectedAnswerTemplates": [
+          "Salve.",
+          "Ego sum discipulus."
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tekrari tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "imperative-basic zayifsa bu chapter review onerilir."
+  },
+  {
+    "id": "via_appia_preposition_review",
+    "titleTemplate": "via appia preposition review: {playerName}",
+    "descriptionTemplate": "Via Prima chapter review gorevi.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "prepositions-in-ad-cum-sine"
+      ],
+      "minLevel": 1,
+      "locationId": "via-appia",
+      "npcId": "lydia"
+    },
+    "suggestedLocationId": "via-appia",
+    "suggestedNpcId": "lydia",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "prepositions-in-ad-cum-sine"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "NPC ile kisa tekrar calismasina basla.",
+        "choiceTemplates": [
+          {
+            "label": "Tekrara basla",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Kisa Latince cevap yaz.",
+        "expectedAnswerTemplates": [
+          "Salve.",
+          "Ego sum discipulus."
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tekrari tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "prepositions-in-ad-cum-sine zayifsa bu chapter review onerilir."
+  },
+  {
+    "id": "capitolium_final_review",
+    "titleTemplate": "capitolium final review: {playerName}",
+    "descriptionTemplate": "Via Prima chapter review gorevi.",
+    "category": "chapter-review",
+    "trigger": {
+      "weakGrammarIds": [
+        "reading-comprehension-basic"
+      ],
+      "minLevel": 1,
+      "locationId": "capitolium",
+      "npcId": "magister"
+    },
+    "suggestedLocationId": "capitolium",
+    "suggestedNpcId": "magister",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "reading-comprehension-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-discipulus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "NPC ile kisa tekrar calismasina basla.",
+        "choiceTemplates": [
+          {
+            "label": "Tekrara basla",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "Kisa Latince cevap yaz.",
+        "expectedAnswerTemplates": [
+          "Salve.",
+          "Ego sum discipulus."
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tekrari tamamla.",
+        "choiceTemplates": [
+          {
+            "label": "Tamamla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "review",
+    "reasonTemplate": "reading-comprehension-basic zayifsa bu chapter review onerilir."
+  }
+]

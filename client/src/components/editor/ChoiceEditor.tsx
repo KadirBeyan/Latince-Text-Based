@@ -1,0 +1,2 @@
+import type { SceneChoice } from "../../types/gameTypes";
+export function ChoiceEditor({ choices, onChange }: { choices: SceneChoice[]; onChange: (choices: SceneChoice[]) => void }) { return <section><h4>Choices</h4>{choices.map((c, i) => <div className="editor-row" key={c.id}><input value={c.label} onChange={e => onChange(choices.map((x,n) => n===i ? {...x,label:e.target.value}:x))}/><input placeholder="nextSceneId" value={c.nextSceneId ?? ""} onChange={e => onChange(choices.map((x,n) => n===i ? {...x,nextSceneId:e.target.value||undefined}:x))}/></div>)}</section>; }

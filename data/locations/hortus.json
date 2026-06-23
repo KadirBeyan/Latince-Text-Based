@@ -1,0 +1,17 @@
+{
+  "id": "hortus",
+  "title": "Hortus",
+  "titleLatin": "Hortus",
+  "descriptionTr": "Domus icinde nesne ve aile kelimeleri icin acik alan.",
+  "mood": "calm",
+  "connectedLocationIds": [
+    "domus"
+  ],
+  "defaultNpcIds": [
+    "cornelia",
+    "julia"
+  ],
+  "vocabularyIds": [],
+  "grammarIds": [],
+  "unlockConditions": []
+}

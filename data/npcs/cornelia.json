@@ -1,0 +1,23 @@
+{
+  "id": "cornelia",
+  "name": "Cornelia",
+  "latinName": "Cornelia",
+  "role": "matrona",
+  "description": "Domus ve familia kelimelerini dogal baglamda tanitan ev sahibi.",
+  "descriptionTr": "Domus ve familia kelimelerini dogal baglamda tanitan ev sahibi.",
+  "personality": "friendly, focused, concise",
+  "defaultLocationId": "domus",
+  "teachingStyle": "gives one clear target per scene",
+  "preferredGrammarIds": [
+    "genitive-intro"
+  ],
+  "preferredVocabularyIds": [
+    "vocab-familia",
+    "vocab-mater"
+  ],
+  "relationshipDefaults": {
+    "trust": 30,
+    "respect": 30,
+    "familiarity": 20
+  }
+}

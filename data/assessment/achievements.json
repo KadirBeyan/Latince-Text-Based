@@ -1,0 +1,128 @@
+[
+  {
+    "id": "prima-vox",
+    "title": "Prima Vox",
+    "description": "İlk Latince cevabını verdin",
+    "unlocked": false
+  },
+  {
+    "id": "salve-magister",
+    "title": "Salve Magister",
+    "description": "İlk selamlaşma görevini gördün",
+    "unlocked": false
+  },
+  {
+    "id": "discipulus",
+    "title": "Discipulus",
+    "description": "Placement test tamamlandı",
+    "unlocked": false
+  },
+  {
+    "id": "grammaticus-i",
+    "title": "Grammaticus I",
+    "description": "5 grammar challenge tamamlandı",
+    "unlocked": false
+  },
+  {
+    "id": "mercator-amicus",
+    "title": "Mercator Amicus",
+    "description": "Forumda Mercator ile ilişki gelişti",
+    "unlocked": false
+  },
+  {
+    "id": "sine-errore",
+    "title": "Sine Errore",
+    "description": "5 doğru cevap üst üste",
+    "unlocked": false
+  },
+  {
+    "id": "accusativus-victor",
+    "title": "Accusativus Victor",
+    "description": "Accusative mastery 80+",
+    "unlocked": false
+  },
+  {
+    "id": "ludus-perfectus",
+    "title": "Ludus Perfectus",
+    "description": "Ludus Perfectus basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "quaestor",
+    "title": "Quaestor",
+    "description": "İlk generated quest tamamlandı",
+    "unlocked": false
+  },
+  {
+    "id": "memoria-fortis",
+    "title": "Memoria Fortis",
+    "description": "7 gün streak",
+    "unlocked": false
+  },
+  {
+    "id": "prologus-perfectus",
+    "title": "Prologus Perfectus",
+    "description": "Prologus Perfectus basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "domus-perfecta",
+    "title": "Domus Perfecta",
+    "description": "Domus Perfecta basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "forum-victor",
+    "title": "Forum Victor",
+    "description": "Forum Victor basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "bibliotheca-lecta",
+    "title": "Bibliotheca Lecta",
+    "description": "Bibliotheca Lecta basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "miles-discipulus",
+    "title": "Miles Discipulus",
+    "description": "Miles Discipulus basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "via-appia-ambulator",
+    "title": "Via Appia Ambulator",
+    "description": "Via Appia Ambulator basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "capitolium-perfectum",
+    "title": "Capitolium Perfectum",
+    "description": "Capitolium Perfectum basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "via-prima-perfecta",
+    "title": "Via Prima Perfecta",
+    "description": "Via Prima Perfecta basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "amicus-marci",
+    "title": "Amicus Marci",
+    "description": "Amicus Marci basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "amicus-mercatoris",
+    "title": "Amicus Mercatoris",
+    "description": "Amicus Mercatoris basarimi acildi.",
+    "unlocked": false
+  },
+  {
+    "id": "scriba-bonus",
+    "title": "Scriba Bonus",
+    "description": "Scriba Bonus basarimi acildi.",
+    "unlocked": false
+  }
+]

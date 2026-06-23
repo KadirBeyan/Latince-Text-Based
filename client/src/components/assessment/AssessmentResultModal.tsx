@@ -1,0 +1,3 @@
+import type { AssessmentResult } from "../../types/assessmentTypes";
+export function AssessmentResultModal({ result }: { result?: AssessmentResult | null }) { if (!result) return null; return <div className="panel-card assessment-result"><h3>Sonuç: {result.estimatedLevel}</h3><div className="metric-grid"><span>Skor <strong>{result.score}</strong></span><span>Doğruluk <strong>%{result.accuracy}</strong></span></div><p>{result.recommendations[0]}</p>{result.weaknesses.length ? <p>Zayıf: {result.weaknesses.join(", ")}</p> : null}{result.strengths.length ? <p>Güçlü: {result.strengths.join(", ")}</p> : null}</div>; }
+

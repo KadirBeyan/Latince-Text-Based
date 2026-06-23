@@ -1,0 +1,20 @@
+{
+  "id": "forum",
+  "title": "Forum",
+  "titleLatin": "Forum Romanum",
+  "descriptionTr": "Alisveris, nesne ve accusativus pratigi icin kalabalik meydan.",
+  "mood": "busy",
+  "connectedLocationIds": [
+    "domus",
+    "taberna",
+    "bibliotheca"
+  ],
+  "defaultNpcIds": [
+    "mercator",
+    "marcus",
+    "lydia"
+  ],
+  "vocabularyIds": [],
+  "grammarIds": [],
+  "unlockConditions": []
+}

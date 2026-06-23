@@ -1,0 +1,14 @@
+[
+  {
+    "id": "wax_tablet",
+    "name": "Wax Tablet",
+    "description": "A reusable writing tablet for first Latin exercises.",
+    "usable": true
+  },
+  {
+    "id": "stylus",
+    "name": "Stylus",
+    "description": "A pointed tool for writing letters into wax.",
+    "usable": true
+  }
+]

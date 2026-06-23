@@ -1,0 +1,81 @@
+.vp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vp-space-2);
+  min-height: 40px;
+  border-radius: var(--vp-radius-sm);
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
+.vp-button--primary, .vp-button--gold {
+  color: #21160b;
+  background: linear-gradient(180deg, var(--vp-gold-1), var(--vp-gold-3));
+}
+
+.vp-button--secondary { color: #fff8e8; background: linear-gradient(180deg, var(--vp-bronze-1), var(--vp-bronze-2)); }
+.vp-button--ghost { color: var(--vp-text-muted); border-color: var(--vp-border-soft); background: rgba(255,248,232,.42); box-shadow: none; }
+.vp-button--danger { border-color: rgba(184, 90, 74, 0.62); background: linear-gradient(180deg, var(--vp-roman-red), #4d1f19); }
+.vp-button--parchment { color: var(--vp-text-on-parchment); background: linear-gradient(180deg, var(--vp-parchment-0), var(--vp-parchment-2)); }
+
+.vp-card, .vp-panel, .panel-card, .scene-card, .start-hero {
+  border: 1px solid var(--vp-border);
+  border-radius: var(--vp-radius-md);
+  background: linear-gradient(180deg, rgba(255,248,232,.94), rgba(245,228,189,.76));
+  box-shadow: var(--vp-shadow-card);
+}
+
+.vp-card, .panel-card { padding: var(--vp-space-5); }
+.vp-card--parchment, .parchment-card, .parchment-panel {
+  color: var(--vp-text-on-parchment);
+  border-color: rgba(143, 98, 48, 0.55);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.42), transparent 38%), linear-gradient(180deg, var(--vp-parchment-0), var(--vp-parchment-1)) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28), 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+.vp-card--elevated, .vp-panel { border-color: var(--vp-border-strong); box-shadow: var(--vp-shadow-card), var(--vp-shadow-gold); }
+.vp-card--compact { padding: var(--vp-space-4); }
+.vp-card--interactive { transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
+.vp-card--interactive:hover { transform: translateY(-2px); border-color: var(--vp-border-strong); box-shadow: var(--vp-shadow-card), 0 0 0 3px rgba(240, 210, 138, 0.08); }
+
+.vp-badge, .mode-chip, .location-unlock-badge, .chapter-focus-row span, .choice-chip-row span, .scene-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vp-space-1);
+  border: 1px solid var(--vp-border);
+  border-radius: 999px;
+  padding: 0.2rem 0.52rem;
+  color: var(--vp-text-muted);
+  background: rgba(10, 9, 6, 0.34);
+  font-size: 0.74rem;
+  line-height: 1.2;
+}
+
+.vp-badge--gold, .scene-badge--gold { color: var(--vp-gold-1); border-color: rgba(240, 210, 138, 0.42); background: rgba(215, 168, 95, 0.12); }
+.vp-badge--bronze { color: var(--vp-bronze-1); border-color: rgba(185, 133, 72, 0.44); }
+.vp-badge--red { color: #e5aaa0; border-color: rgba(139, 47, 37, 0.54); background: var(--vp-roman-red-soft); }
+.vp-badge--success { color: var(--vp-success); border-color: rgba(123, 166, 106, 0.5); }
+.vp-badge--muted { color: var(--vp-text-faint); }
+
+.vp-tabs, .tab-bar { display: grid; gap: var(--vp-space-2); }
+.vp-input, .vp-textarea, .parchment-input {
+  color: var(--vp-text-on-parchment);
+  border-color: rgba(143, 98, 48, 0.5);
+  background: linear-gradient(180deg, var(--vp-parchment-0), var(--vp-parchment-1));
+  box-shadow: inset 0 1px 3px rgba(83, 53, 20, 0.18);
+}
+
+.vp-progress, .roman-progress, .progress-bar {
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 210, 138, 0.18);
+  border-radius: 999px;
+  background: rgba(7, 6, 5, 0.82);
+}
+.vp-progress span, .roman-progress span, .progress-bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--vp-gold-3), var(--vp-gold-1)); }
+.vp-empty-state, .empty-state { color: var(--vp-text-muted); line-height: 1.55; }
+.vp-divider { height: 1px; border: 0; background: linear-gradient(90deg, transparent, var(--vp-border), transparent); }
+
+.panel-heading { display: grid; gap: 0.22rem; margin-bottom: var(--vp-space-4); }
+.panel-heading h2, .panel-heading h3 { margin: 0; color: var(--vp-text-strong); font-family: var(--vp-font-serif); font-size: 1.16rem; line-height: 1.18; }
+.eyebrow { margin: 0; color: var(--vp-gold-1); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }

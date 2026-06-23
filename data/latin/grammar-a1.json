@@ -1,0 +1,258 @@
+[
+  {
+    "id": "greetings-basic",
+    "title": "Selamlasma",
+    "titleTr": "Selamlasma",
+    "titleLatin": "Salutatio",
+    "explanation": "Salve ve vale gibi kisa kaliplarla konusmayi baslatirsin.",
+    "explanationTr": "Salve ve vale gibi kisa kaliplarla konusmayi baslatirsin.",
+    "examples": [
+      "Salve, magister.",
+      "Vale, Marce."
+    ],
+    "commonMistakes": [],
+    "level": 1,
+    "prerequisiteGrammarIds": [],
+    "relatedVocabularyIds": [
+      "vocab-salve",
+      "vocab-vale"
+    ],
+    "tags": [
+      "greetings-basic",
+      "a1"
+    ]
+  },
+  {
+    "id": "sum-esse-present",
+    "title": "Sum/esse genis zaman",
+    "titleTr": "Sum/esse genis zaman",
+    "titleLatin": "Esse",
+    "explanation": "Sum, es, est ve sunt kimlik veya durum bildirir.",
+    "explanationTr": "Sum, es, est ve sunt kimlik veya durum bildirir.",
+    "examples": [
+      "Ego sum discipulus.",
+      "Julia est puella."
+    ],
+    "commonMistakes": [
+      "est yerine es kullanmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [],
+    "relatedVocabularyIds": [
+      "vocab-sum",
+      "vocab-est"
+    ],
+    "tags": [
+      "sum-esse-present",
+      "a1"
+    ]
+  },
+  {
+    "id": "nominative-basic",
+    "title": "Temel nominativus",
+    "titleTr": "Temel nominativus",
+    "titleLatin": "Nominativus",
+    "explanation": "Cumlenin oznesi yalin haldedir.",
+    "explanationTr": "Cumlenin oznesi yalin haldedir.",
+    "examples": [
+      "Puer est discipulus.",
+      "Puella legit."
+    ],
+    "commonMistakes": [
+      "Ozneye accusativus eki eklemek"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [],
+    "relatedVocabularyIds": [
+      "vocab-puer",
+      "vocab-puella"
+    ],
+    "tags": [
+      "nominative-basic",
+      "a1"
+    ]
+  },
+  {
+    "id": "noun-gender-intro",
+    "title": "Isim cinsiyeti",
+    "titleTr": "Isim cinsiyeti",
+    "titleLatin": "Genus",
+    "explanation": "Isimler masculinum, femininum veya neutrum olabilir.",
+    "explanationTr": "Isimler masculinum, femininum veya neutrum olabilir.",
+    "examples": [
+      "Puer bonus est.",
+      "Puella bona est."
+    ],
+    "commonMistakes": [
+      "bonus/bona uyumunu karistirmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [],
+    "relatedVocabularyIds": [
+      "vocab-bonus",
+      "vocab-bona"
+    ],
+    "tags": [
+      "noun-gender-intro",
+      "a1"
+    ]
+  },
+  {
+    "id": "adjective-agreement-intro",
+    "title": "Sifat uyumu",
+    "titleTr": "Sifat uyumu",
+    "titleLatin": "Concordia",
+    "explanation": "Sifat, isimle temel cinsiyet ve sayi uyumu gosterir.",
+    "explanationTr": "Sifat, isimle temel cinsiyet ve sayi uyumu gosterir.",
+    "examples": [
+      "Liber novus est.",
+      "Tabula antiqua est."
+    ],
+    "commonMistakes": [
+      "novus ile feminina ismi kullanmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [
+      "noun-gender-intro"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-novus",
+      "vocab-antiqua"
+    ],
+    "tags": [
+      "adjective-agreement-intro",
+      "a1"
+    ]
+  },
+  {
+    "id": "ego-tu-basic",
+    "title": "Ego ve tu",
+    "titleTr": "Ego ve tu",
+    "titleLatin": "Ego et tu",
+    "explanation": "Ego ben, tu sen anlamina gelir.",
+    "explanationTr": "Ego ben, tu sen anlamina gelir.",
+    "examples": [
+      "Ego sum discipulus.",
+      "Tu es magister."
+    ],
+    "commonMistakes": [
+      "Ego ile es kullanmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [],
+    "relatedVocabularyIds": [
+      "vocab-ego",
+      "vocab-tu"
+    ],
+    "tags": [
+      "ego-tu-basic",
+      "a1"
+    ]
+  },
+  {
+    "id": "simple-sentence-basic",
+    "title": "Basit cumle",
+    "titleTr": "Basit cumle",
+    "titleLatin": "Sententia simplex",
+    "explanation": "A1 duzeyinde ozne ve yuklemle kisa cumle kurarsin.",
+    "explanationTr": "A1 duzeyinde ozne ve yuklemle kisa cumle kurarsin.",
+    "examples": [
+      "Roma magna est.",
+      "Marcus amicus est."
+    ],
+    "commonMistakes": [
+      "Cok uzun yapi kurmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [
+      "sum-esse-present"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-roma",
+      "vocab-amicus"
+    ],
+    "tags": [
+      "simple-sentence-basic",
+      "a1"
+    ]
+  },
+  {
+    "id": "present-active-basic",
+    "title": "Genis zaman fiiller",
+    "titleTr": "Genis zaman fiiller",
+    "titleLatin": "Praesens activum",
+    "explanation": "Legit, scribit, venit gibi fiiller simdiki/genis zamani anlatir.",
+    "explanationTr": "Legit, scribit, venit gibi fiiller simdiki/genis zamani anlatir.",
+    "examples": [
+      "Puer legit.",
+      "Scriba scribit."
+    ],
+    "commonMistakes": [
+      "Fiili nesneyle karistirmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [],
+    "relatedVocabularyIds": [
+      "vocab-legit",
+      "vocab-scribit"
+    ],
+    "tags": [
+      "present-active-basic",
+      "a1"
+    ]
+  },
+  {
+    "id": "first-declension-intro",
+    "title": "Birinci cekim",
+    "titleTr": "Birinci cekim",
+    "titleLatin": "Declinatio prima",
+    "explanation": "Cogu -a bitisli feminina isim burada baslar.",
+    "explanationTr": "Cogu -a bitisli feminina isim burada baslar.",
+    "examples": [
+      "Puella bona est.",
+      "Tabula antiqua est."
+    ],
+    "commonMistakes": [
+      "-a bitisini her zaman ozne sanmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [
+      "noun-gender-intro"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-puella",
+      "vocab-tabula"
+    ],
+    "tags": [
+      "first-declension-intro",
+      "a1"
+    ]
+  },
+  {
+    "id": "second-declension-intro",
+    "title": "Ikinci cekim",
+    "titleTr": "Ikinci cekim",
+    "titleLatin": "Declinatio secunda",
+    "explanation": "-us ve -um kaliplari erken isimlerde sik gorunur.",
+    "explanationTr": "-us ve -um kaliplari erken isimlerde sik gorunur.",
+    "examples": [
+      "Puer bonus est.",
+      "Scutum magnum est."
+    ],
+    "commonMistakes": [
+      "-um nesne formunu ozne yapmak"
+    ],
+    "level": 1,
+    "prerequisiteGrammarIds": [
+      "noun-gender-intro"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-puer",
+      "vocab-scutum"
+    ],
+    "tags": [
+      "second-declension-intro",
+      "a1"
+    ]
+  }
+]

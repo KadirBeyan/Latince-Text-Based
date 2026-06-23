@@ -1,0 +1,32 @@
+[
+  {
+    "id": "latin_basics",
+    "name": "Latin Basics",
+    "description": "The first habits of reading and answering in Latin.",
+    "maxLevel": 10
+  },
+  {
+    "id": "latin_greetings",
+    "name": "Latin Greetings",
+    "description": "Common phrases used to greet teachers and classmates.",
+    "maxLevel": 5
+  },
+  {
+    "id": "latin_sum_esse",
+    "name": "Sum / Esse",
+    "description": "Early familiarity with the verb 'to be'.",
+    "maxLevel": 5
+  },
+  {
+    "id": "latin_reading",
+    "name": "Latin Reading",
+    "description": "Short Latin text comprehension.",
+    "maxLevel": 10
+  },
+  {
+    "id": "latin_forms",
+    "name": "Latin Forms",
+    "description": "Noun and verb form recognition.",
+    "maxLevel": 10
+  }
+]

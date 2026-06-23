@@ -1,0 +1,1000 @@
+[
+  {
+    "id": "vocab-salve",
+    "latin": "salve",
+    "turkish": "merhaba",
+    "meaningTr": "merhaba",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "salve - merhaba"
+    ],
+    "exampleLatin": "salve.",
+    "exampleTr": "merhaba"
+  },
+  {
+    "id": "vocab-vale",
+    "latin": "vale",
+    "turkish": "hosca kal",
+    "meaningTr": "hosca kal",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "vale - hosca kal"
+    ],
+    "exampleLatin": "vale.",
+    "exampleTr": "hosca kal"
+  },
+  {
+    "id": "vocab-magister",
+    "latin": "magister",
+    "turkish": "ogretmen",
+    "meaningTr": "ogretmen",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "magister - ogretmen"
+    ],
+    "exampleLatin": "magister.",
+    "exampleTr": "ogretmen"
+  },
+  {
+    "id": "vocab-discipulus",
+    "latin": "discipulus",
+    "turkish": "ogrenci",
+    "meaningTr": "ogrenci",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "discipulus - ogrenci"
+    ],
+    "exampleLatin": "discipulus.",
+    "exampleTr": "ogrenci"
+  },
+  {
+    "id": "vocab-discipula",
+    "latin": "discipula",
+    "turkish": "kiz ogrenci",
+    "meaningTr": "kiz ogrenci",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "discipula - kiz ogrenci"
+    ],
+    "exampleLatin": "discipula.",
+    "exampleTr": "kiz ogrenci"
+  },
+  {
+    "id": "vocab-roma",
+    "latin": "Roma",
+    "turkish": "Roma",
+    "meaningTr": "Roma",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "Roma - Roma"
+    ],
+    "exampleLatin": "Roma.",
+    "exampleTr": "Roma"
+  },
+  {
+    "id": "vocab-sum",
+    "latin": "sum",
+    "turkish": "benim",
+    "meaningTr": "benim",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sum"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "sum - benim"
+    ],
+    "exampleLatin": "sum.",
+    "exampleTr": "benim"
+  },
+  {
+    "id": "vocab-es",
+    "latin": "es",
+    "turkish": "sensin",
+    "meaningTr": "sensin",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "es"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "es - sensin"
+    ],
+    "exampleLatin": "es.",
+    "exampleTr": "sensin"
+  },
+  {
+    "id": "vocab-est",
+    "latin": "est",
+    "turkish": "dir",
+    "meaningTr": "dir",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "est"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "est - dir"
+    ],
+    "exampleLatin": "est.",
+    "exampleTr": "dir"
+  },
+  {
+    "id": "vocab-sunt",
+    "latin": "sunt",
+    "turkish": "dirler",
+    "meaningTr": "dirler",
+    "pos": "verb",
+    "gender": null,
+    "declension": null,
+    "principalParts": [
+      "sunt"
+    ],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "verb"
+    ],
+    "examples": [
+      "sunt - dirler"
+    ],
+    "exampleLatin": "sunt.",
+    "exampleTr": "dirler"
+  },
+  {
+    "id": "vocab-ego",
+    "latin": "ego",
+    "turkish": "ben",
+    "meaningTr": "ben",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "ego - ben"
+    ],
+    "exampleLatin": "ego.",
+    "exampleTr": "ben"
+  },
+  {
+    "id": "vocab-tu",
+    "latin": "tu",
+    "turkish": "sen",
+    "meaningTr": "sen",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "tu - sen"
+    ],
+    "exampleLatin": "tu.",
+    "exampleTr": "sen"
+  },
+  {
+    "id": "vocab-nomen",
+    "latin": "nomen",
+    "turkish": "ad",
+    "meaningTr": "ad",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "nomen - ad"
+    ],
+    "exampleLatin": "nomen.",
+    "exampleTr": "ad"
+  },
+  {
+    "id": "vocab-mihi",
+    "latin": "mihi",
+    "turkish": "bana",
+    "meaningTr": "bana",
+    "pos": "noun",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "mihi - bana"
+    ],
+    "exampleLatin": "mihi.",
+    "exampleTr": "bana"
+  },
+  {
+    "id": "vocab-amicus",
+    "latin": "amicus",
+    "turkish": "arkadas",
+    "meaningTr": "arkadas",
+    "pos": "noun",
+    "gender": "m",
+    "declension": "2",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "amicus - arkadas"
+    ],
+    "exampleLatin": "amicus.",
+    "exampleTr": "arkadas"
+  },
+  {
+    "id": "vocab-amica",
+    "latin": "amica",
+    "turkish": "amica",
+    "meaningTr": "amica",
+    "pos": "noun",
+    "gender": "f",
+    "declension": "1",
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "noun"
+    ],
+    "examples": [
+      "amica - amica"
+    ],
+    "exampleLatin": "amica.",
+    "exampleTr": "amica"
+  },
+  {
+    "id": "vocab-bonus",
+    "latin": "bonus",
+    "turkish": "bonus",
+    "meaningTr": "bonus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "bonus - bonus"
+    ],
+    "exampleLatin": "bonus.",
+    "exampleTr": "bonus"
+  },
+  {
+    "id": "vocab-bona",
+    "latin": "bona",
+    "turkish": "bona",
+    "meaningTr": "bona",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "bona - bona"
+    ],
+    "exampleLatin": "bona.",
+    "exampleTr": "bona"
+  },
+  {
+    "id": "vocab-novus",
+    "latin": "novus",
+    "turkish": "novus",
+    "meaningTr": "novus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "novus - novus"
+    ],
+    "exampleLatin": "novus.",
+    "exampleTr": "novus"
+  },
+  {
+    "id": "vocab-antiqua",
+    "latin": "antiqua",
+    "turkish": "antiqua",
+    "meaningTr": "antiqua",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "antiqua - antiqua"
+    ],
+    "exampleLatin": "antiqua.",
+    "exampleTr": "antiqua"
+  },
+  {
+    "id": "vocab-magnus",
+    "latin": "magnus",
+    "turkish": "magnus",
+    "meaningTr": "magnus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "magnus - magnus"
+    ],
+    "exampleLatin": "magnus.",
+    "exampleTr": "magnus"
+  },
+  {
+    "id": "vocab-magna",
+    "latin": "magna",
+    "turkish": "magna",
+    "meaningTr": "magna",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "magna - magna"
+    ],
+    "exampleLatin": "magna.",
+    "exampleTr": "magna"
+  },
+  {
+    "id": "vocab-parvus",
+    "latin": "parvus",
+    "turkish": "parvus",
+    "meaningTr": "parvus",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "parvus - parvus"
+    ],
+    "exampleLatin": "parvus.",
+    "exampleTr": "parvus"
+  },
+  {
+    "id": "vocab-parva",
+    "latin": "parva",
+    "turkish": "parva",
+    "meaningTr": "parva",
+    "pos": "adjective",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "adjective"
+    ],
+    "examples": [
+      "parva - parva"
+    ],
+    "exampleLatin": "parva.",
+    "exampleTr": "parva"
+  },
+  {
+    "id": "vocab-et",
+    "latin": "et",
+    "turkish": "ve",
+    "meaningTr": "ve",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "et - ve"
+    ],
+    "exampleLatin": "et.",
+    "exampleTr": "ve"
+  },
+  {
+    "id": "vocab-sed",
+    "latin": "sed",
+    "turkish": "ama",
+    "meaningTr": "ama",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "sed - ama"
+    ],
+    "exampleLatin": "sed.",
+    "exampleTr": "ama"
+  },
+  {
+    "id": "vocab-non",
+    "latin": "non",
+    "turkish": "degil",
+    "meaningTr": "degil",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "non - degil"
+    ],
+    "exampleLatin": "non.",
+    "exampleTr": "degil"
+  },
+  {
+    "id": "vocab-bene",
+    "latin": "bene",
+    "turkish": "iyi",
+    "meaningTr": "iyi",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "bene - iyi"
+    ],
+    "exampleLatin": "bene.",
+    "exampleTr": "iyi"
+  },
+  {
+    "id": "vocab-male",
+    "latin": "male",
+    "turkish": "kotu",
+    "meaningTr": "kotu",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "male - kotu"
+    ],
+    "exampleLatin": "male.",
+    "exampleTr": "kotu"
+  },
+  {
+    "id": "vocab-in",
+    "latin": "in",
+    "turkish": "icinde",
+    "meaningTr": "icinde",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "in - icinde"
+    ],
+    "exampleLatin": "in.",
+    "exampleTr": "icinde"
+  },
+  {
+    "id": "vocab-ad",
+    "latin": "ad",
+    "turkish": "e dogru",
+    "meaningTr": "e dogru",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "ad - e dogru"
+    ],
+    "exampleLatin": "ad.",
+    "exampleTr": "e dogru"
+  },
+  {
+    "id": "vocab-cum",
+    "latin": "cum",
+    "turkish": "ile",
+    "meaningTr": "ile",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "cum - ile"
+    ],
+    "exampleLatin": "cum.",
+    "exampleTr": "ile"
+  },
+  {
+    "id": "vocab-sine",
+    "latin": "sine",
+    "turkish": "siz",
+    "meaningTr": "siz",
+    "pos": "function",
+    "gender": null,
+    "declension": null,
+    "principalParts": [],
+    "level": 1,
+    "chapterIds": [
+      "prologus",
+      "ludus",
+      "domus",
+      "forum",
+      "bibliotheca",
+      "castra",
+      "via-appia",
+      "capitolium"
+    ],
+    "tags": [
+      "core",
+      "function"
+    ],
+    "examples": [
+      "sine - siz"
+    ],
+    "exampleLatin": "sine.",
+    "exampleTr": "siz"
+  }
+]

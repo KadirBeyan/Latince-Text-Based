@@ -1,0 +1,5 @@
+import { useState } from "react";
+import { refreshLearningPath } from "../../api/assessmentApi";
+import { useGameStore } from "../../stores/gameStore";
+export function LearningPathPanel() { const { currentSaveId, gameState, loadGame } = useGameStore(); const [loading, setLoading] = useState(false); const path = gameState?.learningPath; async function refresh() { if (!currentSaveId) return; setLoading(true); await refreshLearningPath(currentSaveId); await loadGame(currentSaveId); setLoading(false); } return <div className="panel-stack"><div className="panel-card"><div className="panel-kicker">Rota</div><h3>{path?.title ?? "Via Discendi"}</h3><p>{path?.summaryTr ?? "Henüz öğrenme rotası oluşturulmadı."}</p><button className="primary-action" onClick={refresh} disabled={loading}>Yenile</button></div>{(path?.steps ?? []).map((step) => <div className="panel-card" key={step.id}><div className="panel-kicker">Öncelik {step.priority} · {step.status}</div><h4>{step.title}</h4><p>{step.reasonTr}</p><small>{[...step.grammarIds, ...step.vocabularyIds, ...step.skillIds].join(", ")}</small></div>)}</div>; }
+

@@ -1,0 +1,24 @@
+{
+  "id": "mercator",
+  "name": "Mercator Publius",
+  "latinName": "Publius",
+  "role": "merchant",
+  "description": "Forumda alisveris ve accusativus pratigi yaptiran tuccar.",
+  "descriptionTr": "Forumda alisveris ve accusativus pratigi yaptiran tuccar.",
+  "personality": "friendly, focused, concise",
+  "defaultLocationId": "forum",
+  "teachingStyle": "asks for object forms in short trade scenes",
+  "preferredGrammarIds": [
+    "accusative-basic",
+    "direct-object-basic"
+  ],
+  "preferredVocabularyIds": [
+    "vocab-mercator",
+    "vocab-pecunia"
+  ],
+  "relationshipDefaults": {
+    "trust": 30,
+    "respect": 30,
+    "familiarity": 20
+  }
+}

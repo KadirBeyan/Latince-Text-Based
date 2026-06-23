@@ -1,0 +1,241 @@
+[
+  {
+    "id": "greetings_review",
+    "title": "Selamlaşma Sanatı",
+    "description": "Magister ile temel Latince selamlaşmaları gözden geçir.",
+    "trigger": {
+      "errorTags": [
+        "missing-greeting",
+        "wrong-greeting"
+      ]
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "magister",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "greetings-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-vale"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "reasonTemplate": "Selamlaşma kalıplarında eksiklerin olduğu için Magister sana bu tekrarı öneriyor."
+  },
+  {
+    "id": "sum_esse_review",
+    "title": "Olmak ya da Olmamak",
+    "description": "Sum/Esse yardımcı fiillerinin çekimini ve kullanımını tekrar et.",
+    "trigger": {
+      "errorTags": [
+        "missing-sum",
+        "wrong-sum-tense"
+      ],
+      "weakGrammarIds": [
+        "sum-esse-present"
+      ]
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "magister",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "sum-esse-present"
+      ],
+      "vocabularyIds": [
+        "vocab-sum",
+        "vocab-es",
+        "vocab-est"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "reasonTemplate": "Sum/Esse fiil çekimlerinde zorlandığın için bu tekrar sana çok yardımcı olacaktır."
+  },
+  {
+    "id": "nominative_practice",
+    "title": "İsimlerin Doğuşu (Nominativus)",
+    "description": "Marcus ile cümlelerin öznelerini ve yalın hali (nominativus) çalış.",
+    "trigger": {
+      "errorTags": [
+        "wrong-declension",
+        "wrong-case"
+      ],
+      "weakGrammarIds": [
+        "nominative-basic"
+      ]
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "marcus",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "nominative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-puer",
+        "vocab-puella",
+        "vocab-amicus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "reasonTemplate": "Cümlelerin öznelerini (Nominativus) doğru belirleyemediğin için Marcus sana pratik öneriyor."
+  },
+  {
+    "id": "accusative_practice",
+    "title": "Nesneleri Hedefle (Accusativus)",
+    "description": "Mercator ile belirtme halini (accusativus) çalışarak ticari eşyaları doğru tanımla.",
+    "trigger": {
+      "errorTags": [
+        "wrong-accusative",
+        "missing-object"
+      ],
+      "weakGrammarIds": [
+        "accusative-basic"
+      ]
+    },
+    "suggestedLocationId": "forum",
+    "suggestedNpcId": "mercator",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "accusative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-pecunia",
+        "vocab-gladius",
+        "vocab-vinum"
+      ],
+      "skillIds": [
+        "rhetorica"
+      ]
+    },
+    "reasonTemplate": "Cümlede nesneleri (Accusativus) kullanırken hatalar yaptığın için Mercator bu alıştırmayı öneriyor."
+  },
+  {
+    "id": "vocabulary_market_practice",
+    "title": "Forum Alışverişi",
+    "description": "Mercator ile Forum'da meyve, sebze ve ticari terimler üzerine kelime hazineni genişlet.",
+    "trigger": {
+      "errorTags": [
+        "vocab-error"
+      ],
+      "weakVocabularyIds": [
+        "vocab-pecunia",
+        "vocab-taberna"
+      ]
+    },
+    "suggestedLocationId": "forum",
+    "suggestedNpcId": "mercator",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [],
+      "vocabularyIds": [
+        "vocab-pecunia",
+        "vocab-taberna",
+        "vocab-mercator"
+      ],
+      "skillIds": [
+        "vocabula"
+      ]
+    },
+    "reasonTemplate": "Forum'daki ticari kelimelerde (Denarii, Taberna vb.) eksiklerin olduğu için Mercator sana kelime pratiği öneriyor."
+  },
+  {
+    "id": "family_vocabulary",
+    "title": "Domus ve Aile",
+    "description": "Julia ile Roma ev hayatı ve aile bireylerini tanımlayan kelimeleri çalış.",
+    "trigger": {
+      "errorTags": [
+        "vocab-family"
+      ],
+      "weakVocabularyIds": [
+        "vocab-pater",
+        "vocab-mater"
+      ]
+    },
+    "suggestedLocationId": "domus",
+    "suggestedNpcId": "julia",
+    "difficulty": "intro",
+    "learningFocus": {
+      "grammarIds": [],
+      "vocabularyIds": [
+        "vocab-pater",
+        "vocab-mater",
+        "vocab-frater",
+        "vocab-soror"
+      ],
+      "skillIds": [
+        "vocabula"
+      ]
+    },
+    "reasonTemplate": "Domus hayatı ve aile kelimelerinde (Pater, Mater vb.) eksikliklerin görüldüğü için Julia bu sohbeti öneriyor."
+  },
+  {
+    "id": "imperative_practice",
+    "title": "Askeri Emirler (Imperativus)",
+    "description": "Castra'daki nöbetçi asker Miles ile emir kipini (imperativus) öğren.",
+    "trigger": {
+      "errorTags": [
+        "wrong-imperative",
+        "missing-imperative"
+      ],
+      "weakGrammarIds": [
+        "imperative-basic"
+      ]
+    },
+    "suggestedLocationId": "castra",
+    "suggestedNpcId": "miles",
+    "difficulty": "challenge",
+    "learningFocus": {
+      "grammarIds": [
+        "imperative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-audi",
+        "vocab-veni",
+        "vocab-sta"
+      ],
+      "skillIds": [
+        "rhetorica"
+      ]
+    },
+    "reasonTemplate": "Emir kipi (Imperativus) çekimlerinde zayıflığın olduğu için ordu kampındaki Miles sana meydan okuyor."
+  },
+  {
+    "id": "reading_practice",
+    "title": "Kütüphane Çalışması",
+    "description": "Bibliotheca'da antik metinleri okuyarak okuduğunu anlama becerini geliştir.",
+    "trigger": {
+      "errorTags": [
+        "reading-comprehension",
+        "translation-error"
+      ],
+      "minLevel": 2
+    },
+    "suggestedLocationId": "bibliotheca",
+    "suggestedNpcId": "magister",
+    "difficulty": "challenge",
+    "learningFocus": {
+      "grammarIds": [
+        "reading-comprehension-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-liber",
+        "vocab-scribit",
+        "vocab-legit"
+      ],
+      "skillIds": [
+        "historia"
+      ]
+    },
+    "reasonTemplate": "Okuma anlama ve karmaşık cümlelerde desteğe ihtiyacın olduğu için Magister seni Kütüphane'ye davet ediyor."
+  }
+]

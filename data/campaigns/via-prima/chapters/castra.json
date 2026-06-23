@@ -1,0 +1,3601 @@
+{
+  "id": "castra",
+  "title": "Castra",
+  "titleTr": "Castra",
+  "titleLatin": "Castra",
+  "description": "Castra chapter, A2 duzeyinde Via Prima ogrenme yolu.",
+  "descriptionTr": "Castra chapter, A2 duzeyinde Via Prima ogrenme yolu.",
+  "order": 6,
+  "startQuestId": "castra_main_prima",
+  "startSceneId": "castra_001_arrival",
+  "locationIds": [
+    "castra"
+  ],
+  "npcIds": [
+    "miles",
+    "marcus",
+    "magister"
+  ],
+  "grammarFocus": [
+    "imperative-basic",
+    "present-active-basic",
+    "prepositions-in-ad-cum-sine"
+  ],
+  "vocabularyFocus": [
+    "vocab-castra",
+    "vocab-miles",
+    "vocab-gladius",
+    "vocab-scutum",
+    "vocab-porta",
+    "vocab-via",
+    "vocab-ducit",
+    "vocab-audit",
+    "vocab-currit",
+    "vocab-venit",
+    "vocab-sta",
+    "vocab-veni",
+    "vocab-audi",
+    "vocab-ducite",
+    "vocab-audite"
+  ],
+  "estimatedSceneCount": 25,
+  "unlockConditions": [
+    {
+      "type": "FLAG_EQUALS",
+      "key": "chapter.bibliotheca.completed",
+      "value": true
+    }
+  ],
+  "mainQuests": [
+    "castra_main_prima",
+    "castra_main_secunda",
+    "castra_main_tertia",
+    "castra_main_quarta"
+  ],
+  "sideQuests": [
+    "castra_side_auxilium",
+    "castra_side_amicus",
+    "castra_side_nota",
+    "castra_side_brevis",
+    "castra_side_memoria"
+  ],
+  "reviewQuests": [
+    "castra_review_recapitulatio"
+  ],
+  "quests": [
+    {
+      "id": "castra_main_prima",
+      "type": "main",
+      "title": "Castra: prima",
+      "titleTr": "Castra: prima",
+      "titleLatin": "prima",
+      "description": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_001_arrival",
+      "scenes": [
+        {
+          "id": "castra_001_arrival",
+          "title": "Castra 001",
+          "titleTr": "Castra 001",
+          "titleLatin": "Exercitatio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Ordu kampının (castra) girişindesin. Nöbetçi asker (miles) sert bir şekilde durmanı söylüyor.",
+          "descriptionTr": "Ordu kampının (castra) girişindesin. Nöbetçi asker (miles) sert bir şekilde durmanı söylüyor.",
+          "objective": "Askerle konuşup kampa gir.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_001_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_002_practice"
+            }
+          ],
+          "interactionModel": {
+            "mode": "interaction-loop",
+            "openingNarrationTr": "Ordu kampının girişindeki kapıdasın.",
+            "openingNarrationLatin": "Ante portam castrōrum stās.",
+            "activeNpcId": "miles",
+            "npcLineLatin": "Quō eās, discipule?",
+            "npcLineTr": "Nereye gidiyorsun, öğrenci?",
+            "intents": [
+              {
+                "id": "approach_miles",
+                "labelTr": "Askere Yaklaş",
+                "verb": "approach",
+                "requiresLatin": false,
+                "resolution": {
+                  "resultNarrationTr": "Askere doğru bir adım yaklaşıyorsun. Asker mızrağını sıkıca kavrıyor."
+                }
+              },
+              {
+                "id": "ask_permission",
+                "labelTr": "Giriş İzni İste",
+                "verb": "ask",
+                "requiresLatin": false,
+                "resolution": {
+                  "npcReactionLatin": "Licet introīre sī eās Romam.",
+                  "npcReactionTr": "Eğer Roma'ya gidiyorsan girmene izin var."
+                }
+              },
+              {
+                "id": "apologize_miles",
+                "labelTr": "Özür Dile",
+                "verb": "apologize",
+                "requiresLatin": false,
+                "resolution": {
+                  "resultNarrationTr": "Rahatsızlık verdiğin için kibarca özür diliyorsun."
+                }
+              },
+              {
+                "id": "state_destination",
+                "labelTr": "Nereye Gittiğini Söyle",
+                "verb": "speak",
+                "requiresLatin": true,
+                "playerIntentTr": "Roma'ya gittiğini söyle.",
+                "targetMeaningTr": "Romam eo.",
+                "canonicalAnswers": [
+                  "Romam eo",
+                  "Romam eo.",
+                  "romam eo",
+                  "Ad Romam eo",
+                  "ad romam eo"
+                ],
+                "responseReactions": {
+                  "correct": {
+                    "npcLineLatin": "I Romam! Intra.",
+                    "npcLineTr": "Roma'ya git! Gir.",
+                    "feedbackTr": "Asker kapıyı açtı ve girmene izin verdi."
+                  }
+                },
+                "successNextSceneId": "castra_002_practice"
+              }
+            ]
+          },
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [
+            {
+              "type": "DISCOVER_LOCATION",
+              "locationId": "castra"
+            }
+          ],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_001_arrival",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-castra",
+              "vocab-miles",
+              "vocab-gladius"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Veni!"
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ]
+        },
+        {
+          "id": "castra_002_practice",
+          "title": "Castra 002",
+          "titleTr": "Castra 002",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "objective": "Audi, Marce! kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_002_practice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-miles",
+              "vocab-gladius",
+              "vocab-scutum"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Audi, Marce!"
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Audi, Marce!",
+            "canonicalAnswers": [
+              "Audi, Marce!",
+              "Audi, Marce",
+              "audi, marce!"
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "present-active-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-miles",
+              "vocab-gladius",
+              "vocab-scutum"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_003_voice",
+            "failureNextSceneId": "castra_002_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Audi, Marce!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "castra_003_voice",
+          "title": "Castra 003",
+          "titleTr": "Castra 003",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "objective": "Porta scutum. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_003_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_004_reply"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_003_voice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-gladius",
+              "vocab-scutum",
+              "vocab-porta"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Porta scutum."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "castra_004_reply",
+          "title": "Castra 004",
+          "titleTr": "Castra 004",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "objective": "Ducite puerum. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_004_reply",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-scutum",
+              "vocab-porta",
+              "vocab-via"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ducite puerum."
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "miles",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Ducite puerum.",
+            "canonicalAnswers": [
+              "Ducite puerum.",
+              "Ducite puerum",
+              "ducite puerum."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "imperative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-scutum",
+              "vocab-porta",
+              "vocab-via"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_005_review",
+            "failureNextSceneId": "castra_004_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Ducite puerum."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_004_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_main_secunda",
+      "type": "main",
+      "title": "Castra: secunda",
+      "titleTr": "Castra: secunda",
+      "titleLatin": "secunda",
+      "description": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_005_review",
+      "scenes": [
+        {
+          "id": "castra_005_review",
+          "title": "Castra 005",
+          "titleTr": "Castra 005",
+          "titleLatin": "Exercitatio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "objective": "State ad portam. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_005_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_006_path"
+            },
+            {
+              "id": "castra_005_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_005_review",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-porta",
+              "vocab-via",
+              "vocab-ducit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: State ad portam."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        },
+        {
+          "id": "castra_006_path",
+          "title": "Castra 006",
+          "titleTr": "Castra 006",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "objective": "Veni! kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_006_path",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-via",
+              "vocab-ducit",
+              "vocab-audit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Veni!"
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Veni!",
+            "canonicalAnswers": [
+              "Veni!",
+              "Veni",
+              "veni!"
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-via",
+              "vocab-ducit",
+              "vocab-audit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_007_arrival",
+            "failureNextSceneId": "castra_006_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Veni!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "castra_007_arrival",
+          "title": "Castra 007",
+          "titleTr": "Castra 007",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "objective": "Audi, Marce! kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_007_arrival",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ducit",
+              "vocab-audit",
+              "vocab-currit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Audi, Marce!"
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "miles",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Audi, Marce!",
+            "canonicalAnswers": [
+              "Audi, Marce!",
+              "Audi, Marce",
+              "audi, marce!"
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "imperative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ducit",
+              "vocab-audit",
+              "vocab-currit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_008_practice",
+            "failureNextSceneId": "castra_007_arrival",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Audi, Marce!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "castra_008_practice",
+          "title": "Castra 008",
+          "titleTr": "Castra 008",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "objective": "Porta scutum. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_008_practice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-audit",
+              "vocab-currit",
+              "vocab-venit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Porta scutum."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Porta scutum.",
+            "canonicalAnswers": [
+              "Porta scutum.",
+              "Porta scutum",
+              "porta scutum."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "present-active-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-audit",
+              "vocab-currit",
+              "vocab-venit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_009_voice",
+            "failureNextSceneId": "castra_008_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Porta scutum."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_008_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_main_tertia",
+      "type": "main",
+      "title": "Castra: tertia",
+      "titleTr": "Castra: tertia",
+      "titleLatin": "tertia",
+      "description": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_009_voice",
+      "scenes": [
+        {
+          "id": "castra_009_voice",
+          "title": "Castra 009",
+          "titleTr": "Castra 009",
+          "titleLatin": "Exercitatio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "objective": "Ducite puerum. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_009_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_010_reply"
+            },
+            {
+              "id": "castra_009_voice_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_009_voice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-currit",
+              "vocab-venit",
+              "vocab-sta"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ducite puerum."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "castra_010_reply",
+          "title": "Castra 010",
+          "titleTr": "Castra 010",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "objective": "State ad portam. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_010_reply",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-venit",
+              "vocab-sta",
+              "vocab-veni"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: State ad portam."
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "miles",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "State ad portam.",
+            "canonicalAnswers": [
+              "State ad portam.",
+              "State ad portam",
+              "state ad portam."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "imperative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-venit",
+              "vocab-sta",
+              "vocab-veni"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_011_review",
+            "failureNextSceneId": "castra_010_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: State ad portam."
+              }
+            ]
+          }
+        },
+        {
+          "id": "castra_011_review",
+          "title": "Castra 011",
+          "titleTr": "Castra 011",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "objective": "Veni! kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_011_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_012_path"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_011_review",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-sta",
+              "vocab-veni",
+              "vocab-audi"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Veni!"
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        },
+        {
+          "id": "castra_012_path",
+          "title": "Castra 012",
+          "titleTr": "Castra 012",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "objective": "Audi, Marce! kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_012_path",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-veni",
+              "vocab-audi",
+              "vocab-ducite"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Audi, Marce!"
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Audi, Marce!",
+            "canonicalAnswers": [
+              "Audi, Marce!",
+              "Audi, Marce",
+              "audi, marce!"
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-veni",
+              "vocab-audi",
+              "vocab-ducite"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_013_arrival",
+            "failureNextSceneId": "castra_012_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Audi, Marce!"
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_012_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_main_quarta",
+      "type": "main",
+      "title": "Castra: quarta",
+      "titleTr": "Castra: quarta",
+      "titleLatin": "quarta",
+      "description": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra main quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_013_arrival",
+      "scenes": [
+        {
+          "id": "castra_013_arrival",
+          "title": "Castra 013",
+          "titleTr": "Castra 013",
+          "titleLatin": "Exercitatio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "objective": "Porta scutum. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_013_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_014_practice"
+            },
+            {
+              "id": "castra_013_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_013_arrival",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-castra",
+              "vocab-miles",
+              "vocab-gladius"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Porta scutum."
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ]
+        },
+        {
+          "id": "castra_014_practice",
+          "title": "Castra 014",
+          "titleTr": "Castra 014",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "objective": "Ducite puerum. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_014_practice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-miles",
+              "vocab-gladius",
+              "vocab-scutum"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ducite puerum."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Ducite puerum.",
+            "canonicalAnswers": [
+              "Ducite puerum.",
+              "Ducite puerum",
+              "ducite puerum."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "present-active-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-miles",
+              "vocab-gladius",
+              "vocab-scutum"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_015_voice",
+            "failureNextSceneId": "castra_014_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Ducite puerum."
+              }
+            ]
+          }
+        },
+        {
+          "id": "castra_015_voice",
+          "title": "Castra 015",
+          "titleTr": "Castra 015",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "objective": "State ad portam. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_015_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_016_reply"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_015_voice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-gladius",
+              "vocab-scutum",
+              "vocab-porta"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: State ad portam."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "castra_016_reply",
+          "title": "Castra 016",
+          "titleTr": "Castra 016",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "objective": "Veni! kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_016_reply",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-scutum",
+              "vocab-porta",
+              "vocab-via"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Veni!"
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "miles",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Veni!",
+            "canonicalAnswers": [
+              "Veni!",
+              "Veni",
+              "veni!"
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "imperative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-scutum",
+              "vocab-porta",
+              "vocab-via"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_017_review",
+            "failureNextSceneId": "castra_016_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Veni!"
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_016_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_side_auxilium",
+      "type": "side",
+      "title": "Castra: auxilium",
+      "titleTr": "Castra: auxilium",
+      "titleLatin": "auxilium",
+      "description": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_017_review",
+      "scenes": [
+        {
+          "id": "castra_017_review",
+          "title": "Castra 017",
+          "titleTr": "Castra 017",
+          "titleLatin": "Exercitatio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "objective": "Audi, Marce! kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [
+            {
+              "id": "castra_017_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_018_path"
+            },
+            {
+              "id": "castra_017_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_017_review",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-porta",
+              "vocab-via",
+              "vocab-ducit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Audi, Marce!"
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Audi, Marce!",
+            "canonicalAnswers": [
+              "Audi, Marce!",
+              "Audi, Marce",
+              "audi, marce!"
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "present-active-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-porta",
+              "vocab-via",
+              "vocab-ducit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_018_path",
+            "failureNextSceneId": "castra_017_review",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Audi, Marce!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "castra_018_path",
+          "title": "Castra 018",
+          "titleTr": "Castra 018",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "objective": "Porta scutum. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_018_path",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-via",
+              "vocab-ducit",
+              "vocab-audit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Porta scutum."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Porta scutum.",
+            "canonicalAnswers": [
+              "Porta scutum.",
+              "Porta scutum",
+              "porta scutum."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-via",
+              "vocab-ducit",
+              "vocab-audit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_019_arrival",
+            "failureNextSceneId": "castra_018_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Porta scutum."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_018_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_side_amicus",
+      "type": "side",
+      "title": "Castra: amicus",
+      "titleTr": "Castra: amicus",
+      "titleLatin": "amicus",
+      "description": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_019_arrival",
+      "scenes": [
+        {
+          "id": "castra_019_arrival",
+          "title": "Castra 019",
+          "titleTr": "Castra 019",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "objective": "Ducite puerum. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_019_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_020_practice"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_019_arrival",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ducit",
+              "vocab-audit",
+              "vocab-currit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ducite puerum."
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ]
+        },
+        {
+          "id": "castra_020_practice",
+          "title": "Castra 020",
+          "titleTr": "Castra 020",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "objective": "State ad portam. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_020_practice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-audit",
+              "vocab-currit",
+              "vocab-venit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: State ad portam."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "State ad portam.",
+            "canonicalAnswers": [
+              "State ad portam.",
+              "State ad portam",
+              "state ad portam."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "present-active-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-audit",
+              "vocab-currit",
+              "vocab-venit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_021_voice",
+            "failureNextSceneId": "castra_020_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: State ad portam."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_020_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_side_nota",
+      "type": "side",
+      "title": "Castra: nota",
+      "titleTr": "Castra: nota",
+      "titleLatin": "nota",
+      "description": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_021_voice",
+      "scenes": [
+        {
+          "id": "castra_021_voice",
+          "title": "Castra 021",
+          "titleTr": "Castra 021",
+          "titleLatin": "Exercitatio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Veni!",
+          "objective": "Veni! kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_021_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_022_reply"
+            },
+            {
+              "id": "castra_021_voice_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_021_voice",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-currit",
+              "vocab-venit",
+              "vocab-sta"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Veni!"
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ]
+        },
+        {
+          "id": "castra_022_reply",
+          "title": "Castra 022",
+          "titleTr": "Castra 022",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Audi, Marce!",
+          "objective": "Audi, Marce! kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_022_reply",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-venit",
+              "vocab-sta",
+              "vocab-veni"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Audi, Marce!"
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "miles",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Audi, Marce!",
+            "canonicalAnswers": [
+              "Audi, Marce!",
+              "Audi, Marce",
+              "audi, marce!"
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "imperative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-venit",
+              "vocab-sta",
+              "vocab-veni"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_023_review",
+            "failureNextSceneId": "castra_022_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Audi, Marce!"
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_022_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_side_brevis",
+      "type": "side",
+      "title": "Castra: brevis",
+      "titleTr": "Castra: brevis",
+      "titleLatin": "brevis",
+      "description": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_023_review",
+      "scenes": [
+        {
+          "id": "castra_023_review",
+          "title": "Castra 023",
+          "titleTr": "Castra 023",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Porta scutum.",
+          "objective": "Porta scutum. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_023_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "castra_024_path"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_023_review",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "present-active-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-sta",
+              "vocab-veni",
+              "vocab-audi"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Porta scutum."
+            ]
+          },
+          "reviewTags": [
+            "present-active-basic"
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_023_review"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_side_memoria",
+      "type": "side",
+      "title": "Castra: memoria",
+      "titleTr": "Castra: memoria",
+      "titleLatin": "memoria",
+      "description": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra side quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_024_path",
+      "scenes": [
+        {
+          "id": "castra_024_path",
+          "title": "Castra 024",
+          "titleTr": "Castra 024",
+          "titleLatin": "Lectio",
+          "locationId": "castra",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: Ducite puerum.",
+          "objective": "Ducite puerum. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_024_path",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyIds": [
+              "vocab-veni",
+              "vocab-audi",
+              "vocab-ducite"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ducite puerum."
+            ]
+          },
+          "reviewTags": [
+            "prepositions-in-ad-cum-sine"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quid iubeo?",
+            "npcPromptTr": "Ne emrettiğini Latince tekrar etmeni istiyor.",
+            "playerIntentTr": "NPC’nin emrini Latince olarak doğru ifade et.",
+            "targetMeaningTr": "Ducite puerum.",
+            "canonicalAnswers": [
+              "Ducite puerum.",
+              "Ducite puerum",
+              "ducite puerum."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "prepositions-in-ad-cum-sine"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-veni",
+              "vocab-audi",
+              "vocab-ducite"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte. Ita fac.",
+                "npcLineTr": "Doğru. Öyle yap.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Imperativum quaere.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Responsum imperativum esse debet.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "castra_025_arrival",
+            "failureNextSceneId": "castra_024_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 35
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Ducite puerum."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_024_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    },
+    {
+      "id": "castra_review_recapitulatio",
+      "type": "review",
+      "title": "Castra: recapitulatio",
+      "titleTr": "Castra: recapitulatio",
+      "titleLatin": "recapitulatio",
+      "description": "Castra review quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Castra review quest; imperative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "castra_025_arrival",
+      "scenes": [
+        {
+          "id": "castra_025_arrival",
+          "title": "Castra 025",
+          "titleTr": "Castra 025",
+          "titleLatin": "Exercitatio",
+          "locationId": "castra",
+          "npcIds": [
+            "miles"
+          ],
+          "description": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "descriptionTr": "Castra bolumunde kisa bir ogrenme ani. Hedef cumle: State ad portam.",
+          "objective": "State ad portam. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "castra_025_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "via-appia_001_arrival"
+            },
+            {
+              "id": "castra_025_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            },
+            {
+              "type": "SET_FLAG",
+              "key": "chapter.castra.completed",
+              "value": true
+            },
+            {
+              "type": "COMPLETE_CHAPTER",
+              "chapterId": "castra"
+            },
+            {
+              "type": "UNLOCK_CHAPTER",
+              "chapterId": "via-appia"
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "castra_025_arrival",
+                "chapterId": "castra"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "imperative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-castra",
+              "vocab-miles",
+              "vocab-gladius"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: State ad portam."
+            ]
+          },
+          "reviewTags": [
+            "imperative-basic"
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "type": "ADD_XP",
+          "amount": 20
+        }
+      ],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "castra_025_arrival"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "imperative-basic",
+          "present-active-basic",
+          "prepositions-in-ad-cum-sine"
+        ],
+        "vocabularyIds": [
+          "vocab-castra",
+          "vocab-miles",
+          "vocab-gladius",
+          "vocab-scutum",
+          "vocab-porta",
+          "vocab-via",
+          "vocab-ducit",
+          "vocab-audit"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A2"
+    }
+  ]
+}

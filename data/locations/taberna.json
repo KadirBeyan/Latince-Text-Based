@@ -1,0 +1,18 @@
+{
+  "id": "taberna",
+  "title": "Taberna",
+  "titleLatin": "Taberna",
+  "descriptionTr": "Kisa alisveris ve yol molasi sahneleri.",
+  "mood": "busy",
+  "connectedLocationIds": [
+    "forum",
+    "via-appia"
+  ],
+  "defaultNpcIds": [
+    "mercator",
+    "lydia"
+  ],
+  "vocabularyIds": [],
+  "grammarIds": [],
+  "unlockConditions": []
+}

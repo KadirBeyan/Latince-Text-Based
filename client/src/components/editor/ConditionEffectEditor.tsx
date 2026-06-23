@@ -1,0 +1,1 @@
+export function ConditionEffectEditor({ label, value, onChange }: { label: string; value: unknown[]; onChange: (value: unknown[]) => void }) { return <label>{label}<textarea value={JSON.stringify(value, null, 2)} onChange={e => { try { const parsed = JSON.parse(e.target.value) as unknown[]; onChange(parsed); } catch { /* preserve last valid value */ } }}/></label>; }

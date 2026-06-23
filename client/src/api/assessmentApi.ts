@@ -1,0 +1,18 @@
+import { requestJson } from "./gameApi";
+import type { AssessmentAnswer, AssessmentAttempt, AssessmentProfile, AssessmentResult, AchievementState, LearningAnalyticsSummary, LearningPath } from "../types/assessmentTypes";
+
+type Range = "session" | "daily" | "weekly" | "all-time";
+type ChallengeType = "grammar" | "vocabulary" | "mixed" | "review" | "quick";
+export function startPlacement(saveId: string, questionCount?: number): Promise<{ attempt: AssessmentAttempt; profile?: AssessmentProfile }> { return requestJson("/api/assessment/placement/start", { method: "POST", body: JSON.stringify({ saveId, questionCount }) }); }
+export function submitPlacementAnswer(params: { saveId: string; attemptId: string; questionId: string; answerText?: string; selectedChoice?: string }): Promise<{ answer: AssessmentAnswer; attempt: AssessmentAttempt; profile?: AssessmentProfile }> { return requestJson("/api/assessment/placement/answer", { method: "POST", body: JSON.stringify(params) }); }
+export function completePlacement(saveId: string, attemptId: string): Promise<{ result: AssessmentResult; profile?: AssessmentProfile; achievements: AchievementState[] }> { return requestJson("/api/assessment/placement/complete", { method: "POST", body: JSON.stringify({ saveId, attemptId }) }); }
+export function getAssessmentProfile(saveId: string): Promise<{ profile: AssessmentProfile }> { return requestJson("/api/assessment/profile/" + encodeURIComponent(saveId)); }
+export function getDiagnostic(saveId: string): Promise<unknown> { return requestJson("/api/assessment/diagnostic/" + encodeURIComponent(saveId)); }
+export function refreshLearningPath(saveId: string): Promise<{ learningPath?: LearningPath }> { return requestJson("/api/assessment/learning-path/refresh", { method: "POST", body: JSON.stringify({ saveId }) }); }
+export function getLearningPath(saveId: string): Promise<{ learningPath?: LearningPath }> { return requestJson("/api/assessment/learning-path/" + encodeURIComponent(saveId)); }
+export function startChallenge(params: { saveId: string; type: ChallengeType; grammarIds?: string[]; vocabularyIds?: string[]; questionCount?: number }): Promise<{ attempt: AssessmentAttempt }> { return requestJson("/api/assessment/challenge/start", { method: "POST", body: JSON.stringify(params) }); }
+export function submitChallengeAnswer(params: { saveId: string; attemptId: string; questionId: string; answerText?: string; selectedChoice?: string }): Promise<{ answer: AssessmentAnswer; attempt: AssessmentAttempt; profile?: AssessmentProfile }> { return requestJson("/api/assessment/challenge/answer", { method: "POST", body: JSON.stringify(params) }); }
+export function completeChallenge(saveId: string, attemptId: string): Promise<{ result: AssessmentResult; achievements: AchievementState[] }> { return requestJson("/api/assessment/challenge/complete", { method: "POST", body: JSON.stringify({ saveId, attemptId }) }); }
+export function getAnalytics(saveId: string, range: Range): Promise<{ summary: LearningAnalyticsSummary; masteryHeatmap: unknown[]; errorHeatmap: unknown[]; progressTrend: unknown }> { return requestJson("/api/assessment/analytics/" + encodeURIComponent(saveId) + "?range=" + encodeURIComponent(range)); }
+export function getAchievements(saveId: string): Promise<{ achievements: AchievementState[] }> { return requestJson("/api/assessment/achievements/" + encodeURIComponent(saveId)); }
+export function createAnalyticsSnapshot(saveId: string, range: Range): Promise<unknown> { return requestJson("/api/assessment/analytics/snapshot", { method: "POST", body: JSON.stringify({ saveId, range }) }); }

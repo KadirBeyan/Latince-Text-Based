@@ -1,0 +1,3590 @@
+{
+  "id": "ludus",
+  "title": "Ludus",
+  "titleTr": "Ludus",
+  "titleLatin": "Ludus",
+  "description": "Ludus chapter, A1 duzeyinde Via Prima ogrenme yolu.",
+  "descriptionTr": "Ludus chapter, A1 duzeyinde Via Prima ogrenme yolu.",
+  "order": 2,
+  "startQuestId": "ludus_main_prima",
+  "startSceneId": "ludus_001_arrival",
+  "locationIds": [
+    "ludus"
+  ],
+  "npcIds": [
+    "magister",
+    "julia",
+    "marcus"
+  ],
+  "grammarFocus": [
+    "nominative-basic",
+    "sum-esse-present",
+    "noun-gender-intro",
+    "adjective-agreement-intro"
+  ],
+  "vocabularyFocus": [
+    "vocab-liber",
+    "vocab-tabula",
+    "vocab-stilus",
+    "vocab-puer",
+    "vocab-puella",
+    "vocab-bonus",
+    "vocab-bona",
+    "vocab-novus",
+    "vocab-antiqua",
+    "vocab-legit",
+    "vocab-scribit"
+  ],
+  "estimatedSceneCount": 25,
+  "unlockConditions": [
+    {
+      "type": "FLAG_EQUALS",
+      "key": "chapter.prologus.completed",
+      "value": true
+    }
+  ],
+  "mainQuests": [
+    "ludus_main_prima",
+    "ludus_main_secunda",
+    "ludus_main_tertia",
+    "ludus_main_quarta"
+  ],
+  "sideQuests": [
+    "ludus_side_auxilium",
+    "ludus_side_amicus",
+    "ludus_side_nota",
+    "ludus_side_brevis",
+    "ludus_side_memoria"
+  ],
+  "reviewQuests": [
+    "ludus_review_recapitulatio"
+  ],
+  "quests": [
+    {
+      "id": "ludus_main_prima",
+      "type": "main",
+      "title": "Ludus: prima",
+      "titleTr": "Ludus: prima",
+      "titleLatin": "prima",
+      "description": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_001_arrival",
+      "scenes": [
+        {
+          "id": "ludus_001_arrival",
+          "title": "Ludus 001",
+          "titleTr": "Ludus 001",
+          "titleLatin": "Exercitatio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "objective": "Puer est discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_001_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_002_practice"
+            },
+            {
+              "id": "ludus_001_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [
+            {
+              "type": "DISCOVER_LOCATION",
+              "locationId": "ludus"
+            }
+          ],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_001_arrival",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-liber",
+              "vocab-tabula",
+              "vocab-stilus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer est discipulus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ]
+        },
+        {
+          "id": "ludus_002_practice",
+          "title": "Ludus 002",
+          "titleTr": "Ludus 002",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "objective": "Puella est bona. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_002_practice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-tabula",
+              "vocab-stilus",
+              "vocab-puer"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella est bona."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "julia",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella est bona.",
+            "canonicalAnswers": [
+              "Puella est bona.",
+              "Puella est bona",
+              "puella est bona."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-tabula",
+              "vocab-stilus",
+              "vocab-puer"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_003_voice",
+            "failureNextSceneId": "ludus_002_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella est bona."
+              }
+            ]
+          }
+        },
+        {
+          "id": "ludus_003_voice",
+          "title": "Ludus 003",
+          "titleTr": "Ludus 003",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "objective": "Liber est novus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_003_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_004_reply"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_003_voice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "noun-gender-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-stilus",
+              "vocab-puer",
+              "vocab-puella"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Liber est novus."
+            ]
+          },
+          "reviewTags": [
+            "noun-gender-intro"
+          ]
+        },
+        {
+          "id": "ludus_004_reply",
+          "title": "Ludus 004",
+          "titleTr": "Ludus 004",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_004_reply",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-puer",
+              "vocab-puella",
+              "vocab-bonus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "adjective-agreement-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quis es?",
+            "npcPromptTr": "Kim olduğunu soruyor.",
+            "playerIntentTr": "Kendini Latince tanıt.",
+            "targetMeaningTr": "Ego sum discipulus.",
+            "canonicalAnswers": [
+              "Ego sum discipulus.",
+              "Ego sum discipulus",
+              "ego sum discipulus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [
+              {
+                "meaningTr": "Sen ... değilsin; kişi karıştı discipulus.",
+                "exampleLatin": "Tu es discipulus.",
+                "reasonTr": "Cümle Latince kurulmuş olabilir, fakat burada kendini tanıtman gerekiyor; ikinci şahıs bağlama uymuyor."
+              }
+            ],
+            "grammarFocusIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-puer",
+              "vocab-puella",
+              "vocab-bonus"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Paene. Te ipsum dic.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "De te ipso respondere debes.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_005_review",
+            "failureNextSceneId": "ludus_004_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Ego sum discipulus."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_004_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_main_secunda",
+      "type": "main",
+      "title": "Ludus: secunda",
+      "titleTr": "Ludus: secunda",
+      "titleLatin": "secunda",
+      "description": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_005_review",
+      "scenes": [
+        {
+          "id": "ludus_005_review",
+          "title": "Ludus 005",
+          "titleTr": "Ludus 005",
+          "titleLatin": "Exercitatio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "objective": "Tu es magister. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_005_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_006_path"
+            },
+            {
+              "id": "ludus_005_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_005_review",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-puella",
+              "vocab-bonus",
+              "vocab-bona"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es magister."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ]
+        },
+        {
+          "id": "ludus_006_path",
+          "title": "Ludus 006",
+          "titleTr": "Ludus 006",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "objective": "Puer est discipulus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_006_path",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-bonus",
+              "vocab-bona",
+              "vocab-novus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer est discipulus."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puer est discipulus.",
+            "canonicalAnswers": [
+              "Puer est discipulus.",
+              "Puer est discipulus",
+              "puer est discipulus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-bonus",
+              "vocab-bona",
+              "vocab-novus"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_007_arrival",
+            "failureNextSceneId": "ludus_006_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puer est discipulus."
+              }
+            ]
+          }
+        },
+        {
+          "id": "ludus_007_arrival",
+          "title": "Ludus 007",
+          "titleTr": "Ludus 007",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "objective": "Puella est bona. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_007_arrival",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "noun-gender-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-bona",
+              "vocab-novus",
+              "vocab-antiqua"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella est bona."
+            ]
+          },
+          "reviewTags": [
+            "noun-gender-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella est bona.",
+            "canonicalAnswers": [
+              "Puella est bona.",
+              "Puella est bona",
+              "puella est bona."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "noun-gender-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-bona",
+              "vocab-novus",
+              "vocab-antiqua"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_008_practice",
+            "failureNextSceneId": "ludus_007_arrival",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella est bona."
+              }
+            ]
+          }
+        },
+        {
+          "id": "ludus_008_practice",
+          "title": "Ludus 008",
+          "titleTr": "Ludus 008",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "objective": "Liber est novus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_008_practice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-novus",
+              "vocab-antiqua",
+              "vocab-legit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Liber est novus."
+            ]
+          },
+          "reviewTags": [
+            "adjective-agreement-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "julia",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Liber est novus.",
+            "canonicalAnswers": [
+              "Liber est novus.",
+              "Liber est novus",
+              "liber est novus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-novus",
+              "vocab-antiqua",
+              "vocab-legit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_009_voice",
+            "failureNextSceneId": "ludus_008_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Liber est novus."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_008_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_main_tertia",
+      "type": "main",
+      "title": "Ludus: tertia",
+      "titleTr": "Ludus: tertia",
+      "titleLatin": "tertia",
+      "description": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_009_voice",
+      "scenes": [
+        {
+          "id": "ludus_009_voice",
+          "title": "Ludus 009",
+          "titleTr": "Ludus 009",
+          "titleLatin": "Exercitatio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_009_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_010_reply"
+            },
+            {
+              "id": "ludus_009_voice_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_009_voice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-liber",
+              "vocab-tabula",
+              "vocab-stilus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ]
+        },
+        {
+          "id": "ludus_010_reply",
+          "title": "Ludus 010",
+          "titleTr": "Ludus 010",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "objective": "Tu es magister. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_010_reply",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-tabula",
+              "vocab-stilus",
+              "vocab-puer"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es magister."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quis est hic?",
+            "npcPromptTr": "Buradaki kişinin kim olduğunu soruyor.",
+            "playerIntentTr": "Karşındaki kişiyi Latince tanıt.",
+            "targetMeaningTr": "Tu es magister.",
+            "canonicalAnswers": [
+              "Tu es magister.",
+              "Tu es magister",
+              "tu es magister."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [
+              {
+                "meaningTr": "Ben kendimi tanıtıyorum.",
+                "exampleLatin": "Ego sum magister.",
+                "reasonTr": "Burada karşındaki kişiden söz etmen gerekiyor; birinci şahıs bağlama uymuyor."
+              }
+            ],
+            "grammarFocusIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-tabula",
+              "vocab-stilus",
+              "vocab-puer"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. De illo responde.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hic de altera persona respondendum est.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_011_review",
+            "failureNextSceneId": "ludus_010_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Tu es magister."
+              }
+            ]
+          }
+        },
+        {
+          "id": "ludus_011_review",
+          "title": "Ludus 011",
+          "titleTr": "Ludus 011",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "objective": "Puer est discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_011_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_012_path"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_011_review",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "noun-gender-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-stilus",
+              "vocab-puer",
+              "vocab-puella"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer est discipulus."
+            ]
+          },
+          "reviewTags": [
+            "noun-gender-intro"
+          ]
+        },
+        {
+          "id": "ludus_012_path",
+          "title": "Ludus 012",
+          "titleTr": "Ludus 012",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "objective": "Puella est bona. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_012_path",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-puer",
+              "vocab-puella",
+              "vocab-bonus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella est bona."
+            ]
+          },
+          "reviewTags": [
+            "adjective-agreement-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella est bona.",
+            "canonicalAnswers": [
+              "Puella est bona.",
+              "Puella est bona",
+              "puella est bona."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-puer",
+              "vocab-puella",
+              "vocab-bonus"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_013_arrival",
+            "failureNextSceneId": "ludus_012_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella est bona."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_012_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_main_quarta",
+      "type": "main",
+      "title": "Ludus: quarta",
+      "titleTr": "Ludus: quarta",
+      "titleLatin": "quarta",
+      "description": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus main quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_013_arrival",
+      "scenes": [
+        {
+          "id": "ludus_013_arrival",
+          "title": "Ludus 013",
+          "titleTr": "Ludus 013",
+          "titleLatin": "Exercitatio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "objective": "Liber est novus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_013_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_014_practice"
+            },
+            {
+              "id": "ludus_013_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_013_arrival",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-puella",
+              "vocab-bonus",
+              "vocab-bona"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Liber est novus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ]
+        },
+        {
+          "id": "ludus_014_practice",
+          "title": "Ludus 014",
+          "titleTr": "Ludus 014",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_014_practice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-bonus",
+              "vocab-bona",
+              "vocab-novus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "julia",
+            "npcPromptLatin": "Quis es?",
+            "npcPromptTr": "Kim olduğunu soruyor.",
+            "playerIntentTr": "Kendini Latince tanıt.",
+            "targetMeaningTr": "Ego sum discipulus.",
+            "canonicalAnswers": [
+              "Ego sum discipulus.",
+              "Ego sum discipulus",
+              "ego sum discipulus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [
+              {
+                "meaningTr": "Sen ... değilsin; kişi karıştı discipulus.",
+                "exampleLatin": "Tu es discipulus.",
+                "reasonTr": "Cümle Latince kurulmuş olabilir, fakat burada kendini tanıtman gerekiyor; ikinci şahıs bağlama uymuyor."
+              }
+            ],
+            "grammarFocusIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-bonus",
+              "vocab-bona",
+              "vocab-novus"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Paene. Te ipsum dic.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "De te ipso respondere debes.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_015_voice",
+            "failureNextSceneId": "ludus_014_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Ego sum discipulus."
+              }
+            ]
+          }
+        },
+        {
+          "id": "ludus_015_voice",
+          "title": "Ludus 015",
+          "titleTr": "Ludus 015",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "objective": "Tu es magister. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_015_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_016_reply"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_015_voice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "noun-gender-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-bona",
+              "vocab-novus",
+              "vocab-antiqua"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es magister."
+            ]
+          },
+          "reviewTags": [
+            "noun-gender-intro"
+          ]
+        },
+        {
+          "id": "ludus_016_reply",
+          "title": "Ludus 016",
+          "titleTr": "Ludus 016",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "objective": "Puer est discipulus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_016_reply",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-novus",
+              "vocab-antiqua",
+              "vocab-legit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer est discipulus."
+            ]
+          },
+          "reviewTags": [
+            "adjective-agreement-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puer est discipulus.",
+            "canonicalAnswers": [
+              "Puer est discipulus.",
+              "Puer est discipulus",
+              "puer est discipulus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-novus",
+              "vocab-antiqua",
+              "vocab-legit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_017_review",
+            "failureNextSceneId": "ludus_016_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puer est discipulus."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_016_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_side_auxilium",
+      "type": "side",
+      "title": "Ludus: auxilium",
+      "titleTr": "Ludus: auxilium",
+      "titleLatin": "auxilium",
+      "description": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_017_review",
+      "scenes": [
+        {
+          "id": "ludus_017_review",
+          "title": "Ludus 017",
+          "titleTr": "Ludus 017",
+          "titleLatin": "Exercitatio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "objective": "Puella est bona. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [
+            {
+              "id": "ludus_017_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_018_path"
+            },
+            {
+              "id": "ludus_017_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_017_review",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-liber",
+              "vocab-tabula",
+              "vocab-stilus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella est bona."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "julia",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella est bona.",
+            "canonicalAnswers": [
+              "Puella est bona.",
+              "Puella est bona",
+              "puella est bona."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "nominative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-liber",
+              "vocab-tabula",
+              "vocab-stilus"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_018_path",
+            "failureNextSceneId": "ludus_017_review",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella est bona."
+              }
+            ]
+          }
+        },
+        {
+          "id": "ludus_018_path",
+          "title": "Ludus 018",
+          "titleTr": "Ludus 018",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "objective": "Liber est novus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_018_path",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-tabula",
+              "vocab-stilus",
+              "vocab-puer"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Liber est novus."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Liber est novus.",
+            "canonicalAnswers": [
+              "Liber est novus.",
+              "Liber est novus",
+              "liber est novus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-tabula",
+              "vocab-stilus",
+              "vocab-puer"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_019_arrival",
+            "failureNextSceneId": "ludus_018_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Liber est novus."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_018_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_side_amicus",
+      "type": "side",
+      "title": "Ludus: amicus",
+      "titleTr": "Ludus: amicus",
+      "titleLatin": "amicus",
+      "description": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_019_arrival",
+      "scenes": [
+        {
+          "id": "ludus_019_arrival",
+          "title": "Ludus 019",
+          "titleTr": "Ludus 019",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_019_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_020_practice"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_019_arrival",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "noun-gender-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-stilus",
+              "vocab-puer",
+              "vocab-puella"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "noun-gender-intro"
+          ]
+        },
+        {
+          "id": "ludus_020_practice",
+          "title": "Ludus 020",
+          "titleTr": "Ludus 020",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "objective": "Tu es magister. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_020_practice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-puer",
+              "vocab-puella",
+              "vocab-bonus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es magister."
+            ]
+          },
+          "reviewTags": [
+            "adjective-agreement-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "julia",
+            "npcPromptLatin": "Quis est hic?",
+            "npcPromptTr": "Buradaki kişinin kim olduğunu soruyor.",
+            "playerIntentTr": "Karşındaki kişiyi Latince tanıt.",
+            "targetMeaningTr": "Tu es magister.",
+            "canonicalAnswers": [
+              "Tu es magister.",
+              "Tu es magister",
+              "tu es magister."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [
+              {
+                "meaningTr": "Ben kendimi tanıtıyorum.",
+                "exampleLatin": "Ego sum magister.",
+                "reasonTr": "Burada karşındaki kişiden söz etmen gerekiyor; birinci şahıs bağlama uymuyor."
+              }
+            ],
+            "grammarFocusIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-puer",
+              "vocab-puella",
+              "vocab-bonus"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. De illo responde.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hic de altera persona respondendum est.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_021_voice",
+            "failureNextSceneId": "ludus_020_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Tu es magister."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_020_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_side_nota",
+      "type": "side",
+      "title": "Ludus: nota",
+      "titleTr": "Ludus: nota",
+      "titleLatin": "nota",
+      "description": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_021_voice",
+      "scenes": [
+        {
+          "id": "ludus_021_voice",
+          "title": "Ludus 021",
+          "titleTr": "Ludus 021",
+          "titleLatin": "Exercitatio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puer est discipulus.",
+          "objective": "Puer est discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_021_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_022_reply"
+            },
+            {
+              "id": "ludus_021_voice_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_021_voice",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-puella",
+              "vocab-bonus",
+              "vocab-bona"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puer est discipulus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ]
+        },
+        {
+          "id": "ludus_022_reply",
+          "title": "Ludus 022",
+          "titleTr": "Ludus 022",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Puella est bona.",
+          "objective": "Puella est bona. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_022_reply",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-bonus",
+              "vocab-bona",
+              "vocab-novus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Puella est bona."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quid vides?",
+            "npcPromptTr": "Gördüğün durumu Latince söylemeni istiyor.",
+            "playerIntentTr": "Durumu NPC’ye Latince cümleyle anlat.",
+            "targetMeaningTr": "Puella est bona.",
+            "canonicalAnswers": [
+              "Puella est bona.",
+              "Puella est bona",
+              "puella est bona."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-bonus",
+              "vocab-bona",
+              "vocab-novus"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte narras.",
+                "npcLineTr": "Doğru anlatıyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Sententiam iterum compone.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum rem aliam narrat.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_023_review",
+            "failureNextSceneId": "ludus_022_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Puella est bona."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_022_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_side_brevis",
+      "type": "side",
+      "title": "Ludus: brevis",
+      "titleTr": "Ludus: brevis",
+      "titleLatin": "brevis",
+      "description": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_023_review",
+      "scenes": [
+        {
+          "id": "ludus_023_review",
+          "title": "Ludus 023",
+          "titleTr": "Ludus 023",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "julia"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Liber est novus.",
+          "objective": "Liber est novus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_023_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_024_path"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_023_review",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "noun-gender-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-bona",
+              "vocab-novus",
+              "vocab-antiqua"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Liber est novus."
+            ]
+          },
+          "reviewTags": [
+            "noun-gender-intro"
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_023_review"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_side_memoria",
+      "type": "side",
+      "title": "Ludus: memoria",
+      "titleTr": "Ludus: memoria",
+      "titleLatin": "memoria",
+      "description": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus side quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_024_path",
+      "scenes": [
+        {
+          "id": "ludus_024_path",
+          "title": "Ludus 024",
+          "titleTr": "Ludus 024",
+          "titleLatin": "Lectio",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_024_path",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyIds": [
+              "vocab-novus",
+              "vocab-antiqua",
+              "vocab-legit"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "adjective-agreement-intro"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quis es?",
+            "npcPromptTr": "Kim olduğunu soruyor.",
+            "playerIntentTr": "Kendini Latince tanıt.",
+            "targetMeaningTr": "Ego sum discipulus.",
+            "canonicalAnswers": [
+              "Ego sum discipulus.",
+              "Ego sum discipulus",
+              "ego sum discipulus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [
+              {
+                "meaningTr": "Sen ... değilsin; kişi karıştı discipulus.",
+                "exampleLatin": "Tu es discipulus.",
+                "reasonTr": "Cümle Latince kurulmuş olabilir, fakat burada kendini tanıtman gerekiyor; ikinci şahıs bağlama uymuyor."
+              }
+            ],
+            "grammarFocusIds": [
+              "adjective-agreement-intro"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-novus",
+              "vocab-antiqua",
+              "vocab-legit"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Paene. Te ipsum dic.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "De te ipso respondere debes.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "ludus_025_arrival",
+            "failureNextSceneId": "ludus_024_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 35
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Ego sum discipulus."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_024_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "ludus_review_recapitulatio",
+      "type": "review",
+      "title": "Ludus: recapitulatio",
+      "titleTr": "Ludus: recapitulatio",
+      "titleLatin": "recapitulatio",
+      "description": "Ludus review quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Ludus review quest; nominative-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "ludus_025_arrival",
+      "scenes": [
+        {
+          "id": "ludus_025_arrival",
+          "title": "Ludus 025",
+          "titleTr": "Ludus 025",
+          "titleLatin": "Exercitatio",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "descriptionTr": "Ludus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es magister.",
+          "objective": "Tu es magister. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "ludus_025_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "domus_001_arrival"
+            },
+            {
+              "id": "ludus_025_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            },
+            {
+              "type": "SET_FLAG",
+              "key": "chapter.ludus.completed",
+              "value": true
+            },
+            {
+              "type": "COMPLETE_CHAPTER",
+              "chapterId": "ludus"
+            },
+            {
+              "type": "UNLOCK_CHAPTER",
+              "chapterId": "domus"
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_025_arrival",
+                "chapterId": "ludus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-liber",
+              "vocab-tabula",
+              "vocab-stilus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es magister."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "type": "ADD_XP",
+          "amount": 20
+        }
+      ],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "ludus_025_arrival"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "nominative-basic",
+          "sum-esse-present",
+          "noun-gender-intro",
+          "adjective-agreement-intro"
+        ],
+        "vocabularyIds": [
+          "vocab-liber",
+          "vocab-tabula",
+          "vocab-stilus",
+          "vocab-puer",
+          "vocab-puella",
+          "vocab-bonus",
+          "vocab-bona",
+          "vocab-novus"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    }
+  ]
+}

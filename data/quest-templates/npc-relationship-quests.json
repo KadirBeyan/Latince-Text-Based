@@ -1,0 +1,279 @@
+[
+  {
+    "id": "magister_bonus_lesson",
+    "titleTemplate": "Magister Aelius'un Kayıp Parşömeni",
+    "descriptionTemplate": "Magister Aelius, kaybolan değerli bir felsefe parşömenini bulmanı rica ediyor.",
+    "category": "npc-favor",
+    "trigger": {
+      "npcId": "magister",
+      "minLevel": 1
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "magister",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "greetings",
+        "sum-esse-present"
+      ],
+      "vocabularyIds": [
+        "vocab-magister",
+        "vocab-liber",
+        "vocab-tabula"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Magister'a yardım etmeyi teklif et.",
+        "choiceTemplates": [
+          {
+            "label": "\"Yardım etmek istiyorum, Magister\" de.",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Kitap bendedir\" (liber apud me est) veya basitçe \"Kitap\" (liber) kelimesini doğru yaz.",
+        "expectedAnswerTemplates": [
+          "liber"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "Magister'a \"Ben bir öğrenciyim ve buradayım\" (ego discipulus sum) de.",
+        "expectedAnswerTemplates": [
+          "ego discipulus sum",
+          "discipulus sum"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Parşömene ulaşıp Magister'a teslim et.",
+        "choiceTemplates": [
+          {
+            "label": "Parşömeni teslim et",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "normal",
+    "reasonTemplate": "Magister Aelius ile ilişkini güçlendirmek için bu görevi tamamla."
+  },
+  {
+    "id": "marcus_forum_errand",
+    "titleTemplate": "Marcus ile Gizli Notlar",
+    "descriptionTemplate": "Marcus, Forum'dan aldığı bir mektubun Latince tercümesinde senden yardım istiyor.",
+    "category": "npc-favor",
+    "trigger": {
+      "npcId": "marcus",
+      "minLevel": 2
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "marcus",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "accusative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-amicus",
+        "vocab-liber",
+        "vocab-charta"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Marcus'un yanına otur.",
+        "choiceTemplates": [
+          {
+            "label": "Marcus'u dinle",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Mektubu okuyorum\" cümlesini Latince yaz. (chartam lego)",
+        "expectedAnswerTemplates": [
+          "chartam lego"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Arkadaş mektubu yazar\" cümlesini Latince yaz. (amicus chartam scribit)",
+        "expectedAnswerTemplates": [
+          "amicus chartam scribit"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Marcus ile notları gizlice sakla.",
+        "choiceTemplates": [
+          {
+            "label": "Mektubu sakla",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "normal",
+    "reasonTemplate": "Marcus ile olan dostluğunu pekiştirmek için ona yardım et."
+  },
+  {
+    "id": "julia_domus_help",
+    "titleTemplate": "Julia'nın Ev İşleri",
+    "descriptionTemplate": "Julia, domus'ta aile yemeği hazırlığı için senden Latince malzeme isimlerini doğrulamanı istiyor.",
+    "category": "npc-favor",
+    "trigger": {
+      "npcId": "julia",
+      "minLevel": 2
+    },
+    "suggestedLocationId": "domus",
+    "suggestedNpcId": "julia",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "first-declension-nouns"
+      ],
+      "vocabularyIds": [
+        "vocab-puella",
+        "vocab-villa",
+        "vocab-domus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Julia'ya mutfakta eşlik et.",
+        "choiceTemplates": [
+          {
+            "label": "Julia'ya selam ver",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Ev\" anlamına gelen Latince dişil kelimeyi yaz. (domus veya villa)",
+        "expectedAnswerTemplates": [
+          "villa",
+          "domus"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Kız kardeşe su ver\" (aquam da) için \"Su\" (aqua) kelimesinin accusativus halini yaz. (aquam)",
+        "expectedAnswerTemplates": [
+          "aquam"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Yemeğin hazır olmasına yardım ettiğin için Julia sana teşekkür eder.",
+        "choiceTemplates": [
+          {
+            "label": "Sofraya otur",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "normal",
+    "reasonTemplate": "Julia ile arandaki samimiyeti artırmak için domus'taki işlere el at."
+  },
+  {
+    "id": "mercator_price_negotiation",
+    "titleTemplate": "Tüccar Mercator ile Forum Pazarlığı",
+    "descriptionTemplate": "Tüccar Mercator, mal girişlerini kontrol etmek için Latince sayılara ve terimlere ihtiyaç duyuyor.",
+    "category": "npc-favor",
+    "trigger": {
+      "npcId": "mercator",
+      "minLevel": 2
+    },
+    "suggestedLocationId": "forum",
+    "suggestedNpcId": "mercator",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "second-declension-nouns",
+        "numbers-1-10"
+      ],
+      "vocabularyIds": [
+        "vocab-mercator",
+        "vocab-numerus",
+        "vocab-forum"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Tezgaha yaklaş ve tüccarın teklifini dinle.",
+        "choiceTemplates": [
+          {
+            "label": "Fiyatları kontrol et",
+            "correctness": "neutral"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Üç\" sayısının Latince karşılığını yaz.",
+        "expectedAnswerTemplates": [
+          "tres"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Tüccarın sayıları\" için \"Sayı\" (numerus) kelimesinin çoğul halini yaz veya \"Sayı\" yaz.",
+        "expectedAnswerTemplates": [
+          "numerus",
+          "numeri"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Karlı bir Forum pazarlığı sonrası tüccarla el sıkış.",
+        "choiceTemplates": [
+          {
+            "label": "Malı satın al",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "normal",
+    "reasonTemplate": "Tüccar Mercator ile ticaret ağını genişletmek için onunla ortak bir iş yap."
+  }
+]

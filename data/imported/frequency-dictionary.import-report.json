@@ -1,0 +1,3532 @@
+{
+  "importedAt": "2026-06-22T13:36:30.721Z",
+  "sourcePath": "/Users/kadirbeyan/Downloads/Latin Frequency Dictionary_ Th - Hudson, Paul_5051.epub",
+  "rawEntryCount": 4268,
+  "normalizedEntryCount": 4221,
+  "formCount": 59477,
+  "insertedCount": 0,
+  "updatedCount": 4221,
+  "skippedCount": 47,
+  "duplicateCount": 47,
+  "posCounts": {
+    "unknown": 26,
+    "adjective": 701,
+    "verb": 1560,
+    "noun": 1636,
+    "numeral": 7,
+    "adverb": 219,
+    "preposition": 24,
+    "conjunction": 38,
+    "interjection": 7,
+    "pronoun": 3
+  },
+  "levelCounts": {
+    "A1": 250,
+    "A2": 498,
+    "B1": 1241,
+    "B2": 1476,
+    "advanced": 756
+  },
+  "frequencyBandCounts": {
+    "top-100": 100,
+    "top-250": 150,
+    "top-500": 250,
+    "top-1000": 497,
+    "top-2000": 992,
+    "top-5000": 2232
+  },
+  "confidenceAverage": 0.949,
+  "warnings": [
+    "lex-unknown-spqrstudyguides:missing-grammar",
+    "lex-unknown-spqrstudyguides:missing-frequency",
+    "lex-unknown-spqrstudyguides:unknown-pos",
+    "lex-unknown-commonwords:missing-grammar",
+    "lex-unknown-commonwords:missing-frequency",
+    "lex-unknown-commonwords:unknown-pos",
+    "lex-unknown-nonnullus:unknown-pos",
+    "lex-unknown-foundationwords:missing-grammar",
+    "lex-unknown-foundationwords:missing-frequency",
+    "lex-unknown-foundationwords:unknown-pos",
+    "lex-unknown-frequentwords:missing-grammar",
+    "lex-unknown-frequentwords:missing-frequency",
+    "lex-unknown-frequentwords:unknown-pos",
+    "lex-unknown-foundation:missing-grammar",
+    "lex-unknown-foundation:missing-frequency",
+    "lex-unknown-foundation:unknown-pos",
+    "lex-unknown-frequent:missing-grammar",
+    "lex-unknown-frequent:missing-frequency",
+    "lex-unknown-frequent:unknown-pos",
+    "lex-unknown-lesser:missing-grammar",
+    "lex-unknown-lesser:missing-frequency",
+    "lex-unknown-lesser:unknown-pos",
+    "lex-unknown-ueryrare:missing-grammar",
+    "lex-unknown-ueryrare:missing-frequency",
+    "lex-unknown-ueryrare:unknown-pos",
+    "lex-unknown-ficus:unknown-pos",
+    "lex-unknown-rarewords:missing-grammar",
+    "lex-unknown-rarewords:missing-frequency",
+    "lex-unknown-rarewords:unknown-pos",
+    "lex-unknown-specus:unknown-pos",
+    "lex-unknown-introduction:missing-grammar",
+    "lex-unknown-introduction:missing-frequency",
+    "lex-unknown-introduction:unknown-pos",
+    "lex-unknown-lesserwords:missing-grammar",
+    "lex-unknown-lesserwords:missing-frequency",
+    "lex-unknown-lesserwords:unknown-pos",
+    "lex-unknown-aper:unknown-pos",
+    "lex-unknown-ueryrarewords:missing-grammar",
+    "lex-unknown-ueryrarewords:missing-frequency",
+    "lex-unknown-ueryrarewords:unknown-pos",
+    "lex-unknown-officio:unknown-pos",
+    "lex-unknown-acknowledgements:missing-grammar",
+    "lex-unknown-acknowledgements:missing-frequency",
+    "lex-unknown-acknowledgements:unknown-pos",
+    "lex-unknown-howtousethisbook:missing-grammar",
+    "lex-unknown-howtousethisbook:missing-frequency",
+    "lex-unknown-howtousethisbook:unknown-pos",
+    "lex-unknown-memini:unknown-pos",
+    "lex-unknown-dedication:missing-grammar",
+    "lex-unknown-dedication:missing-frequency",
+    "lex-unknown-dedication:unknown-pos",
+    "lex-unknown-ueryfrequentwords:missing-grammar",
+    "lex-unknown-ueryfrequentwords:missing-frequency",
+    "lex-unknown-ueryfrequentwords:unknown-pos",
+    "lex-unknown-sourcetexts:missing-grammar",
+    "lex-unknown-sourcetexts:missing-frequency",
+    "lex-unknown-sourcetexts:unknown-pos",
+    "lex-unknown-meridies:unknown-pos",
+    "lex-unknown-ministro:unknown-pos",
+    "lex-unknown-aluus:unknown-pos"
+  ],
+  "errors": [],
+  "sampleEntries": [
+    {
+      "id": "lex-unknown-spqrstudyguides",
+      "lemma": "spqrstudyguides",
+      "displayLemma": "SPQR Study Guides",
+      "normalizedLemma": "spqrstudyguides",
+      "principalParts": [
+        "spqrstudyguides"
+      ],
+      "pos": "unknown",
+      "morphology": {},
+      "meanings": {
+        "en": [
+          "The SPQR Study Guides series is designed to make it easy for students of all levels to dip their toes into antiquity. It includes 20 volumes of classical books broken down by chapter",
+          "with each Latin chapter followed by its equivalent English chapter. It also gives you the running vocabulary for each chapter as you read",
+          "in case you need a little help or if you’re revising the text for an exam."
+        ],
+        "shortEn": "The SPQR Study Guides series is designed to make it easy for students of all levels to dip their toes into antiquity. It includes 20 volumes of classical books broken down by chapter"
+      },
+      "frequency": {
+        "rank": 1,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 42,
+        "teachAfterGrammarIds": [],
+        "usefulChapterIds": [
+          "ludus",
+          "bibliotheca"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:unknown",
+          "level:advanced",
+          "needs-review"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "spqrstudyguides",
+          "normalizedForm": "spqrstudyguides",
+          "lemma": "spqrstudyguides",
+          "pos": "unknown",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 1,
+        "confidence": 0.7,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.7,
+        "warnings": [
+          "missing-grammar",
+          "missing-frequency",
+          "unknown-pos"
+        ],
+        "needsReview": true
+      }
+    },
+    {
+      "id": "lex-unknown-commonwords",
+      "lemma": "commonwords",
+      "displayLemma": "Common Words",
+      "normalizedLemma": "commonwords",
+      "principalParts": [
+        "commonwords"
+      ],
+      "pos": "unknown",
+      "morphology": {},
+      "meanings": {
+        "en": [
+          "Words used at least 100-199 times alo",
+          "alere",
+          "alui",
+          "altus (vt, 3rd) feed",
+          "nourish",
+          "rear"
+        ],
+        "shortEn": "Words used at least 100-199 times alo"
+      },
+      "frequency": {
+        "rank": 2,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 42,
+        "teachAfterGrammarIds": [],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:unknown",
+          "level:advanced",
+          "needs-review"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "commonwords",
+          "normalizedForm": "commonwords",
+          "lemma": "commonwords",
+          "pos": "unknown",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 2,
+        "confidence": 0.7,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.7,
+        "warnings": [
+          "missing-grammar",
+          "missing-frequency",
+          "unknown-pos"
+        ],
+        "needsReview": true
+      }
+    },
+    {
+      "id": "lex-adjective-incolumis",
+      "lemma": "incolumis",
+      "displayLemma": "incolumis",
+      "normalizedLemma": "incolumis",
+      "principalParts": [
+        "incolumis",
+        "incolume"
+      ],
+      "pos": "adjective",
+      "morphology": {},
+      "meanings": {
+        "en": [
+          "unharmed",
+          "uninjured",
+          "alive",
+          "safe",
+          "unimpaired."
+        ],
+        "shortEn": "unharmed"
+      },
+      "frequency": {
+        "rank": 3,
+        "count": 199,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 62,
+        "teachAfterGrammarIds": [
+          "adjective-agreement"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:adjective",
+          "level:advanced"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "incolumis",
+          "normalizedForm": "incolumis",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "incolume",
+          "normalizedForm": "incolume",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "incolumisus",
+          "normalizedForm": "incolumisus",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "nominative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumisi",
+          "normalizedForm": "incolumisi",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "genitive",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumiso",
+          "normalizedForm": "incolumiso",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "dative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumisum",
+          "normalizedForm": "incolumisum",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "accusative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumiso",
+          "normalizedForm": "incolumiso",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "ablative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumise",
+          "normalizedForm": "incolumise",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "vocative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumisi",
+          "normalizedForm": "incolumisi",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "nominative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumisorum",
+          "normalizedForm": "incolumisorum",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "genitive",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumisis",
+          "normalizedForm": "incolumisis",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "dative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "incolumisos",
+          "normalizedForm": "incolumisos",
+          "lemma": "incolumis",
+          "pos": "adjective",
+          "features": {
+            "case": "accusative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 3,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-iacio",
+      "lemma": "iacio",
+      "displayLemma": "iacio",
+      "normalizedLemma": "iacio",
+      "principalParts": [
+        "iacio",
+        "iacere",
+        "ieci",
+        "iactus"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "3"
+      },
+      "meanings": {
+        "en": [
+          "throw",
+          "hurl",
+          "cast",
+          "throw away",
+          "utter."
+        ],
+        "shortEn": "throw"
+      },
+      "frequency": {
+        "rank": 4,
+        "count": 199,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "iacio",
+          "normalizedForm": "iacio",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "iacere",
+          "normalizedForm": "iacere",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "ieci",
+          "normalizedForm": "ieci",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "iactus",
+          "normalizedForm": "iactus",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "iacio",
+          "normalizedForm": "iacio",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "iaciis",
+          "normalizedForm": "iaciis",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "iaciit",
+          "normalizedForm": "iaciit",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "iaciimus",
+          "normalizedForm": "iaciimus",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "iaciitis",
+          "normalizedForm": "iaciitis",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "iaciunt",
+          "normalizedForm": "iaciunt",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "iaci",
+          "normalizedForm": "iaci",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "iaciite",
+          "normalizedForm": "iaciite",
+          "lemma": "iacio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 4,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-recito",
+      "lemma": "recito",
+      "displayLemma": "recito",
+      "normalizedLemma": "recito",
+      "principalParts": [
+        "recito",
+        "recitare",
+        "recitaui",
+        "recitatus"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "1"
+      },
+      "meanings": {
+        "en": [
+          "read aloud",
+          "recite",
+          "name in writing."
+        ],
+        "shortEn": "read aloud"
+      },
+      "frequency": {
+        "rank": 5,
+        "count": 199,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus",
+          "bibliotheca"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:1"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "recito",
+          "normalizedForm": "recito",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "recitare",
+          "normalizedForm": "recitare",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "recitaui",
+          "normalizedForm": "recitaui",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "recitatus",
+          "normalizedForm": "recitatus",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "recito",
+          "normalizedForm": "recito",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "recitas",
+          "normalizedForm": "recitas",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "recitat",
+          "normalizedForm": "recitat",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "recitamus",
+          "normalizedForm": "recitamus",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "recitatis",
+          "normalizedForm": "recitatis",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "recitant",
+          "normalizedForm": "recitant",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "recita",
+          "normalizedForm": "recita",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "recitate",
+          "normalizedForm": "recitate",
+          "lemma": "recito",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 5,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-urgeo",
+      "lemma": "urgeo",
+      "displayLemma": "urgeo",
+      "normalizedLemma": "urgeo",
+      "principalParts": [
+        "urgeo",
+        "urgere",
+        "ursi"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "2"
+      },
+      "meanings": {
+        "en": [
+          "press / squeeze / bear hard / down",
+          "tread / traverse continually",
+          "push / shove / thrust",
+          "spur on",
+          "urge",
+          "press hard in attack / pursuit"
+        ],
+        "shortEn": "press / squeeze / bear hard / down"
+      },
+      "frequency": {
+        "rank": 6,
+        "count": 199,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus",
+          "bibliotheca"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:2"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "urgeo",
+          "normalizedForm": "urgeo",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "urgere",
+          "normalizedForm": "urgere",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "ursi",
+          "normalizedForm": "ursi",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "urgeo",
+          "normalizedForm": "urgeo",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "urges",
+          "normalizedForm": "urges",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "urget",
+          "normalizedForm": "urget",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "urgemus",
+          "normalizedForm": "urgemus",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "urgetis",
+          "normalizedForm": "urgetis",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "urgent",
+          "normalizedForm": "urgent",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "urge",
+          "normalizedForm": "urge",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "urgete",
+          "normalizedForm": "urgete",
+          "lemma": "urgeo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 6,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-uereor",
+      "lemma": "uereor",
+      "displayLemma": "vereor",
+      "normalizedLemma": "uereor",
+      "principalParts": [
+        "uereor",
+        "uereri",
+        "ueritussum"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "2",
+        "isDeponent": true
+      },
+      "meanings": {
+        "en": [
+          "revere",
+          "respect",
+          "fear",
+          "dread."
+        ],
+        "shortEn": "revere"
+      },
+      "frequency": {
+        "rank": 7,
+        "count": 199,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus",
+          "bibliotheca"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:2"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "uereor",
+          "normalizedForm": "uereor",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "uereri",
+          "normalizedForm": "uereri",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "ueritussum",
+          "normalizedForm": "ueritussum",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "uereoreo",
+          "normalizedForm": "uereoreo",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "uereores",
+          "normalizedForm": "uereores",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "uereoret",
+          "normalizedForm": "uereoret",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "uereoremus",
+          "normalizedForm": "uereoremus",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "uereoretis",
+          "normalizedForm": "uereoretis",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "uereorent",
+          "normalizedForm": "uereorent",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "uereore",
+          "normalizedForm": "uereore",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "uereorete",
+          "normalizedForm": "uereorete",
+          "lemma": "uereor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 7,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-noun-cena",
+      "lemma": "cena",
+      "displayLemma": "cena",
+      "normalizedLemma": "cena",
+      "principalParts": [
+        "cena",
+        "cenae"
+      ],
+      "pos": "noun",
+      "morphology": {
+        "gender": "feminine",
+        "declension": "1"
+      },
+      "meanings": {
+        "en": [
+          "dinner / supper",
+          "principal Roman meal (evening)",
+          "course",
+          "meal",
+          "company at dinner."
+        ],
+        "shortEn": "dinner / supper"
+      },
+      "frequency": {
+        "rank": 8,
+        "count": 198,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 65,
+        "teachAfterGrammarIds": [
+          "nominative-basic"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:noun",
+          "level:advanced",
+          "declension:1"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "cena",
+          "normalizedForm": "cena",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "cenae",
+          "normalizedForm": "cenae",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "cena",
+          "normalizedForm": "cena",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "nominative",
+            "number": "singular",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cenae",
+          "normalizedForm": "cenae",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "genitive",
+            "number": "singular",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cenae",
+          "normalizedForm": "cenae",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "dative",
+            "number": "singular",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cenam",
+          "normalizedForm": "cenam",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "accusative",
+            "number": "singular",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cena",
+          "normalizedForm": "cena",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "ablative",
+            "number": "singular",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cena",
+          "normalizedForm": "cena",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "vocative",
+            "number": "singular",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cenae",
+          "normalizedForm": "cenae",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "nominative",
+            "number": "plural",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cenarum",
+          "normalizedForm": "cenarum",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "genitive",
+            "number": "plural",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cenis",
+          "normalizedForm": "cenis",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "dative",
+            "number": "plural",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "cenas",
+          "normalizedForm": "cenas",
+          "lemma": "cena",
+          "pos": "noun",
+          "features": {
+            "case": "accusative",
+            "number": "plural",
+            "gender": "feminine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 8,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-noun-censor",
+      "lemma": "censor",
+      "displayLemma": "censor",
+      "normalizedLemma": "censor",
+      "principalParts": [
+        "censor",
+        "censoris"
+      ],
+      "pos": "noun",
+      "morphology": {
+        "gender": "masculine",
+        "declension": "3"
+      },
+      "meanings": {
+        "en": [
+          "censor",
+          "magistrate for registration / census",
+          "censurer",
+          "critic (behavior / books)."
+        ],
+        "shortEn": "censor"
+      },
+      "frequency": {
+        "rank": 9,
+        "count": 198,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 65,
+        "teachAfterGrammarIds": [],
+        "usefulChapterIds": [
+          "ludus",
+          "bibliotheca"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:noun",
+          "level:advanced",
+          "declension:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "censor",
+          "normalizedForm": "censor",
+          "lemma": "censor",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "censoris",
+          "normalizedForm": "censoris",
+          "lemma": "censor",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "censor",
+          "normalizedForm": "censor",
+          "lemma": "censor",
+          "pos": "noun",
+          "features": {
+            "gender": "masculine"
+          },
+          "confidence": 0.7,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 9,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-adjective-quot",
+      "lemma": "quot",
+      "displayLemma": "quot",
+      "normalizedLemma": "quot",
+      "principalParts": [
+        "quot",
+        "undeclined"
+      ],
+      "pos": "adjective",
+      "morphology": {},
+      "meanings": {
+        "en": [
+          "how many",
+          "of what number",
+          "as many."
+        ],
+        "shortEn": "how many"
+      },
+      "frequency": {
+        "rank": 10,
+        "count": 198,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 62,
+        "teachAfterGrammarIds": [
+          "adjective-agreement"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:adjective",
+          "level:advanced"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "quot",
+          "normalizedForm": "quot",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "undeclined",
+          "normalizedForm": "undeclined",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "quotus",
+          "normalizedForm": "quotus",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "nominative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quoti",
+          "normalizedForm": "quoti",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "genitive",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quoto",
+          "normalizedForm": "quoto",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "dative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quotum",
+          "normalizedForm": "quotum",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "accusative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quoto",
+          "normalizedForm": "quoto",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "ablative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quote",
+          "normalizedForm": "quote",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "vocative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quoti",
+          "normalizedForm": "quoti",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "nominative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quotorum",
+          "normalizedForm": "quotorum",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "genitive",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quotis",
+          "normalizedForm": "quotis",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "dative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "quotos",
+          "normalizedForm": "quotos",
+          "lemma": "quot",
+          "pos": "adjective",
+          "features": {
+            "case": "accusative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 10,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-arguo",
+      "lemma": "arguo",
+      "displayLemma": "arguo",
+      "normalizedLemma": "arguo",
+      "principalParts": [
+        "arguo",
+        "arguere",
+        "argui",
+        "argutus"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "3"
+      },
+      "meanings": {
+        "en": [
+          "prove",
+          "argue",
+          "allege",
+          "disclose",
+          "accuse",
+          "complain of"
+        ],
+        "shortEn": "prove"
+      },
+      "frequency": {
+        "rank": 11,
+        "count": 197,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "arguo",
+          "normalizedForm": "arguo",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "arguere",
+          "normalizedForm": "arguere",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "argui",
+          "normalizedForm": "argui",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "argutus",
+          "normalizedForm": "argutus",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "arguo",
+          "normalizedForm": "arguo",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "arguis",
+          "normalizedForm": "arguis",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "arguit",
+          "normalizedForm": "arguit",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "arguimus",
+          "normalizedForm": "arguimus",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "arguitis",
+          "normalizedForm": "arguitis",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "arguunt",
+          "normalizedForm": "arguunt",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "argu",
+          "normalizedForm": "argu",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "arguite",
+          "normalizedForm": "arguite",
+          "lemma": "arguo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 11,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-bibo",
+      "lemma": "bibo",
+      "displayLemma": "bibo",
+      "normalizedLemma": "bibo",
+      "principalParts": [
+        "bibo",
+        "bibere",
+        "bibi",
+        "bibitus"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "3"
+      },
+      "meanings": {
+        "en": [
+          "drink",
+          "toast",
+          "visit",
+          "frequent (with river name)",
+          "drain",
+          "draw off"
+        ],
+        "shortEn": "drink"
+      },
+      "frequency": {
+        "rank": 12,
+        "count": 197,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "bibo",
+          "normalizedForm": "bibo",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "bibere",
+          "normalizedForm": "bibere",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "bibi",
+          "normalizedForm": "bibi",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "bibitus",
+          "normalizedForm": "bibitus",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "bibo",
+          "normalizedForm": "bibo",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "bibis",
+          "normalizedForm": "bibis",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "bibit",
+          "normalizedForm": "bibit",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "bibimus",
+          "normalizedForm": "bibimus",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "bibitis",
+          "normalizedForm": "bibitis",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "bibunt",
+          "normalizedForm": "bibunt",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "bib",
+          "normalizedForm": "bib",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "bibite",
+          "normalizedForm": "bibite",
+          "lemma": "bibo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 12,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-confiteor",
+      "lemma": "confiteor",
+      "displayLemma": "confiteor",
+      "normalizedLemma": "confiteor",
+      "principalParts": [
+        "confiteor",
+        "confiteri",
+        "confessussum"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "2",
+        "isDeponent": true
+      },
+      "meanings": {
+        "en": [
+          "confess (with acc.)",
+          "admit",
+          "acknowledge",
+          "reveal",
+          "disclose",
+          "concede"
+        ],
+        "shortEn": "confess (with acc.)"
+      },
+      "frequency": {
+        "rank": 13,
+        "count": 197,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:2"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "confiteor",
+          "normalizedForm": "confiteor",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "confiteri",
+          "normalizedForm": "confiteri",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "confessussum",
+          "normalizedForm": "confessussum",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "confiteoreo",
+          "normalizedForm": "confiteoreo",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "confiteores",
+          "normalizedForm": "confiteores",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "confiteoret",
+          "normalizedForm": "confiteoret",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "confiteoremus",
+          "normalizedForm": "confiteoremus",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "confiteoretis",
+          "normalizedForm": "confiteoretis",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "confiteorent",
+          "normalizedForm": "confiteorent",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "confiteore",
+          "normalizedForm": "confiteore",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "confiteorete",
+          "normalizedForm": "confiteorete",
+          "lemma": "confiteor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 13,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-eligo",
+      "lemma": "eligo",
+      "displayLemma": "eligo",
+      "normalizedLemma": "eligo",
+      "principalParts": [
+        "eligo",
+        "eligere",
+        "elegi",
+        "electus"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "3"
+      },
+      "meanings": {
+        "en": [
+          "pick out",
+          "choose."
+        ],
+        "shortEn": "pick out"
+      },
+      "frequency": {
+        "rank": 14,
+        "count": 197,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "via-appia"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "eligo",
+          "normalizedForm": "eligo",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "eligere",
+          "normalizedForm": "eligere",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "elegi",
+          "normalizedForm": "elegi",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "electus",
+          "normalizedForm": "electus",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "eligo",
+          "normalizedForm": "eligo",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "eligis",
+          "normalizedForm": "eligis",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "eligit",
+          "normalizedForm": "eligit",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "eligimus",
+          "normalizedForm": "eligimus",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "eligitis",
+          "normalizedForm": "eligitis",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "eligunt",
+          "normalizedForm": "eligunt",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "elig",
+          "normalizedForm": "elig",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "eligite",
+          "normalizedForm": "eligite",
+          "lemma": "eligo",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 14,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-sufficio",
+      "lemma": "sufficio",
+      "displayLemma": "sufficio",
+      "normalizedLemma": "sufficio",
+      "principalParts": [
+        "sufficio",
+        "sufficere",
+        "suffeci",
+        "suffectus"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "3"
+      },
+      "meanings": {
+        "en": [
+          "be sufficient",
+          "suffice",
+          "stand up to",
+          "be capable / qualified",
+          "provide",
+          "appoint."
+        ],
+        "shortEn": "be sufficient"
+      },
+      "frequency": {
+        "rank": 15,
+        "count": 197,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "sufficio",
+          "normalizedForm": "sufficio",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "sufficere",
+          "normalizedForm": "sufficere",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "suffeci",
+          "normalizedForm": "suffeci",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "suffectus",
+          "normalizedForm": "suffectus",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "sufficio",
+          "normalizedForm": "sufficio",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "sufficiis",
+          "normalizedForm": "sufficiis",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "sufficiit",
+          "normalizedForm": "sufficiit",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "sufficiimus",
+          "normalizedForm": "sufficiimus",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "sufficiitis",
+          "normalizedForm": "sufficiitis",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "sufficiunt",
+          "normalizedForm": "sufficiunt",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "suffici",
+          "normalizedForm": "suffici",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "sufficiite",
+          "normalizedForm": "sufficiite",
+          "lemma": "sufficio",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 15,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-adjective-trepidus",
+      "lemma": "trepidus",
+      "displayLemma": "trepidus",
+      "normalizedLemma": "trepidus",
+      "principalParts": [
+        "trepidus",
+        "trepida",
+        "trepidum"
+      ],
+      "pos": "adjective",
+      "morphology": {},
+      "meanings": {
+        "en": [
+          "nervous",
+          "jumpy",
+          "agitated",
+          "perilous",
+          "alarming",
+          "frightened"
+        ],
+        "shortEn": "nervous"
+      },
+      "frequency": {
+        "rank": 16,
+        "count": 197,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 62,
+        "teachAfterGrammarIds": [
+          "adjective-agreement"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:adjective",
+          "level:advanced"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "trepidus",
+          "normalizedForm": "trepidus",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "trepida",
+          "normalizedForm": "trepida",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "trepidum",
+          "normalizedForm": "trepidum",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "trepidus",
+          "normalizedForm": "trepidus",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "nominative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepidi",
+          "normalizedForm": "trepidi",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "genitive",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepido",
+          "normalizedForm": "trepido",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "dative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepidum",
+          "normalizedForm": "trepidum",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "accusative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepido",
+          "normalizedForm": "trepido",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "ablative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepide",
+          "normalizedForm": "trepide",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "vocative",
+            "number": "singular",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepidi",
+          "normalizedForm": "trepidi",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "nominative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepidorum",
+          "normalizedForm": "trepidorum",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "genitive",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "trepidis",
+          "normalizedForm": "trepidis",
+          "lemma": "trepidus",
+          "pos": "adjective",
+          "features": {
+            "case": "dative",
+            "number": "plural",
+            "gender": "masculine"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 16,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-noun-moles",
+      "lemma": "moles",
+      "displayLemma": "moles",
+      "normalizedLemma": "moles",
+      "principalParts": [
+        "moles",
+        "molis"
+      ],
+      "pos": "noun",
+      "morphology": {
+        "gender": "feminine",
+        "declension": "3"
+      },
+      "meanings": {
+        "en": [
+          "large mass",
+          "rock / boulder",
+          "heap / lump / pile",
+          "bulk",
+          "monster",
+          "mole / jetty / dam / dike"
+        ],
+        "shortEn": "large mass"
+      },
+      "frequency": {
+        "rank": 17,
+        "count": 196,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 65,
+        "teachAfterGrammarIds": [],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:noun",
+          "level:advanced",
+          "declension:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "moles",
+          "normalizedForm": "moles",
+          "lemma": "moles",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "molis",
+          "normalizedForm": "molis",
+          "lemma": "moles",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "moles",
+          "normalizedForm": "moles",
+          "lemma": "moles",
+          "pos": "noun",
+          "features": {
+            "gender": "feminine"
+          },
+          "confidence": 0.7,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 17,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-noun-sedes",
+      "lemma": "sedes",
+      "displayLemma": "sedes",
+      "normalizedLemma": "sedes",
+      "principalParts": [
+        "sedes",
+        "sedis"
+      ],
+      "pos": "noun",
+      "morphology": {
+        "gender": "feminine",
+        "declension": "3"
+      },
+      "meanings": {
+        "en": [
+          "seat",
+          "home",
+          "residence",
+          "settlement",
+          "habitation",
+          "chair."
+        ],
+        "shortEn": "seat"
+      },
+      "frequency": {
+        "rank": 18,
+        "count": 196,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 65,
+        "teachAfterGrammarIds": [],
+        "usefulChapterIds": [
+          "domus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:noun",
+          "level:advanced",
+          "declension:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "sedes",
+          "normalizedForm": "sedes",
+          "lemma": "sedes",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "sedis",
+          "normalizedForm": "sedis",
+          "lemma": "sedes",
+          "pos": "noun",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "sedes",
+          "normalizedForm": "sedes",
+          "lemma": "sedes",
+          "pos": "noun",
+          "features": {
+            "gender": "feminine"
+          },
+          "confidence": 0.7,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 18,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-numeral-decum",
+      "lemma": "decum",
+      "displayLemma": "decum",
+      "normalizedLemma": "decum",
+      "principalParts": [
+        "decum"
+      ],
+      "pos": "numeral",
+      "morphology": {},
+      "meanings": {
+        "en": [
+          "10th - (ord., ‘in series’)",
+          "(a / the) 10th (part) (fract with pars?)."
+        ],
+        "shortEn": "10th - (ord., ‘in series’)"
+      },
+      "frequency": {
+        "rank": 19,
+        "count": 195,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 57,
+        "teachAfterGrammarIds": [],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:numeral",
+          "level:advanced"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "decum",
+          "normalizedForm": "decum",
+          "lemma": "decum",
+          "pos": "numeral",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 19,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    },
+    {
+      "id": "lex-verb-labor",
+      "lemma": "labor",
+      "displayLemma": "labor",
+      "normalizedLemma": "labor",
+      "principalParts": [
+        "labor",
+        "labi",
+        "lapsussum"
+      ],
+      "pos": "verb",
+      "morphology": {
+        "conjugation": "3",
+        "isDeponent": true
+      },
+      "meanings": {
+        "en": [
+          "slip",
+          "slip and fall",
+          "slide",
+          "glide",
+          "drop",
+          "perish"
+        ],
+        "shortEn": "slip"
+      },
+      "frequency": {
+        "rank": 20,
+        "count": 195,
+        "band": "top-100"
+      },
+      "pedagogy": {
+        "estimatedLevel": "A1",
+        "priority": 66,
+        "teachAfterGrammarIds": [
+          "present-active-verbs"
+        ],
+        "usefulChapterIds": [
+          "ludus"
+        ],
+        "tags": [
+          "frequency:top-100",
+          "pos:verb",
+          "level:advanced",
+          "conjugation:3"
+        ],
+        "exampleDifficulty": "easy"
+      },
+      "forms": [
+        {
+          "form": "labor",
+          "normalizedForm": "labor",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "labi",
+          "normalizedForm": "labi",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "lapsussum",
+          "normalizedForm": "lapsussum",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {},
+          "confidence": 0.95,
+          "source": "principal-parts"
+        },
+        {
+          "form": "laboro",
+          "normalizedForm": "laboro",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "laboris",
+          "normalizedForm": "laboris",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "laborit",
+          "normalizedForm": "laborit",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "singular",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "laborimus",
+          "normalizedForm": "laborimus",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "1",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "laboritis",
+          "normalizedForm": "laboritis",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "laborunt",
+          "normalizedForm": "laborunt",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "3",
+            "number": "plural",
+            "tense": "present",
+            "mood": "indicative",
+            "voice": "active"
+          },
+          "confidence": 0.82,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "labor",
+          "normalizedForm": "labor",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "singular",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        },
+        {
+          "form": "laborite",
+          "normalizedForm": "laborite",
+          "lemma": "labor",
+          "pos": "verb",
+          "features": {
+            "person": "2",
+            "number": "plural",
+            "tense": "present",
+            "mood": "imperative",
+            "voice": "active"
+          },
+          "confidence": 0.8,
+          "source": "generated-morphology"
+        }
+      ],
+      "source": {
+        "type": "frequency-dictionary",
+        "sourceName": "Latin Frequency Dictionary",
+        "sourceRank": 20,
+        "confidence": 0.95,
+        "importedAt": "2026-06-22T13:36:30.721Z"
+      },
+      "quality": {
+        "parseConfidence": 0.95,
+        "warnings": [],
+        "needsReview": false
+      }
+    }
+  ],
+  "wroteDb": true,
+  "wroteJson": true
+}

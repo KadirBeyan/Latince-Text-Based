@@ -1,0 +1,148 @@
+[
+  {
+    "id": "ludus_object_vocab_practice",
+    "titleTemplate": "Ludus Nesne Kelimeleri",
+    "descriptionTemplate": "Ludus'taki liber, tabula ve stilus kelimelerini kısa cümlelerle tekrar et.",
+    "category": "vocabulary-practice",
+    "trigger": {
+      "weakVocabularyIds": [
+        "vocab-liber",
+        "vocab-tabula",
+        "vocab-stilus"
+      ],
+      "locationId": "ludus",
+      "minLevel": 1
+    },
+    "suggestedLocationId": "ludus",
+    "suggestedNpcId": "magister",
+    "difficulty": "practice",
+    "learningFocus": {
+      "grammarIds": [
+        "nominative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-liber",
+        "vocab-tabula",
+        "vocab-stilus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Magister'in masasındaki okul nesnelerini incele.",
+        "choiceTemplates": [
+          {
+            "label": "Nesneleri tek tek adlandır",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Kitap yenidir\" cümlesini Latince yaz.",
+        "expectedAnswerTemplates": [
+          "liber est novus"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Tablet eskidir\" cümlesini Latince yaz.",
+        "expectedAnswerTemplates": [
+          "tabula est antiqua"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Stilusu yerine koy ve kısa tekrarı bitir.",
+        "choiceTemplates": [
+          {
+            "label": "Magister'e hazır olduğunu söyle",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "small",
+    "reasonTemplate": "Ludus nesne kelimeleri zayıf görünüyor; kısa bir tekrar iyi olur."
+  },
+  {
+    "id": "domus_family_vocab_practice",
+    "titleTemplate": "Familia Kelimeleri",
+    "descriptionTemplate": "Domus sahnelerinde geçen aile kelimelerini Cornelia ile tekrar et.",
+    "category": "vocabulary-practice",
+    "trigger": {
+      "weakVocabularyIds": [
+        "vocab-mater",
+        "vocab-pater",
+        "vocab-filia"
+      ],
+      "locationId": "domus",
+      "minLevel": 1
+    },
+    "suggestedLocationId": "domus",
+    "suggestedNpcId": "cornelia",
+    "difficulty": "review",
+    "learningFocus": {
+      "grammarIds": [
+        "sum-esse-present"
+      ],
+      "vocabularyIds": [
+        "vocab-mater",
+        "vocab-pater",
+        "vocab-filia"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "scenePlan": [
+      {
+        "role": "intro",
+        "inputMode": "choice",
+        "objectiveTemplate": "Cornelia'nın aile listesini dinle.",
+        "choiceTemplates": [
+          {
+            "label": "Familia kelimelerini tekrar et",
+            "correctness": "good"
+          }
+        ]
+      },
+      {
+        "role": "practice",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Anne iyidir\" cümlesini Latince yaz.",
+        "expectedAnswerTemplates": [
+          "mater est bona"
+        ]
+      },
+      {
+        "role": "challenge",
+        "inputMode": "text",
+        "objectiveTemplate": "\"Kız küçüktür\" cümlesini Latince yaz.",
+        "expectedAnswerTemplates": [
+          "filia est parva"
+        ]
+      },
+      {
+        "role": "resolution",
+        "inputMode": "choice",
+        "objectiveTemplate": "Cornelia'ya listeyi anladığını göster.",
+        "choiceTemplates": [
+          {
+            "label": "Teşekkür et",
+            "correctness": "good"
+          }
+        ]
+      }
+    ],
+    "rewardProfile": "small",
+    "reasonTemplate": "Familia kelimeleri için kısa ve güvenli bir tekrar."
+  }
+]

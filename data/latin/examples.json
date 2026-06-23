@@ -1,0 +1,222 @@
+[
+  {
+    "id": "example-greetings-1",
+    "latin": "Salve, magister!",
+    "turkish": "Örnek: Salve, magister!",
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-greetings-2",
+    "latin": "Valete, amici!",
+    "turkish": "Örnek: Valete, amici!",
+    "grammarIds": [
+      "greetings"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-sum-esse-present-1",
+    "latin": "Ego discipulus sum.",
+    "turkish": "Örnek: Ego discipulus sum.",
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-sum-esse-present-2",
+    "latin": "Marcus est amicus.",
+    "turkish": "Örnek: Marcus est amicus.",
+    "grammarIds": [
+      "sum-esse-present"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-nominative-basic-1",
+    "latin": "Puella legit.",
+    "turkish": "Örnek: Puella legit.",
+    "grammarIds": [
+      "nominative-basic"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-accusative-basic-1",
+    "latin": "Puer librum legit.",
+    "turkish": "Örnek: Puer librum legit.",
+    "grammarIds": [
+      "accusative-basic"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-first-declension-nouns-1",
+    "latin": "Puella aquam portat.",
+    "turkish": "Örnek: Puella aquam portat.",
+    "grammarIds": [
+      "first-declension-nouns"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-second-declension-nouns-1",
+    "latin": "Servus dominum salutat.",
+    "turkish": "Örnek: Servus dominum salutat.",
+    "grammarIds": [
+      "second-declension-nouns"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-present-active-verbs-1",
+    "latin": "Discipuli laborant.",
+    "turkish": "Örnek: Discipuli laborant.",
+    "grammarIds": [
+      "present-active-verbs"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-imperative-singular-1",
+    "latin": "Lege!",
+    "turkish": "Örnek: Lege!",
+    "grammarIds": [
+      "imperative-singular"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-imperative-plural-1",
+    "latin": "Legite!",
+    "turkish": "Örnek: Legite!",
+    "grammarIds": [
+      "imperative-plural"
+    ],
+    "vocabularyIds": [],
+    "level": 3
+  },
+  {
+    "id": "example-adjective-agreement-1",
+    "latin": "Bona puella legit.",
+    "turkish": "Örnek: Bona puella legit.",
+    "grammarIds": [
+      "adjective-agreement"
+    ],
+    "vocabularyIds": [],
+    "level": 3
+  },
+  {
+    "id": "example-basic-questions-1",
+    "latin": "Quid est hoc?",
+    "turkish": "Örnek: Quid est hoc?",
+    "grammarIds": [
+      "basic-questions"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-personal-pronouns-1",
+    "latin": "Ego scribo; tu legis.",
+    "turkish": "Örnek: Ego scribo; tu legis.",
+    "grammarIds": [
+      "personal-pronouns"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-possessive-adjectives-1",
+    "latin": "Meus liber est novus.",
+    "turkish": "Örnek: Meus liber est novus.",
+    "grammarIds": [
+      "possessive-adjectives"
+    ],
+    "vocabularyIds": [],
+    "level": 3
+  },
+  {
+    "id": "example-prepositions-accusative-1",
+    "latin": "Ad forum ambulo.",
+    "turkish": "Örnek: Ad forum ambulo.",
+    "grammarIds": [
+      "prepositions-accusative"
+    ],
+    "vocabularyIds": [],
+    "level": 3
+  },
+  {
+    "id": "example-prepositions-ablative-1",
+    "latin": "Cum amico venio.",
+    "turkish": "Örnek: Cum amico venio.",
+    "grammarIds": [
+      "prepositions-ablative"
+    ],
+    "vocabularyIds": [],
+    "level": 3
+  },
+  {
+    "id": "example-numbers-1-10-1",
+    "latin": "Tres libri sunt.",
+    "turkish": "Örnek: Tres libri sunt.",
+    "grammarIds": [
+      "numbers-1-10"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-word-order-basics-1",
+    "latin": "Marcus librum legit.",
+    "turkish": "Örnek: Marcus librum legit.",
+    "grammarIds": [
+      "word-order-basics"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  },
+  {
+    "id": "example-conjunctions-et-sed-1",
+    "latin": "Lego et scribo, sed non canto.",
+    "turkish": "Örnek: Lego et scribo, sed non canto.",
+    "grammarIds": [
+      "conjunctions-et-sed"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-negation-non-1",
+    "latin": "Non dormio.",
+    "turkish": "Örnek: Non dormio.",
+    "grammarIds": [
+      "negation-non"
+    ],
+    "vocabularyIds": [],
+    "level": 2
+  },
+  {
+    "id": "example-simple-reading-strategy-1",
+    "latin": "Primum verbum quaere.",
+    "turkish": "Örnek: Primum verbum quaere.",
+    "grammarIds": [
+      "simple-reading-strategy"
+    ],
+    "vocabularyIds": [],
+    "level": 1
+  }
+]

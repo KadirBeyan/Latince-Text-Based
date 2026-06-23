@@ -1,0 +1,23 @@
+{
+  "id": "flavius",
+  "name": "Flavius",
+  "latinName": "Flavius",
+  "role": "reader",
+  "description": "Kisa metinler ve notlarla oyuncuya baglam veren yardimci.",
+  "descriptionTr": "Kisa metinler ve notlarla oyuncuya baglam veren yardimci.",
+  "personality": "friendly, focused, concise",
+  "defaultLocationId": "bibliotheca",
+  "teachingStyle": "gives one clear target per scene",
+  "preferredGrammarIds": [
+    "reading-comprehension-basic"
+  ],
+  "preferredVocabularyIds": [
+    "vocab-liber",
+    "vocab-nota"
+  ],
+  "relationshipDefaults": {
+    "trust": 30,
+    "respect": 30,
+    "familiarity": 20
+  }
+}

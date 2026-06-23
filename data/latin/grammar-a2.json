@@ -1,0 +1,262 @@
+[
+  {
+    "id": "accusative-basic",
+    "title": "Temel accusativus",
+    "titleTr": "Temel accusativus",
+    "titleLatin": "Accusativus",
+    "explanation": "Dogrudan nesne cogu zaman accusativus alir.",
+    "explanationTr": "Dogrudan nesne cogu zaman accusativus alir.",
+    "examples": [
+      "Puer librum videt.",
+      "Puella panem portat."
+    ],
+    "commonMistakes": [
+      "librum yerine liber yazmak"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "nominative-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-librum",
+      "vocab-panis"
+    ],
+    "tags": [
+      "accusative-basic",
+      "a2"
+    ]
+  },
+  {
+    "id": "direct-object-basic",
+    "title": "Dogrudan nesne",
+    "titleTr": "Dogrudan nesne",
+    "titleLatin": "Obiectum directum",
+    "explanation": "Fiilin etkiledigi sey nesnedir.",
+    "explanationTr": "Fiilin etkiledigi sey nesnedir.",
+    "examples": [
+      "Mercator pecuniam quaerit."
+    ],
+    "commonMistakes": [
+      "Ozne ve nesneyi yer degistirmek"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "accusative-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-pecunia"
+    ],
+    "tags": [
+      "direct-object-basic",
+      "a2"
+    ]
+  },
+  {
+    "id": "present-active-conjugations",
+    "title": "Etken fiil cekimleri",
+    "titleTr": "Etken fiil cekimleri",
+    "titleLatin": "Coniugatio",
+    "explanation": "Kisiye gore fiil sonlari degisir; A2de temel bicimleri tanirsin.",
+    "explanationTr": "Kisiye gore fiil sonlari degisir; A2de temel bicimleri tanirsin.",
+    "examples": [
+      "Marcus venit.",
+      "Discipuli audiunt."
+    ],
+    "commonMistakes": [
+      "tekil/cogul sonu karistirmak"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "present-active-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-venit",
+      "vocab-audit"
+    ],
+    "tags": [
+      "present-active-conjugations",
+      "a2"
+    ]
+  },
+  {
+    "id": "imperative-basic",
+    "title": "Emir kipi",
+    "titleTr": "Emir kipi",
+    "titleLatin": "Imperativus",
+    "explanation": "Veni, audi, state gibi bicimler komut verir.",
+    "explanationTr": "Veni, audi, state gibi bicimler komut verir.",
+    "examples": [
+      "Veni!",
+      "Audite!"
+    ],
+    "commonMistakes": [
+      "emir yerine haber kipi kullanmak"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "present-active-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-veni",
+      "vocab-audi"
+    ],
+    "tags": [
+      "imperative-basic",
+      "a2"
+    ]
+  },
+  {
+    "id": "prepositions-in-ad-cum-sine",
+    "title": "Temel edatlar",
+    "titleTr": "Temel edatlar",
+    "titleLatin": "Praepositiones",
+    "explanation": "in, ad, cum, sine yer, yon veya birliktelik bildirir.",
+    "explanationTr": "in, ad, cum, sine yer, yon veya birliktelik bildirir.",
+    "examples": [
+      "Marcus ad portam venit.",
+      "Puer cum Marco ambulat."
+    ],
+    "commonMistakes": [
+      "ad ile konumu anlatmak"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "accusative-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-ad",
+      "vocab-cum"
+    ],
+    "tags": [
+      "prepositions-in-ad-cum-sine",
+      "a2"
+    ]
+  },
+  {
+    "id": "ablative-intro",
+    "title": "Ablativus giris",
+    "titleTr": "Ablativus giris",
+    "titleLatin": "Ablativus",
+    "explanation": "cum ve sine gibi edatlar erken duzeyde ablativusla gorulebilir.",
+    "explanationTr": "cum ve sine gibi edatlar erken duzeyde ablativusla gorulebilir.",
+    "examples": [
+      "Puer cum Marco ambulat."
+    ],
+    "commonMistakes": [
+      "cum Marcus demek"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "prepositions-in-ad-cum-sine"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-cum"
+    ],
+    "tags": [
+      "ablative-intro",
+      "a2"
+    ]
+  },
+  {
+    "id": "genitive-intro",
+    "title": "Genitivus giris",
+    "titleTr": "Genitivus giris",
+    "titleLatin": "Genitivus",
+    "explanation": "Aitlik ve iliskiyi hafifce tanitir.",
+    "explanationTr": "Aitlik ve iliskiyi hafifce tanitir.",
+    "examples": [
+      "Liber Marci est."
+    ],
+    "commonMistakes": [
+      "A1 cumlede gereksiz genitivus kullanmak"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "nominative-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-liber"
+    ],
+    "tags": [
+      "genitive-intro",
+      "a2"
+    ]
+  },
+  {
+    "id": "reading-comprehension-basic",
+    "title": "Kisa okuma",
+    "titleTr": "Kisa okuma",
+    "titleLatin": "Lectio brevis",
+    "explanation": "Kisa cumle dizilerinde kim, ne yapiyor, neyi sorularini bulursun.",
+    "explanationTr": "Kisa cumle dizilerinde kim, ne yapiyor, neyi sorularini bulursun.",
+    "examples": [
+      "Puer librum legit. Puella scribit."
+    ],
+    "commonMistakes": [
+      "Her kelimeyi ayri cevirmek"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "present-active-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-legit",
+      "vocab-scribit"
+    ],
+    "tags": [
+      "reading-comprehension-basic",
+      "a2"
+    ]
+  },
+  {
+    "id": "negation-non",
+    "title": "Non ile olumsuzluk",
+    "titleTr": "Non ile olumsuzluk",
+    "titleLatin": "Negatio",
+    "explanation": "Non fiilden once veya cumlede olumsuz anlam verir.",
+    "explanationTr": "Non fiilden once veya cumlede olumsuz anlam verir.",
+    "examples": [
+      "Non vinum emo."
+    ],
+    "commonMistakes": [
+      "non'u isim sanmak"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "simple-sentence-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-non"
+    ],
+    "tags": [
+      "negation-non",
+      "a2"
+    ]
+  },
+  {
+    "id": "conjunctions-et-sed",
+    "title": "Et ve sed",
+    "titleTr": "Et ve sed",
+    "titleLatin": "Coniunctiones",
+    "explanation": "Et ekler, sed karsitlik kurar.",
+    "explanationTr": "Et ekler, sed karsitlik kurar.",
+    "examples": [
+      "Marcus legit et Julia scribit."
+    ],
+    "commonMistakes": [
+      "et/sed anlamini ters cevirmek"
+    ],
+    "level": 2,
+    "prerequisiteGrammarIds": [
+      "simple-sentence-basic"
+    ],
+    "relatedVocabularyIds": [
+      "vocab-et",
+      "vocab-sed"
+    ],
+    "tags": [
+      "conjunctions-et-sed",
+      "a2"
+    ]
+  }
+]

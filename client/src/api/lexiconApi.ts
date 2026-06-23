@@ -1,0 +1,11 @@
+import { requestJson } from "./gameApi";
+
+export type LexicalEntryDto = { id: string; displayLemma: string; normalizedLemma: string; pos: string; meanings: { shortEn?: string; shortTr?: string; en: string[]; tr?: string[] }; frequency: { rank?: number; band: string }; pedagogy: { estimatedLevel: string; priority: number; usefulChapterIds: string[]; tags: string[] }; forms: Array<{ form: string; features: Record<string, string>; confidence: number }> };
+export type LexiconStats = { entryCount: number; formCount: number; posCounts: Record<string, number>; levelCounts: Record<string, number>; frequencyBandCounts: Record<string, number> };
+export type LexicalImportReportDto = { rawEntryCount: number; normalizedEntryCount: number; formCount: number; insertedCount: number; updatedCount: number; skippedCount: number; duplicateCount: number; posCounts: Record<string, number>; levelCounts: Record<string, number>; frequencyBandCounts: Record<string, number>; confidenceAverage: number; warnings: string[]; errors: string[]; wroteDb: boolean; wroteJson: boolean; sampleEntries: LexicalEntryDto[] };
+
+export function searchLexicon(q: string): Promise<LexicalEntryDto[]> { return requestJson(`/api/lexicon/search?q=${encodeURIComponent(q)}`); }
+export function lookupLexicon(query: string): Promise<{ best?: { entry: LexicalEntryDto; confidence: number; reason: string }; exactLemmaMatches: LexicalEntryDto[]; formMatches: Array<{ entry: LexicalEntryDto; form: { form: string; features: Record<string, string>; confidence: number } }> }> { return requestJson(`/api/lexicon/lookup/${encodeURIComponent(query)}`); }
+export function getLexiconStats(): Promise<LexiconStats> { return requestJson("/api/lexicon/stats"); }
+export function getChapterVocabulary(chapterId: string): Promise<LexicalEntryDto[]> { return requestJson(`/api/lexicon/chapter/${encodeURIComponent(chapterId)}?limit=20`); }
+export function importFrequencyDictionary(payload: { epubPath: string; dryRun: boolean; writeDb: boolean; writeJson: boolean }): Promise<{ report: LexicalImportReportDto; sampleEntries: LexicalEntryDto[] }> { return requestJson("/api/lexicon/import/frequency-dictionary", { method: "POST", body: JSON.stringify(payload) }); }

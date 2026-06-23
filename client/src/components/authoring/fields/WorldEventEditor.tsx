@@ -1,0 +1,5 @@
+import { NumberField, SelectField, TextField } from "./editorUtils";
+
+export function WorldEventEditor({ value = {}, onChange }: { value?: any; onChange: (value: any) => void }) {
+  return <div className="authoring-form-grid"><SelectField label="type" value={value.type ?? "rumor"} options={["rumor", "news", "location", "npc", "quest", "system"]} onChange={(type) => onChange({ ...value, type })} /><TextField label="title" value={value.title} onChange={(title) => onChange({ ...value, title })} /><TextField label="text" value={value.text} onChange={(text) => onChange({ ...value, text })} /><NumberField label="importance" value={value.importance ?? 20} min={1} max={100} onChange={(importance) => onChange({ ...value, importance })} /><TextField label="relatedLocationId" value={value.relatedLocationId} onChange={(relatedLocationId) => onChange({ ...value, relatedLocationId })} /><TextField label="relatedNpcId" value={value.relatedNpcId} onChange={(relatedNpcId) => onChange({ ...value, relatedNpcId })} /></div>;
+}

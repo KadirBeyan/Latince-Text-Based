@@ -1,0 +1,19 @@
+export type LatinPos = "noun" | "verb" | "adjective" | "adverb" | "pronoun" | "preposition" | "conjunction" | "interjection" | "particle" | "unknown";
+export type LatinCase = "nominative" | "genitive" | "dative" | "accusative" | "ablative" | "vocative" | "unknown";
+export type LatinNumber = "singular" | "plural" | "unknown";
+export type LatinGender = "masculine" | "feminine" | "neuter" | "common" | "unknown";
+export type LatinPerson = "1" | "2" | "3" | "unknown";
+export type LatinTense = "present" | "imperfect" | "future" | "perfect" | "pluperfect" | "future-perfect" | "unknown";
+export type LatinMood = "indicative" | "imperative" | "subjunctive" | "infinitive" | "participle" | "unknown";
+export type LatinVoice = "active" | "passive" | "unknown";
+export type LatinToken = { raw: string; normalized: string; index: number; start?: number; end?: number };
+export type LatinFormCandidate = { lemma: string; pos: LatinPos; confidence: number; source: "vocabulary" | "morphology" | "heuristic" | "unknown"; features?: { case?: LatinCase; number?: LatinNumber; gender?: LatinGender; person?: LatinPerson; tense?: LatinTense; mood?: LatinMood; voice?: LatinVoice; declension?: string; conjugation?: string }; meaningTr?: string; vocabularyId?: string };
+export type LatinAnalysisWarning = { code: string; messageTr: string };
+export type LatinWordAnalysis = { token: LatinToken; candidates: LatinFormCandidate[]; best?: LatinFormCandidate; warnings: LatinAnalysisWarning[] };
+export type LatinDetectedStructure = { type: "greeting" | "sum-esse" | "simple-nominative-predicate" | "subject-verb-object" | "imperative" | "prepositional-phrase" | "noun-adjective-agreement" | "unknown"; confidence: number; explanationTr: string; relatedGrammarIds?: string[] };
+export type LatinDetectedError = { tag: string; severity: "info" | "warning" | "error"; messageTr: string; token?: string; expected?: string; actual?: string; relatedGrammarIds?: string[] };
+export type LatinDifficultyResult = { level: "A1" | "A2" | "B1" | "B2" | "unknown"; score: number; reasons: string[]; detectedGrammarIds: string[]; detectedVocabularyIds: string[]; outOfLevelGrammarIds: string[]; outOfLevelVocabularyIds: string[] };
+export type LatinSentenceAnalysis = { original: string; normalized: string; tokens: LatinToken[]; words: LatinWordAnalysis[]; detectedStructures: LatinDetectedStructure[]; possibleErrors: LatinDetectedError[]; difficulty: LatinDifficultyResult; summaryTr: string };
+export type GrammarGateResult = { ok: boolean; level: "A1" | "A2" | "B1" | "B2"; violations: Array<{ type: "grammar" | "vocabulary" | "length" | "unknown-form"; id?: string; token?: string; messageTr: string }>; safeSuggestion?: string };
+export type LatinExercise = { id: string; type: "translate-to-latin" | "choose-form" | "fill-blank" | "parse-word"; promptTr: string; expectedAnswers: string[]; choices?: string[]; grammarIds: string[]; vocabularyIds: string[]; difficulty: "intro" | "practice" | "review" | "challenge"; explanationTr?: string };
+

@@ -1,0 +1,18 @@
+{
+  "id": "castra",
+  "title": "Castra",
+  "titleLatin": "Castra",
+  "descriptionTr": "Emir kiplerinin egitim komutlariyla calisildigi guvenli kamp.",
+  "mood": "calm",
+  "connectedLocationIds": [
+    "porta",
+    "via-appia"
+  ],
+  "defaultNpcIds": [
+    "miles",
+    "marcus"
+  ],
+  "vocabularyIds": [],
+  "grammarIds": [],
+  "unlockConditions": []
+}

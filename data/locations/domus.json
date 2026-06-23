@@ -1,0 +1,19 @@
+{
+  "id": "domus",
+  "title": "Domus",
+  "titleLatin": "Domus Corneliae",
+  "descriptionTr": "Ev, aile ve gunluk hayat kelimeleri icin sakin bir alan.",
+  "mood": "calm",
+  "connectedLocationIds": [
+    "ludus",
+    "hortus",
+    "forum"
+  ],
+  "defaultNpcIds": [
+    "cornelia",
+    "julia"
+  ],
+  "vocabularyIds": [],
+  "grammarIds": [],
+  "unlockConditions": []
+}

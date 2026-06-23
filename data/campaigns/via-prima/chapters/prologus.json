@@ -1,0 +1,3618 @@
+{
+  "id": "prologus",
+  "title": "Prologus",
+  "titleTr": "Prologus",
+  "titleLatin": "Prologus",
+  "description": "Prologus chapter, A1 duzeyinde Via Prima ogrenme yolu.",
+  "descriptionTr": "Prologus chapter, A1 duzeyinde Via Prima ogrenme yolu.",
+  "order": 1,
+  "startQuestId": "prologus_main_prima",
+  "startSceneId": "prologus_001_arrival",
+  "locationIds": [
+    "porta"
+  ],
+  "npcIds": [
+    "magister",
+    "marcus",
+    "lucius"
+  ],
+  "grammarFocus": [
+    "greetings-basic",
+    "sum-esse-present",
+    "nominative-basic",
+    "ego-tu-basic",
+    "simple-sentence-basic"
+  ],
+  "vocabularyFocus": [
+    "vocab-salve",
+    "vocab-vale",
+    "vocab-magister",
+    "vocab-discipulus",
+    "vocab-roma",
+    "vocab-sum",
+    "vocab-es",
+    "vocab-est",
+    "vocab-ego",
+    "vocab-tu",
+    "vocab-nomen",
+    "vocab-mihi"
+  ],
+  "estimatedSceneCount": 25,
+  "unlockConditions": [],
+  "mainQuests": [
+    "quest_prima_dies",
+    "prologus_main_prima",
+    "prologus_main_secunda",
+    "prologus_main_tertia",
+    "prologus_main_quarta"
+  ],
+  "sideQuests": [
+    "prologus_side_auxilium",
+    "prologus_side_amicus",
+    "prologus_side_nota",
+    "prologus_side_brevis",
+    "prologus_side_memoria"
+  ],
+  "reviewQuests": [
+    "prologus_review_recapitulatio"
+  ],
+  "quests": [
+    {
+      "id": "quest_prima_dies",
+      "type": "compat",
+      "title": "Prima Dies",
+      "description": "Original opening compatibility quest.",
+      "startSceneId": "ludus_intro",
+      "scenes": [
+        {
+          "id": "ludus_intro",
+          "title": "At the Door",
+          "locationId": "ludus",
+          "npcIds": [
+            "marcus",
+            "magister"
+          ],
+          "description": "Porta Ludī önündesin. Magister seni süzüyor.",
+          "objective": "Magister ile tanış ve içeri gir.",
+          "inputMode": "choice",
+          "conditions": [],
+          "effects": [],
+          "rewards": [],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "ludus_intro"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve",
+              "vocab-magister"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Salve temel selamdir.",
+            "explanationAfter": "Kisa cevaplarda bicim korunur.",
+            "commonMistakes": [
+              "Turkce cevap vermek"
+            ],
+            "hintLevels": [
+              "S harfiyle baslar",
+              "Salve kalibini kullan"
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ],
+          "choices": [
+            {
+              "id": "enter_ludus",
+              "label": "Enter quietly",
+              "description": "Iceri gir.",
+              "conditions": [],
+              "effects": [],
+              "nextSceneId": "meet_magister"
+            }
+          ],
+          "textChallenge": null,
+          "interactionModel": {
+            "mode": "interaction-loop",
+            "openingNarrationTr": "Porta Ludī önündesin. Magister seni süzüyor.",
+            "openingNarrationLatin": "Ante portam ludī stās. Magister tē spectat.",
+            "activeNpcId": "magister",
+            "npcLineLatin": "Quis es?",
+            "npcLineTr": "Kimsin?",
+            "intents": [
+              {
+                "id": "inspect_gate",
+                "labelTr": "Kapıyı İncele",
+                "verb": "inspect",
+                "requiresLatin": false,
+                "resolution": {
+                  "resultNarrationTr": "Okulun büyük kapısını incelersin.",
+                  "revealedTextTr": "Kapının üzerinde PORTA LUDI yazıyor.",
+                  "consequences": [
+                    {
+                      "id": "consq_ludi_gate",
+                      "kind": "knowledge",
+                      "titleTr": "Yeni Bilgi",
+                      "bodyTr": "Kapıdaki yazıyı çözdün: Okul Kapısı.",
+                      "tone": "success"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "speak_introduce",
+                "labelTr": "Kendini Tanıt",
+                "verb": "speak",
+                "requiresLatin": true,
+                "playerIntentTr": "Kendini Marcus olarak tanıt.",
+                "targetMeaningTr": "Ego sum Marcus.",
+                "canonicalAnswers": [
+                  "Ego sum Marcus",
+                  "Ego sum Marcus.",
+                  "Ego sum marcus",
+                  "Marcus sum"
+                ],
+                "responseReactions": {
+                  "correct": {
+                    "npcLineLatin": "Bene, Marce. Intra.",
+                    "npcLineTr": "Güzel, Marcus. Gir.",
+                    "feedbackTr": "Magister seni tanıdı ve onayladı."
+                  }
+                },
+                "successNextSceneId": "meet_magister"
+              },
+              {
+                "id": "ask_where",
+                "labelTr": "Buranın neresi olduğunu sor",
+                "verb": "ask",
+                "requiresLatin": false,
+                "resolution": {
+                  "resultNarrationTr": "Buranın neresi olduğunu soruyorsun.",
+                  "npcReactionLatin": "Hic est ludus.",
+                  "npcReactionTr": "Burası okuldur."
+                }
+              },
+              {
+                "id": "wait_magister",
+                "labelTr": "Magister'in devam etmesini bekle",
+                "verb": "wait",
+                "requiresLatin": false,
+                "nextSceneId": "meet_magister"
+              }
+            ]
+          },
+          "revisitVariants": [
+            {
+              "id": "ludus_intro_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "ludus_intro",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "At the Door (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "ludus_intro_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "ludus_intro",
+                  "inspectId": "ludus_intro_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "ludus_intro_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "ludus_intro",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "meet_magister",
+          "title": "Magister Aelius",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister",
+            "marcus"
+          ],
+          "description": "Compatibility lesson for the original Via Prima opening.",
+          "objective": "Magister ile ilk dersi tamamla.",
+          "inputMode": "choice",
+          "conditions": [],
+          "effects": [],
+          "rewards": [],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "meet_magister"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve",
+              "vocab-magister"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Salve temel selamdir.",
+            "explanationAfter": "Kisa cevaplarda bicim korunur.",
+            "commonMistakes": [
+              "Turkce cevap vermek"
+            ],
+            "hintLevels": [
+              "S harfiyle baslar",
+              "Salve kalibini kullan"
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ],
+          "choices": [
+            {
+              "id": "listen_to_magister",
+              "label": "Listen carefully",
+              "description": "Dersi dinle.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "UNLOCK_SKILL",
+                  "skillId": "latin_basics"
+                }
+              ],
+              "nextSceneId": "choose_tablet"
+            }
+          ],
+          "textChallenge": null,
+          "revisitVariants": [
+            {
+              "id": "meet_magister_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "meet_magister",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "Magister Aelius (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "meet_magister_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "meet_magister",
+                  "inspectId": "meet_magister_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "meet_magister_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "meet_magister",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "choose_tablet",
+          "title": "Wax and Stylus",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister",
+            "marcus"
+          ],
+          "description": "Compatibility lesson for the original Via Prima opening.",
+          "objective": "Magister ile ilk dersi tamamla.",
+          "inputMode": "choice",
+          "conditions": [],
+          "effects": [],
+          "rewards": [],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "choose_tablet"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve",
+              "vocab-magister"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Salve temel selamdir.",
+            "explanationAfter": "Kisa cevaplarda bicim korunur.",
+            "commonMistakes": [
+              "Turkce cevap vermek"
+            ],
+            "hintLevels": [
+              "S harfiyle baslar",
+              "Salve kalibini kullan"
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ],
+          "choices": [
+            {
+              "id": "take_tools",
+              "label": "Take both tools",
+              "description": "Araclari al.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_ITEM",
+                  "itemId": "wax_tablet",
+                  "quantity": 1
+                },
+                {
+                  "type": "ADD_ITEM",
+                  "itemId": "stylus",
+                  "quantity": 1
+                },
+                {
+                  "type": "SET_FLAG",
+                  "key": "has_lesson_tools",
+                  "value": true
+                }
+              ],
+              "nextSceneId": "first_latin_question"
+            }
+          ],
+          "textChallenge": null,
+          "revisitVariants": [
+            {
+              "id": "choose_tablet_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "choose_tablet",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "Wax and Stylus (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "choose_tablet_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "choose_tablet",
+                  "inspectId": "choose_tablet_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "choose_tablet_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "choose_tablet",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "first_latin_question",
+          "title": "The First Answer",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister",
+            "marcus"
+          ],
+          "description": "Compatibility lesson for the original Via Prima opening.",
+          "objective": "Magister ile ilk dersi tamamla.",
+          "inputMode": "dialogue-response",
+          "conditions": [
+            {
+              "type": "FLAG_EQUALS",
+              "key": "has_lesson_tools",
+              "value": true
+            }
+          ],
+          "effects": [],
+          "rewards": [],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "first_latin_question"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve",
+              "vocab-magister"
+            ],
+            "skillIds": [
+              "latin_greetings"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Salve temel selamdir.",
+            "explanationAfter": "Kisa cevaplarda bicim korunur.",
+            "commonMistakes": [
+              "Turkce cevap vermek"
+            ],
+            "hintLevels": [
+              "S harfiyle baslar",
+              "Salve kalibini kullan"
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ],
+          "choices": [],
+          "textChallenge": null,
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Salve.",
+            "npcPromptTr": "Sana selam veriyor.",
+            "playerIntentTr": "NPC’ye Latince selam ver.",
+            "targetMeaningTr": "NPC’ye selam ver.",
+            "canonicalAnswers": [
+              "Salve.",
+              "Salve magister.",
+              "Salve, magister."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "greetings-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-salve",
+              "vocab-magister"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Salve!",
+                "npcLineTr": "Güzel. Selam!",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Salve!",
+                "npcLineTr": "Güzel. Selam!",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Salve!",
+                "npcLineTr": "Güzel. Selam!",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Iterum saluta.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum non est salutatio.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "lesson_complete",
+            "failureNextSceneId": "first_latin_question",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 120
+              },
+              {
+                "type": "UNLOCK_SKILL",
+                "skillId": "latin_greetings"
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_sum_esse",
+                "amount": 1
+              },
+              {
+                "type": "COMPLETE_QUEST",
+                "questId": "quest_prima_dies"
+              },
+              {
+                "type": "ADD_DIALOGUE_ENTRY",
+                "speakerId": "system",
+                "text": "Selamlaşmayı öğrendin.",
+                "language": "tr"
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Selamlaşma",
+                "body": "Salve, Latince 'selam' demektir."
+              }
+            ]
+          },
+          "revisitVariants": [
+            {
+              "id": "first_latin_question_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "first_latin_question",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "The First Answer (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "first_latin_question_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "first_latin_question",
+                  "inspectId": "first_latin_question_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "first_latin_question_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "first_latin_question",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson_complete",
+          "title": "Lesson Complete",
+          "locationId": "ludus",
+          "npcIds": [
+            "magister",
+            "marcus"
+          ],
+          "description": "Compatibility lesson for the original Via Prima opening.",
+          "objective": "Magister ile ilk dersi tamamla.",
+          "inputMode": "choice",
+          "conditions": [],
+          "effects": [],
+          "rewards": [],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "lesson_complete"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Salve temel selamdir.",
+            "explanationAfter": "Kisa cevaplarda bicim korunur.",
+            "commonMistakes": [
+              "Turkce cevap vermek"
+            ],
+            "hintLevels": [
+              "S harfiyle baslar",
+              "Salve kalibini kullan"
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ],
+          "choices": [
+            {
+              "id": "continue_to_prologus",
+              "label": "Prologus yoluna don",
+              "description": "Yeni Via Prima akisini surdur.",
+              "conditions": [],
+              "effects": [],
+              "nextSceneId": "prologus_001_arrival"
+            }
+          ],
+          "textChallenge": null,
+          "revisitVariants": [
+            {
+              "id": "lesson_complete_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "lesson_complete",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "Lesson Complete (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "lesson_complete_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "lesson_complete",
+                  "inspectId": "lesson_complete_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "lesson_complete_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "lesson_complete",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": []
+    },
+    {
+      "id": "prologus_main_prima",
+      "type": "main",
+      "title": "Prologus: prima",
+      "titleTr": "Prologus: prima",
+      "titleLatin": "prima",
+      "description": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_001_arrival",
+      "scenes": [
+        {
+          "id": "prologus_001_arrival",
+          "title": "Prologus 001",
+          "titleTr": "Prologus 001",
+          "titleLatin": "Exercitatio",
+          "locationId": "porta",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "objective": "Salve, magister. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_001_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_002_practice"
+            },
+            {
+              "id": "prologus_001_arrival_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [
+            {
+              "type": "DISCOVER_LOCATION",
+              "locationId": "porta"
+            }
+          ],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_001_arrival",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve",
+              "vocab-vale",
+              "vocab-magister"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Salve, magister."
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ],
+          "revisitVariants": [
+            {
+              "id": "prologus_001_arrival_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "prologus_001_arrival",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "Prologus 001 (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "prologus_001_arrival_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "prologus_001_arrival",
+                  "inspectId": "prologus_001_arrival_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "prologus_001_arrival_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "prologus_001_arrival",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prologus_002_practice",
+          "title": "Prologus 002",
+          "titleTr": "Prologus 002",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_002_practice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_003_voice"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_002_practice",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-vale",
+              "vocab-magister",
+              "vocab-discipulus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ],
+          "revisitVariants": [
+            {
+              "id": "prologus_002_practice_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "prologus_002_practice",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "Prologus 002 (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "prologus_002_practice_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "prologus_002_practice",
+                  "inspectId": "prologus_002_practice_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "prologus_002_practice_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "prologus_002_practice",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prologus_003_voice",
+          "title": "Prologus 003",
+          "titleTr": "Prologus 003",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "lucius"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "objective": "Tu es Marcus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_003_voice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_004_reply"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_003_voice",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-magister",
+              "vocab-discipulus",
+              "vocab-roma"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es Marcus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ],
+          "revisitVariants": [
+            {
+              "id": "prologus_003_voice_revisit",
+              "conditions": [
+                {
+                  "type": "SCENE_VISIT_COUNT_MIN",
+                  "sceneId": "prologus_003_voice",
+                  "count": 2
+                }
+              ],
+              "titleOverride": "Prologus 003 (Tekrar Ziyaret)",
+              "descriptionOverride": "[Tekrar Ziyaret] Buraya daha önce de gelmiştin. Çevre tanıdık geliyor. İnsanlar seni aşina gözlerle süzüyor."
+            }
+          ],
+          "ambientTemplates": [
+            {
+              "templateId": "inspect_object",
+              "customId": "prologus_003_voice_ambient_inspect",
+              "labelTrOverride": "Etrafı Gözlemle",
+              "descriptionTrOverride": "Çevredeki nesnelere ve detaylara göz gezdir.",
+              "effects": [
+                {
+                  "type": "MARK_SCENE_INSPECTED",
+                  "sceneId": "prologus_003_voice",
+                  "inspectId": "prologus_003_voice_ambient_inspect"
+                }
+              ]
+            },
+            {
+              "templateId": "remember_lesson",
+              "customId": "prologus_003_voice_ambient_remember",
+              "labelTrOverride": "Dersleri Hatırla",
+              "descriptionTrOverride": "Geçmiş gramer ve kelime derslerini zihninde canlandır.",
+              "effects": [
+                {
+                  "type": "SET_SCENE_LOCAL_FLAG",
+                  "sceneId": "prologus_003_voice",
+                  "key": "remembered_lesson",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_003_voice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_main_secunda",
+      "type": "main",
+      "title": "Prologus: secunda",
+      "titleTr": "Prologus: secunda",
+      "titleLatin": "secunda",
+      "description": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_004_reply",
+      "scenes": [
+        {
+          "id": "prologus_004_reply",
+          "title": "Prologus 004",
+          "titleTr": "Prologus 004",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "objective": "Mihi nomen est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_004_reply",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-discipulus",
+              "vocab-roma",
+              "vocab-sum"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "intro"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Mihi nomen est."
+            ]
+          },
+          "reviewTags": [
+            "ego-tu-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quis es?",
+            "npcPromptTr": "Kim olduğunu soruyor.",
+            "playerIntentTr": "Kendini Latince tanıt.",
+            "targetMeaningTr": "Mihi nomen est.",
+            "canonicalAnswers": [
+              "Mihi nomen est.",
+              "Mihi nomen est",
+              "mihi nomen est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-discipulus",
+              "vocab-roma",
+              "vocab-sum"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Paene. Te ipsum dic.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "De te ipso respondere debes.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_005_review",
+            "failureNextSceneId": "prologus_004_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Mihi nomen est."
+              }
+            ]
+          }
+        },
+        {
+          "id": "prologus_005_review",
+          "title": "Prologus 005",
+          "titleTr": "Prologus 005",
+          "titleLatin": "Exercitatio",
+          "locationId": "porta",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "objective": "Vale, amice. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_005_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_006_path"
+            },
+            {
+              "id": "prologus_005_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_005_review",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "simple-sentence-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-roma",
+              "vocab-sum",
+              "vocab-es"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Vale, amice."
+            ]
+          },
+          "reviewTags": [
+            "simple-sentence-basic"
+          ]
+        },
+        {
+          "id": "prologus_006_path",
+          "title": "Prologus 006",
+          "titleTr": "Prologus 006",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "lucius"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "objective": "Salve, magister. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_006_path",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-sum",
+              "vocab-es",
+              "vocab-est"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Salve, magister."
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "lucius",
+            "npcPromptLatin": "Salve.",
+            "npcPromptTr": "Sana selam veriyor.",
+            "playerIntentTr": "NPC’ye Latince selam ver.",
+            "targetMeaningTr": "Salve, magister.",
+            "canonicalAnswers": [
+              "Salve, magister.",
+              "Salve, magister",
+              "salve, magister."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "greetings-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-sum",
+              "vocab-es",
+              "vocab-est"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Salve!",
+                "npcLineTr": "Güzel. Selam!",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Salve!",
+                "npcLineTr": "Güzel. Selam!",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Salve!",
+                "npcLineTr": "Güzel. Selam!",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Iterum saluta.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum non est salutatio.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_007_arrival",
+            "failureNextSceneId": "prologus_006_path",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Salve, magister."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_006_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_main_tertia",
+      "type": "main",
+      "title": "Prologus: tertia",
+      "titleTr": "Prologus: tertia",
+      "titleLatin": "tertia",
+      "description": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_007_arrival",
+      "scenes": [
+        {
+          "id": "prologus_007_arrival",
+          "title": "Prologus 007",
+          "titleTr": "Prologus 007",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_007_arrival_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_008_practice"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_007_arrival",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-es",
+              "vocab-est",
+              "vocab-ego"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ]
+        },
+        {
+          "id": "prologus_008_practice",
+          "title": "Prologus 008",
+          "titleTr": "Prologus 008",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "objective": "Tu es Marcus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_008_practice",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-est",
+              "vocab-ego",
+              "vocab-tu"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es Marcus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quis est hic?",
+            "npcPromptTr": "Buradaki kişinin kim olduğunu soruyor.",
+            "playerIntentTr": "Karşındaki kişiyi Latince tanıt.",
+            "targetMeaningTr": "Tu es Marcus.",
+            "canonicalAnswers": [
+              "Tu es Marcus.",
+              "Tu es Marcus",
+              "tu es marcus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [
+              {
+                "meaningTr": "Ben kendimi tanıtıyorum.",
+                "exampleLatin": "Ego sum Marcus.",
+                "reasonTr": "Burada karşındaki kişiden söz etmen gerekiyor; birinci şahıs bağlama uymuyor."
+              }
+            ],
+            "grammarFocusIds": [
+              "nominative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-est",
+              "vocab-ego",
+              "vocab-tu"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. De illo responde.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hic de altera persona respondendum est.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_009_voice",
+            "failureNextSceneId": "prologus_008_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Tu es Marcus."
+              }
+            ]
+          }
+        },
+        {
+          "id": "prologus_009_voice",
+          "title": "Prologus 009",
+          "titleTr": "Prologus 009",
+          "titleLatin": "Exercitatio",
+          "locationId": "porta",
+          "npcIds": [
+            "lucius"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "objective": "Mihi nomen est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_009_voice",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ego",
+              "vocab-tu",
+              "vocab-nomen"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Mihi nomen est."
+            ]
+          },
+          "reviewTags": [
+            "ego-tu-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "lucius",
+            "npcPromptLatin": "Quis es?",
+            "npcPromptTr": "Kim olduğunu soruyor.",
+            "playerIntentTr": "Kendini Latince tanıt.",
+            "targetMeaningTr": "Mihi nomen est.",
+            "canonicalAnswers": [
+              "Mihi nomen est.",
+              "Mihi nomen est",
+              "mihi nomen est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-ego",
+              "vocab-tu",
+              "vocab-nomen"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Paene. Te ipsum dic.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "De te ipso respondere debes.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_010_reply",
+            "failureNextSceneId": "prologus_009_voice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Mihi nomen est."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_009_voice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_main_quarta",
+      "type": "main",
+      "title": "Prologus: quarta",
+      "titleTr": "Prologus: quarta",
+      "titleLatin": "quarta",
+      "description": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus main quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_010_reply",
+      "scenes": [
+        {
+          "id": "prologus_010_reply",
+          "title": "Prologus 010",
+          "titleTr": "Prologus 010",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "objective": "Vale, amice. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_010_reply",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "simple-sentence-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve",
+              "vocab-vale",
+              "vocab-magister"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Vale, amice."
+            ]
+          },
+          "reviewTags": [
+            "simple-sentence-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Vale.",
+            "npcPromptTr": "Senden ayrılırken veda ediyor.",
+            "playerIntentTr": "NPC’ye Latince veda et.",
+            "targetMeaningTr": "NPC’ye veda et.",
+            "canonicalAnswers": [
+              "Vale, amice.",
+              "Vale, amice",
+              "vale, amice."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "simple-sentence-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-salve",
+              "vocab-vale",
+              "vocab-magister"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Vale, amice.",
+                "npcLineTr": "Hoşça kal, dostum.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Vale, amice.",
+                "npcLineTr": "Hoşça kal, dostum.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Vale, amice.",
+                "npcLineTr": "Hoşça kal, dostum.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Dic vale.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum non est valedictio.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_011_review",
+            "failureNextSceneId": "prologus_010_reply",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Vale, amice."
+              }
+            ]
+          }
+        },
+        {
+          "id": "prologus_011_review",
+          "title": "Prologus 011",
+          "titleTr": "Prologus 011",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "objective": "Salve, magister. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_011_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_012_path"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_011_review",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-vale",
+              "vocab-magister",
+              "vocab-discipulus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Salve, magister."
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ]
+        },
+        {
+          "id": "prologus_012_path",
+          "title": "Prologus 012",
+          "titleTr": "Prologus 012",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "lucius"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_012_path_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_013_arrival"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_012_path",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-magister",
+              "vocab-discipulus",
+              "vocab-roma"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_012_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 60,
+        "currency": 5
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_side_auxilium",
+      "type": "side",
+      "title": "Prologus: auxilium",
+      "titleTr": "Prologus: auxilium",
+      "titleLatin": "auxilium",
+      "description": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_013_arrival",
+      "scenes": [
+        {
+          "id": "prologus_013_arrival",
+          "title": "Prologus 013",
+          "titleTr": "Prologus 013",
+          "titleLatin": "Exercitatio",
+          "locationId": "porta",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "objective": "Tu es Marcus. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_013_arrival",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-discipulus",
+              "vocab-roma",
+              "vocab-sum"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es Marcus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quis est hic?",
+            "npcPromptTr": "Buradaki kişinin kim olduğunu soruyor.",
+            "playerIntentTr": "Karşındaki kişiyi Latince tanıt.",
+            "targetMeaningTr": "Tu es Marcus.",
+            "canonicalAnswers": [
+              "Tu es Marcus.",
+              "Tu es Marcus",
+              "tu es marcus."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [
+              {
+                "meaningTr": "Ben kendimi tanıtıyorum.",
+                "exampleLatin": "Ego sum Marcus.",
+                "reasonTr": "Burada karşındaki kişiden söz etmen gerekiyor; birinci şahıs bağlama uymuyor."
+              }
+            ],
+            "grammarFocusIds": [
+              "nominative-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-discipulus",
+              "vocab-roma",
+              "vocab-sum"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Recte dicis.",
+                "npcLineTr": "Doğru söylüyorsun.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. De illo responde.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hic de altera persona respondendum est.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_014_practice",
+            "failureNextSceneId": "prologus_013_arrival",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Tu es Marcus."
+              }
+            ]
+          }
+        },
+        {
+          "id": "prologus_014_practice",
+          "title": "Prologus 014",
+          "titleTr": "Prologus 014",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "objective": "Mihi nomen est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_014_practice",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-roma",
+              "vocab-sum",
+              "vocab-es"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Mihi nomen est."
+            ]
+          },
+          "reviewTags": [
+            "ego-tu-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "marcus",
+            "npcPromptLatin": "Quis es?",
+            "npcPromptTr": "Kim olduğunu soruyor.",
+            "playerIntentTr": "Kendini Latince tanıt.",
+            "targetMeaningTr": "Mihi nomen est.",
+            "canonicalAnswers": [
+              "Mihi nomen est.",
+              "Mihi nomen est",
+              "mihi nomen est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-roma",
+              "vocab-sum",
+              "vocab-es"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Paene. Te ipsum dic.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "De te ipso respondere debes.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_015_voice",
+            "failureNextSceneId": "prologus_014_practice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Mihi nomen est."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_014_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_side_amicus",
+      "type": "side",
+      "title": "Prologus: amicus",
+      "titleTr": "Prologus: amicus",
+      "titleLatin": "amicus",
+      "description": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_015_voice",
+      "scenes": [
+        {
+          "id": "prologus_015_voice",
+          "title": "Prologus 015",
+          "titleTr": "Prologus 015",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "lucius"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "objective": "Vale, amice. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_015_voice",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "simple-sentence-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-sum",
+              "vocab-es",
+              "vocab-est"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Vale, amice."
+            ]
+          },
+          "reviewTags": [
+            "simple-sentence-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "lucius",
+            "npcPromptLatin": "Vale.",
+            "npcPromptTr": "Senden ayrılırken veda ediyor.",
+            "playerIntentTr": "NPC’ye Latince veda et.",
+            "targetMeaningTr": "NPC’ye veda et.",
+            "canonicalAnswers": [
+              "Vale, amice.",
+              "Vale, amice",
+              "vale, amice."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "simple-sentence-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-sum",
+              "vocab-es",
+              "vocab-est"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Vale, amice.",
+                "npcLineTr": "Hoşça kal, dostum.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Vale, amice.",
+                "npcLineTr": "Hoşça kal, dostum.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Vale, amice.",
+                "npcLineTr": "Hoşça kal, dostum.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Non ita. Dic vale.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "Hoc responsum non est valedictio.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_016_reply",
+            "failureNextSceneId": "prologus_015_voice",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 20
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Vale, amice."
+              }
+            ]
+          }
+        },
+        {
+          "id": "prologus_016_reply",
+          "title": "Prologus 016",
+          "titleTr": "Prologus 016",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Salve, magister.",
+          "objective": "Salve, magister. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_016_reply_continue",
+              "label": "Dikkatle cevap ver",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_017_review"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_016_reply",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "greetings-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-es",
+              "vocab-est",
+              "vocab-ego"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "review"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Salve, magister."
+            ]
+          },
+          "reviewTags": [
+            "greetings-basic"
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_016_reply"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_side_nota",
+      "type": "side",
+      "title": "Prologus: nota",
+      "titleTr": "Prologus: nota",
+      "titleLatin": "nota",
+      "description": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_017_review",
+      "scenes": [
+        {
+          "id": "prologus_017_review",
+          "title": "Prologus 017",
+          "titleTr": "Prologus 017",
+          "titleLatin": "Exercitatio",
+          "locationId": "porta",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Ego sum discipulus.",
+          "objective": "Ego sum discipulus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_017_review_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_018_path"
+            },
+            {
+              "id": "prologus_017_review_review",
+              "label": "Kurali tekrar et",
+              "description": "Yanlis secimi kisa notla duzelt.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_JOURNAL_ENTRY",
+                  "title": "Kisa tekrar",
+                  "body": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul."
+                }
+              ]
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 10
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_017_review",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "sum-esse-present"
+            ],
+            "vocabularyIds": [
+              "vocab-est",
+              "vocab-ego",
+              "vocab-tu"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "practice"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Ego sum discipulus."
+            ]
+          },
+          "reviewTags": [
+            "sum-esse-present"
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_017_review"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_side_brevis",
+      "type": "side",
+      "title": "Prologus: brevis",
+      "titleTr": "Prologus: brevis",
+      "titleLatin": "brevis",
+      "description": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_018_path",
+      "scenes": [
+        {
+          "id": "prologus_018_path",
+          "title": "Prologus 018",
+          "titleTr": "Prologus 018",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "lucius"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Tu es Marcus.",
+          "objective": "Tu es Marcus. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_018_path_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "prologus_019_arrival"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_018_path",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "nominative-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-ego",
+              "vocab-tu",
+              "vocab-nomen"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Tu es Marcus."
+            ]
+          },
+          "reviewTags": [
+            "nominative-basic"
+          ]
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_018_path"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_side_memoria",
+      "type": "side",
+      "title": "Prologus: memoria",
+      "titleTr": "Prologus: memoria",
+      "titleLatin": "memoria",
+      "description": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus side quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_019_arrival",
+      "scenes": [
+        {
+          "id": "prologus_019_arrival",
+          "title": "Prologus 019",
+          "titleTr": "Prologus 019",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "magister"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Mihi nomen est.",
+          "objective": "Mihi nomen est. kalibini tani veya kullan.",
+          "inputMode": "dialogue-response",
+          "choices": [],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_019_arrival",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-salve",
+              "vocab-vale",
+              "vocab-magister"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Mihi nomen est."
+            ]
+          },
+          "reviewTags": [
+            "ego-tu-basic"
+          ],
+          "dialogueChallenge": {
+            "mode": "dialogue-response",
+            "speakerNpcId": "magister",
+            "npcPromptLatin": "Quis es?",
+            "npcPromptTr": "Kim olduğunu soruyor.",
+            "playerIntentTr": "Kendini Latince tanıt.",
+            "targetMeaningTr": "Mihi nomen est.",
+            "canonicalAnswers": [
+              "Mihi nomen est.",
+              "Mihi nomen est",
+              "mihi nomen est."
+            ],
+            "acceptedVariants": [],
+            "rejectedMeanings": [],
+            "grammarFocusIds": [
+              "ego-tu-basic"
+            ],
+            "vocabularyFocusIds": [
+              "vocab-salve",
+              "vocab-vale",
+              "vocab-magister"
+            ],
+            "expectedLevel": "A1",
+            "evaluation": {
+              "allowEquivalentMeaning": true,
+              "allowWordOrderVariation": true,
+              "requireContextMatch": true,
+              "useLlmSemanticJudge": true,
+              "minimumConfidence": 0.55,
+              "allowAdvancedCorrectAnswer": true
+            },
+            "reactions": {
+              "correct": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru cevap. Anlam ve bağlam uyuşuyor."
+              },
+              "equivalentCorrect": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Doğru; farklı ama eşdeğer bir Latince ifade kullandın."
+              },
+              "acceptableVariant": {
+                "npcLineLatin": "Bene. Intellego.",
+                "npcLineTr": "Güzel. Anladım.",
+                "feedbackTr": "Kabul edilebilir bir varyant."
+              },
+              "nearMiss": {
+                "npcLineLatin": "Paene recte. Iterum tenta.",
+                "npcLineTr": "Neredeyse doğru. Tekrar dene.",
+                "feedbackTr": "Cevabın yakın; küçük bir biçim ya da kelime hatası var."
+              },
+              "wrong": {
+                "npcLineLatin": "Paene. Te ipsum dic.",
+                "npcLineTr": "Böyle değil. Tekrar dene.",
+                "feedbackTr": "Cevap hedeflenen anlam veya gramerle uyuşmuyor."
+              },
+              "contextWrong": {
+                "npcLineLatin": "De te ipso respondere debes.",
+                "npcLineTr": "Bağlamı karıştırdın.",
+                "feedbackTr": "Latince yapı doğru olabilir, ama bu konuşma anında beklenen anlam farklı."
+              }
+            },
+            "retryAllowed": true,
+            "maxAttempts": 3,
+            "successNextSceneId": "prologus_020_practice",
+            "failureNextSceneId": "prologus_019_arrival",
+            "successEffects": [
+              {
+                "type": "ADD_XP",
+                "amount": 35
+              },
+              {
+                "type": "INCREMENT_SKILL",
+                "skillId": "latin_basics",
+                "amount": 1
+              }
+            ],
+            "failureEffects": [
+              {
+                "type": "ADD_JOURNAL_ENTRY",
+                "title": "Cevap ipucu",
+                "body": "Hedef kalip: Mihi nomen est."
+              }
+            ]
+          }
+        }
+      ],
+      "rewards": [],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_019_arrival"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    },
+    {
+      "id": "prologus_review_recapitulatio",
+      "type": "review",
+      "title": "Prologus: recapitulatio",
+      "titleTr": "Prologus: recapitulatio",
+      "titleLatin": "recapitulatio",
+      "description": "Prologus review quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "descriptionTr": "Prologus review quest; greetings-basic odaginda kisa oynanabilir bolum.",
+      "startSceneId": "prologus_020_practice",
+      "scenes": [
+        {
+          "id": "prologus_020_practice",
+          "title": "Prologus 020",
+          "titleTr": "Prologus 020",
+          "titleLatin": "Lectio",
+          "locationId": "porta",
+          "npcIds": [
+            "marcus"
+          ],
+          "description": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "descriptionTr": "Prologus bolumunde kisa bir ogrenme ani. Hedef cumle: Vale, amice.",
+          "objective": "Vale, amice. kalibini tani veya kullan.",
+          "inputMode": "choice",
+          "choices": [
+            {
+              "id": "prologus_020_practice_continue",
+              "label": "Devam et",
+              "description": "Kisa aciklamayi uygula.",
+              "conditions": [],
+              "effects": [
+                {
+                  "type": "ADD_XP",
+                  "amount": 5
+                }
+              ],
+              "nextSceneId": "ludus_001_arrival"
+            }
+          ],
+          "textChallenge": null,
+          "conditions": [],
+          "effects": [],
+          "rewards": [
+            {
+              "type": "ADD_XP",
+              "amount": 30
+            },
+            {
+              "type": "SET_FLAG",
+              "key": "chapter.prologus.completed",
+              "value": true
+            },
+            {
+              "type": "COMPLETE_CHAPTER",
+              "chapterId": "prologus"
+            },
+            {
+              "type": "UNLOCK_CHAPTER",
+              "chapterId": "ludus"
+            }
+          ],
+          "onEnterEvents": [
+            {
+              "type": "scene.entered",
+              "payload": {
+                "sceneId": "prologus_020_practice",
+                "chapterId": "prologus"
+              }
+            }
+          ],
+          "learningFocus": {
+            "grammarIds": [
+              "simple-sentence-basic"
+            ],
+            "vocabularyIds": [
+              "vocab-vale",
+              "vocab-magister",
+              "vocab-discipulus"
+            ],
+            "skillIds": [
+              "latin_basics"
+            ],
+            "difficulty": "challenge"
+          },
+          "pedagogy": {
+            "explanationBefore": "Tek hedefe odaklan: bicim ve anlami birlikte kontrol et.",
+            "explanationAfter": "Kisa Latince cumlelerde ozne, fiil ve varsa nesneyi sirayla bul.",
+            "commonMistakes": [
+              "Turkce kelime dizimini aynen tasimak",
+              "Ozne ve nesne bicimini karistirmak"
+            ],
+            "hintLevels": [
+              "Anahtar kelimeyi bul.",
+              "Ornek cevap: Vale, amice."
+            ]
+          },
+          "reviewTags": [
+            "simple-sentence-basic"
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "type": "ADD_XP",
+          "amount": 20
+        }
+      ],
+      "statusConditions": [],
+      "completionConditions": [
+        {
+          "type": "SCENE_COMPLETED",
+          "sceneId": "prologus_020_practice"
+        }
+      ],
+      "rewardBundle": {
+        "xp": 25,
+        "currency": 1
+      },
+      "learningFocus": {
+        "grammarIds": [
+          "greetings-basic",
+          "sum-esse-present",
+          "nominative-basic",
+          "ego-tu-basic",
+          "simple-sentence-basic"
+        ],
+        "vocabularyIds": [
+          "vocab-salve",
+          "vocab-vale",
+          "vocab-magister",
+          "vocab-discipulus",
+          "vocab-roma",
+          "vocab-sum",
+          "vocab-es",
+          "vocab-est"
+        ],
+        "skillIds": [
+          "latin_basics"
+        ]
+      },
+      "recommendedLevel": "A1"
+    }
+  ]
+}

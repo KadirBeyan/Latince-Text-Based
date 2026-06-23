@@ -1,0 +1,398 @@
+[
+  {
+    "id": "prologus_review_recapitulatio",
+    "type": "review",
+    "title": "Prologus: recapitulatio",
+    "titleTr": "Prologus: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Prologus review quest; greetings-basic odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Prologus review quest; greetings-basic odaginda kisa oynanabilir bolum.",
+    "startSceneId": "prologus_020_practice",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "prologus_020_practice"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "greetings-basic",
+        "sum-esse-present",
+        "nominative-basic",
+        "ego-tu-basic",
+        "simple-sentence-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-salve",
+        "vocab-vale",
+        "vocab-magister",
+        "vocab-discipulus",
+        "vocab-roma",
+        "vocab-sum",
+        "vocab-es",
+        "vocab-est"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A1"
+  },
+  {
+    "id": "ludus_review_recapitulatio",
+    "type": "review",
+    "title": "Ludus: recapitulatio",
+    "titleTr": "Ludus: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Ludus review quest; nominative-basic odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Ludus review quest; nominative-basic odaginda kisa oynanabilir bolum.",
+    "startSceneId": "ludus_025_arrival",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "ludus_025_arrival"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "nominative-basic",
+        "sum-esse-present",
+        "noun-gender-intro",
+        "adjective-agreement-intro"
+      ],
+      "vocabularyIds": [
+        "vocab-liber",
+        "vocab-tabula",
+        "vocab-stilus",
+        "vocab-puer",
+        "vocab-puella",
+        "vocab-bonus",
+        "vocab-bona",
+        "vocab-novus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A1"
+  },
+  {
+    "id": "domus_review_recapitulatio",
+    "type": "review",
+    "title": "Domus: recapitulatio",
+    "titleTr": "Domus: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Domus review quest; nominative-basic odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Domus review quest; nominative-basic odaginda kisa oynanabilir bolum.",
+    "startSceneId": "domus_025_arrival",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "domus_025_arrival"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "nominative-basic",
+        "genitive-intro",
+        "adjective-agreement-intro",
+        "sum-esse-present"
+      ],
+      "vocabularyIds": [
+        "vocab-mater",
+        "vocab-pater",
+        "vocab-filius",
+        "vocab-filia",
+        "vocab-servus",
+        "vocab-ancilla",
+        "vocab-domus",
+        "vocab-hortus"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A1"
+  },
+  {
+    "id": "forum_review_recapitulatio",
+    "type": "review",
+    "title": "Forum: recapitulatio",
+    "titleTr": "Forum: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Forum review quest; accusative-basic odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Forum review quest; accusative-basic odaginda kisa oynanabilir bolum.",
+    "startSceneId": "forum_030_path",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "forum_030_path"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "accusative-basic",
+        "direct-object-basic",
+        "present-active-basic",
+        "negation-non"
+      ],
+      "vocabularyIds": [
+        "vocab-forum",
+        "vocab-mercator",
+        "vocab-pecunia",
+        "vocab-denarius",
+        "vocab-panis",
+        "vocab-vinum",
+        "vocab-librum",
+        "vocab-tabulam"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A2"
+  },
+  {
+    "id": "bibliotheca_review_recapitulatio",
+    "type": "review",
+    "title": "Bibliotheca: recapitulatio",
+    "titleTr": "Bibliotheca: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Bibliotheca review quest; reading-comprehension-basic odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Bibliotheca review quest; reading-comprehension-basic odaginda kisa oynanabilir bolum.",
+    "startSceneId": "bibliotheca_025_arrival",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "bibliotheca_025_arrival"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "reading-comprehension-basic",
+        "conjunctions-et-sed",
+        "present-active-basic",
+        "accusative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-bibliotheca",
+        "vocab-liber",
+        "vocab-pagina",
+        "vocab-capitulum",
+        "vocab-littera",
+        "vocab-scriba",
+        "vocab-legit",
+        "vocab-scribit"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A2"
+  },
+  {
+    "id": "castra_review_recapitulatio",
+    "type": "review",
+    "title": "Castra: recapitulatio",
+    "titleTr": "Castra: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Castra review quest; imperative-basic odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Castra review quest; imperative-basic odaginda kisa oynanabilir bolum.",
+    "startSceneId": "castra_025_arrival",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "castra_025_arrival"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "imperative-basic",
+        "present-active-basic",
+        "prepositions-in-ad-cum-sine"
+      ],
+      "vocabularyIds": [
+        "vocab-castra",
+        "vocab-miles",
+        "vocab-gladius",
+        "vocab-scutum",
+        "vocab-porta",
+        "vocab-via",
+        "vocab-ducit",
+        "vocab-audit"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A2"
+  },
+  {
+    "id": "via-appia_review_recapitulatio",
+    "type": "review",
+    "title": "Via Appia: recapitulatio",
+    "titleTr": "Via Appia: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Via Appia review quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Via Appia review quest; prepositions-in-ad-cum-sine odaginda kisa oynanabilir bolum.",
+    "startSceneId": "via-appia_025_arrival",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "via-appia_025_arrival"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "prepositions-in-ad-cum-sine",
+        "ablative-intro",
+        "present-active-basic",
+        "accusative-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-via",
+        "vocab-porta",
+        "vocab-villa",
+        "vocab-ager",
+        "vocab-urbs",
+        "vocab-taberna",
+        "vocab-cum",
+        "vocab-sine"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A2"
+  },
+  {
+    "id": "capitolium_review_recapitulatio",
+    "type": "review",
+    "title": "Capitolium: recapitulatio",
+    "titleTr": "Capitolium: recapitulatio",
+    "titleLatin": "recapitulatio",
+    "description": "Capitolium review quest; greetings-basic odaginda kisa oynanabilir bolum.",
+    "descriptionTr": "Capitolium review quest; greetings-basic odaginda kisa oynanabilir bolum.",
+    "startSceneId": "capitolium_030_path",
+    "rewards": [
+      {
+        "type": "ADD_XP",
+        "amount": 20
+      }
+    ],
+    "statusConditions": [],
+    "completionConditions": [
+      {
+        "type": "SCENE_COMPLETED",
+        "sceneId": "capitolium_030_path"
+      }
+    ],
+    "rewardBundle": {
+      "xp": 25,
+      "currency": 1
+    },
+    "learningFocus": {
+      "grammarIds": [
+        "greetings-basic",
+        "sum-esse-present",
+        "nominative-basic",
+        "accusative-basic",
+        "present-active-basic",
+        "imperative-basic",
+        "prepositions-in-ad-cum-sine",
+        "reading-comprehension-basic"
+      ],
+      "vocabularyIds": [
+        "vocab-capitolium",
+        "vocab-templum",
+        "vocab-amicus",
+        "vocab-victoria",
+        "vocab-corona",
+        "vocab-discipulus",
+        "vocab-via",
+        "vocab-prima"
+      ],
+      "skillIds": [
+        "latin_basics"
+      ]
+    },
+    "recommendedLevel": "A2"
+  }
+]
