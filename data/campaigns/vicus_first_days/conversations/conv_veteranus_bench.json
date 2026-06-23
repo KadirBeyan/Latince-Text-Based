@@ -8,6 +8,11 @@
   "locationIds": [
     "veteran_bench"
   ],
+  "freeformEnabled": true,
+  "freeformExamples": ["Veteranus'a kendimi tanıtıyorum.", "Eski günleri soruyorum.", "Sessizce hikâyesini dinliyorum."],
+  "allowedActionKinds": ["speak_to_npc", "ask_npc", "listen", "remember", "thank", "apologize", "direct_latin_utterance"],
+  "latinRequiredForActionKinds": ["speak_to_npc", "ask_npc", "thank", "apologize"],
+  "fallbackRejectionTr": "Bankın yanında Veteranus ile konuşabilir, ona soru sorabilir ya da hikâyesini dinleyebilirsin.",
   "nodes": [
     {
       "id": "start",
@@ -68,10 +73,14 @@
       "options": [
         {
           "id": "opt_finish_vet",
-          "labelTr": "Söyleşiyi bitir",
-          "verb": "leave",
-          "requiresLatin": false,
-          "nextNodeId": "end"
+          "labelTr": "Veteranus'a teşekkür ederek ayrıl",
+          "verb": "thank",
+          "requiresLatin": true,
+          "playerIntentTr": "Veteranus'a teşekkür et",
+          "targetMeaningTr": "Teşekkür ederim, asker.",
+          "canonicalAnswers": ["gratias miles", "gratias tibi ago"],
+          "successNextNodeId": "end",
+          "failureBehavior": "retry"
         }
       ]
     },

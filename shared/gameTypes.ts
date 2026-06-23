@@ -193,6 +193,10 @@ export interface PlayerSave {
   characterProfile?: CharacterProfile;
   villageLife?: VillageLifeState;
   activeConversation?: ConversationRuntimeState;
+  pendingFreeformLatin?: PendingFreeformLatinState;
+  latestFreeformResponse?: FreeformWorldResponse;
+  worldPresence?: WorldPresenceSaveState;
+  activeWorldPresence?: ActiveWorldPresence;
 }
 
 export interface ChapterProgress {
@@ -494,7 +498,8 @@ export type GameAction =
   | { type: "CONVERSATION_OPTION_SELECT"; saveId: string; flowId: string; nodeId: string; optionId: string }
   | { type: "CONVERSATION_TEXT_SUBMIT"; saveId: string; flowId: string; nodeId: string; optionId: string; answer: string }
   | { type: "CONVERSATION_EXIT"; saveId: string; flowId: string }
-  | { type: "FREEFORM_ACTION_SUBMIT"; saveId: string; sceneId?: string; flowId?: string; nodeId?: string; inputText: string };
+  | { type: "FREEFORM_ACTION_SUBMIT"; saveId: string; sceneId?: string; flowId?: string; nodeId?: string; inputText: string }
+  | { type: "FREEFORM_LATIN_SUBMIT"; saveId: string; pendingFreeformLatinId: string; answer: string };
 
 export interface GameEventTemplate {
   type: string;
@@ -540,6 +545,9 @@ export interface GameState {
   livingScene?: ActiveLivingSceneView;
   villageLife?: VillageLifeState;
   activeConversation?: ConversationRuntimeState;
+  pendingFreeformLatin?: PendingFreeformLatinState;
+  latestFreeformResponse?: FreeformWorldResponse;
+  activeWorldPresence?: ActiveWorldPresence;
 }
 
 export interface SessionSummary { completedScenes: number; correctAnswers: number; wrongAnswers: number; xpGained: number; currencyGained: number; newSkills: string[]; newItems: string[]; improvedMastery: Array<{ targetId: string; targetType: MasteryTargetType; before?: number; after: number }>; weakTags: string[]; reviewSuggestions: string[]; }
@@ -1051,8 +1059,90 @@ export type ConversationRuntimeState = {
   selectedOptionId?: string;
   attempts: Record<string, number>;
   completed: boolean;
+  freeformHistory?: FreeformHistoryEntry[];
   currentNode?: any;
   options?: any[];
+};
+
+export type FreeformActionKind =
+  | "speak_to_npc" | "ask_npc" | "answer_npc" | "inspect_object"
+  | "read_text" | "listen" | "remember" | "move_or_leave" | "help"
+  | "refuse" | "bargain" | "persuade" | "thank" | "apologize"
+  | "journal" | "direct_latin_utterance" | "unknown";
+
+export type VillageMood = "quiet" | "busy" | "warm" | "tense" | "rainy" | "festive" | "suspicious" | "tired" | "expectant";
+export type NpcMood = "warm" | "busy" | "tired" | "curious" | "guarded" | "pleased" | "disappointed" | "impatient" | "thoughtful" | "proud";
+
+export type WorldJournalEntry = {
+  id: string; dayNumber: number; timeOfDay: VillageTimeOfDay; titleTr: string; bodyTr: string;
+  relatedNpcIds: string[]; relatedLocationIds: string[]; learnedWordIds: string[]; relatedActivityIds: string[];
+  createdAt: string; generatedBy: "template" | "llm" | "player";
+};
+
+export type WorldPresenceSaveState = {
+  visitedLocations: Record<string, { visitCount: number; firstVisitedAt: string; lastVisitedAt: string; lastMood?: VillageMood; discoveredObjectIds: string[]; inspectedObjectIds: string[]; readObjectIds: string[]; memoryNotesTr: string[] }>;
+  discoveredLatinIds: string[];
+  seenRumorIds: string[];
+  journalEntries: WorldJournalEntry[];
+  npcMoodOverrides?: Record<string, { mood: NpcMood; untilDay?: number; reasonTr: string }>;
+  worldFlags: Record<string, string | number | boolean>;
+};
+
+export type LatinDiscoveryView = {
+  id: string; wordOrPhraseLatin: string; meaningTr: string; sourceObjectId?: string; sourceNpcId?: string; sourceLocationId?: string;
+  grammarNoteTr?: string; exampleLatin?: string; exampleTr?: string; difficulty: "beginner" | "easy" | "medium"; tags: string[];
+};
+
+export type DynamicWorldNarration = {
+  narrationTr: string; npcLines?: { npcId: string; latin?: string; tr?: string }[]; ambientLinesTr?: string[];
+  suggestedPlayerThoughtTr?: string; latinNudge?: { wordLatin: string; meaningTr: string; noteTr?: string }; generatedBy: "llm" | "template";
+};
+
+export type ActiveWorldPresence = {
+  locationAtmosphere?: DynamicWorldNarration;
+  locationMemoryNotesTr: string[];
+  visibleObjects: { id: string; titleTr: string; descriptionTr: string; inspectable: boolean; readable: boolean }[];
+  readableObjects: { id: string; titleTr: string; surfacePreviewLatin?: string; difficulty: string; discovered: boolean }[];
+  rumors: { id: string; titleTr: string; previewTr: string; seen: boolean }[];
+  npcsPresent: { id: string; nameTr: string; mood: NpcMood; moodHintTr: string }[];
+  recentDiscoveries: LatinDiscoveryView[];
+  journalEntries?: WorldJournalEntry[];
+  latestWorldReaction?: DynamicWorldNarration;
+};
+
+export type HintLevel = "nudge" | "vocabulary" | "structure" | "example";
+
+export type PendingFreeformLatinState = {
+  id: string;
+  originalInput: string;
+  actionKind: FreeformActionKind;
+  targetNpcId?: string;
+  matchedOptionId?: string;
+  matchedIntentId?: string;
+  targetMeaningTr: string;
+  suggestedLatinPromptTr: string;
+  createdAt: string;
+  attempts: number;
+  hintLevel?: HintLevel;
+};
+
+export type FreeformHistoryEntry = {
+  inputText: string;
+  interpretationSummaryTr: string;
+  latinAnswer?: string;
+  verdict?: string;
+  nodeId: string;
+  at: string;
+};
+
+export type FreeformWorldResponse = {
+  narrationTr?: string;
+  npcLineLatin?: string;
+  npcLineTr?: string;
+  feedbackTr?: string;
+  consequencePresentations: ConsequencePresentation[];
+  suggestedNextOptionIds?: string[];
+  tone: "success" | "neutral" | "warning" | "failure";
 };
 
 export type DialogueSequenceTurn = {

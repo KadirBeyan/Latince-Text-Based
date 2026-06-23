@@ -5,6 +5,7 @@ import { v2ToV3 } from "./v2ToV3";
 import { v3ToV4 } from "./v3ToV4";
 import { v4ToV5 } from "./v4ToV5";
 import { v5ToV6 } from "./v5ToV6";
+import { v6ToV7 } from "./v6ToV7";
 
 function withCharacterProfile(save: Record<string, unknown>): Record<string, unknown> {
   if (save.characterProfile && typeof save.characterProfile === "object") {
@@ -65,9 +66,14 @@ export function migrateSave(value: unknown): PlayerSave {
     version = 6;
   }
   if (version === 6) {
+    currentSave = v6ToV7(currentSave) as any;
+    version = 7;
+  }
+  if (version === 7) {
     const save = currentSave as Record<string, unknown>;
     if (!save.chapterProgress || typeof save.chapterProgress !== "object") save.chapterProgress = {};
     if (!save.livingSceneStates || typeof save.livingSceneStates !== "object") save.livingSceneStates = {};
+    if (!save.worldPresence || typeof save.worldPresence !== "object") save.worldPresence = { visitedLocations: {}, discoveredLatinIds: [], seenRumorIds: [], journalEntries: [], npcMoodOverrides: {}, worldFlags: {} };
     return withCharacterProfile(save) as unknown as PlayerSave;
   }
   

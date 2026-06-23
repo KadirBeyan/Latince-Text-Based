@@ -347,6 +347,17 @@ export class AuthoringValidationService {
     const vocabIds = new Set(content.vocabulary.map((item) => item.id));
     if (grammarIds.size !== content.grammar.length) this.adder(issues, "grammar")("error", "DUPLICATE_GRAMMAR_ID", "Duplicate grammar id var.", "data/latin");
     if (vocabIds.size !== content.vocabulary.length) this.adder(issues, "vocabulary")("error", "DUPLICATE_VOCABULARY_ID", "Duplicate vocabulary id var.", "data/latin");
+    for (const flow of content.conversations) {
+      const add = this.adder(issues, "conversation", flow.id);
+      if (flow.freeformEnabled && !flow.nodes.some((node) => node.options.length >= 2)) add("warning", "FREEFORM_WITHOUT_CLEAR_OPTIONS", "Freeform aktif ama clarification için yeterli seçenek yok.", "nodes");
+      if (flow.freeformEnabled && !flow.fallbackRejectionTr?.trim()) add("warning", "MISSING_FREEFORM_FALLBACK", "Freeform akışında fallbackRejectionTr eksik.", "fallbackRejectionTr");
+      for (const [nodeIndex, node] of flow.nodes.entries()) {
+        const aliases = node.options.flatMap((option) => option.aliasesTr ?? []).map((alias) => alias.toLocaleLowerCase("tr-TR").trim());
+        if (new Set(aliases).size !== aliases.length) add("warning", "DUPLICATE_FREEFORM_ALIAS", "Aynı node içinde yinelenen freeform alias var.", `nodes.${nodeIndex}.options`);
+        const text = [node.narrationTr, node.playerContextTr, ...node.options.flatMap((option) => [option.labelTr, option.descriptionTr, option.requiresLatinReasonTr])].filter(Boolean).join(" ");
+        if (/latince\s+yaz\s*:/i.test(text)) add("warning", "FORM_LIKE_LATIN_PROMPT", "Form dili yerine 'Bunu Latince ifade etmeye çalış.' kullan.", `nodes.${nodeIndex}`);
+      }
+    }
     return issues;
   }
 

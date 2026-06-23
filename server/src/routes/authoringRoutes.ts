@@ -11,6 +11,8 @@ import { ContentOverrideService } from "../content/ContentOverrideService";
 import { evaluateDialogueResponse } from "../latin/SemanticLatinEvaluator";
 import { LlmProviderFactory } from "../llm/LlmProviderFactory";
 import { safeJsonParse } from "../llm/JsonRepair";
+import { ContentLoader } from "../game/content/ContentLoader";
+import { FreeformActionInterpreter } from "../game/freeform/FreeformActionInterpreter";
 
 type Handler = (req: Request, res: Response) => unknown | Promise<unknown>;
 
@@ -22,6 +24,9 @@ export function createAuthoringRoutes(params: { runtime: RuntimeConfig }): Route
   const contentService = new AuthoringContentService(fileService, validationService, overrideService);
   const draftService = new AuthoringDraftService(validationService);
   const previewService = new AuthoringPreviewService();
+  const contentLoader = new ContentLoader();
+  contentLoader.load();
+  const freeformInterpreter = new FreeformActionInterpreter();
   const wrap = (handler: Handler) => (req: Request, res: Response, next: NextFunction) => Promise.resolve(handler(req, res)).catch(next);
   const requireStudio: Handler = (_req, res) => {
     if (!params.runtime.enableAuthoringStudio) res.status(403).json({ error: "Authoring Studio is disabled." });
@@ -135,6 +140,44 @@ export function createAuthoringRoutes(params: { runtime: RuntimeConfig }): Route
       llmConfig,
     });
     res.json(result);
+  }));
+
+  router.post("/freeform/interpret", wrap(async (req, res) => {
+    const { inputText, flowId, nodeId, sceneId, llmConfig } = req.body || {};
+    if (typeof inputText !== "string" || !flowId || !nodeId) {
+      res.status(400).json({ error: "inputText, flowId and nodeId are required." });
+      return;
+    }
+    const flow = contentLoader.getConversationFlow(String(flowId));
+    const node = flow?.nodes.find((item) => item.id === nodeId);
+    if (!flow || !node) {
+      res.status(404).json({ error: "Conversation flow or node was not found." });
+      return;
+    }
+    const scene = sceneId ? contentLoader.getContent().campaigns.flatMap((campaign) => campaign.chapters).flatMap((chapter) => chapter.quests).flatMap((quest) => quest.scenes).find((item) => item.id === sceneId) : undefined;
+    res.json(await freeformInterpreter.interpretFreeformAction({
+      inputText,
+      context: { scene, conversationFlow: flow, currentNode: node, availableOptions: node.options, nearbyNpcIds: scene?.npcIds ?? flow.npcIds, locationId: scene?.locationId ?? flow.locationIds[0] },
+      llmConfig
+    }));
+  }));
+
+  router.post("/freeform/test-latin", wrap(async (req, res) => {
+    const { pendingFreeformLatin, answer, flowId, nodeId, llmConfig } = req.body || {};
+    const flow = flowId ? contentLoader.getConversationFlow(String(flowId)) : undefined;
+    const node = flow?.nodes.find((item) => item.id === nodeId);
+    const option = node?.options.find((item) => item.id === pendingFreeformLatin?.matchedOptionId);
+    if (!pendingFreeformLatin || typeof answer !== "string" || !option) {
+      res.status(400).json({ error: "pendingFreeformLatin, answer and a matching flow/node option are required." });
+      return;
+    }
+    res.json(await evaluateDialogueResponse({
+      answer,
+      challenge: { mode: "dialogue-response", playerIntentTr: option.playerIntentTr || option.labelTr, targetMeaningTr: pendingFreeformLatin.targetMeaningTr, canonicalAnswers: option.canonicalAnswers ?? [], acceptedVariants: option.acceptedVariants ?? [], reactions: option.npcReactions },
+      sceneContext: { sceneId: "authoring-freeform-test", npcIds: flow?.npcIds },
+      playerContext: {},
+      llmConfig
+    }));
   }));
 
   router.post("/dialogue/suggest-variants", wrap(async (req, res) => {

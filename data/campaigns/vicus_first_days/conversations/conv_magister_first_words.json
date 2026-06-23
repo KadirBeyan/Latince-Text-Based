@@ -8,6 +8,11 @@
   "locationIds": [
     "teacher_corner"
   ],
+  "freeformEnabled": true,
+  "freeformExamples": ["Magister'e adımı söylüyorum.", "Bu kelimenin anlamını soruyorum.", "Latince cevap vermeyi deniyorum."],
+  "allowedActionKinds": ["speak_to_npc", "ask_npc", "answer_npc", "read_text", "remember", "direct_latin_utterance"],
+  "latinRequiredForActionKinds": ["speak_to_npc", "ask_npc", "answer_npc"],
+  "fallbackRejectionTr": "Ders köşesinde Magister'in sorusuna cevap verebilir, bir kelimeyi sorabilir veya yazıya bakabilirsin.",
   "nodes": [
     {
       "id": "start",
@@ -47,7 +52,7 @@
       "options": [
         {
           "id": "opt_write_salve",
-          "labelTr": "'salve' yaz",
+          "labelTr": "Magister'i Latince selamla",
           "verb": "read",
           "requiresLatin": true,
           "playerIntentTr": "'salve' yazarım",
@@ -68,10 +73,14 @@
       "options": [
         {
           "id": "opt_finish_lesson",
-          "labelTr": "Dersi tamamla",
-          "verb": "leave",
-          "requiresLatin": false,
-          "nextNodeId": "end"
+          "labelTr": "Magister'e teşekkür ederek dersi bitir",
+          "verb": "thank",
+          "requiresLatin": true,
+          "playerIntentTr": "Magister'e teşekkür et",
+          "targetMeaningTr": "Teşekkür ederim, öğretmen.",
+          "canonicalAnswers": ["gratias magister", "gratias tibi ago magister"],
+          "successNextNodeId": "end",
+          "failureBehavior": "retry"
         }
       ]
     },

@@ -10,7 +10,7 @@ function createEmptySave(): PlayerSave {
     playerName: "Test",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
-    currentCampaignId: "via-prima",
+    currentCampaignId: "vicus_first_days",
     currentChapterId: "vicus_prologue",
     currentQuestId: "vicus_prologue_main",
     currentSceneId: "vicus_001_home_morning",

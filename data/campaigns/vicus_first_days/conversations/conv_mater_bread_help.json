@@ -12,6 +12,11 @@
     "village_path",
     "village_market"
   ],
+  "freeformEnabled": true,
+  "freeformExamples": ["Mater'e sepetin ağır olup olmadığını soruyorum.", "Yardım edeceğimi söylüyorum.", "Sepetin içinde ne olduğunu inceliyorum."],
+  "allowedActionKinds": ["speak_to_npc", "ask_npc", "inspect_object", "help", "refuse", "thank", "direct_latin_utterance"],
+  "latinRequiredForActionKinds": ["speak_to_npc", "ask_npc", "help", "refuse", "thank"],
+  "fallbackRejectionTr": "Bu ev işi içinde bunu yapmanın bir yolu görünmüyor. Mater'e sorabilir, sepeti inceleyebilir veya yardım teklif edebilirsin.",
   "nodes": [
     {
       "id": "start",

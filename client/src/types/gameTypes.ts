@@ -25,7 +25,8 @@ export type GameAction =
   | { type: "CONVERSATION_OPTION_SELECT"; saveId: string; flowId: string; nodeId: string; optionId: string }
   | { type: "CONVERSATION_TEXT_SUBMIT"; saveId: string; flowId: string; nodeId: string; optionId: string; answer: string }
   | { type: "CONVERSATION_EXIT"; saveId: string; flowId: string }
-  | { type: "FREEFORM_ACTION_SUBMIT"; saveId: string; sceneId?: string; flowId?: string; nodeId?: string; inputText: string };
+  | { type: "FREEFORM_ACTION_SUBMIT"; saveId: string; sceneId?: string; flowId?: string; nodeId?: string; inputText: string }
+  | { type: "FREEFORM_LATIN_SUBMIT"; saveId: string; pendingFreeformLatinId: string; answer: string };
 
 export type SceneChoice = {
   id: string;
@@ -497,6 +498,8 @@ export type GameState = {
   livingScene?: ActiveLivingSceneView;
   villageLife?: VillageLifeState;
   activeConversation?: ConversationRuntimeState;
+  pendingFreeformLatin?: PendingFreeformLatinState;
+  latestFreeformResponse?: FreeformWorldResponse;
 };
 
 export type SaveSummary = {
@@ -524,6 +527,7 @@ export type ConversationRuntimeState = {
   selectedOptionId?: string;
   attempts: Record<string, number>;
   completed: boolean;
+  freeformHistory?: FreeformHistoryEntry[];
   currentNode?: ConversationNode;
   options?: ConversationOption[];
 };
@@ -539,6 +543,11 @@ export type ConversationFlow = {
   nodes: ConversationNode[];
   completionEffects?: any[];
   completionNextSceneId?: string;
+  freeformEnabled?: boolean;
+  freeformExamples?: string[];
+  allowedActionKinds?: FreeformActionKind[];
+  latinRequiredForActionKinds?: FreeformActionKind[];
+  fallbackRejectionTr?: string;
 };
 
 export type ConversationNode = {
@@ -554,6 +563,11 @@ export type ConversationNode = {
   conditions?: any[];
   isEnding?: boolean;
   endingSummaryTr?: string;
+  freeformEnabled?: boolean;
+  freeformExamples?: string[];
+  allowedActionKinds?: FreeformActionKind[];
+  latinRequiredForActionKinds?: FreeformActionKind[];
+  fallbackRejectionTr?: string;
 };
 
 export type ConversationOption = {
@@ -580,6 +594,50 @@ export type ConversationOption = {
   };
   resolutionTr?: string;
   resolutionLatin?: string;
+  aliasesTr?: string[];
+  freeformMatchHints?: string[];
+  requiresLatinReasonTr?: string;
+};
+
+export type FreeformActionKind =
+  | "speak_to_npc" | "ask_npc" | "answer_npc" | "inspect_object"
+  | "read_text" | "listen" | "remember" | "move_or_leave" | "help"
+  | "refuse" | "bargain" | "persuade" | "thank" | "apologize"
+  | "direct_latin_utterance" | "unknown";
+
+export type HintLevel = "nudge" | "vocabulary" | "structure" | "example";
+
+export type PendingFreeformLatinState = {
+  id: string;
+  originalInput: string;
+  actionKind: FreeformActionKind;
+  targetNpcId?: string;
+  matchedOptionId?: string;
+  matchedIntentId?: string;
+  targetMeaningTr: string;
+  suggestedLatinPromptTr: string;
+  createdAt: string;
+  attempts: number;
+  hintLevel?: HintLevel;
+};
+
+export type FreeformHistoryEntry = {
+  inputText: string;
+  interpretationSummaryTr: string;
+  latinAnswer?: string;
+  verdict?: string;
+  nodeId: string;
+  at: string;
+};
+
+export type FreeformWorldResponse = {
+  narrationTr?: string;
+  npcLineLatin?: string;
+  npcLineTr?: string;
+  feedbackTr?: string;
+  consequencePresentations: ConsequencePresentation[];
+  suggestedNextOptionIds?: string[];
+  tone: "success" | "neutral" | "warning" | "failure";
 };
 
 export type HintResult = {

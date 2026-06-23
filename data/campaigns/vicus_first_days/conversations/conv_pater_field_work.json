@@ -8,6 +8,11 @@
   "locationIds": [
     "field_edge"
   ],
+  "freeformEnabled": true,
+  "freeformExamples": ["Pater'e nasıl yardım edeceğimi soruyorum.", "Sabanı inceliyorum.", "Çalışmaya hazır olduğumu söylüyorum."],
+  "allowedActionKinds": ["speak_to_npc", "ask_npc", "inspect_object", "help", "refuse", "direct_latin_utterance"],
+  "latinRequiredForActionKinds": ["speak_to_npc", "ask_npc", "help", "refuse"],
+  "fallbackRejectionTr": "Tarlanın kıyısında yapabileceklerin sınırlı. Pater'e sorabilir, aletleri inceleyebilir veya çalışmayı kabul edebilirsin.",
   "nodes": [
     {
       "id": "start",
@@ -66,10 +71,14 @@
       "options": [
         {
           "id": "opt_finish_field",
-          "labelTr": "Çalışmayı bitir",
-          "verb": "leave",
-          "requiresLatin": false,
-          "nextNodeId": "end"
+          "labelTr": "İşin bittiğini Pater'e söyle",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Çalışmayı bitirdiğini söyle",
+          "targetMeaningTr": "İşi bitirdim, baba.",
+          "canonicalAnswers": ["laborem finivi pater", "opus finivi pater"],
+          "successNextNodeId": "end",
+          "failureBehavior": "retry"
         }
       ]
     },

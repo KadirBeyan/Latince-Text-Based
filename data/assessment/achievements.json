@@ -42,12 +42,6 @@
     "unlocked": false
   },
   {
-    "id": "ludus-perfectus",
-    "title": "Ludus Perfectus",
-    "description": "Ludus Perfectus basarimi acildi.",
-    "unlocked": false
-  },
-  {
     "id": "quaestor",
     "title": "Quaestor",
     "description": "İlk generated quest tamamlandı",
@@ -57,54 +51,6 @@
     "id": "memoria-fortis",
     "title": "Memoria Fortis",
     "description": "7 gün streak",
-    "unlocked": false
-  },
-  {
-    "id": "prologus-perfectus",
-    "title": "Vicus Initium",
-    "description": "Vicus Initium basarimi acildi.",
-    "unlocked": false
-  },
-  {
-    "id": "domus-perfecta",
-    "title": "Familia Firma",
-    "description": "Familia Firma basarimi acildi.",
-    "unlocked": false
-  },
-  {
-    "id": "forum-victor",
-    "title": "Mercatus Amicus",
-    "description": "Mercatus Amicus basarimi acildi.",
-    "unlocked": false
-  },
-  {
-    "id": "bibliotheca-lecta",
-    "title": "Tabula Lecta",
-    "description": "Tabula Lecta basarimi acildi.",
-    "unlocked": false
-  },
-  {
-    "id": "miles-discipulus",
-    "title": "Miles Discipulus",
-    "description": "Miles Discipulus basarimi acildi.",
-    "unlocked": false
-  },
-  {
-    "id": "via-appia-ambulator",
-    "title": "Via Appia Ambulator",
-    "description": "Via Appia Ambulator basarimi acildi.",
-    "unlocked": false
-  },
-  {
-    "id": "capitolium-perfectum",
-    "title": "Capitolium Perfectum",
-    "description": "Capitolium Perfectum basarimi acildi.",
-    "unlocked": false
-  },
-  {
-    "id": "via-prima-perfecta",
-    "title": "Via Prima Perfecta",
-    "description": "Via Prima Perfecta basarimi acildi.",
     "unlocked": false
   },
   {

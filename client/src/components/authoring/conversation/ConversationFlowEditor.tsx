@@ -10,6 +10,8 @@ type ConversationFlowEditorProps = {
 export function ConversationFlowEditor({ data, onChange }: ConversationFlowEditorProps) {
   const [editingNodeId, setEditingNodeId] = useState<string | null>(null);
   const [editingOptionId, setEditingOptionId] = useState<{ nodeId: string; optionId: string } | null>(null);
+  const [testInput, setTestInput] = useState("");
+  const [testResult, setTestResult] = useState<any>(null);
 
   const nodes = data?.nodes ?? [];
   const activeNode = nodes.find((n: any) => n.id === editingNodeId);
@@ -90,6 +92,11 @@ export function ConversationFlowEditor({ data, onChange }: ConversationFlowEdito
           <Field label="İlişkili Aktivite ID" value={data?.relatedActivityId} onChange={(relatedActivityId) => onChange({ relatedActivityId })} />
           <Field label="NPC IDs (Virgülle ayırın)" value={(data?.npcIds ?? []).join(", ")} onChange={(val) => onChange({ npcIds: split(val) })} />
           <Field label="Konum IDs (Virgülle ayırın)" value={(data?.locationIds ?? []).join(", ")} onChange={(val) => onChange({ locationIds: split(val) })} />
+          <label style={{ display: "flex", alignItems: "center", gap: ".5rem" }}><input type="checkbox" checked={Boolean(data?.freeformEnabled)} onChange={(e) => onChange({ freeformEnabled: e.target.checked })} /><span>Freeform aktif</span></label>
+          <Field label="Freeform örnekleri (virgülle)" value={(data?.freeformExamples ?? []).join(", ")} onChange={(val) => onChange({ freeformExamples: split(val) })} />
+          <Field label="İzinli action kind'lar" value={(data?.allowedActionKinds ?? []).join(", ")} onChange={(val) => onChange({ allowedActionKinds: split(val) })} />
+          <Field label="Latince gerektiren action kind'lar" value={(data?.latinRequiredForActionKinds ?? []).join(", ")} onChange={(val) => onChange({ latinRequiredForActionKinds: split(val) })} />
+          <Field label="Fallback rejection" value={data?.fallbackRejectionTr} onChange={(fallbackRejectionTr) => onChange({ fallbackRejectionTr })} />
         </div>
       </VpCard>
 
@@ -235,6 +242,8 @@ export function ConversationFlowEditor({ data, onChange }: ConversationFlowEdito
                       <Field label="Seçenek ID" value={opt.id} onChange={(id) => updateOption(activeNode.id, opt.id, { id })} />
                       <Field label="Seçenek Metni (labelTr)" value={opt.labelTr} onChange={(labelTr) => updateOption(activeNode.id, opt.id, { labelTr })} />
                       <Field label="Açıklama (descriptionTr)" value={opt.descriptionTr} onChange={(descriptionTr) => updateOption(activeNode.id, opt.id, { descriptionTr })} />
+                      <Field label="Eşleşme alias'ları (virgülle)" value={(opt.aliasesTr ?? []).join(", ")} onChange={(val) => updateOption(activeNode.id, opt.id, { aliasesTr: split(val) })} />
+                      <Field label="Freeform match ipuçları" value={(opt.freeformMatchHints ?? []).join(", ")} onChange={(val) => updateOption(activeNode.id, opt.id, { freeformMatchHints: split(val) })} />
                       <label>
                         <span>Eylem Fiili (verb)</span>
                         <select 
@@ -306,6 +315,8 @@ export function ConversationFlowEditor({ data, onChange }: ConversationFlowEdito
           </div>
         </VpCard>
       )}
+
+      {activeNode && data?.freeformEnabled && <VpCard variant="compact"><VpSectionHeader eyebrow="Freeform Test" title="Niyet yorumunu dene" /><div style={{ padding: "1rem", display: "flex", flexDirection: "column", gap: ".7rem" }}><VpInput value={testInput} placeholder="Örn. Magister'e adımı söylüyorum" onChange={(e) => setTestInput(e.target.value)} /><VpButton onClick={async () => { const response = await fetch("/api/authoring/freeform/interpret", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ inputText: testInput, flowId: data.id, nodeId: activeNode.id }) }); setTestResult(await response.json()); }}>Yorumla</VpButton>{testResult && <pre style={{ whiteSpace: "pre-wrap", fontSize: ".75rem", color: "#c9d1d9" }}>{JSON.stringify(testResult, null, 2)}</pre>}</div></VpCard>}
 
       {/* 4. Advanced JSON Block */}
       <JsonBlock data={data} onChange={onChange} />

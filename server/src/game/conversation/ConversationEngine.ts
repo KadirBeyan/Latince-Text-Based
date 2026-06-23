@@ -243,7 +243,8 @@ export class ConversationEngine {
         save: nextSave,
         events,
         dialogueLog,
-        nodeTransitioned: true
+        nodeTransitioned: true,
+        evaluation
       };
     } else {
       // Handle failure behaviors: retry, node, soft-fail, continue
@@ -267,7 +268,8 @@ export class ConversationEngine {
           save: nextSave,
           events,
           dialogueLog,
-          nodeTransitioned: false
+          nodeTransitioned: false,
+          evaluation
         };
       } else {
         // Node / soft-fail / continue transition
@@ -301,7 +303,8 @@ export class ConversationEngine {
           save: nextSave,
           events,
           dialogueLog,
-          nodeTransitioned: true
+          nodeTransitioned: true,
+          evaluation
         };
       }
     }

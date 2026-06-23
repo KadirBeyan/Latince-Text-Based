@@ -60,6 +60,7 @@ type GameContextValue = {
   submitConversationText: (text: string) => Promise<void>;
   exitConversation: () => Promise<void>;
   submitFreeformAction: (text: string) => Promise<void>;
+  submitFreeformLatin: (text: string) => Promise<void>;
 };
 
 const GameContext = createContext<GameContextValue | null>(null);
@@ -654,6 +655,25 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }
   }, [applyGameState, currentSaveId, getLlmConfigOrUndefined, gameState]);
 
+  const submitFreeformLatin = useCallback(async (text: string) => {
+    if (!currentSaveId || !gameState?.pendingFreeformLatin) return;
+    setActionLoading(true);
+    setError(null);
+    try {
+      const state = await submitGameAction({
+        saveId: currentSaveId,
+        action: { type: "FREEFORM_LATIN_SUBMIT", saveId: currentSaveId, pendingFreeformLatinId: gameState.pendingFreeformLatin.id, answer: text },
+        llmConfig: getLlmConfigOrUndefined()
+      });
+      applyGameState(state);
+      setRightPanelTab("feedback");
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [applyGameState, currentSaveId, getLlmConfigOrUndefined, gameState]);
+
   const value = useMemo(() => ({
     currentSaveId,
     gameState,
@@ -700,6 +720,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     submitConversationText,
     exitConversation,
     submitFreeformAction,
+    submitFreeformLatin,
   }), [
     currentSaveId,
     gameState,

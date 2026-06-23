@@ -15,11 +15,10 @@ export class ContentLoader {
 
   load(): LoadedContent {
     const campaignsDir = path.join(this.dataRoot, "campaigns");
-    const campaignFiles = this.listMergedFiles("campaigns");
-    const flatCampaigns = campaignFiles.map((file) => this.readJson<Campaign>(path.join(campaignsDir, file)));
-    const modularCampaigns = this.readModularCampaigns(campaignsDir, new Set());
-    const modularIds = new Set(modularCampaigns.map((campaign) => campaign.id));
-    const campaigns = [...modularCampaigns, ...flatCampaigns.filter((campaign) => !modularIds.has(campaign.id))];
+    const vicusDir = path.join(campaignsDir, "vicus_first_days");
+    const campaigns = fs.existsSync(path.join(vicusDir, "campaign.json"))
+      ? this.readModularCampaigns(campaignsDir, new Set()).filter((campaign) => campaign.id === "vicus_first_days")
+      : [];
 
     const templatesDir = path.join(this.dataRoot, "quest-templates");
     const templateFiles = this.listMergedFiles("quest-templates");
@@ -91,8 +90,7 @@ export class ContentLoader {
   }
 
   getDefaultCampaign(): Campaign | undefined {
-    const vicus = this.content.campaigns.find((c) => c.id === "vicus_first_days");
-    return vicus || this.content.campaigns[0];
+    return this.content.campaigns.find((campaign) => campaign.id === "vicus_first_days");
   }
 
   getConversationFlow(id: ID): ConversationFlow | undefined {
@@ -118,8 +116,7 @@ export class ContentLoader {
   getChapter(campaignId: ID, chapterId: ID): Chapter | undefined {
     this.checkLegacy(campaignId);
     this.checkLegacy(chapterId);
-    const normalizedChapterId = chapterId === "chapter_ludus" ? "prologus" : chapterId;
-    return this.getCampaign(campaignId)?.chapters.find((chapter) => chapter.id === normalizedChapterId);
+    return this.getCampaign(campaignId)?.chapters.find((chapter) => chapter.id === chapterId);
   }
 
   getQuest(campaignId: ID, questId: ID): Quest | undefined {

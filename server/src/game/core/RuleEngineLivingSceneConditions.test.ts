@@ -11,10 +11,10 @@ function createEmptySave(): PlayerSave {
     playerName: "Test",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
-    currentCampaignId: "via-prima",
-    currentChapterId: "prologus",
-    currentQuestId: "quest_prima_dies",
-    currentSceneId: "ludus_intro",
+    currentCampaignId: "vicus_first_days",
+    currentChapterId: "village_first_days",
+    currentQuestId: "vicus_prologue_main",
+    currentSceneId: "vicus_001_home_morning",
     level: 1,
     xp: 0,
     currency: 0,
@@ -48,13 +48,13 @@ test("RuleEngine - checks SCENE_VISIT_COUNT_MIN", () => {
   const livingSceneSystem = new LivingSceneSystem();
   let save = createEmptySave();
 
-  const cond = { type: "SCENE_VISIT_COUNT_MIN" as const, sceneId: "ludus_intro", count: 2 };
+  const cond = { type: "SCENE_VISIT_COUNT_MIN" as const, sceneId: "vicus_001_home_morning", count: 2 };
   assert.strictEqual(engine.checkCondition(save, cond), false);
 
-  save = livingSceneSystem.onSceneEnter({ save, sceneId: "ludus_intro" });
+  save = livingSceneSystem.onSceneEnter({ save, sceneId: "vicus_001_home_morning" });
   assert.strictEqual(engine.checkCondition(save, cond), false);
 
-  save = livingSceneSystem.onSceneEnter({ save, sceneId: "ludus_intro" });
+  save = livingSceneSystem.onSceneEnter({ save, sceneId: "vicus_001_home_morning" });
   assert.strictEqual(engine.checkCondition(save, cond), true);
 });
 
@@ -63,9 +63,9 @@ test("RuleEngine - checks SCENE_LOCAL_FLAG_EQUALS", () => {
   const livingSceneSystem = new LivingSceneSystem();
   let save = createEmptySave();
 
-  const cond = { type: "SCENE_LOCAL_FLAG_EQUALS" as const, sceneId: "ludus_intro", key: "is_sunny", value: true };
+  const cond = { type: "SCENE_LOCAL_FLAG_EQUALS" as const, sceneId: "vicus_001_home_morning", key: "is_sunny", value: true };
   assert.strictEqual(engine.checkCondition(save, cond), false);
 
-  save = livingSceneSystem.setLocalFlag({ save, sceneId: "ludus_intro", key: "is_sunny", value: true });
+  save = livingSceneSystem.setLocalFlag({ save, sceneId: "vicus_001_home_morning", key: "is_sunny", value: true });
   assert.strictEqual(engine.checkCondition(save, cond), true);
 });

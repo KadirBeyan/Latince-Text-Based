@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import type { DialogueEntry, GameAction, GameState, PlayerSave, SessionSummary } from "../types/gameTypes";
 import { ConversationEngine } from "../conversation/ConversationEngine";
 import { FreeformActionInterpreter } from "../freeform/FreeformActionInterpreter";
+import { FreeformWorldResponseService } from "../freeform/FreeformWorldResponseService";
 import { ContentLoader } from "../content/ContentLoader";
 import { SaveRepository, type SaveSummary } from "../save/SaveRepository";
 import { QuestSystem } from "../systems/QuestSystem";
@@ -26,6 +27,7 @@ import { CharacterCreationService } from "../character/CharacterCreationService"
 import { StartingProfileService } from "../character/StartingProfileService";
 import type { CharacterCreationInput } from "../character/CharacterTypes";
 import type { CharacterProfile } from "../types/gameTypes";
+import { WorldPresenceService } from "../world/WorldPresenceService";
 
 export class GameEngine {
   private readonly eventBus: EventBus;
@@ -47,6 +49,8 @@ export class GameEngine {
 
   private readonly conversationEngine: ConversationEngine;
   private readonly freeformInterpreter: FreeformActionInterpreter;
+  private readonly freeformWorldResponse = new FreeformWorldResponseService();
+  private readonly worldPresence = new WorldPresenceService();
 
   constructor(
     private readonly contentLoader: ContentLoader,
@@ -67,19 +71,23 @@ export class GameEngine {
   }
 
   async createNewGame(playerName: string, campaignId?: string, llmConfig?: LlmProviderConfig): Promise<GameState> {
-    const save = this.initializeSave(playerName, campaignId || "vicus_first_days");
+    let save = this.initializeSave(playerName, campaignId || "vicus_first_days");
+    const scene = this.contentLoader.getScene(save.currentCampaignId, save.currentSceneId);
+    if (scene?.locationId) save = await this.worldPresence.onLocationEnter({ save, locationId: scene.locationId, llmConfig });
     const saved = this.saveRepository.create(save);
     return this.gameStateService.buildState(saved);
   }
 
   async createCharacterSave(input: CharacterCreationInput, campaignId?: string): Promise<GameState> {
     const result = this.characterCreationService.createProfile(input);
-    const save = this.initializeSave(result.playerName, campaignId || "vicus_first_days", undefined, {
+    let save = this.initializeSave(result.playerName, campaignId || "vicus_first_days", undefined, {
       profile: result.profile,
       startChapterId: "village_first_days",
       startQuestId: "vicus_prologue_main",
       startSceneId: "vicus_001_home_morning"
     });
+    const scene = this.contentLoader.getScene(save.currentCampaignId, save.currentSceneId);
+    if (scene?.locationId) save = await this.worldPresence.onLocationEnter({ save, locationId: scene.locationId });
     const saved = this.saveRepository.create(save);
     return this.gameStateService.buildState(saved);
   }
@@ -139,7 +147,7 @@ export class GameEngine {
         break;
       }
       case "CONVERSATION_EXIT": {
-        nextSave = { ...save };
+        nextSave = { ...save, pendingFreeformLatin: undefined, latestFreeformResponse: undefined };
         if (nextSave.activeConversation) {
           if (nextSave.activeConversation.selectedOptionId) {
             nextSave.activeConversation = {
@@ -181,6 +189,31 @@ export class GameEngine {
         const nearbyNpcs = scene ? scene.npcIds : [];
         const locationId = scene ? scene.locationId : undefined;
 
+        const authoredConversationOptionMatches = activeConv ? this.matchesAuthoredConversationOption(action.inputText, availableOptions) : false;
+
+        if (!authoredConversationOptionMatches && locationId && /\b(defter|gunluk|günlük|not al|yazıyorum|yaziyorum)\b/i.test(action.inputText)) {
+          const facts = save.eventLog.slice(-5).map((event) => String(event.payload.summaryTr ?? event.payload.messageTr ?? event.type));
+          const journal = this.worldPresence.journal.createJournalEntry({ save, mode: "manual", relatedLocationIds: [locationId], learnedWordIds: save.worldPresence?.discoveredLatinIds.slice(-5), rawFactsTr: facts.length ? facts : ["köyde çevreme dikkatle baktım."] });
+          nextSave = journal.save;
+          nextSave.activeWorldPresence = { ...this.worldPresence.buildView(nextSave, locationId), latestWorldReaction: { narrationTr: journal.entry.bodyTr, generatedBy: "template" } };
+          break;
+        }
+        if (!authoredConversationOptionMatches && locationId && /\b(dinle|dinliyorum|kulak ver|konuşmaları|konusmalari|söylenti|soylenti)\b/i.test(action.inputText)) {
+          const heard = this.worldPresence.rumors.surfaceRumor({ save, locationId }); nextSave = heard.save;
+          nextSave.activeWorldPresence = { ...this.worldPresence.buildView(nextSave, locationId), latestWorldReaction: { narrationTr: heard.narrationTr ?? "Bugün belirgin bir söylenti duymuyorsun.", generatedBy: "template" } };
+          break;
+        }
+        if (!authoredConversationOptionMatches && locationId && /\b(oku|okuyorum|yazıda|yazida|ne yazıyor|ne yaziyor)\b/i.test(action.inputText)) {
+          const candidates = this.worldPresence.readable.getReadableObjects({ save, locationId });
+          const match = this.worldPresence.objects.matchFreeformObject({ inputText: action.inputText, visibleObjects: this.worldPresence.objects.getVisibleObjects({ save, locationId }).filter(o => o.readable) });
+          const readable = candidates.find(o => o.id === match.objectId) ?? candidates.find(o => [o.titleTr, ...(o.aliasesTr ?? [])].some(a => action.inputText.toLocaleLowerCase("tr-TR").includes(a.toLocaleLowerCase("tr-TR")))) ?? (candidates.length === 1 ? candidates[0] : undefined);
+          if (readable) { const result = this.worldPresence.readable.attemptReadObject({ save, objectId: readable.id, playerLatinAttempt: action.inputText }); nextSave = result.save; nextSave.activeWorldPresence = { ...this.worldPresence.buildView(nextSave, locationId), latestWorldReaction: { narrationTr: result.resultTr, generatedBy: "template" } }; break; }
+        }
+        if (!authoredConversationOptionMatches && locationId && /\b(incele|bakıyorum|bakiyorum|kontrol|içine bak|icine bak)\b/i.test(action.inputText)) {
+          const visible = this.worldPresence.objects.getVisibleObjects({ save, locationId }); const match = this.worldPresence.objects.matchFreeformObject({ inputText: action.inputText, visibleObjects: visible });
+          if (match.objectId) { const result = this.worldPresence.objects.inspectObject({ save, locationId, objectId: match.objectId, inputText: action.inputText }); nextSave = result.save; nextSave.activeWorldPresence = { ...this.worldPresence.buildView(nextSave, locationId), latestWorldReaction: { narrationTr: result.resultTr, latinNudge: result.latinDiscoveries[0] ? { wordLatin: result.latinDiscoveries[0].wordOrPhraseLatin, meaningTr: result.latinDiscoveries[0].meaningTr } : undefined, generatedBy: "template" } }; break; }
+        }
+
         const result = await this.freeformInterpreter.interpretFreeformAction({
           inputText: action.inputText,
           context: {
@@ -195,22 +228,42 @@ export class GameEngine {
           llmConfig
         });
 
-        nextSave = { ...save };
+        nextSave = { ...save, latestFreeformResponse: undefined };
+        nextSave = this.eventBus.emit(nextSave, "FREEFORM_ACTION_INTERPRETED", {
+          inputText: action.inputText,
+          actionKind: result.actionKind,
+          matchedOptionId: result.matchedOptionId,
+          confidence: result.confidence,
+          meaningTr: result.meaningTr,
+          requiresLatin: result.requiresLatin
+        });
 
         if (result.ok && result.matchedOptionId) {
           const optionId = result.matchedOptionId;
-          const flowId = activeConv!.flowId;
-          const nodeId = activeConv!.currentNodeId;
+          if (!activeConv || !conversationFlow) throw new Error("Freeform conversation option requires an active conversation.");
+          const flowId = activeConv.flowId;
+          const nodeId = activeConv.currentNodeId;
           const node = conversationFlow.nodes.find((n: any) => n.id === nodeId);
           const option = node.options.find((o: any) => o.id === optionId);
-          
-          if (option.requiresLatin) {
-            if (nextSave.activeConversation) {
-              nextSave.activeConversation = {
-                ...nextSave.activeConversation,
-                selectedOptionId: optionId
-              };
-            }
+          const directLatin = result.actionKind === "direct_latin_utterance" && result.detectedLatinText;
+
+          if (option.requiresLatin && directLatin) {
+            const resolved = await this.conversationEngine.submitConversationText({ save: nextSave, flowId, nodeId, optionId, answer: directLatin, llmConfig });
+            nextSave = resolved.save;
+            nextSave = this.recordFreeformHistory(nextSave, action.inputText, result.meaningTr, nodeId, directLatin, resolved.evaluation?.verdict);
+            nextSave.latestFreeformResponse = this.freeformWorldResponse.buildFreeformWorldResponse({ interpretation: result, latinEvaluation: resolved.evaluation, context: { sceneId: save.currentSceneId, flowId, nodeId, locationId, npcIds: nearbyNpcs, playerProfile: save.characterProfile } });
+            nextSave = this.eventBus.emit(nextSave, "FREEFORM_LATIN_EVALUATED", { answer: directLatin, verdict: resolved.evaluation?.verdict, acceptedAsCorrect: resolved.evaluation?.acceptedAsCorrect, feedbackTr: resolved.evaluation?.feedbackTr });
+          } else if (option.requiresLatin || result.requiresLatin) {
+            const pending = {
+              id: randomUUID(), originalInput: action.inputText, actionKind: result.actionKind,
+              targetNpcId: result.targetNpcId || node.speakerNpcId, matchedOptionId: optionId,
+              targetMeaningTr: result.targetMeaningTr || option.targetMeaningTr || option.labelTr,
+              suggestedLatinPromptTr: result.suggestedLatinPromptTr || "Bunu Latince ifade etmeye çalış.",
+              createdAt: new Date().toISOString(), attempts: 0, hintLevel: "nudge"
+            } as const;
+            nextSave.pendingFreeformLatin = pending;
+            nextSave = this.recordFreeformHistory(nextSave, action.inputText, result.meaningTr, nodeId);
+            nextSave = this.eventBus.emit(nextSave, "FREEFORM_LATIN_REQUESTED", { targetMeaningTr: pending.targetMeaningTr, targetNpcId: pending.targetNpcId, matchedOptionId: optionId });
           } else {
             const optionResult = this.conversationEngine.selectConversationOption({
               save: nextSave,
@@ -219,9 +272,12 @@ export class GameEngine {
               optionId
             });
             nextSave = optionResult.save;
+            nextSave = this.recordFreeformHistory(nextSave, action.inputText, result.meaningTr, nodeId);
+            nextSave.latestFreeformResponse = this.freeformWorldResponse.buildFreeformWorldResponse({ interpretation: result, context: { sceneId: save.currentSceneId, flowId, nodeId, locationId, npcIds: nearbyNpcs, playerProfile: save.characterProfile } });
           }
         } else if (result.ok && result.matchedIntentId) {
           nextSave = await this.sceneSystem.resolveIntentSelect(nextSave, result.matchedIntentId, save.currentSceneId);
+          nextSave.latestFreeformResponse = this.freeformWorldResponse.buildFreeformWorldResponse({ interpretation: result, context: { sceneId: save.currentSceneId, locationId, npcIds: nearbyNpcs, playerProfile: save.characterProfile } });
         } else {
           const rejectionMessage = result.rejection?.messageTr || "Bunu şu an burada yapamazsın.";
           const entry: DialogueEntry = {
@@ -232,7 +288,38 @@ export class GameEngine {
             timestamp: new Date().toISOString()
           };
           nextSave.dialogueLog = [...nextSave.dialogueLog, entry];
+          nextSave.latestFreeformResponse = this.freeformWorldResponse.buildFreeformWorldResponse({ interpretation: result, context: { sceneId: save.currentSceneId, flowId: activeConv?.flowId, nodeId: activeConv?.currentNodeId, locationId, npcIds: nearbyNpcs, playerProfile: save.characterProfile } });
+          nextSave = this.eventBus.emit(nextSave, "FREEFORM_ACTION_REJECTED", { inputText: action.inputText, reasonCode: result.rejection?.reasonCode, messageTr: rejectionMessage, suggestedOptionIds: result.rejection?.suggestedOptionIds ?? [] });
         }
+        break;
+      }
+      case "FREEFORM_LATIN_SUBMIT": {
+        const pending = save.pendingFreeformLatin;
+        if (!pending || pending.id !== action.pendingFreeformLatinId) throw new Error("Bekleyen Latince ifade isteği bulunamadı.");
+        const activeConv = save.activeConversation;
+        if (!activeConv || !pending.matchedOptionId) throw new Error("Bekleyen Latince ifade bir konuşma seçeneğine bağlı değil.");
+        const resolved = await this.conversationEngine.submitConversationText({
+          save,
+          flowId: activeConv.flowId,
+          nodeId: activeConv.currentNodeId,
+          optionId: pending.matchedOptionId,
+          answer: action.answer,
+          llmConfig
+        });
+        nextSave = resolved.save;
+        const accepted = Boolean(resolved.evaluation?.acceptedAsCorrect);
+        nextSave.pendingFreeformLatin = accepted ? undefined : {
+          ...pending,
+          attempts: pending.attempts + 1,
+          hintLevel: pending.attempts >= 2 ? "example" : pending.attempts === 1 ? "structure" : "vocabulary"
+        };
+        nextSave = this.recordFreeformHistory(nextSave, pending.originalInput, pending.targetMeaningTr, activeConv.currentNodeId, action.answer, resolved.evaluation?.verdict);
+        nextSave.latestFreeformResponse = this.freeformWorldResponse.buildFreeformWorldResponse({
+          interpretation: { ok: true, interpretationSource: "heuristic", actionKind: pending.actionKind, matchedOptionId: pending.matchedOptionId, confidence: 1, targetNpcId: pending.targetNpcId, meaningTr: pending.targetMeaningTr, requiresLatin: true, targetMeaningTr: pending.targetMeaningTr, detectedLatinText: action.answer, canResolveImmediately: false },
+          latinEvaluation: resolved.evaluation,
+          context: { sceneId: save.currentSceneId, flowId: activeConv.flowId, nodeId: activeConv.currentNodeId, npcIds: pending.targetNpcId ? [pending.targetNpcId] : [], playerProfile: save.characterProfile }
+        });
+        nextSave = this.eventBus.emit(nextSave, "FREEFORM_LATIN_EVALUATED", { answer: action.answer, verdict: resolved.evaluation?.verdict, acceptedAsCorrect: accepted, feedbackTr: resolved.evaluation?.feedbackTr });
         break;
       }
       case "REQUEST_HINT": {
@@ -263,6 +350,8 @@ export class GameEngine {
         break;
     }
 
+    const finalScene = this.contentLoader.getScene(nextSave.currentCampaignId, nextSave.currentSceneId);
+    if (finalScene?.locationId) nextSave.activeWorldPresence = this.worldPresence.buildView(nextSave, finalScene.locationId);
     const updated = this.saveRepository.update(nextSave);
     return this.gameStateService.buildState(updated);
   }
@@ -386,7 +475,7 @@ export class GameEngine {
       characterProfile.skillProgress = { lingua: 0, memoria: 0, observatio: 0, urbanitas: 0, auctoritas: 0, mercatura: 0, disciplina: 0, labor: 0, scriptura: 0, pietas: 0 };
     }
     const baseSave: PlayerSave = {
-      schemaVersion: 6,
+      schemaVersion: 7,
       id: saveId,
       playerName,
       createdAt: now,
@@ -433,7 +522,8 @@ export class GameEngine {
           dayFlags: {}
         },
         routineHistory: []
-      }
+      },
+      worldPresence: { visitedLocations: {}, discoveredLatinIds: [], seenRumorIds: [], journalEntries: [], npcMoodOverrides: {}, worldFlags: {} }
     };
 
     baseSave.skills = this.startingProfileService.toPlayerSkills(characterProfile);
@@ -448,6 +538,47 @@ export class GameEngine {
       throw new Error(`Save ${saveId} was not found.`);
     }
     return save;
+  }
+
+  private recordFreeformHistory(save: PlayerSave, inputText: string, interpretationSummaryTr: string, nodeId: string, latinAnswer?: string, verdict?: string): PlayerSave {
+    if (!save.activeConversation) return save;
+    const history = [...(save.activeConversation.freeformHistory ?? []), {
+      inputText,
+      interpretationSummaryTr,
+      latinAnswer,
+      verdict,
+      nodeId,
+      at: new Date().toISOString()
+    }].slice(-10);
+    return { ...save, activeConversation: { ...save.activeConversation, freeformHistory: history } };
+  }
+
+  private matchesAuthoredConversationOption(inputText: string, availableOptions: any[]): boolean {
+    const normalize = (value: string) => value
+      .toLocaleLowerCase("tr-TR")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9çğıöşü\s]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const clean = normalize(inputText);
+    if (!clean) return false;
+    return availableOptions.some((option) => {
+      const aliases = [
+        option.labelTr,
+        option.descriptionTr,
+        option.playerIntentTr,
+        ...(option.aliasesTr ?? []),
+        ...(option.freeformMatchHints ?? [])
+      ].filter((item): item is string => Boolean(item));
+      return aliases.some((alias) => {
+        const normalizedAlias = normalize(alias);
+        const aliasTokens = normalizedAlias.split(" ").filter((token) => token.length > 2);
+        const overlap = aliasTokens.filter((token) => clean.includes(token)).length;
+        const score = clean === normalizedAlias ? 1 : clean.includes(normalizedAlias) || normalizedAlias.includes(clean) ? 0.92 : aliasTokens.length ? overlap / aliasTokens.length : 0;
+        return score >= 0.5;
+      });
+    });
   }
 
   private resolveScene(save: PlayerSave) {

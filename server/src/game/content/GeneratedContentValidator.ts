@@ -55,7 +55,16 @@ export class GeneratedContentValidator {
     const vocabularyIds = new Set(content.vocabulary.map(i => i.id));
     
     // Extracted locations
-    const locationIds = new Set<ID>(["ludus_room", "forum", "domus"]);
+    const locationIds = new Set<ID>([
+      "home_hut",
+      "village_path",
+      "field_edge",
+      "village_market",
+      "teacher_corner",
+      "veteran_bench",
+      "scribe_table",
+      "shrine"
+    ]);
     for (const campaign of content.campaigns) {
       for (const chapter of campaign.chapters) {
         for (const q of chapter.quests) {

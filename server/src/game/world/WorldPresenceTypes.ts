@@ -1,0 +1,25 @@
+import type { CharacterOrigin, CharacterTrait, Condition, Effect, FreeformActionKind, LifePathId, NpcMood, RpgSkillId, VillageMood, VillageTimeOfDay } from "../types/gameTypes";
+export type { NpcMood, VillageMood };
+export type LocationPresenceProfile = { locationId: string; nameTr?: string; baseDescriptionTr: string; baseDescriptionLatin?: string; moodByTime?: Partial<Record<VillageTimeOfDay, VillageMood>>; defaultMood: VillageMood; ambientDetailIds: string[]; ambientObjectIds: string[]; readableObjectIds: string[]; revisitDescriptionTemplates: { firstVisitTr: string; repeatVisitTr: string; afterActivityTr?: Record<string, string>; afterFlagTr?: Record<string, string> }; latinFocus?: { targetWordIds?: string[]; targetGrammarIds?: string[]; difficulty: "beginner" | "easy" | "medium" }; allowedFreeformActionKinds: FreeformActionKind[] };
+export type AmbientObject = { id: string; locationId: string; titleTr: string; descriptionTr: string; visibleConditions?: Condition[]; inspectable: boolean; readable: boolean; portable?: boolean; objectTags: string[]; inspectResultTemplatesTr: string[]; latinDiscoveryIds?: string[]; relatedNpcIds?: string[]; relatedActivityIds?: string[]; aliasesTr?: string[] };
+export type ReadableObject = { id: string; locationId: string; titleTr: string; surfaceTextLatin: string; glossTr?: string; difficulty: "beginner" | "easy" | "medium"; requiredSkill?: { skillId: RpgSkillId; minValue: number }; wordFocus: string[]; grammarFocus?: string[]; successResultTr: string; partialResultTr: string; failureResultTr: string; effectsOnRead?: Effect[]; aliasesTr?: string[] };
+export type VillageRumor = { id: string; titleTr: string; bodyTr: string; sourceNpcId?: string; locationId?: string; timeWindows?: VillageTimeOfDay[]; conditions?: Condition[]; expiresAfterDay?: number; relatedPathId?: LifePathId; relatedActivityId?: string; relatedLocationId?: string; priority: number; once: boolean };
+export type NpcMoodRule = { id: string; conditions: Condition[]; mood: NpcMood; priority: number; visibleHintTr: string; timeWindows?: VillageTimeOfDay[]; requiredWorldFlags?: Record<string, string | number | boolean> };
+export type NpcMoodProfile = { npcId: string; defaultMood: NpcMood; defaultHintTr?: string; moodRules: NpcMoodRule[]; voiceProfileTr: string; voiceProfileLatin: string };
+export type LatinDiscovery = { id: string; wordOrPhraseLatin: string; meaningTr: string; sourceObjectId?: string; sourceNpcId?: string; sourceLocationId?: string; grammarNoteTr?: string; exampleLatin?: string; exampleTr?: string; difficulty: "beginner" | "easy" | "medium"; tags: string[] };
+export type JournalTemplate = { id: string; titleTr: string; bodyTemplateTr: string; tags: string[] };
+export type WorldReactionTemplate = { eventType: string; templatesTr: string[] };
+export type WorldPresenceContent = { locations: LocationPresenceProfile[]; ambientObjects: AmbientObject[]; readableObjects: ReadableObject[]; rumors: VillageRumor[]; npcMoodProfiles: NpcMoodProfile[]; journalTemplates: JournalTemplate[]; latinDiscoveries: LatinDiscovery[]; worldReactionTemplates: WorldReactionTemplate[] };
+export type WorldContextPack = {
+  mode: "location_enter" | "conversation_start" | "freeform_reaction" | "object_inspect" | "readable_attempt" | "rumor_surface" | "journal_entry" | "day_summary";
+  player: { name: string; origin: CharacterOrigin; traits: CharacterTrait[]; skills: Record<RpgSkillId, number>; currentLifePhase: string };
+  village: { dayNumber: number; timeOfDay: VillageTimeOfDay; mood: VillageMood; recentActivities: string[]; recentEvents: string[] };
+  location?: { id: string; nameTr: string; mood: VillageMood; visitCount: number; baseDescriptionTr: string; visibleObjectIds: string[]; readableObjectIds: string[]; ambientDetailsTr: string[]; memoryNotesTr: string[] };
+  npcsPresent: { id: string; nameTr: string; mood: NpcMood; relationshipSummaryTr?: string; memorySnippetsTr: string[]; voiceProfileTr: string; voiceProfileLatin: string }[];
+  rumors: { id: string; bodyTr: string; sourceNpcId?: string }[];
+  latinFocus: { knownWords: string[]; targetWords: string[]; recentMistakes: string[]; grammarFocus: string[]; maxLevel: "beginner" | "easy" | "medium" };
+  availableActions: { id: string; labelTr: string; actionKind: FreeformActionKind; requiresLatin: boolean }[];
+  hardConstraints: { allowedNpcIds: string[]; allowedObjectIds: string[]; allowedLocationIds: string[]; forbiddenClaimsTr: string[] };
+};
+export type DynamicWorldNarration = { narrationTr: string; npcLines?: { npcId: string; latin?: string; tr?: string }[]; ambientLinesTr?: string[]; suggestedPlayerThoughtTr?: string; latinNudge?: { wordLatin: string; meaningTr: string; noteTr?: string }; generatedBy: "llm" | "template" };
+export type JournalEntryDraft = { titleTr: string; bodyTr: string };

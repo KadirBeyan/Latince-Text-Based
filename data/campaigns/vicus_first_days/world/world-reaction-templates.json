@@ -1,0 +1,11 @@
+[
+ {"eventType":"latin_success","templatesTr":["Kısa cümlen anlaşılıyor; Latince köyün içinde gerçek bir işe dönüşüyor."]},
+ {"eventType":"latin_near_miss","templatesTr":["Sözün tam yerine oturmuyor, fakat ana kelime niyetini taşıyor."]},
+ {"eventType":"latin_failure","templatesTr":["Kelimeler dağılsa da denemen çevrendekilerin dikkatinden kaçmıyor."]},
+ {"eventType":"object_inspected","templatesTr":["Yakından bakınca sıradan görünen şey küçük bir ayrıntı açığa çıkarıyor."]},
+ {"eventType":"rumor_heard","templatesTr":["Duyduğun söz köyün görünmeyen hareketini kısa süreliğine açığa çıkarıyor."]},
+ {"eventType":"journal_written","templatesTr":["Yaşadıkların defterde kısa ama kalıcı bir iz bırakıyor."]},
+ {"eventType":"location_revisited","templatesTr":["Mekân aynı kalmış gibi görünse de sen artık ona ilk gelişindeki gözlerle bakmıyorsun."]},
+ {"eventType":"npc_helped","templatesTr":["Yardımın küçük bir rahatlama olarak yüzüne yansıyor."]},
+ {"eventType":"npc_refused","templatesTr":["Reddin havada kısa bir sessizlik bırakıyor."]}
+]

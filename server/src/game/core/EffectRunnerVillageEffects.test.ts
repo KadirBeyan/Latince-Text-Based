@@ -12,7 +12,7 @@ function createMockSave(): PlayerSave {
     playerName: "Test",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
-    currentCampaignId: "via-prima",
+    currentCampaignId: "vicus_first_days",
     currentChapterId: "vicus_prologue",
     currentQuestId: "vicus_prologue_main",
     currentSceneId: "vicus_001_home_morning",
@@ -109,7 +109,7 @@ test("EffectRunner - applies village effects", () => {
   save = runner.applyEffects(
     save,
     [{ type: "SET_VILLAGE_DAY_FLAG", key: "helped_mother", value: true }],
-    { campaignId: "via-prima", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
+    { campaignId: "vicus_first_days", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
   );
   assert.strictEqual(save.villageLife?.dayState.dayFlags.helped_mother, true);
 
@@ -125,7 +125,7 @@ test("EffectRunner - applies village effects", () => {
         summaryTr: "Ekmek tasima isi bitti."
       }
     }],
-    { campaignId: "via-prima", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
+    { campaignId: "vicus_first_days", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
   );
   assert.strictEqual(save.villageLife?.dayState.actionsUsedThisPeriod, 1);
   assert.ok(save.villageLife?.dayState.completedDailyActivityIds.includes("help_mater_bread"));
@@ -135,7 +135,7 @@ test("EffectRunner - applies village effects", () => {
   save = runner.applyEffects(
     save,
     [{ type: "ADVANCE_VILLAGE_TIME" }],
-    { campaignId: "via-prima", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
+    { campaignId: "vicus_first_days", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
   );
   assert.strictEqual(save.villageLife?.dayState.timeOfDay, "meridies");
 
@@ -143,7 +143,7 @@ test("EffectRunner - applies village effects", () => {
   save = runner.applyEffects(
     save,
     [{ type: "START_NEW_VILLAGE_DAY" }],
-    { campaignId: "via-prima", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
+    { campaignId: "vicus_first_days", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
   );
   assert.strictEqual(save.villageLife?.dayState.dayNumber, 2);
   assert.strictEqual(save.villageLife?.dayState.timeOfDay, "mane");
@@ -167,7 +167,7 @@ test("EffectRunner - applies ADD_RPG_SKILL_PROGRESS & handles level ups", () => 
         reasonTr: "Harika Latin pratik!"
       }
     }],
-    { campaignId: "via-prima", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
+    { campaignId: "vicus_first_days", chapterId: "vicus_prologue", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
   );
 
   assert.strictEqual(save.characterProfile?.skills.lingua, 2);

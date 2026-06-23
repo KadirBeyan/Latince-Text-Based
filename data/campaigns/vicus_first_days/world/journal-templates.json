@@ -1,0 +1,11 @@
+[
+ {"id":"first_latin_greeting","titleTr":"İlk Latince Selam","bodyTemplateTr":"Bugün birine Latince selam verdim. Kısa bir söz olsa da köyün sesi içinde bana ait bir yer açtı.","tags":["latin","greeting"]},
+ {"id":"helped_mater","titleTr":"Mater'e Yardım","bodyTemplateTr":"Mater'in işine el verdim. Evdeki küçük görevlerin de insanı bir yere bağladığını hissettim.","tags":["family"]},
+ {"id":"inspected_object","titleTr":"Yakından Bakınca","bodyTemplateTr":"Bugün çevremdeki sıradan bir şeye dikkatle baktım; daha önce görmediğim bir ayrıntı ortaya çıktı.","tags":["object"]},
+ {"id":"read_first_word","titleTr":"İlk Okunan Kelime","bodyTemplateTr":"Bir Latin kelimesi bugün gözümde yalnızca işaret olmaktan çıktı.","tags":["latin","reading"]},
+ {"id":"spoke_magister","titleTr":"Magister ile Konuşma","bodyTemplateTr":"Magister'in yanında kelimelerimi daha dikkatli seçtim. Sormanın da öğrenmenin bir parçası olduğunu gördüm.","tags":["npc","learning"]},
+ {"id":"heard_rumor","titleTr":"Köy Sözü","bodyTemplateTr":"Köyde duyduğum bir söz, önümde henüz seçmediğim yollar olduğunu hatırlattı.","tags":["rumor"]},
+ {"id":"latin_failed","titleTr":"Zorlanan Söz","bodyTemplateTr":"Latince sözüm istediğim gibi çıkmadı. Yine de susmak yerine denedim.","tags":["latin","failure"]},
+ {"id":"latin_success","titleTr":"Anlaşılan Söz","bodyTemplateTr":"Kısa Latince sözüm anlaşıldı. Kelimeler ilk kez gerçekten bana aitmiş gibi geldi.","tags":["latin","success"]},
+ {"id":"day_summary","titleTr":"Günün Sonu","bodyTemplateTr":"Günün sesleri dinerken konuşmaları, gördüğüm işaretleri ve öğrendiğim kelimeleri bir araya getiriyorum.","tags":["summary"]}
+]

@@ -13,10 +13,10 @@ function createEmptySave(): PlayerSave {
     playerName: "Test",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
-    currentCampaignId: "via-prima",
-    currentChapterId: "prologus",
-    currentQuestId: "quest_prima_dies",
-    currentSceneId: "ludus_intro",
+    currentCampaignId: "vicus_first_days",
+    currentChapterId: "village_first_days",
+    currentQuestId: "vicus_prologue_main",
+    currentSceneId: "vicus_001_home_morning",
     level: 1,
     xp: 0,
     currency: 0,
@@ -56,13 +56,13 @@ test("EffectRunner - applies SET_SCENE_LOCAL_FLAG and ADD_SCENE_CLUE", () => {
   save = runner.applyEffects(
     save,
     [
-      { type: "SET_SCENE_LOCAL_FLAG", sceneId: "ludus_intro", key: "dirty", value: true },
-      { type: "ADD_SCENE_CLUE", sceneId: "ludus_intro", clueId: "blood_stain" }
+      { type: "SET_SCENE_LOCAL_FLAG", sceneId: "vicus_001_home_morning", key: "dirty", value: true },
+      { type: "ADD_SCENE_CLUE", sceneId: "vicus_001_home_morning", clueId: "blood_stain" }
     ],
-    { campaignId: "via-prima", chapterId: "prologus", questId: "quest_prima_dies", sceneId: "ludus_intro" }
+    { campaignId: "vicus_first_days", chapterId: "village_first_days", questId: "vicus_prologue_main", sceneId: "vicus_001_home_morning" }
   );
 
-  assert.strictEqual(livingSceneSystem.hasSceneLocalFlag(save, "ludus_intro", "dirty", true), true);
-  const state = livingSceneSystem.getOrCreateSceneState(save, "ludus_intro");
+  assert.strictEqual(livingSceneSystem.hasSceneLocalFlag(save, "vicus_001_home_morning", "dirty", true), true);
+  const state = livingSceneSystem.getOrCreateSceneState(save, "vicus_001_home_morning");
   assert.ok(state.discoveredClueIds.includes("blood_stain"));
 });

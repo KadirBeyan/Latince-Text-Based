@@ -10,11 +10,13 @@ import { LivingSceneSystem } from "../systems/LivingSceneSystem";
 import { NpcMemoryReactionSystem } from "../systems/NpcMemoryReactionSystem";
 import { AmbientActionTemplates } from "../content/AmbientActionTemplates";
 import { VillageLifeSystem } from "../systems/VillageLifeSystem";
+import { WorldPresenceService } from "../world/WorldPresenceService";
 
 export class GameStateService {
   private readonly reviewSystem = new ReviewSystem();
   private readonly masterySystem = new MasterySystem();
   private readonly campaignProgressSystem = new CampaignProgressSystem();
+  private readonly worldPresence = new WorldPresenceService();
   constructor(
     private readonly contentLoader: ContentLoader,
     private readonly ruleEngine: RuleEngine,
@@ -122,6 +124,7 @@ export class GameStateService {
     const chapterProgress = this.campaignProgressSystem.getCampaignProgress(save, currentCampaign);
     const unlockedChapters = Object.values(chapterProgress).filter((progress) => progress.unlocked).map((progress) => progress.chapterId);
 
+    const activeWorldPresence = currentScene.locationId ? (save.activeWorldPresence ?? this.worldPresence.buildView(save, currentScene.locationId)) : undefined;
     return {
       saveId: save.id,
       player: { name: save.playerName, level: save.level, xp: save.xp, currency: save.currency, streak: save.streak, characterProfile: save.characterProfile },
@@ -164,6 +167,9 @@ export class GameStateService {
           options: node.options
         };
       })(),
+      pendingFreeformLatin: save.pendingFreeformLatin,
+      latestFreeformResponse: save.latestFreeformResponse,
+      activeWorldPresence,
       livingScene,
       villageLife: (() => {
         const system = new VillageLifeSystem();

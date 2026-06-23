@@ -15,7 +15,7 @@ test("ContentValidator - validates invalid revisitVariants scene references", ()
         title: "Via Prima",
         chapters: [
           {
-            id: "prologus",
+            id: "village_first_days",
             title: "Prologus",
             quests: [
               {

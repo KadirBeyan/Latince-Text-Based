@@ -2,7 +2,10 @@ import { useGameStore } from "../../../stores/gameStore";
 import { ConversationNodeView } from "./ConversationNodeView";
 import { ConversationOptionList } from "./ConversationOptionList";
 import { ConversationLatinComposer } from "./ConversationLatinComposer";
-import { FreeformActionBox } from "./FreeformActionBox";
+import { FreeformCommandLine } from "../freeform/FreeformCommandLine";
+import { PendingLatinExpressionPanel } from "../freeform/PendingLatinExpressionPanel";
+import { FreeformWorldResponseCard } from "../freeform/FreeformWorldResponseCard";
+import { FreeformClarificationPanel } from "../freeform/FreeformClarificationPanel";
 
 export function ConversationStage() {
   const {
@@ -11,6 +14,7 @@ export function ConversationStage() {
     submitConversationText,
     exitConversation,
     submitFreeformAction,
+    submitFreeformLatin,
     actionLoading
   } = useGameStore();
 
@@ -82,7 +86,12 @@ export function ConversationStage() {
 
       <ConversationNodeView node={currentNode} />
 
-      {selectedOption ? (
+      {gameState?.latestFreeformResponse && <FreeformWorldResponseCard response={gameState.latestFreeformResponse} />}
+      {gameState?.latestFreeformResponse && <FreeformClarificationPanel response={gameState.latestFreeformResponse} options={options} onSelect={selectConversationOption} />}
+
+      {gameState?.pendingFreeformLatin ? (
+        <PendingLatinExpressionPanel pending={gameState.pendingFreeformLatin} onSubmit={submitFreeformLatin} disabled={actionLoading} />
+      ) : selectedOption ? (
         <ConversationLatinComposer
           option={selectedOption}
           onSubmit={submitConversationText}
@@ -96,10 +105,7 @@ export function ConversationStage() {
             disabled={actionLoading}
             onOptionSelect={selectConversationOption}
           />
-          <FreeformActionBox
-            onSubmit={submitFreeformAction}
-            actionLoading={actionLoading}
-          />
+          <FreeformCommandLine onSubmit={submitFreeformAction} disabled={actionLoading} examples={currentNode.freeformExamples ?? ["Mater’e yardım edeceğimi söylüyorum.", "Sepeti inceliyorum.", "Doğrudan Latince konuşuyorum."]} />
         </>
       )}
     </section>

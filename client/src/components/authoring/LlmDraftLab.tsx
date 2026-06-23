@@ -10,7 +10,7 @@ export function LlmDraftLab() {
   const { generateLlmDraft, llmDraftResult, applyLlmDraftToEditor, loading } = useAuthoringStore();
   const [kind, setKind] = useState<LlmDraftKind>("scene");
   const [promptTr, setPromptTr] = useState(templates[0]);
-  const [chapterId, setChapterId] = useState("prologus");
+  const [chapterId, setChapterId] = useState("village_first_days");
   const [locationId, setLocationId] = useState("ludus");
   const [grammarIds, setGrammarIds] = useState("greetings-basic");
   const [vocabularyIds, setVocabularyIds] = useState("vocab-salve");

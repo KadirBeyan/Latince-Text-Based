@@ -16,6 +16,10 @@ The player explores a modular Roman world, talks to NPCs, answers Latin challeng
 - Local desktop packaging with Tauri 2, AppData-aware saves, backups, cache tools, and content overrides.
 - QA tooling for type checks, tests, content validation, save integrity, smoke tests, Playwright flows, and beta reports.
 
+## Stage 22: Freeform Latin Roleplay
+
+Vicus conversations now accept Turkish action descriptions and direct Latin utterances. Speech intent opens an in-world Latin expression prompt, semantic evaluation supports retrying with progressive hints, and NPC/world feedback remains separate from deterministic effects. See [docs/freeform-latin-roleplay-core.md](docs/freeform-latin-roleplay-core.md).
+
 ## Tech Stack
 
 - **Frontend:** React 18, Vite, TypeScript, React Flow, Phosphor Icons

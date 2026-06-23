@@ -6,6 +6,12 @@ import { ContentValidator } from "./ContentValidator";
 test("Vicus First Days content loads and validates", () => {
   const loader = new ContentLoader();
   const content = loader.load();
+  assert.deepStrictEqual(content.campaigns.map((campaign) => campaign.id), ["vicus_first_days"]);
+  assert.strictEqual(loader.getDefaultCampaign()?.id, "vicus_first_days");
+  assert.throws(
+    () => loader.getCampaign("via-prima"),
+    /Legacy campaign reference removed; use vicus_first_days\./
+  );
   const campaign = content.campaigns.find((candidate) => candidate.id === "vicus_first_days");
   assert.ok(campaign, "Should find campaign vicus_first_days");
   assert.strictEqual(campaign.chapters.length, 1);

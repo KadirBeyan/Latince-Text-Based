@@ -8,6 +8,11 @@
   "locationIds": [
     "village_market"
   ],
+  "freeformEnabled": true,
+  "freeformExamples": ["Ekmeğin fiyatını soruyorum.", "Tezgâhtaki malları inceliyorum.", "Daha düşük fiyat için pazarlık ediyorum."],
+  "allowedActionKinds": ["speak_to_npc", "ask_npc", "inspect_object", "bargain", "persuade", "thank", "refuse", "direct_latin_utterance"],
+  "latinRequiredForActionKinds": ["speak_to_npc", "ask_npc", "bargain", "persuade", "thank", "refuse"],
+  "fallbackRejectionTr": "Pazar tezgâhında Mercator'e soru sorabilir, mallara bakabilir veya pazarlık etmeyi deneyebilirsin.",
   "nodes": [
     {
       "id": "start",
@@ -75,10 +80,14 @@
       "options": [
         {
           "id": "opt_leave_merchant",
-          "labelTr": "Pazardan ayrıl",
-          "verb": "leave",
-          "requiresLatin": false,
-          "nextNodeId": "end"
+          "labelTr": "Mercator'e veda et",
+          "verb": "speak",
+          "requiresLatin": true,
+          "playerIntentTr": "Mercator'e veda et",
+          "targetMeaningTr": "Hoşça kal, tüccar.",
+          "canonicalAnswers": ["vale mercator", "vale"],
+          "successNextNodeId": "end",
+          "failureBehavior": "retry"
         }
       ]
     },

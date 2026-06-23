@@ -1,4 +1,4 @@
-import type { Condition, Effect, DialogueReaction, ID } from "./gameTypes";
+import type { Condition, DialogueEvaluationResult, Effect, DialogueReaction, FreeformActionKind, FreeformHistoryEntry } from "./gameTypes";
 
 export type ConversationFlow = {
   id: string;
@@ -11,6 +11,12 @@ export type ConversationFlow = {
   nodes: ConversationNode[];
   completionEffects?: Effect[];
   completionNextSceneId?: string;
+  freeformEnabled?: boolean;
+  freeformExamples?: string[];
+  allowedActionKinds?: FreeformActionKind[];
+  disallowedActionMessages?: Partial<Record<FreeformActionKind, string>>;
+  latinRequiredForActionKinds?: FreeformActionKind[];
+  fallbackRejectionTr?: string;
 };
 
 export type ConversationNode = {
@@ -26,6 +32,11 @@ export type ConversationNode = {
   conditions?: Condition[];
   isEnding?: boolean;
   endingSummaryTr?: string;
+  freeformEnabled?: boolean;
+  freeformExamples?: string[];
+  allowedActionKinds?: FreeformActionKind[];
+  latinRequiredForActionKinds?: FreeformActionKind[];
+  fallbackRejectionTr?: string;
 };
 
 export type ConversationOption = {
@@ -63,6 +74,9 @@ export type ConversationOption = {
   };
   resolutionTr?: string;
   resolutionLatin?: string;
+  aliasesTr?: string[];
+  freeformMatchHints?: string[];
+  requiresLatinReasonTr?: string;
 };
 
 export type ConversationRuntimeState = {
@@ -73,6 +87,7 @@ export type ConversationRuntimeState = {
   selectedOptionId?: string;
   attempts: Record<string, number>;
   completed: boolean;
+  freeformHistory?: FreeformHistoryEntry[];
 };
 
 export type ActiveConversationView = {
@@ -87,4 +102,5 @@ export type ConversationActionResult = {
   events: any[]; // GameEvent placeholder
   dialogueLog: any[]; // DialogueEntry placeholder
   nodeTransitioned: boolean;
+  evaluation?: DialogueEvaluationResult;
 };

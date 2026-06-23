@@ -11,7 +11,7 @@ const MOCK_SAVE: PlayerSave = {
   playerName: "Marcus",
   createdAt: "2026-06-20T12:00:00Z",
   updatedAt: "2026-06-20T12:00:00Z",
-  currentCampaignId: "via-prima",
+  currentCampaignId: "vicus_first_days",
   currentChapterId: "caput-1",
   currentQuestId: "quest-1",
   currentSceneId: "scene-1",

@@ -57,7 +57,7 @@ export function ConversationLatinComposer({ option, onSubmit, onCancel, actionLo
         <h4 style={{ margin: "0.25rem 0", color: "#ffffff" }}>{option.playerIntentTr || option.labelTr}</h4>
         {option.targetMeaningTr && (
           <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.85rem", fontStyle: "italic", color: "var(--text-muted, #8e8e93)" }}>
-            İpucu: Latince "{option.targetMeaningTr}" demelisin.
+            Hedef anlam: “{option.targetMeaningTr}”
           </p>
         )}
       </div>
@@ -107,7 +107,7 @@ export function ConversationLatinComposer({ option, onSubmit, onCancel, actionLo
           className="parchment-input"
           value={text}
           disabled={actionLoading}
-          placeholder="Latince cümleni yaz..."
+          placeholder="Bunu Latince ifade etmeye çalış..."
           onChange={(event) => setText(event.target.value)}
           onKeyDown={(event) => {
             if (event.key === "Enter" && !event.shiftKey) {
