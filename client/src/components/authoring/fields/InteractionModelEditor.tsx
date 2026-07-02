@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectField, TextField } from "./editorUtils";
+import { SelectField, TextField, type SelectOption } from "./editorUtils";
 import { InteractionIntentEditor } from "./InteractionIntentEditor";
 import type { SceneInteractionModel } from "../../../types/gameTypes";
 
@@ -9,6 +9,9 @@ interface InteractionModelEditorProps {
   sceneIds: string[];
   npcIds: string[];
   locationIds: string[];
+  sceneOptions?: SelectOption[];
+  npcOptions?: SelectOption[];
+  locationOptions?: SelectOption[];
 }
 
 export function InteractionModelEditor({
@@ -16,7 +19,10 @@ export function InteractionModelEditor({
   onChange,
   sceneIds,
   npcIds,
-  locationIds
+  locationIds,
+  sceneOptions,
+  npcOptions,
+  locationOptions
 }: InteractionModelEditorProps) {
   const handleToggleActive = () => {
     if (model) {
@@ -82,7 +88,7 @@ export function InteractionModelEditor({
             <SelectField
               label="Aktif NPC"
               value={model.activeNpcId || ""}
-              options={npcIds}
+              options={npcOptions ?? npcIds}
               onChange={(activeNpcId) => update({ activeNpcId })}
             />
             <TextField
@@ -137,6 +143,9 @@ export function InteractionModelEditor({
               sceneIds={sceneIds}
               npcIds={npcIds}
               locationIds={locationIds}
+              sceneOptions={sceneOptions}
+              npcOptions={npcOptions}
+              locationOptions={locationOptions}
             />
           </div>
         </div>

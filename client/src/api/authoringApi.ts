@@ -1,5 +1,5 @@
 import { getApiBase } from "./apiBase";
-import type { AuthoringBackup, AuthoringContentKind, AuthoringDocument, AuthoringMetrics, AuthoringSaveResult, AuthoringTreeNode, AuthoringValidationResult, ContentOverrideEntry, LlmDraftRequest, LlmDraftResult, PreviewSessionResult, ScenePreviewResult } from "../types/authoringTypes";
+import type { AuthoringBackup, AuthoringContentKind, AuthoringDocument, AuthoringMetrics, AuthoringReferences, AuthoringSaveResult, AuthoringTreeNode, AuthoringValidationResult, ContentOverrideEntry, LlmDraftRequest, LlmDraftResult, PreviewSessionResult, ScenePreviewResult } from "../types/authoringTypes";
 import type { GameAction, Scene } from "../types/gameTypes";
 
 async function json<T>(url: string, init?: RequestInit): Promise<T> {
@@ -13,6 +13,7 @@ async function json<T>(url: string, init?: RequestInit): Promise<T> {
 
 export const authoringApi = {
   tree: () => json<AuthoringTreeNode[]>("/api/authoring/tree"),
+  references: () => json<AuthoringReferences>("/api/authoring/references"),
   documents: (kind?: AuthoringContentKind) => json<AuthoringDocument[]>(`/api/authoring/documents${kind ? `?kind=${encodeURIComponent(kind)}` : ""}`),
   document: (kind: AuthoringContentKind, pathOrId: string) => json<AuthoringDocument>(`/api/authoring/document?kind=${encodeURIComponent(kind)}&pathOrId=${encodeURIComponent(pathOrId)}`),
   saveDocument: (body: { kind: AuthoringContentKind; path: string; data: unknown; validateBeforeSave?: boolean; createBackup?: boolean; allowErrorOverride?: boolean }) => json<AuthoringSaveResult>("/api/authoring/document", { method: "PUT", body: JSON.stringify(body) }),

@@ -50,6 +50,10 @@ export function listSaves(): Promise<SaveSummary[]> {
   return requestJson<SaveSummary[]>("/api/game/saves");
 }
 
+export function deleteSave(saveId: string): Promise<{ saves: SaveSummary[] }> {
+  return requestJson<{ saves: SaveSummary[] }>(`/api/game/saves/${encodeURIComponent(saveId)}`, { method: "DELETE" });
+}
+
 export function createNewGame(playerName: string, campaignId = "vicus_first_days"): Promise<GameState> {
   return requestJson<GameState>("/api/game/new", {
     method: "POST",

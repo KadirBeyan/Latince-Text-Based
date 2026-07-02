@@ -17,7 +17,7 @@ export const InteractionIntentList: React.FC<InteractionIntentListProps> = ({
 }) => {
   if (!intents || intents.length === 0) {
     return (
-      <div className="text-center p-6 border border-gray-800 rounded-xl bg-gray-950/20 text-gray-500 text-sm italic">
+      <div className="interaction-empty-state text-center p-6 border rounded-xl text-sm italic">
         Şu anda yapılabilecek bir eylem bulunmuyor.
       </div>
     );
@@ -25,8 +25,8 @@ export const InteractionIntentList: React.FC<InteractionIntentListProps> = ({
 
   return (
     <div className={`space-y-2.5 ${className}`}>
-      <h4 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-2">
-        Bir Niyet Seç:
+      <h4 className="interaction-list-heading text-xs uppercase tracking-wider font-semibold mb-2">
+        Ne yapmak istiyorsun?
       </h4>
       <div className="grid grid-cols-1 gap-2">
         {intents.map((intent, index) => {

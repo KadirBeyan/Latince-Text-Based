@@ -79,6 +79,19 @@ export type AuthoringSaveResult = {
   overridePath?: string;
 };
 
+export type AuthoringReferenceOption = { id: string; label: string };
+
+export type AuthoringReferences = {
+  scenes: Array<AuthoringReferenceOption & { title: string; questId: string; chapterId: string }>;
+  quests: Array<AuthoringReferenceOption & { title: string; chapterId: string }>;
+  chapters: Array<AuthoringReferenceOption & { title: string; campaignId: string }>;
+  npcs: Array<AuthoringReferenceOption & { name: string }>;
+  locations: Array<AuthoringReferenceOption & { title: string }>;
+  grammar: AuthoringReferenceOption[];
+  vocabulary: AuthoringReferenceOption[];
+  skills: AuthoringReferenceOption[];
+};
+
 export type LlmDraftKind =
   | "scene"
   | "quest"

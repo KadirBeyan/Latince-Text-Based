@@ -33,6 +33,22 @@ function withCharacterProfile(save: Record<string, unknown>): Record<string, unk
   return save;
 }
 
+function withCurrentContentRefs(save: Record<string, unknown>): Record<string, unknown> {
+  if (save.currentCampaignId === "via-prima") {
+    save.currentCampaignId = "vicus_first_days";
+  }
+  if (save.currentChapterId === "prologus" || save.currentChapterId === "vicus_prologue") {
+    save.currentChapterId = "village_first_days";
+  }
+  if (save.currentQuestId === "prologus_main_prima") {
+    save.currentQuestId = "vicus_prologue_main";
+  }
+  if (typeof save.currentSceneId === "string" && save.currentSceneId.startsWith("prologus_")) {
+    save.currentSceneId = "vicus_001_home_morning";
+  }
+  return save;
+}
+
 export function migrateSave(value: unknown): PlayerSave {
   if (typeof value !== "object" || value === null) {
     throw new Error("Save must be an object.");
@@ -71,6 +87,7 @@ export function migrateSave(value: unknown): PlayerSave {
   }
   if (version === 7) {
     const save = currentSave as Record<string, unknown>;
+    withCurrentContentRefs(save);
     if (!save.chapterProgress || typeof save.chapterProgress !== "object") save.chapterProgress = {};
     if (!save.livingSceneStates || typeof save.livingSceneStates !== "object") save.livingSceneStates = {};
     if (!save.worldPresence || typeof save.worldPresence !== "object") save.worldPresence = { visitedLocations: {}, discoveredLatinIds: [], seenRumorIds: [], journalEntries: [], npcMoodOverrides: {}, worldFlags: {} };

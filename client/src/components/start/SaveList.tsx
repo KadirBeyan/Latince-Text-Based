@@ -1,3 +1,4 @@
+import { Trash } from "@phosphor-icons/react";
 import { useGameStore } from "../../stores/gameStore";
 
 function formatDate(value?: string): string {
@@ -8,7 +9,13 @@ function formatDate(value?: string): string {
 }
 
 export function SaveList() {
-  const { saves, loadGame, actionLoading, loading } = useGameStore();
+  const { saves, loadGame, deleteSave, actionLoading, loading } = useGameStore();
+
+  function confirmDelete(saveId: string, playerName: string): void {
+    if (window.confirm(`${playerName} kaydını kalıcı olarak silmek istiyor musun?`)) {
+      void deleteSave(saveId);
+    }
+  }
 
   return (
     <section className="save-list">
@@ -26,7 +33,19 @@ export function SaveList() {
               <p>{save.level ? `Lv ${save.level}` : "Seviye bilgisi yok"}{typeof save.xp === "number" ? ` · ${save.xp} XP` : ""}</p>
               <small>{formatDate(save.updatedAt)}</small>
             </div>
-            <button type="button" onClick={() => void loadGame(save.id)} disabled={actionLoading}>Devam Et</button>
+            <div className="save-actions">
+              <button type="button" onClick={() => void loadGame(save.id)} disabled={actionLoading}>Devam Et</button>
+              <button
+                type="button"
+                className="save-delete-button"
+                onClick={() => confirmDelete(save.id, save.playerName)}
+                disabled={actionLoading}
+                aria-label={`${save.playerName} kaydını sil`}
+                title="Kaydı sil"
+              >
+                <Trash size={16} weight="bold" aria-hidden="true" />
+              </button>
+            </div>
           </article>
         ))}
       </div>

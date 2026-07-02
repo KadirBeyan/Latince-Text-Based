@@ -19,19 +19,19 @@ export const NextActionsPanel: React.FC<NextActionsPanelProps> = ({
 
   return (
     <div
-      className={`p-4 rounded-xl border border-teal-900/35 bg-teal-950/5 space-y-3.5 shadow-sm animate-fadeIn ${className}`}
+      className={`next-actions-panel p-4 rounded-xl space-y-3.5 animate-fadeIn ${className}`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-          <span className="text-xs font-bold tracking-wider text-teal-400 uppercase">
+          <span className="next-actions-dot w-2 h-2 rounded-full animate-pulse" />
+          <span className="next-actions-label text-xs font-bold tracking-wider uppercase">
             Eylem Başarıyla Tamamlandı
           </span>
         </div>
       </div>
 
       {hasConsequences && (
-        <div className="border-t border-teal-900/20 pt-2">
+        <div className="next-actions-divider pt-2">
           <ConsequencePanel consequences={consequences} />
         </div>
       )}
@@ -40,7 +40,7 @@ export const NextActionsPanel: React.FC<NextActionsPanelProps> = ({
         <div className="flex justify-end pt-1">
           <button
             onClick={onContinue}
-            className="px-5 py-2 bg-gradient-to-r from-teal-700 to-emerald-700 hover:from-teal-600 hover:to-emerald-600 text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md hover:shadow-teal-900/30 transition-all duration-300 active:scale-[0.98]"
+            className="next-actions-button px-5 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 active:scale-[0.98]"
           >
             Devam Et
           </button>

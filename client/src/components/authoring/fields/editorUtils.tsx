@@ -1,5 +1,7 @@
 import { VpInput, VpTextarea } from "../../ui";
 
+export type SelectOption = string | { value: string; label: string };
+
 export const EFFECT_TYPES = ["ADD_XP", "ADD_CURRENCY", "REMOVE_CURRENCY", "ADD_ITEM", "REMOVE_ITEM", "UNLOCK_SKILL", "INCREMENT_SKILL", "START_QUEST", "COMPLETE_QUEST", "COMPLETE_CHAPTER", "UNLOCK_CHAPTER", "ADD_JOURNAL_ENTRY", "ADD_DIALOGUE_ENTRY", "SET_FLAG", "SET_NARRATIVE_FLAG", "ADD_NPC_MEMORY", "UPDATE_NPC_RELATIONSHIP", "DISCOVER_LOCATION", "SET_LOCATION_FLAG", "SET_LOCATION_MOOD", "ADD_WORLD_EVENT", "APPLY_REWARD_BUNDLE", "GO_TO_SCENE", "MARK_SCENE_COMPLETED"];
 export const CONDITION_TYPES = ["HAS_ITEM", "HAS_SKILL", "FLAG_EQUALS", "NARRATIVE_FLAG_EQUALS", "QUEST_STATUS", "MIN_LEVEL", "SCENE_VISITED", "SCENE_COMPLETED", "NPC_RELATION_MIN", "NPC_MEMORY_HAS_TAG", "LOCATION_DISCOVERED", "LOCATION_FLAG_EQUALS", "CHAPTER_COMPLETED", "ASSESSMENT_LEVEL_MIN", "MASTERY_MIN"];
 
@@ -11,8 +13,22 @@ export function NumberField({ label, value, onChange, min = -9999, max = 9999 }:
   return <label><span>{label}</span><VpInput type="number" value={String(value ?? 0)} onChange={(event) => onChange(clamp(Number(event.target.value), min, max))} /></label>;
 }
 
-export function SelectField({ label, value, options, onChange }: { label: string; value: unknown; options: string[]; onChange: (value: string) => void }) {
-  return <label><span>{label}</span><select value={String(value ?? "")} onChange={(event) => onChange(event.target.value)}><option value="">-</option>{options.map((option) => <option key={option} value={option}>{option}</option>)}</select></label>;
+export function SelectField({ label, value, options, onChange }: { label: string; value: unknown; options: SelectOption[]; onChange: (value: string) => void }) {
+  return <label><span>{label}</span><select value={String(value ?? "")} onChange={(event) => onChange(event.target.value)}><option value="">-</option>{options.map((option) => { const item = typeof option === "string" ? { value: option, label: option } : option; return <option key={item.value} value={item.value}>{item.label}</option>; })}</select></label>;
+}
+
+export function ReferenceListField({ label, value, options, onChange }: { label: string; value: string[]; options: SelectOption[]; onChange: (value: string[]) => void }) {
+  const selected = value ?? [];
+  const add = (next: string) => {
+    if (!next || selected.includes(next)) return;
+    onChange([...selected, next]);
+  };
+  const remove = (target: string) => onChange(selected.filter((item) => item !== target));
+  const labelFor = (id: string) => {
+    const match = options.find((option) => (typeof option === "string" ? option === id : option.value === id));
+    return typeof match === "string" ? match : match?.label ?? id;
+  };
+  return <label className="authoring-wide"><span>{label}</span><select value="" onChange={(event) => add(event.target.value)}><option value="">Ekle...</option>{options.map((option) => { const item = typeof option === "string" ? { value: option, label: option } : option; return <option key={item.value} value={item.value}>{item.label}</option>; })}</select><div className="authoring-reference-chips">{selected.length ? selected.map((id) => <button type="button" key={id} onClick={() => remove(id)}>{labelFor(id)} ×</button>) : <small>Secim yok</small>}</div></label>;
 }
 
 export function LinesField({ label, value, onChange }: { label: string; value: string[]; onChange: (value: string[]) => void }) {

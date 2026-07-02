@@ -11,16 +11,20 @@ import { split } from "./fields/editorUtils";
 import { CinematicPreview } from "./CinematicPreview";
 import { InteractionModelEditor } from "./fields/InteractionModelEditor";
 import { DialogueSequenceEditor } from "./fields/DialogueSequenceEditor";
+import type { AuthoringReferences } from "../../types/authoringTypes";
 
-export function SceneEditor({ data, onChange }: { data: any; onChange: (patch: any) => void }) {
-  const sceneIds = [data?.id, ...(data?.choices ?? []).map((choice: any) => choice.nextSceneId), data?.textChallenge?.successNextSceneId, data?.textChallenge?.failureNextSceneId, data?.dialogueChallenge?.successNextSceneId, data?.dialogueChallenge?.failureNextSceneId].filter(Boolean);
-  const npcIds = data?.npcIds ?? [];
-  const locationIds = [data?.locationId].filter(Boolean);
+export function SceneEditor({ data, references, onChange }: { data: any; references?: AuthoringReferences | null; onChange: (patch: any) => void }) {
+  const sceneIds = references?.scenes.map((item) => item.id) ?? [data?.id, ...(data?.choices ?? []).map((choice: any) => choice.nextSceneId), data?.textChallenge?.successNextSceneId, data?.textChallenge?.failureNextSceneId, data?.dialogueChallenge?.successNextSceneId, data?.dialogueChallenge?.failureNextSceneId].filter(Boolean);
+  const npcIds = references?.npcs.map((item) => item.id) ?? data?.npcIds ?? [];
+  const locationIds = references?.locations.map((item) => item.id) ?? [data?.locationId].filter(Boolean);
+  const sceneOptions = references?.scenes.map((item) => ({ value: item.id, label: item.label })) ?? sceneIds;
+  const npcOptions = references?.npcs.map((item) => ({ value: item.id, label: item.label })) ?? npcIds;
+  const locationOptions = references?.locations.map((item) => ({ value: item.id, label: item.label })) ?? locationIds;
   return (
     <div className="authoring-editor-stack">
       <VpCard variant="compact"><VpSectionHeader eyebrow="Scene" title={data?.titleTr ?? data?.title ?? "Sahne"} /><div className="authoring-form-grid"><FieldAnchor fieldPath="id"><Field label="id" value={data?.id} onChange={(id) => onChange({ id })} /></FieldAnchor><FieldAnchor fieldPath="titleTr"><Field label="titleTr" value={data?.titleTr ?? data?.title} onChange={(title) => onChange({ title, titleTr: title })} /></FieldAnchor><Field label="titleLatin" value={data?.titleLatin} onChange={(titleLatin) => onChange({ titleLatin })} /><FieldAnchor fieldPath="locationId"><Field label="locationId" value={data?.locationId} onChange={(locationId) => onChange({ locationId })} /></FieldAnchor><FieldAnchor fieldPath="npcIds"><Field label="npcIds" value={(data?.npcIds ?? []).join(", ")} onChange={(value) => onChange({ npcIds: split(value) })} /></FieldAnchor><FieldAnchor fieldPath="inputMode"><label><span>inputMode</span><select value={data?.inputMode ?? "choice"} onChange={(event) => onChange({ inputMode: event.target.value })}><option value="choice">choice</option><option value="text">text</option><option value="hybrid">hybrid</option><option value="dialogue-response">dialogue-response</option><option value="hybrid-dialogue">hybrid-dialogue</option></select></label></FieldAnchor></div><FieldAnchor fieldPath="descriptionTr"><label className="authoring-wide"><span>descriptionTr</span><VpTextarea value={data?.descriptionTr ?? data?.description ?? ""} onChange={(event) => onChange({ description: event.target.value, descriptionTr: event.target.value })} /></label></FieldAnchor><label className="authoring-wide"><span>objective</span><VpTextarea value={data?.objective ?? ""} onChange={(event) => onChange({ objective: event.target.value })} /></label></VpCard>
       <CinematicPreview kind="scene" data={data} />
-      <VpCard variant="compact"><VpSectionHeader eyebrow="Learning Focus" title="Grammar / Vocabulary" /><FieldAnchor fieldPath="learningFocus.grammarIds"><LearningFocusEditor value={data?.learningFocus} scene={data} onChange={(learningFocus) => onChange({ learningFocus })} /></FieldAnchor></VpCard>
+      <VpCard variant="compact"><VpSectionHeader eyebrow="Learning Focus" title="Grammar / Vocabulary" /><FieldAnchor fieldPath="learningFocus.grammarIds"><LearningFocusEditor value={data?.learningFocus} scene={data} references={references} onChange={(learningFocus) => onChange({ learningFocus })} /></FieldAnchor></VpCard>
       
       {data?.inputMode === "dialogue-response" ? (
         <VpCard variant="compact">
@@ -58,6 +62,9 @@ export function SceneEditor({ data, onChange }: { data: any; onChange: (patch: a
           sceneIds={sceneIds}
           npcIds={npcIds}
           locationIds={locationIds}
+          sceneOptions={sceneOptions}
+          npcOptions={npcOptions}
+          locationOptions={locationOptions}
         />
       </VpCard>
 
@@ -74,37 +81,12 @@ export function SceneEditor({ data, onChange }: { data: any; onChange: (patch: a
 
       <VpCard variant="compact">
         <VpSectionHeader eyebrow="Living Scene Config" title="Revisit Variants & Ambient Actions" />
-        <div style={{ padding: "16px", fontSize: "0.85rem" }}>
-          <h4 style={{ margin: "0 0 8px 0", color: "var(--gold)" }}>Tekrar Ziyaret Varyantları ({data?.revisitVariants?.length ?? 0})</h4>
-          {(data?.revisitVariants || []).length === 0 ? (
-            <p className="authoring-muted" style={{ margin: "0 0 16px 0", fontStyle: "italic" }}>Tanımlı varyant yok. Gelismis JSON alanından ekleyebilirsiniz.</p>
-          ) : (
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "16px" }}>
-              {(data.revisitVariants).map((v: any, idx: number) => (
-                <div key={idx} style={{ padding: "8px", backgroundColor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "4px" }}>
-                  <div><strong>ID:</strong> {v.id}</div>
-                  {v.titleOverride && <div><strong>Title:</strong> {v.titleOverride}</div>}
-                  {v.descriptionOverride && <div><strong>Description:</strong> {v.descriptionOverride}</div>}
-                </div>
-              ))}
-            </div>
-          )}
-
-          <h4 style={{ margin: "0 0 8px 0", color: "var(--gold)" }}>Çevre Etkileşim Şablonları ({data?.ambientTemplates?.length ?? 0})</h4>
-          {(data?.ambientTemplates || []).length === 0 ? (
-            <p className="authoring-muted" style={{ margin: 0, fontStyle: "italic" }}>Tanımlı şablon yok. Gelismis JSON alanından ekleyebilirsiniz.</p>
-          ) : (
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-              {(data.ambientTemplates).map((t: any, idx: number) => (
-                <div key={idx} style={{ padding: "8px", backgroundColor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "4px" }}>
-                  <div><strong>Template:</strong> {t.templateId}</div>
-                  {t.labelTrOverride && <div><strong>Label Override:</strong> {t.labelTrOverride}</div>}
-                  {t.descriptionTrOverride && <div><strong>Description Override:</strong> {t.descriptionTrOverride}</div>}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        <LivingSceneEditor
+          revisitVariants={data?.revisitVariants ?? []}
+          ambientTemplates={data?.ambientTemplates ?? []}
+          onRevisitChange={(revisitVariants) => onChange({ revisitVariants })}
+          onAmbientChange={(ambientTemplates) => onChange({ ambientTemplates })}
+        />
       </VpCard>
 
       <JsonBlock data={data} onChange={onChange} />
@@ -116,3 +98,9 @@ export function Field({ label, value, onChange }: { label: string; value: unknow
 export function JsonBlock({ data, onChange }: { data: any; onChange: (value: any) => void }) { return <VpCard variant="compact"><JsonAdvancedEditor value={data} onChange={onChange} title="Gelismis JSON" /></VpCard>; }
 export { split };
 export function splitLines(value: string): string[] { return value.split("\n").map((item) => item.trim()).filter(Boolean); }
+
+function LivingSceneEditor({ revisitVariants, ambientTemplates, onRevisitChange, onAmbientChange }: { revisitVariants: any[]; ambientTemplates: any[]; onRevisitChange: (value: any[]) => void; onAmbientChange: (value: any[]) => void }) {
+  const updateRevisit = (index: number, patch: any) => onRevisitChange(revisitVariants.map((item, i) => i === index ? { ...item, ...patch } : item));
+  const updateAmbient = (index: number, patch: any) => onAmbientChange(ambientTemplates.map((item, i) => i === index ? { ...item, ...patch } : item));
+  return <div className="authoring-nested-editor"><div className="authoring-row-head"><strong>Tekrar Ziyaret Varyantları ({revisitVariants.length})</strong><button type="button" onClick={() => onRevisitChange([...revisitVariants, { id: `revisit_${revisitVariants.length + 1}`, titleOverride: "", descriptionOverride: "" }])}>Varyant ekle</button></div>{revisitVariants.map((variant, index) => <div className="authoring-repeat-row" key={variant.id ?? index}><div className="authoring-row-head"><strong>{variant.id || `Variant ${index + 1}`}</strong><button type="button" onClick={() => onRevisitChange(revisitVariants.filter((_, i) => i !== index))}>Sil</button></div><div className="authoring-form-grid"><Field label="id" value={variant.id} onChange={(id) => updateRevisit(index, { id })} /><Field label="titleOverride" value={variant.titleOverride} onChange={(titleOverride) => updateRevisit(index, { titleOverride })} /><label className="authoring-wide"><span>descriptionOverride</span><VpTextarea value={variant.descriptionOverride ?? ""} onChange={(event) => updateRevisit(index, { descriptionOverride: event.target.value })} /></label></div></div>)}<div className="authoring-row-head"><strong>Çevre Etkileşim Şablonları ({ambientTemplates.length})</strong><button type="button" onClick={() => onAmbientChange([...ambientTemplates, { templateId: `ambient_${ambientTemplates.length + 1}`, labelTrOverride: "", descriptionTrOverride: "" }])}>Şablon ekle</button></div>{ambientTemplates.map((template, index) => <div className="authoring-repeat-row" key={template.templateId ?? index}><div className="authoring-row-head"><strong>{template.templateId || `Template ${index + 1}`}</strong><button type="button" onClick={() => onAmbientChange(ambientTemplates.filter((_, i) => i !== index))}>Sil</button></div><div className="authoring-form-grid"><Field label="templateId" value={template.templateId} onChange={(templateId) => updateAmbient(index, { templateId })} /><Field label="labelTrOverride" value={template.labelTrOverride} onChange={(labelTrOverride) => updateAmbient(index, { labelTrOverride })} /><label className="authoring-wide"><span>descriptionTrOverride</span><VpTextarea value={template.descriptionTrOverride ?? ""} onChange={(event) => updateAmbient(index, { descriptionTrOverride: event.target.value })} /></label></div></div>)}</div>;
+}

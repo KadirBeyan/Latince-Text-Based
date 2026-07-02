@@ -221,6 +221,8 @@ dd { margin: 0; }
 .save-item { display: flex; justify-content: space-between; gap: 0.8rem; align-items: center; border: 1px solid rgba(177, 132, 61, 0.34); border-radius: 8px; padding: 0.8rem; background: rgba(10, 9, 6, 0.36); }
 .save-item h3, .save-item p { margin: 0; }
 .save-item p, .save-item small { color: var(--muted); }
+.save-actions { display: flex; align-items: center; gap: 0.45rem; }
+.save-delete-button { display: inline-grid; width: 36px; min-width: 36px; min-height: 36px; place-items: center; padding: 0; border-color: rgba(201, 95, 84, 0.45); color: #f6ecd2; background: linear-gradient(180deg, #65332d, #2a1512); }
 .settings-start summary { cursor: pointer; color: var(--accent-bright); font-weight: 700; }
 
 @media (max-width: 1500px) and (min-width: 1201px) {
@@ -261,6 +263,8 @@ dd { margin: 0; }
   .dialogue-entry { max-width: 100%; }
   .choice-list { grid-template-columns: 1fr; }
   .save-item, .top-actions, .input-actions { align-items: stretch; flex-direction: column; }
+  .save-actions { width: 100%; align-items: stretch; }
+  .save-actions button:first-child { flex: 1; }
   .top-actions button, .input-actions button, .settings-actions button, .save-item button { width: 100%; }
 }
 

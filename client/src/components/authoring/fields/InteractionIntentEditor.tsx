@@ -1,11 +1,12 @@
 import React from "react";
 import { VpButton } from "../../ui";
-import { SelectField, TextField, LinesField } from "./editorUtils";
+import { SelectField, TextField, LinesField, type SelectOption } from "./editorUtils";
 import { ConditionEditor } from "./ConditionEditor";
 import { EffectEditor } from "./EffectEditor";
 import { ConsequencePresentationEditor } from "./ConsequencePresentationEditor";
 import { FailureBranchEditor } from "./FailureBranchEditor";
 import type { InteractionIntent } from "../../../types/gameTypes";
+import { getIntentRoleMeta } from "../../game/interaction/ActionVerbBadge";
 
 interface InteractionIntentEditorProps {
   intents: InteractionIntent[];
@@ -13,6 +14,9 @@ interface InteractionIntentEditorProps {
   sceneIds: string[];
   npcIds: string[];
   locationIds: string[];
+  sceneOptions?: SelectOption[];
+  npcOptions?: SelectOption[];
+  locationOptions?: SelectOption[];
 }
 
 const VERBS = [
@@ -32,8 +36,12 @@ export function InteractionIntentEditor({
   onChange,
   sceneIds,
   npcIds,
-  locationIds
+  locationIds,
+  sceneOptions,
+  npcOptions,
+  locationOptions
 }: InteractionIntentEditorProps) {
+  const effectiveLocationIds = locationOptions?.map((option) => typeof option === "string" ? option : option.value) ?? locationIds;
   const update = (index: number, patch: Partial<InteractionIntent>) => {
     onChange(intents.map((intent, i) => (i === index ? { ...intent, ...patch } : intent)));
   };
@@ -63,10 +71,11 @@ export function InteractionIntentEditor({
         </VpButton>
       </div>
 
-      {intents.map((intent, index) => (
-        <div className="authoring-repeat-row" key={intent.id ?? index}>
+      {intents.map((intent, index) => {
+        const role = getIntentRoleMeta(intent.verb, intent.requiresLatin);
+        return <div className={`authoring-repeat-row authoring-intent-row authoring-intent-row--${role.tone}`} key={intent.id ?? index}>
           <div className="authoring-row-head">
-            <strong>{intent.labelTr} (ID: {intent.id})</strong>
+            <strong><span className={`interaction-role-badge interaction-role-badge--${role.tone}`}>{role.label}</span> {intent.labelTr} (ID: {intent.id})</strong>
             <button type="button" onClick={() => remove(index)}>
               Sil
             </button>
@@ -124,17 +133,17 @@ export function InteractionIntentEditor({
                 onChange={(targetMeaningTr) => update(index, { targetMeaningTr })}
               />
               <SelectField
-                label="Konuşan NPC"
-                value={intent.speakerNpcId || ""}
-                options={npcIds}
-                onChange={(speakerNpcId) => update(index, { speakerNpcId })}
-              />
+              label="Konuşan NPC"
+              value={intent.speakerNpcId || ""}
+              options={npcOptions ?? npcIds}
+              onChange={(speakerNpcId) => update(index, { speakerNpcId })}
+            />
               <SelectField
-                label="Hedef NPC"
-                value={intent.targetNpcId || ""}
-                options={npcIds}
-                onChange={(targetNpcId) => update(index, { targetNpcId })}
-              />
+              label="Hedef NPC"
+              value={intent.targetNpcId || ""}
+              options={npcOptions ?? npcIds}
+              onChange={(targetNpcId) => update(index, { targetNpcId })}
+            />
               <LinesField
                 label="Kabul Edilen Doğru Cevaplar (Canonical Answers - Satır Satır)"
                 value={intent.canonicalAnswers || []}
@@ -153,19 +162,19 @@ export function InteractionIntentEditor({
             <SelectField
               label="Başarı Hedef Sahne"
               value={intent.successNextSceneId || ""}
-              options={sceneIds}
+              options={sceneOptions ?? sceneIds}
               onChange={(successNextSceneId) => update(index, { successNextSceneId })}
             />
             <SelectField
               label="Hata Hedef Sahne"
               value={intent.failureNextSceneId || ""}
-              options={sceneIds}
+              options={sceneOptions ?? sceneIds}
               onChange={(failureNextSceneId) => update(index, { failureNextSceneId })}
             />
             <SelectField
               label="Varsayılan Sonraki Sahne"
               value={intent.nextSceneId || ""}
-              options={sceneIds}
+              options={sceneOptions ?? sceneIds}
               onChange={(nextSceneId) => update(index, { nextSceneId })}
             />
             <TextField
@@ -197,7 +206,7 @@ export function InteractionIntentEditor({
               onChange={(conditions) => update(index, { conditions })}
               sceneIds={sceneIds}
               npcIds={npcIds}
-              locationIds={locationIds}
+              locationIds={effectiveLocationIds}
             />
           </div>
 
@@ -208,13 +217,13 @@ export function InteractionIntentEditor({
               onChange={(effects) => update(index, { effects })}
               sceneIds={sceneIds}
               npcIds={npcIds}
-              locationIds={locationIds}
+              locationIds={effectiveLocationIds}
             />
           </div>
 
           {/* Resolution Configuration */}
           <div style={{ marginTop: "1rem", border: "1px solid rgba(255,255,255,0.05)", padding: "0.75rem", borderRadius: "8px" }}>
-            <span className="text-xs font-bold text-teal-400">Eylem Çözümleme (Resolution):</span>
+            <span className="authoring-muted" style={{ fontWeight: 800 }}>Eylem Çözümleme (Resolution):</span>
             <div className="authoring-form-grid" style={{ marginTop: "0.5rem" }}>
               <TextField
                 label="Sonuç Anlatımı (Türkçe)"
@@ -260,12 +269,12 @@ export function InteractionIntentEditor({
                 onChange={(failureBranches) => update(index, { failureBranches })}
                 sceneIds={sceneIds}
                 npcIds={npcIds}
-                locationIds={locationIds}
+                locationIds={effectiveLocationIds}
               />
             </div>
           )}
-        </div>
-      ))}
+        </div>;
+      })}
     </div>
   );
 }

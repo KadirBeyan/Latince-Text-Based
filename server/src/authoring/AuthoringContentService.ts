@@ -1,5 +1,5 @@
 import type { Campaign, Chapter, Quest, Scene } from "../game/types/gameTypes";
-import type { AuthoringContentKind, AuthoringDocument, AuthoringSaveRequest, AuthoringSaveResult, AuthoringTreeNode } from "./AuthoringTypes";
+import type { AuthoringContentKind, AuthoringDocument, AuthoringReferences, AuthoringSaveRequest, AuthoringSaveResult, AuthoringTreeNode } from "./AuthoringTypes";
 import { AuthoringFileService } from "./AuthoringFileService";
 import { AuthoringValidationService } from "./AuthoringValidationService";
 import { ContentOverrideService } from "../content/ContentOverrideService";
@@ -36,6 +36,38 @@ export class AuthoringContentService {
       issueCount: docs.filter((doc) => folder.kinds.includes(doc.kind)).reduce((sum, doc) => sum + (doc.validation?.errors.length ?? 0), 0),
       warningCount: docs.filter((doc) => folder.kinds.includes(doc.kind)).reduce((sum, doc) => sum + (doc.validation?.warnings.length ?? 0), 0),
     }));
+  }
+
+  async getReferences(): Promise<AuthoringReferences> {
+    const content = this.validationService["contentLoader"].load();
+    const scenes: AuthoringReferences["scenes"] = [];
+    const quests: AuthoringReferences["quests"] = [];
+    const chapters: AuthoringReferences["chapters"] = [];
+    for (const campaign of content.campaigns) {
+      for (const chapter of campaign.chapters ?? []) {
+        chapters.push({ id: chapter.id, title: chapter.title, label: `${chapter.title} (${chapter.id})`, campaignId: campaign.id });
+        for (const quest of chapter.quests ?? []) {
+          quests.push({ id: quest.id, title: quest.title, label: `${quest.title} (${quest.id})`, chapterId: chapter.id });
+          for (const scene of quest.scenes ?? []) {
+            scenes.push({ id: scene.id, title: scene.title, label: `${scene.title} (${scene.id})`, questId: quest.id, chapterId: chapter.id });
+          }
+        }
+      }
+    }
+    return {
+      scenes,
+      quests,
+      chapters,
+      npcs: content.npcs.map((npc) => ({ id: npc.id, name: npc.name, label: `${npc.name} (${npc.id})` })),
+      locations: content.campaigns.flatMap((campaign) => campaign.chapters).flatMap((chapter) => chapter.quests).flatMap((quest) => quest.scenes).reduce<Array<{ id: string; title: string; label: string }>>((acc, scene) => {
+        if (!scene.locationId || acc.some((item) => item.id === scene.locationId)) return acc;
+        acc.push({ id: scene.locationId, title: scene.locationId, label: scene.locationId });
+        return acc;
+      }, []),
+      grammar: content.grammar.map((item) => ({ id: item.id, label: `${item.titleTr ?? item.title} (${item.id})` })),
+      vocabulary: content.vocabulary.map((item) => ({ id: item.id, label: `${item.latin} - ${item.turkish} (${item.id})` })),
+      skills: content.skills.map((item) => ({ id: item.id, label: `${item.name ?? item.id} (${item.id})` })),
+    };
   }
 
   async listDocuments(kind?: AuthoringContentKind, includeValidation = false): Promise<AuthoringDocument[]> {

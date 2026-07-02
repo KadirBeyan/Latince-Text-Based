@@ -48,6 +48,7 @@ export function createAuthoringRoutes(params: { runtime: RuntimeConfig }): Route
   });
 
   router.get("/tree", wrap(async (_req, res) => res.json(await contentService.getAuthoringTree())));
+  router.get("/references", wrap(async (_req, res) => res.json(await contentService.getReferences())));
   router.use("/graph", createSceneGraphRoutes({ runtime: params.runtime }));
   router.get("/documents", wrap(async (req, res) => res.json(await contentService.listDocuments(req.query.kind as AuthoringContentKind | undefined))));
   router.get("/document", wrap(async (req, res) => res.json(await contentService.getDocument({ kind: String(req.query.kind) as AuthoringContentKind, pathOrId: String(req.query.pathOrId ?? "") }))));

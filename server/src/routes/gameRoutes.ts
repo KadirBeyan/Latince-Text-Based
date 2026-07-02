@@ -71,6 +71,10 @@ export function createGameRoutes(gameEngine: GameEngine, contentLoader: ContentL
     res.json(gameEngine.listSaves());
   }));
 
+  router.delete("/api/game/saves/:saveId", asyncHandler((req, res) => {
+    res.json({ saves: gameEngine.deleteSave(String(req.params.saveId)) });
+  }));
+
   router.get("/api/content/validate", asyncHandler((_req, res) => {
     const content = contentLoader.getContent();
     const validation = contentValidator.validate(content);

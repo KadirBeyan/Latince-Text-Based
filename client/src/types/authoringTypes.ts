@@ -19,6 +19,17 @@ export type AuthoringDocument = { id: string; kind: AuthoringContentKind; title:
 export type ContentOverrideEntry = { relativePath: string; overridePath: string; sourcePath: string; updatedAt?: string; size?: number };
 export type AuthoringTreeNode = { id: string; kind: AuthoringContentKind | "folder"; title: string; path?: string; children?: AuthoringTreeNode[]; issueCount?: number; warningCount?: number };
 export type AuthoringSaveResult = { ok: boolean; document?: AuthoringDocument; validation: AuthoringValidationResult; backupPath?: string; savedTo?: "override" | "source"; path?: string; defaultPath?: string; overridePath?: string };
+export type AuthoringReferenceOption = { id: string; label: string };
+export type AuthoringReferences = {
+  scenes: Array<AuthoringReferenceOption & { title: string; questId: string; chapterId: string }>;
+  quests: Array<AuthoringReferenceOption & { title: string; chapterId: string }>;
+  chapters: Array<AuthoringReferenceOption & { title: string; campaignId: string }>;
+  npcs: Array<AuthoringReferenceOption & { name: string }>;
+  locations: Array<AuthoringReferenceOption & { title: string }>;
+  grammar: AuthoringReferenceOption[];
+  vocabulary: AuthoringReferenceOption[];
+  skills: AuthoringReferenceOption[];
+};
 export type LlmDraftKind = "scene" | "quest" | "npc" | "location" | "grammar-explanation" | "assessment-question" | "review-quest";
 export type LlmDraftRequest = { kind: LlmDraftKind; chapterId?: string; questId?: string; locationId?: string; npcIds?: string[]; grammarIds?: string[]; vocabularyIds?: string[]; difficulty?: "intro" | "practice" | "review" | "challenge"; promptTr: string; constraints?: string[]; llmConfig?: LlmProviderConfig };
 export type LlmDraftResult = { ok: boolean; kind: LlmDraftKind; generatedBy: "llm" | "fallback"; fallbackReason?: string; draft: unknown; sanitizedDraft?: any; validation: AuthoringValidationResult; latinGate?: unknown; warnings: string[] };

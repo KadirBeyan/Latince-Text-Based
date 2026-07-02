@@ -1,5 +1,5 @@
 import { createContext, createElement, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from "react";
-import { createCharacterSave, createNewGame, getGameState, listSaves, requestHint as requestHintApi, requestNarration as requestNarrationApi, resetGame, submitGameAction, getSessionSummary } from "../api/gameApi";
+import { createCharacterSave, createNewGame, deleteSave as deleteSaveApi, getGameState, listSaves, requestHint as requestHintApi, requestNarration as requestNarrationApi, resetGame, submitGameAction, getSessionSummary } from "../api/gameApi";
 import { refreshSideQuestSuggestions, acceptSideQuestSuggestion, dismissSideQuestSuggestion } from "../api/sideQuestApi";
 import {
   generateQuestFromSuggestion as apiGenerateQuestFromSuggestion,
@@ -33,6 +33,7 @@ type GameContextValue = {
   createGame: (playerName: string) => Promise<void>;
   createCharacterGame: (payload: CharacterCreationPayload) => Promise<void>;
   loadGame: (saveId: string) => Promise<void>;
+  deleteSave: (saveId: string) => Promise<void>;
   submitChoice: (choiceId: string) => Promise<void>;
   submitText: (text: string) => Promise<void>;
   submitIntent: (intentId: string) => Promise<void>;
@@ -249,6 +250,29 @@ export function GameProvider({ children }: { children: ReactNode }) {
       setActionLoading(false);
     }
   }, [applyGameState]);
+
+  const deleteSave = useCallback(async (saveId: string) => {
+    setActionLoading(true);
+    setError(null);
+    try {
+      const result = await deleteSaveApi(saveId);
+      setSaves(result.saves);
+      if (currentSaveId === saveId) {
+        setCurrentSaveId(null);
+        setGameState(null);
+        gameStateRef.current = null;
+        setNarration(null);
+        setHint(null);
+      }
+      if (readStoredValue(LAST_SAVE_KEY) === saveId) {
+        removeStoredValue(LAST_SAVE_KEY);
+      }
+    } catch (err) {
+      setError(messageFromError(err));
+    } finally {
+      setActionLoading(false);
+    }
+  }, [currentSaveId]);
 
   const submitChoice = useCallback(async (choiceId: string) => {
     if (!currentSaveId) {
@@ -693,6 +717,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     createGame,
     createCharacterGame,
     loadGame,
+    deleteSave,
     submitChoice,
     submitText,
     submitIntent,
@@ -738,7 +763,9 @@ export function GameProvider({ children }: { children: ReactNode }) {
     sessionSummary,
     loadSaves,
     createGame,
+    createCharacterGame,
     loadGame,
+    deleteSave,
     submitChoice,
     submitText,
     submitIntent,

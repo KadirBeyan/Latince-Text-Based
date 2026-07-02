@@ -1,6 +1,6 @@
 import React from "react";
 import type { InteractionIntent } from "../../../types/gameTypes";
-import { ActionVerbBadge } from "./ActionVerbBadge";
+import { ActionVerbBadge, getIntentRoleMeta } from "./ActionVerbBadge";
 
 interface InteractionIntentCardProps {
   intent: InteractionIntent;
@@ -15,50 +15,47 @@ export const InteractionIntentCard: React.FC<InteractionIntentCardProps> = ({
   onSelect,
   className = ""
 }) => {
+  const role = getIntentRoleMeta(intent.verb, intent.requiresLatin);
+  const behaviorLabel = intent.requiresLatin
+    ? "Cevap ister"
+    : intent.nextSceneId || intent.successNextSceneId
+      ? "Sahne geçişi"
+      : ["approach", "persuade", "bargain", "challenge"].includes(intent.verb)
+        ? "Riskli"
+        : "Anında çözülür";
+
   return (
     <button
       onClick={() => {
         if (!isLocked) onSelect();
       }}
       disabled={isLocked}
-      className={`w-full flex items-center justify-between p-3.5 rounded-xl border transition-all duration-300 text-left ${
-        isLocked
-          ? "border-gray-800/40 bg-gray-950/20 text-gray-500 cursor-not-allowed opacity-55"
-          : "border-gray-800 bg-gray-900/60 hover:bg-gray-800/40 hover:border-gray-700/80 active:scale-[0.99] text-gray-200"
-      } ${className}`}
+      className={`interaction-intent-card interaction-intent-card--${role.tone} w-full p-4 rounded-xl border transition-all duration-300 text-left ${isLocked ? "is-locked cursor-not-allowed opacity-55" : "active:scale-[0.99]"} ${className}`}
     >
-      <div className="flex items-center gap-3.5 flex-1 min-w-0">
-        <ActionVerbBadge verb={intent.verb} />
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold leading-snug">{intent.labelTr}</p>
-          {intent.descriptionTr && (
-            <p className="text-xs text-gray-400 mt-0.5 line-clamp-1">{intent.descriptionTr}</p>
-          )}
-          {intent.previewConsequenceTr && !isLocked && (
-            <p className="text-[10px] text-teal-400 font-medium mt-1">
-              Olası Sonuç: {intent.previewConsequenceTr}
-            </p>
-          )}
+      <div className="interaction-intent-topline">
+        <div className="interaction-intent-role-row">
+          <span className={`interaction-role-badge interaction-role-badge--${role.tone}`}>{role.label}</span>
+          <ActionVerbBadge verb={intent.verb} />
         </div>
-      </div>
-
-      <div className="flex items-center gap-2 shrink-0 ml-3">
         {isLocked ? (
-          <span className="text-[10px] uppercase font-bold tracking-wider text-rose-500 bg-rose-950/20 border border-rose-900/30 px-1.5 py-0.5 rounded">
+          <span className="interaction-intent-status interaction-intent-status--locked text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded border">
             Kilitli
           </span>
         ) : (
-          <span
-            className={`text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded border ${
-              intent.requiresLatin
-                ? "text-blue-300 bg-blue-950/30 border-blue-900/30"
-                : "text-teal-300 bg-teal-950/30 border-teal-900/30"
-            }`}
-          >
-            {intent.requiresLatin ? "Latince Söyle" : "Eylem"}
+          <span className={`interaction-intent-status interaction-intent-status--${role.tone} text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded border`}>
+            {behaviorLabel}
           </span>
         )}
       </div>
+      <p className="interaction-intent-title text-sm font-semibold leading-snug">{intent.labelTr}</p>
+      {intent.descriptionTr && (
+        <p className="interaction-intent-description text-xs mt-1">{intent.descriptionTr}</p>
+      )}
+      {intent.previewConsequenceTr && !isLocked && (
+        <p className="interaction-intent-preview text-[10px] font-medium mt-2">
+          Olası Sonuç: {intent.previewConsequenceTr}
+        </p>
+      )}
     </button>
   );
 };

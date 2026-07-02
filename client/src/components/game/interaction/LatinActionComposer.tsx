@@ -27,22 +27,22 @@ export const LatinActionComposer: React.FC<LatinActionComposerProps> = ({
   };
 
   return (
-    <div className={`p-5 rounded-xl border border-blue-900/40 bg-blue-950/10 space-y-4 shadow-md ${className}`}>
+    <div className={`latin-action-composer p-5 rounded-xl border space-y-4 ${className}`}>
       <div className="space-y-1">
-        <span className="text-[10px] uppercase font-bold tracking-widest text-blue-400 bg-blue-950/50 px-2 py-0.5 rounded">
+        <span className="latin-composer-kicker text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded">
           Latince Konuş
         </span>
-        <h4 className="text-sm font-semibold text-gray-200 mt-2">
-          Niyetin: <span className="text-blue-300">{intent.playerIntentTr || intent.labelTr}</span>
+        <h4 className="latin-composer-title text-sm font-semibold mt-2">
+          Niyetin: <span>{intent.playerIntentTr || intent.labelTr}</span>
         </h4>
         {intent.descriptionTr && (
-          <p className="text-xs text-gray-400 leading-relaxed">{intent.descriptionTr}</p>
+          <p className="latin-composer-description text-xs leading-relaxed">{intent.descriptionTr}</p>
         )}
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-3">
         <div className="space-y-1.5">
-          <label htmlFor="latin-input" className="text-xs text-gray-400 font-semibold uppercase tracking-wider">
+          <label htmlFor="latin-input" className="latin-composer-label text-xs font-semibold uppercase tracking-wider">
             Bunu Latince söyle:
           </label>
           <div className="relative">
@@ -52,7 +52,7 @@ export const LatinActionComposer: React.FC<LatinActionComposerProps> = ({
               onChange={(e) => setText(e.target.value)}
               placeholder="Cümleni buraya yaz..."
               rows={2}
-              className="w-full p-3 rounded-lg border border-blue-800/40 bg-gray-950/60 text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-none font-serif placeholder-gray-600 transition-all duration-300"
+              className="latin-composer-textarea w-full p-3 rounded-lg border text-sm focus:outline-none resize-none font-serif transition-all duration-300"
               disabled={isLoading}
             />
           </div>
@@ -66,7 +66,7 @@ export const LatinActionComposer: React.FC<LatinActionComposerProps> = ({
                 setShowHintText(!showHintText);
                 onShowHint();
               }}
-              className="px-3.5 py-2 border border-blue-800/40 bg-blue-950/20 hover:bg-blue-900/30 text-blue-300 text-xs font-semibold rounded-lg transition-all"
+              className="latin-composer-secondary px-3.5 py-2 border text-xs font-semibold rounded-lg transition-all"
             >
               İpucu İste
             </button>
@@ -74,7 +74,7 @@ export const LatinActionComposer: React.FC<LatinActionComposerProps> = ({
           <button
             type="submit"
             disabled={!text.trim() || isLoading}
-            className="px-5 py-2 bg-blue-700 hover:bg-blue-600 disabled:bg-gray-800 disabled:text-gray-500 text-white text-sm font-semibold rounded-lg shadow transition-all duration-300"
+            className="latin-composer-submit px-5 py-2 text-sm font-semibold rounded-lg shadow transition-all duration-300"
           >
             {isLoading ? "Değerlendiriliyor..." : "Söyle"}
           </button>
@@ -82,13 +82,13 @@ export const LatinActionComposer: React.FC<LatinActionComposerProps> = ({
       </form>
 
       {showHintText && (intent.grammarFocusIds || intent.vocabularyFocusIds) && (
-        <div className="p-3 rounded-lg border border-blue-900/30 bg-blue-950/15 text-xs text-blue-300 space-y-1">
-          <p className="font-semibold text-blue-200">Gramer & Kelime İpucu:</p>
+        <div className="latin-composer-hint p-3 rounded-lg border text-xs space-y-1">
+          <p className="font-semibold">Gramer & Kelime İpucu:</p>
           <p>
             Hedef Yapılar: {[...(intent.grammarFocusIds || []), ...(intent.vocabularyFocusIds || [])].join(", ")}
           </p>
           {intent.targetMeaningTr && (
-            <p className="text-[10px] text-gray-500">Hedeflenen Anlam: {intent.targetMeaningTr}</p>
+            <p className="latin-composer-hint-muted text-[10px]">Hedeflenen Anlam: {intent.targetMeaningTr}</p>
           )}
         </div>
       )}

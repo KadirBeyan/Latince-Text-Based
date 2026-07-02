@@ -101,7 +101,7 @@ export const InteractionLoop: React.FC = () => {
   };
 
   return (
-    <section className="parchment-card p-6 border border-amber-900/30 bg-stone-950/40 rounded-2xl shadow-xl space-y-6 animate-fadeIn">
+    <section className="parchment-card interaction-loop-card p-6 rounded-2xl space-y-6 animate-fadeIn">
       {/* 2. Show active dialogue context header if in dialogue sequence */}
       {isDialogueSequence && scene.dialogueSequence && (
         <DialogueSequenceView

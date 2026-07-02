@@ -420,6 +420,12 @@ export class GameEngine {
     return this.saveRepository.list();
   }
 
+  deleteSave(saveId: string): SaveSummary[] {
+    this.requireSave(saveId);
+    this.saveRepository.delete(saveId);
+    return this.listSaves();
+  }
+
   getReview(saveId: string): ReviewSuggestion {
     return this.reviewSystem.createReviewSuggestion(this.requireSave(saveId));
   }
